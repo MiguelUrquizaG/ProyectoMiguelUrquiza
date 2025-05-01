@@ -27,27 +27,15 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarColor01">
 					<ul class="navbar-nav me-auto">
-						<li class="nav-item">
-							<a class="nav-link" href="Inicio.html">Inicio
-								<span class="visually-hidden">(current)</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="Prendas.html">Prendas</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="Servicios.html">Servicios</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="QuienesSomos.html">Quiénes somos</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="Precios.html">Precios</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="Formularios.html">Formularios</a>
-						</li>
-					</ul>
+											<li class="nav-item">
+												<a class="nav-link " th:href="@{/}">Prendas
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link active" th:href="@{/categorias}">Categorias
+												</a>
+											</li>
+										</ul>
 					<a href="inicioSesion.html"><i class=" h2 bi bi-person-fill text-white"></i></a>
 				</div>
 			</div>
@@ -66,6 +54,7 @@
 					<form method="POST" action="#" th:action="@{/anadirCategoria/submit}" th:object="${categoria}"
 						class="w-100" name="anadirCategoria">
 						<div class="mb-3 ">
+							
 							<label for="inputNombre" class="form-label">Nombre Categoria<span
 									class="text-danger">*</span></label>
 							<input th:field="*{nombre}" type="text" class="form-control" id="inputNombre" required

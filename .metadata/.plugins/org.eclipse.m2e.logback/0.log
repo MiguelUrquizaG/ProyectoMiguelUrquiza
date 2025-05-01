@@ -521,3 +521,138 @@
 2025-05-01 20:54:04,175 [Worker-13: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2025-05-01 20:54:04,177 [Worker-13: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2025-05-01 20:54:04,180 [Worker-13: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 21:23:33,714 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-05-01 21:23:33,717 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-05-01 21:23:33,719 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 21:30:52,146 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-05-01 21:30:52,149 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 21:30:52,152 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 21:31:17,770 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-05-01 21:31:17,773 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 21:31:17,776 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 21:31:55,062 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 21:31:55,068 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 15 resources from src\main\resources to target\classes
+2025-05-01 21:31:55,074 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 21:34:38,883 [Worker-13: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-05-01 21:34:38,886 [Worker-13: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 21:34:38,889 [Worker-13: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 21:34:42,127 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-05-01 21:34:42,129 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 21:34:42,132 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 21:35:28,811 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-05-01 21:35:28,813 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 21:35:28,817 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 21:37:34,089 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-05-01 21:37:34,091 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 21:37:34,094 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 21:37:37,953 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-05-01 21:37:37,956 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 21:37:37,959 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 21:39:08,453 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 21:39:08,460 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 15 resources from src\main\resources to target\classes
+2025-05-01 21:39:08,467 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 21:40:48,177 [Worker-7: Launching MiguelUrquizaGarcia - MiguelUrquizaGarciaApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 21:40:48,182 [Worker-7: Launching MiguelUrquizaGarcia - MiguelUrquizaGarciaApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 15 resources from src\main\resources to target\classes
+2025-05-01 21:40:48,189 [Worker-7: Launching MiguelUrquizaGarcia - MiguelUrquizaGarciaApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 21:41:41,645 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-05-01 21:41:41,648 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 21:41:41,651 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 21:41:47,147 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-05-01 21:41:47,150 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 21:41:47,152 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 21:41:59,747 [Worker-8: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-05-01 21:41:59,749 [Worker-8: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 21:41:59,752 [Worker-8: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 21:42:10,093 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-05-01 21:42:10,096 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 21:42:10,099 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 21:49:12,148 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-05-01 21:49:12,151 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 21:49:12,153 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 21:49:18,785 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-05-01 21:49:18,788 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 21:49:18,791 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 21:49:31,807 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-05-01 21:49:31,809 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 21:49:31,812 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 21:49:37,821 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-05-01 21:49:37,823 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 21:49:37,826 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 21:49:41,669 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-05-01 21:49:41,671 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 21:49:41,674 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 21:49:47,214 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-05-01 21:49:47,217 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 21:49:47,219 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 21:50:35,394 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-05-01 21:50:35,397 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 21:50:35,399 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 21:50:37,906 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-05-01 21:50:37,909 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 21:50:37,912 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 21:50:45,179 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-05-01 21:50:45,182 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 21:50:45,184 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 21:52:19,787 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 21:52:19,793 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 15 resources from src\main\resources to target\classes
+2025-05-01 21:52:19,799 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 21:52:34,839 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 21:52:34,842 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 15 resources from src\main\resources to target\classes
+2025-05-01 21:52:34,848 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 21:52:50,320 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 21:52:50,325 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 15 resources from src\main\resources to target\classes
+2025-05-01 21:52:50,331 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 21:53:04,033 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 21:53:04,037 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 15 resources from src\main\resources to target\classes
+2025-05-01 21:53:04,043 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 21:59:44,483 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 21:59:44,489 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 15 resources from src\main\resources to target\classes
+2025-05-01 21:59:44,496 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 22:00:25,168 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 22:00:25,173 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 15 resources from src\main\resources to target\classes
+2025-05-01 22:00:25,179 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 22:00:58,816 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-05-01 22:00:58,819 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 22:00:58,822 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 22:01:06,170 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 22:01:06,176 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 15 resources from src\main\resources to target\classes
+2025-05-01 22:01:06,182 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 22:01:07,228 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 22:01:07,234 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 15 resources from src\main\resources to target\classes
+2025-05-01 22:01:07,240 [Worker-7: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 22:01:58,976 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-05-01 22:01:58,978 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 22:01:58,981 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 22:03:25,210 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-05-01 22:03:25,213 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 22:03:25,215 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 22:03:39,701 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-05-01 22:03:39,704 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 22:03:39,706 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 22:04:08,351 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-05-01 22:04:08,354 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 22:04:08,356 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 22:04:12,374 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-05-01 22:04:12,377 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 22:04:12,380 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 22:04:44,952 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 22:04:44,956 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 15 resources from src\main\resources to target\classes
+2025-05-01 22:04:44,963 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 22:05:13,219 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 22:05:13,223 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 15 resources from src\main\resources to target\classes
+2025-05-01 22:05:13,229 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 22:05:18,913 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 22:05:18,917 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 15 resources from src\main\resources to target\classes
+2025-05-01 22:05:18,924 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 22:06:35,690 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 22:06:35,696 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 15 resources from src\main\resources to target\classes
+2025-05-01 22:06:35,702 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 22:07:46,838 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-05-01 22:07:46,841 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 22:07:46,843 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 22:07:52,125 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 22:07:52,130 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 15 resources from src\main\resources to target\classes
+2025-05-01 22:07:52,136 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources
+2025-05-01 22:08:39,924 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-05-01 22:08:39,929 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 15 resources from src\main\resources to target\classes
+2025-05-01 22:08:39,935 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\user\Documents\workspace-spring-tools-for-eclipse-4.30.0.RELEASE\MiguelUrquizaGarcia\src\test\resources

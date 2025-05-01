@@ -28,24 +28,12 @@
 				<div class="collapse navbar-collapse" id="navbarColor01">
 					<ul class="navbar-nav me-auto">
 						<li class="nav-item">
-							<a class="nav-link" href="Inicio.html">Inicio
-								<span class="visually-hidden">(current)</span>
+							<a class="nav-link " th:href="@{/}">Prendas
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="Prendas.html">Prendas</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="Servicios.html">Servicios</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="QuienesSomos.html">Quiénes somos</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="Precios.html">Precios</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="Formularios.html">Formularios</a>
+							<a class="nav-link active" th:href="@{/categorias}">Categorias
+							</a>
 						</li>
 					</ul>
 					<a href="inicioSesion.html"><i class=" h2 bi bi-person-fill text-white"></i></a>
@@ -65,7 +53,8 @@
 
 
 
-					<form method="POST" action="#" th:action="@{/anadirPrenda/submit}" th:object="${prenda}" class="w-100" name="inicioSesion" >
+					<form method="POST" action="#" th:action="@{/anadirPrenda/submit}" th:object="${prenda}"
+						class="w-100" name="inicioSesion">
 						<div class="mb-3 ">
 							<label for="inputNombre" class="form-label">Nombre Prenda<span
 									class="text-danger">*</span></label>
@@ -75,29 +64,33 @@
 
 						<div class="mb-3 ">
 							<label for="inputPrecio" class="form-label">Precio<span class="text-danger">*</span></label>
-							<input th:field="*{precio}" type="number" min="1" class="form-control" id="inputPrecio" required
-								placeholder="Ingrese el precio del producto.">
+							<input th:field="*{precio}" type="number" min="1" class="form-control" id="inputPrecio"
+								required placeholder="Ingrese el precio del producto.">
 						</div>
-						 <div class="mb-3 ">
+						<div class="mb-3 ">
 							<label for="inputCategoria" class="form-label">Categoría<span
 									class="text-danger">*</span></label>
 							<select th:field="*{categoria}" class="form-control form-select" required>
-								<option th:each="categoria : ${categoria}" th:text="${categoria.nombre}" th:value="${categoria.id}">
-									
+								<option th:each="categoria : ${categoria}" th:text="${categoria.nombre}"
+									th:value="${categoria.id}">
+
 								</option>
 
 							</select>
-	
-							
+
+
 						</div>
 						<div class="mb-3 ">
-							<label  for="inputDescripcion" class="form-label">Descripción<span class="text-danger">*</span></label>
-							<textarea th:field="*{descripcion}" class="form-control" id="inputDescripcion" required></textarea>
+							<label for="inputDescripcion" class="form-label">Descripción<span
+									class="text-danger">*</span></label>
+							<textarea th:field="*{descripcion}" class="form-control" id="inputDescripcion"
+								required></textarea>
 						</div>
 						<div class="mb-3 ">
-							<label  for="inputImage" class="form-label">Url Imagen<span class="text-danger">*</span></label>
+							<label for="inputImage" class="form-label">Url Imagen<span
+									class="text-danger">*</span></label>
 							<input th:field="*{urlImagen}" type="text" class="form-control" id="inputImage" required>
-							</div>
+						</div>
 						<div>
 							<button type="submit" class="btn btn-dark">Añadir Prenda</button>
 						</div>

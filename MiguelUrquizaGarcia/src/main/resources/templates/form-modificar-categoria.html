@@ -27,11 +27,15 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarColor01">
 					<ul class="navbar-nav me-auto">
-						<li class="nav-item">
-							<a class="nav-link active" href="main.html">Inicio
-							</a>
-						</li>
-					</ul>
+											<li class="nav-item">
+												<a class="nav-link " th:href="@{/}">Prendas
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link active" th:href="@{/categorias}">Categorias
+												</a>
+											</li>
+										</ul>
 					<a href="inicioSesion.html"><i class=" h2 bi bi-person-fill text-white"></i></a>
 				</div>
 			</div>
@@ -49,7 +53,7 @@
 
 
 
-					<form method="POST" action="#" th:action="@{/editarPrenda/modificar}" th:object="${prenda}"
+					<form method="POST" action="#" th:action="@{/editarCategoria/submit}" th:object="${categoria}"
 						class="w-100" name="inicioSesion">
 						<div class="mb-3 ">
 							<input type="hidden" th:field="*{id}" />
@@ -60,41 +64,13 @@
 						</div>
 
 						<div class="mb-3 ">
-							<label for="inputPrecio" class="form-label">Precio<span class="text-danger">*</span></label>
-							<input th:field="*{precio}" type="number" min="1" class="form-control" id="inputPrecio"
-								required placeholder="Ingrese el precio del producto.">
-						</div>
-						<!-- <div class="mb-3 ">
-							<label for="inputCategoria" class="form-label">Categoría<span
-									class="text-danger">*</span></label>
-							<select class="form-control form-select" required>
-								<option>
-									Otro
-								</option>
-								<option>
-									Piel
-								</option>
-								<option>
-									Sintetico
-								</option>
-
-							</select>
-	
-							
-						</div> -->
-						<div class="mb-3 ">
 							<label for="inputDescripcion" class="form-label">Descripción<span
 									class="text-danger">*</span></label>
 							<textarea th:field="*{descripcion}" class="form-control" id="inputDescripcion"
 								required></textarea>
 						</div>
-						<div class="mb-3 ">
-							<label for="inputImage" class="form-label">Url Imagen<span
-									class="text-danger">*</span></label>
-							<input th:field="*{urlImagen}" type="text" class="form-control" id="inputImage" required>
-						</div>
 						<div>
-							<button type="submit" class="btn btn-dark">Añadir Prenda</button>
+							<button type="submit" class="btn btn-dark">Editar Categoria</button>
 						</div>
 					</form>
 

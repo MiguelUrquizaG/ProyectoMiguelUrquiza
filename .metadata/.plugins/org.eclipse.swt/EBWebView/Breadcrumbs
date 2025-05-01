@@ -1,169 +1,152 @@
-3:24:19 Tab59 StartNav774 #typed
-3:24:19 Tab59 FinishNav774
-3:24:19 Tab59 PageLoad
-3:24:20 Tab59 StartNav775 #typed
-3:24:20 Tab59 FinishNav775
-3:24:20 Tab59 PageLoad
-3:24:21 Tab59 StartNav776 #typed
-3:24:21 Tab59 FinishNav776
-3:24:21 Tab59 PageLoad
-3:24:22 Tab59 StartNav777 #typed
-3:24:22 Tab59 FinishNav777
-3:24:22 Tab59 PageLoad
-3:24:31 Tab59 StartNav778 #typed
-3:24:31 Tab59 FinishNav778
-3:24:31 Tab59 PageLoad
-3:24:32 Tab59 StartNav779 #typed
-3:24:32 Tab59 FinishNav779
-3:24:32 Tab59 PageLoad
-3:24:35 Tab59 StartNav780 #typed
-3:24:35 Tab59 FinishNav780
-3:24:35 Tab59 PageLoad
-3:24:39 Microsoft.NewBrowser_Popup
-3:24:39 Microsoft.BrowserList.AddBrowser
-3:24:39 Browser60 Insert active Tab60 at 0
-3:24:39 Tab60 StartNav781 #auto_toplevel
-3:24:39 Tab60 StartNav782 #typed
-3:24:39 Tab60 FinishNav781
-3:24:39 Tab60 PageLoad
-3:24:39 Tab60 FinishNav782
-3:24:39 Tab60 PageLoad
-3:24:40 Microsoft.Shutdown.OnWindowClosing
-3:24:40 Microsoft.Shutdown.OnWindowClosing_MaybeClearBrowsingDataOnExit
-3:24:40 Microsoft.Shutdown.OnWindowClosing_ClearBrowsingDataOnExitNotInProgress
-3:24:40 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
-3:24:40 Tab60 RenderProcessGone
-3:24:40 Browser60 Close Tab60 at 0
-3:24:40 Tab60 WebContentsDestroyed
-3:24:40 Microsoft.Shutdown.OnWindowClosing
-3:24:40 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
-3:24:40 Widget Closed: BrowserFrame
-3:24:40 Microsoft.Shutdown.OnWindowClosing
-3:24:40 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
-3:24:40 Microsoft.Browser_Removed
-3:24:41 Microsoft.NewBrowser_Popup
-3:24:41 Microsoft.BrowserList.AddBrowser
-3:24:41 Browser61 Insert active Tab61 at 0
-3:24:41 Tab61 StartNav783 #auto_toplevel
-3:24:41 Tab61 StartNav784 #typed
-3:24:41 Tab61 FinishNav783
-3:24:41 Tab61 PageLoad
-3:24:41 Tab61 FinishNav784
-3:24:41 Tab61 PageLoad
-3:24:41 Tab61 StartNav785 #typed
-3:24:41 Tab61 FinishNav785 ERR_ABORTED
-3:24:41 Tab61 StartNav786 #typed
-3:24:41 Tab61 FinishNav786 ERR_ABORTED
-3:24:41 Tab61 StartNav787 #typed
-3:24:41 Tab61 FinishNav787 ERR_ABORTED
-3:24:41 Tab61 StartNav788 #typed
-3:24:41 Tab61 FinishNav788 ERR_ABORTED
-3:24:41 Tab61 StartNav789 #typed
-3:24:41 Tab61 FinishNav789 ERR_ABORTED
-3:24:41 Tab61 StartNav790 #typed
-3:24:41 Tab61 FinishNav790 ERR_ABORTED
-3:24:41 Tab61 StartNav791 #typed
-3:24:41 Tab61 FinishNav791 ERR_ABORTED
-3:24:41 Tab61 StartNav792 #typed
-3:24:41 Tab61 FinishNav792 ERR_ABORTED
-3:24:41 Tab61 StartNav793 #typed
-3:24:41 Tab61 FinishNav793 ERR_ABORTED
-3:24:41 Tab61 StartNav794 #typed
-3:24:41 Tab61 FinishNav794 ERR_ABORTED
-3:24:41 Tab61 StartNav795 #typed
-3:24:41 Tab61 FinishNav795 ERR_ABORTED
-3:24:41 Tab61 StartNav796 #typed
-3:24:41 Tab61 FinishNav796 ERR_ABORTED
-3:24:41 Tab61 StartNav797 #typed
-3:24:41 Tab61 FinishNav797 ERR_ABORTED
-3:24:41 Tab61 StartNav798 #typed
-3:24:41 Tab61 FinishNav798 ERR_ABORTED
-3:24:41 Tab61 StartNav799 #typed
-3:24:41 Tab61 FinishNav799 ERR_ABORTED
-3:24:41 Tab61 StartNav800 #typed
-3:24:41 Tab61 FinishNav800 ERR_ABORTED
-3:24:41 Tab61 StartNav801 #typed
-3:24:41 Tab61 FinishNav801 ERR_ABORTED
-3:24:41 Tab61 StartNav802 #typed
-3:24:41 Tab61 FinishNav802 ERR_ABORTED
-3:24:41 Tab61 StartNav803 #typed
-3:24:41 Tab61 FinishNav803 ERR_ABORTED
-3:24:41 Tab61 StartNav804 #typed
-3:24:41 Tab61 FinishNav804 ERR_ABORTED
-3:24:41 Tab61 StartNav805 #typed
-3:24:41 Tab61 FinishNav805 ERR_ABORTED
-3:24:41 Tab61 StartNav806 #typed
-3:24:41 Tab61 FinishNav806 ERR_ABORTED
-3:24:41 Tab61 StartNav807 #typed
-3:24:41 Tab61 FinishNav807 ERR_ABORTED
-3:24:41 Tab61 StartNav808 #typed
-3:24:41 Tab61 FinishNav808 ERR_ABORTED
-3:24:41 Tab61 StartNav809 #typed
-3:24:41 Tab61 FinishNav809 ERR_ABORTED
-3:24:41 Tab61 StartNav810 #typed
-3:24:41 Tab61 FinishNav810 ERR_ABORTED
-3:24:41 Tab61 StartNav811 #typed
-3:24:41 Tab61 FinishNav811 ERR_ABORTED
-3:24:41 Tab61 StartNav812 #typed
-3:24:41 Tab61 FinishNav812 ERR_ABORTED
-3:24:41 Tab61 StartNav813 #typed
-3:24:41 Tab61 FinishNav813 ERR_ABORTED
-3:24:41 Tab61 StartNav814 #typed
-3:24:41 Tab61 FinishNav814 ERR_ABORTED
-3:24:41 Tab61 StartNav815 #typed
-3:24:41 Tab61 FinishNav815 ERR_ABORTED
-3:24:41 Tab61 StartNav816 #typed
-3:24:41 Tab61 FinishNav816 ERR_ABORTED
-3:24:41 Tab61 StartNav817 #typed
-3:24:41 Tab61 FinishNav817 ERR_ABORTED
-3:24:41 Tab61 StartNav818 #typed
-3:24:41 Tab61 FinishNav818 ERR_ABORTED
-3:24:41 Tab61 StartNav819 #typed
-3:24:41 Tab61 FinishNav819 ERR_ABORTED
-3:24:41 Tab61 StartNav820 #typed
-3:24:41 Tab61 FinishNav820 ERR_ABORTED
-3:24:41 Tab61 StartNav821 #typed
-3:24:41 Tab61 FinishNav821 ERR_ABORTED
-3:24:41 Tab61 StartNav822 #typed
-3:24:41 Tab61 FinishNav822
-3:24:41 Tab61 PageLoad
-3:24:41 Microsoft.Shutdown.OnWindowClosing
-3:24:41 Microsoft.Shutdown.OnWindowClosing_MaybeClearBrowsingDataOnExit
-3:24:41 Microsoft.Shutdown.OnWindowClosing_ClearBrowsingDataOnExitNotInProgress
-3:24:41 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
-3:24:41 Tab61 RenderProcessGone
-3:24:41 Browser61 Close Tab61 at 0
-3:24:41 Tab61 WebContentsDestroyed
-3:24:41 Microsoft.Shutdown.OnWindowClosing
-3:24:41 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
-3:24:41 Widget Closed: BrowserFrame
-3:24:41 Microsoft.Shutdown.OnWindowClosing
-3:24:41 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
-3:24:41 Microsoft.Browser_Removed
-3:24:42 Tab59 StartNav823 #typed
-3:24:42 Tab59 FinishNav823
-3:24:42 Tab59 PageLoad
-3:24:47 Tab59 StartNav824 #typed
-3:24:47 Tab59 FinishNav824
-3:24:47 Tab59 PageLoad
-3:25:03 Tab59 StartNav825 #typed
-3:25:03 Tab59 FinishNav825
-3:25:03 Tab59 PageLoad
-3:25:06 Tab59 StartNav826 #typed
-3:25:06 Tab59 FinishNav826
-3:25:06 Tab59 PageLoad
-3:25:19 Tab59 StartNav827 #typed
-3:25:19 Tab59 FinishNav827
-3:25:19 Tab59 PageLoad
-3:25:28 Tab59 StartNav828 #typed
-3:25:28 Tab59 FinishNav828
-3:25:28 Tab59 PageLoad
-3:25:32 Tab59 StartNav829 #typed
-3:25:32 Tab59 FinishNav829
-3:25:32 Tab59 PageLoad
-3:25:36 Tab59 StartNav830 #typed
-3:25:36 Tab59 FinishNav830
-3:25:36 Tab59 PageLoad
-3:25:47 Tab59 StartNav831 #typed
-3:25:47 Tab59 FinishNav831
-3:25:47 Tab59 PageLoad
+4:37:51 Tab41 FinishNav1059
+4:37:51 Tab41 PageLoad
+4:37:52 Tab41 StartNav1060 #typed
+4:37:52 Tab41 FinishNav1060
+4:37:52 Tab41 PageLoad
+4:38:23 Tab41 StartNav1061 #typed
+4:38:23 Tab41 FinishNav1061
+4:38:23 Tab41 PageLoad
+4:39:03 Microsoft.Shutdown.OnWindowClosing
+4:39:03 Microsoft.Shutdown.OnWindowClosing_MaybeClearBrowsingDataOnExit
+4:39:03 Microsoft.Shutdown.OnWindowClosing_ClearBrowsingDataOnExitNotInProgress
+4:39:03 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+4:39:03 Tab82 RenderProcessGone
+4:39:03 Browser82 Close Tab82 at 0
+4:39:03 Tab82 WebContentsDestroyed
+4:39:03 Microsoft.Shutdown.OnWindowClosing
+4:39:03 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+4:39:03 Widget Closed: BrowserFrame
+4:39:03 Microsoft.Shutdown.OnWindowClosing
+4:39:03 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+4:39:03 Microsoft.Browser_Removed
+4:39:03 Microsoft.NewBrowser_Popup
+4:39:03 Microsoft.BrowserList.AddBrowser
+4:39:03 Browser85 Insert active Tab85 at 0
+4:39:03 Tab85 StartNav1062 #auto_toplevel
+4:39:03 Tab85 StartNav1063 #typed
+4:39:03 Tab85 FinishNav1062
+4:39:03 Tab85 PageLoad
+4:39:03 Tab85 FinishNav1063
+4:39:03 Tab85 PageLoad
+4:39:04 Tab85 StartNav1064 #typed
+4:39:04 Tab85 FinishNav1064
+4:39:04 Tab85 PageLoad
+4:39:05 Tab85 StartNav1065 #typed
+4:39:05 Tab85 FinishNav1065
+4:39:05 Tab85 PageLoad
+4:39:07 Tab85 StartNav1066 #typed
+4:39:07 Tab85 FinishNav1066
+4:39:07 Tab85 PageLoad
+4:39:10 Tab85 StartNav1067 #typed
+4:39:10 Tab85 FinishNav1067
+4:39:10 Tab85 PageLoad
+4:39:15 Tab85 StartNav1068 #typed
+4:39:15 Tab85 FinishNav1068
+4:39:15 Tab85 PageLoad
+4:39:15 Tab85 StartNav1069 #typed
+4:39:15 Tab85 FinishNav1069
+4:39:15 Tab85 PageLoad
+4:39:18 Tab85 StartNav1070 #typed
+4:39:18 Tab85 FinishNav1070
+4:39:18 Tab85 PageLoad
+4:39:30 Tab84 StartNav1071 #typed
+4:39:30 Tab84 FinishNav1071
+4:39:30 Tab84 PageLoad
+4:39:33 Tab67 StartNav1072 #typed
+4:39:33 Tab67 FinishNav1072
+4:39:33 Tab67 PageLoad
+4:39:36 Tab85 StartNav1073 #typed
+4:39:36 Tab85 FinishNav1073
+4:39:36 Tab85 PageLoad
+4:39:37 Microsoft.NewBrowser_Popup
+4:39:37 Microsoft.BrowserList.AddBrowser
+4:39:37 Browser86 Insert active Tab86 at 0
+4:39:37 Tab86 StartNav1074 #auto_toplevel
+4:39:37 Tab86 StartNav1075 #typed
+4:39:37 Tab86 FinishNav1074
+4:39:37 Tab86 PageLoad
+4:39:37 Tab86 FinishNav1075
+4:39:37 Tab86 PageLoad
+4:39:38 Microsoft.Shutdown.OnWindowClosing
+4:39:38 Microsoft.Shutdown.OnWindowClosing_MaybeClearBrowsingDataOnExit
+4:39:38 Microsoft.Shutdown.OnWindowClosing_ClearBrowsingDataOnExitNotInProgress
+4:39:38 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+4:39:38 Tab86 RenderProcessGone
+4:39:38 Browser86 Close Tab86 at 0
+4:39:38 Tab86 WebContentsDestroyed
+4:39:38 Microsoft.Shutdown.OnWindowClosing
+4:39:38 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+4:39:38 Widget Closed: BrowserFrame
+4:39:38 Microsoft.Shutdown.OnWindowClosing
+4:39:38 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+4:39:38 Microsoft.Browser_Removed
+4:39:42 Tab41 StartNav1076 #typed
+4:39:42 Tab41 FinishNav1076
+4:39:42 Tab41 PageLoad
+4:40:05 Tab41 StartNav1077 #typed
+4:40:05 Tab41 FinishNav1077
+4:40:05 Tab41 PageLoad
+4:40:06 Tab41 StartNav1078 #typed
+4:40:06 Tab41 FinishNav1078
+4:40:06 Tab41 PageLoad
+4:40:08 Tab67 StartNav1079 #typed
+4:40:08 Tab67 FinishNav1079
+4:40:08 Tab67 PageLoad
+4:40:09 Microsoft.Shutdown.OnWindowClosing
+4:40:09 Microsoft.Shutdown.OnWindowClosing_MaybeClearBrowsingDataOnExit
+4:40:09 Microsoft.Shutdown.OnWindowClosing_ClearBrowsingDataOnExitNotInProgress
+4:40:09 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+4:40:09 Tab67 RenderProcessGone
+4:40:09 Browser67 Close Tab67 at 0
+4:40:09 Tab67 WebContentsDestroyed
+4:40:09 Microsoft.Shutdown.OnWindowClosing
+4:40:09 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+4:40:09 Widget Closed: BrowserFrame
+4:40:09 Microsoft.Shutdown.OnWindowClosing
+4:40:09 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+4:40:09 Microsoft.Browser_Removed
+4:40:09 Microsoft.NewBrowser_Popup
+4:40:09 Microsoft.BrowserList.AddBrowser
+4:40:09 Browser87 Insert active Tab87 at 0
+4:40:09 Tab87 StartNav1080 #auto_toplevel
+4:40:09 Tab87 StartNav1081 #typed
+4:40:09 Tab87 FinishNav1080
+4:40:09 Tab87 PageLoad
+4:40:09 Tab87 FinishNav1081
+4:40:09 Tab87 PageLoad
+4:40:09 Tab87 StartNav1082 #typed
+4:40:09 Tab87 FinishNav1082
+4:40:09 Tab87 PageLoad
+4:40:10 Tab87 StartNav1083 #typed
+4:40:10 Tab87 FinishNav1083
+4:40:10 Tab87 PageLoad
+4:40:11 Tab87 StartNav1084 #typed
+4:40:11 Tab87 FinishNav1084
+4:40:11 Tab87 PageLoad
+4:40:13 Tab87 StartNav1085 #typed
+4:40:13 Tab87 FinishNav1085
+4:40:13 Tab87 PageLoad
+4:40:14 Tab87 StartNav1086 #typed
+4:40:14 Tab87 FinishNav1086
+4:40:14 Tab87 PageLoad
+4:40:16 Tab87 StartNav1087 #typed
+4:40:16 Tab87 FinishNav1087
+4:40:16 Tab87 PageLoad
+4:40:17 Tab87 StartNav1088 #typed
+4:40:17 Tab87 FinishNav1088
+4:40:17 Tab87 PageLoad
+4:40:20 Tab87 StartNav1089 #typed
+4:40:20 Tab87 FinishNav1089
+4:40:20 Tab87 PageLoad
+4:40:21 Tab87 StartNav1090 #typed
+4:40:21 Tab87 FinishNav1090
+4:40:21 Tab87 PageLoad
+4:40:27 Tab41 StartNav1091 #typed
+4:40:27 Tab41 FinishNav1091
+4:40:27 Tab41 PageLoad
+4:40:31 Tab41 StartNav1092 #typed
+4:40:31 Tab41 FinishNav1092
+4:40:31 Tab41 PageLoad
+4:40:39 Tab85 StartNav1093 #typed
+4:40:39 Tab85 FinishNav1093
+4:40:39 Tab85 PageLoad
