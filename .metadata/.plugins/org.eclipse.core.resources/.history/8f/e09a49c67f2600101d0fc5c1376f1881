@@ -1,0 +1,71 @@
+package com.salesianostriana.dam.miguelurquizagarcia.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.salesianostriana.dam.miguelurquizagarcia.model.Prenda;
+import com.salesianostriana.dam.miguelurquizagarcia.service.Services;
+
+@Controller
+public class ControllerPrenda {
+	
+	private Services service;
+	
+	public ControllerPrenda (Services service) {
+		this.service = service;
+	}
+	
+	@GetMapping("/")
+	public String main(Model model) {
+		model.addAttribute("prenda",service.findAll());
+//		for(Prenda p : service.getList()) {
+//			System.out.println(p.toString());
+//		}
+		return "main";
+	}
+	
+	@GetMapping("/anadirPrenda")
+	public String anadirPrenda(Model model) {
+		model.addAttribute("prenda", new Prenda());
+		return "form";
+	}
+	
+	
+	@GetMapping("/editarPrenda/{id}")
+	public String editarPrenda(@PathVariable long id ,Model model) {
+		Prenda p = service.findById(id);
+		model.addAttribute("prenda", p);
+		return "form-modificar";
+	}
+	
+	@GetMapping("/eliminarPrenda/{id}")
+	public String eliminarPrenda(@PathVariable long id, Model model) {
+		Prenda p = service.findById(id);
+		model.addAttribute("prenda", p);
+		return "delete";
+	}
+	
+	@PostMapping("/editarPrenda/modificar")
+	public String procesarModificado(@ModelAttribute("prenda") Prenda prenda) {
+		service.save(prenda.getId(), prenda);
+		System.out.println("Holaaa");
+		return "redirect:/";
+	}
+	
+	@DeleteMapping("/eliminarPrenda/submit")
+	public String procesarEliminar(@ModelAttribute("prenda") Prenda prenda) {
+		service.deletePrenda(prenda);
+		return "redirect:/";
+	}
+	
+	@PostMapping("/anadirPrenda/submit")
+	public String procesarPrenda(@ModelAttribute("prenda")Prenda prenda) {
+		service.addPrenda(prenda);
+		return "redirect:/";
+	}
+}
