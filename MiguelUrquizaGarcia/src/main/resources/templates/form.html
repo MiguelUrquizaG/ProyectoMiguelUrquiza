@@ -78,24 +78,18 @@
 							<input th:field="*{precio}" type="number" min="1" class="form-control" id="inputPrecio" required
 								placeholder="Ingrese el precio del producto.">
 						</div>
-						<!-- <div class="mb-3 ">
+						 <div class="mb-3 ">
 							<label for="inputCategoria" class="form-label">Categoría<span
 									class="text-danger">*</span></label>
-							<select class="form-control form-select" required>
-								<option>
-									Otro
-								</option>
-								<option>
-									Piel
-								</option>
-								<option>
-									Sintetico
+							<select th:field="*{categoria}" class="form-control form-select" required>
+								<option th:each="categoria : ${categoria}" th:text="${categoria.nombre}" th:value="${categoria.id}">
+									
 								</option>
 
 							</select>
 	
 							
-						</div> -->
+						</div>
 						<div class="mb-3 ">
 							<label  for="inputDescripcion" class="form-label">Descripción<span class="text-danger">*</span></label>
 							<textarea th:field="*{descripcion}" class="form-control" id="inputDescripcion" required></textarea>
@@ -116,7 +110,7 @@
 
 		</div>
 	</main>
-	<footer class="text-center bg-primary text-lg-start text-white mt-0">
+	<footer class="fixed-bottom  text-center bg-primary text-lg-start text-white mt-0">
 
 		<div>
 			<div class="container text-center text-md-start">

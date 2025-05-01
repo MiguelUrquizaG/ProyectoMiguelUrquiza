@@ -1,13 +1,11 @@
 package com.salesianostriana.dam.miguelurquizagarcia.model;
 
-
-
-
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,19 +14,16 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Prenda {
-
+public class Categoria {
+	
 	@Id
 	@GeneratedValue
-	private long id;
+	private Long id;
 	
 	private String nombre;
-	private double precio;
-	private String descripcion;
-	private String urlImagen;
 	
-	@ManyToOne
-	private Categoria categoria;
+	@OneToMany
+	private List<Prenda> listaPrendas;
 	
-	
+
 }

@@ -19,7 +19,7 @@
 
 <body>
 	<header>
-		<nav class="navbar navbar-dark navbar-expand-lg nav-underline">
+		<nav class=" navbar navbar-dark navbar-expand-lg nav-underline">
 			<div class="container-fluid">
 				<span class="navbar-brand">Tintoreria Urquiza</span>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
@@ -46,22 +46,22 @@
 				<a class=" col-2" href="#" th:href="@{/anadirPrenda}">Añadir Prenda</a>
 			</div>
 		</div>
-		<div class="container" >
+		<div class="container">
 
 
-			<div class="row mt-3" >
+			<div class="row mt-3">
 				<div class="card col-12 col-xl-6" style="width: 24rem;" th:each="prenda : ${prenda}">
-					<img  th:src="@{${prenda.urlImagen}}"
-						class="card-img-top h-50" alt="pantalon" >
+					<img th:src="@{${prenda.urlImagen}}" class="card-img-top h-50" alt="pantalon">
 					<div class="card-body">
-						<h5 class="card-title" th:text="${prenda.nombre}" ></h5>
-						<p class="card-text"  th:text="${prenda.descripcion}"></p>
+						<h5 class="card-title" th:text="${prenda.nombre}"></h5>
+						<p class="card-text" th:text="${prenda.descripcion}"></p>
 						<div class="container">
 							<div class="row">
-								<a class=" col-5 me-1  btn btn-primary" th:data-id="${prenda.id}" th:href="@{/editarPrenda/{id} (id=${prenda.id})}"
-									href="#offcanvasPantalon" role="button">Modificar</a>
-								<a class=" col-5 me-1 btn btn-primary" 
-									th:data-id="${prenda.id}" th:href="@{/eliminarPrenda/{id} (id=${prenda.id})}" role="button">Eliminar</a>
+								<a class=" col-5 me-1  btn btn-primary" th:data-id="${prenda.id}"
+									th:href="@{/editarPrenda/{id} (id=${prenda.id})}" href="#offcanvasPantalon"
+									role="button">Modificar</a>
+							<a class=" col-5 me-1 btn btn-primary" th:data-id="${prenda.id}"
+									th:href="@{/eliminarPrenda/{id} (id=${prenda.id})}" role="button">Eliminar</a>
 							</div>
 						</div>
 					</div>
@@ -74,7 +74,7 @@
 
 	</main>
 
-	<footer class="text-center bg-primary text-lg-start text-white mt-0">
+	<footer class=" fixed-bottom text-center bg-primary text-lg-start text-white mt-0">
 
 		<div>
 			<div class="container text-center text-md-start">

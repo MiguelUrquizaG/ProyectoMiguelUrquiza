@@ -16,9 +16,10 @@
 
 </head>
 
-<body class="bg-formulario text-primary">
+
+<body>
 	<header>
-		<nav class="navbar navbar-dark navbar-expand-lg nav-underline">
+		<nav class=" navbar navbar-dark navbar-expand-lg nav-underline">
 			<div class="container-fluid">
 				<span class="navbar-brand">Tintoreria Urquiza</span>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
@@ -38,65 +39,42 @@
 		</nav>
 
 	</header>
+
 	<main>
-		<span class="h2 container-content d-block text-center bg-primary text-white py-2">Añadir Prenda
-		</span>
+		<div class="container mt-3">
+			<div class="row">
+				<a class=" col-2" href="#" th:href="@{/anadirPrenda}">Añadir Prenda</a>
+			</div>
+		</div>
 		<div class="container">
 
 
-			<div class="row justify-content-center mt-3 mb-5">
-				<div class="col-12  col-lg-4">
-
-
-
-					<div method="DELETE" action="#" th:action="@{/eliminarPrenda/submit}" th:object="${prenda}"
-						class="w-100" name="eliminarPrenda">
-						<div class="mb-3 ">
-							Nombre: <span th:text="*{nombre}"></span>
+			<div class="row mt-3">
+				<div class="card col-12 col-xl-6" style="width: 24rem;" th:each="prenda : ${prenda}">
+					<img th:src="@{${prenda.urlImagen}}" class="card-img-top h-50" alt="pantalon">
+					<div class="card-body">
+						<h5 class="card-title" th:text="${prenda.nombre}"></h5>
+						<p class="card-text" th:text="${prenda.descripcion}"></p>
+						<div class="container">
+							<div class="row">
+								<a class=" col-5 me-1  btn btn-primary" th:data-id="${prenda.id}"
+									th:href="@{/editarPrenda/{id} (id=${prenda.id})}" href="#offcanvasPantalon"
+									role="button">Modificar</a>
+							<a class=" col-5 me-1 btn btn-primary" th:data-id="${prenda.id}"
+									th:href="@{/eliminarPrenda/{id} (id=${prenda.id})}" role="button">Eliminar</a>
+							</div>
 						</div>
-
-						<div class="mb-3 ">
-							Precio <span th:text="*{#numbers.formatDecimal(precio,2,2)}"></span>€
-						</div>
-
-						<div class="mb-3 ">
-							Descripción: <span th:text="*{descripcion}"></span>
-						</div>
-
-
-						<div class="mb-3 ">
-							<img th:src="*{urlImagen}"></img>
-						</div>
-
-						<!-- <div class="mb-3 ">
-							<label for="inputCategoria" class="form-label">Categoría<span
-									class="text-danger">*</span></label>
-							<select class="form-control form-select" required>
-								<option>
-									Otro
-								</option>
-								<option>
-									Piel
-								</option>
-								<option>
-									Sintetico
-								</option>
-
-							</select>
-	
-							
-						</div> -->
-
 					</div>
 				</div>
+
 			</div>
-
-
+		</div>
 
 		</div>
+
 	</main>
 
-	<footer class="text-center bg-primary text-lg-start text-white mt-0">
+	<footer class=" fixed-bottom text-center bg-primary text-lg-start text-white mt-0">
 
 		<div>
 			<div class="container text-center text-md-start">
@@ -149,3 +127,5 @@
 		</div>
 	</footer>
 </body>
+
+</html>
