@@ -29,7 +29,11 @@
 				<div class="collapse navbar-collapse" id="navbarColor01">
 					<ul class="navbar-nav me-auto">
 						<li class="nav-item">
-							<a class="nav-link active" href="main.html">Inicio
+							<a class="nav-link " th:href="@{/}">Inicio
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" th:href="@{/categorias}">Categorias
 							</a>
 						</li>
 					</ul>
@@ -43,32 +47,31 @@
 	<main>
 		<div class="container mt-3">
 			<div class="row">
-				<a class=" col-2" href="#" th:href="@{/anadirPrenda}">Añadir Prenda</a>
+				<a class=" col-2" href="#" th:href="@{/anadirCategoria}">Añadir Categoria</a>
 			</div>
 		</div>
 		<div class="container">
 
 
 			<div class="row mt-3">
-				<div class="card col-12 col-xl-6" style="width: 24rem;" th:each="prenda : ${prenda}">
-					<img th:src="@{${prenda.urlImagen}}" class="card-img-top h-50" alt="pantalon">
-					<div class="card-body">
-						<h5 class="card-title" th:text="${prenda.nombre}"></h5>
-						<p class="card-text" th:text="${prenda.descripcion}"></p>
-						<div class="container">
-							<div class="row">
-								<a class=" col-5 me-1  btn btn-primary" th:data-id="${prenda.id}"
-									th:href="@{/editarPrenda/{id} (id=${prenda.id})}" href="#offcanvasPantalon"
-									role="button">Modificar</a>
-							<a class=" col-5 me-1 btn btn-primary" th:data-id="${prenda.id}"
-									th:href="@{/eliminarPrenda/{id} (id=${prenda.id})}" role="button">Eliminar</a>
+					<div class="col-12  col-xl-6 card text-white bg-primary mb-3 mx-3" style="width: 24rem;"
+						th:each="categoria : ${categoria}">
+						<div class="card-header">Header</div>
+						<div class="card-body">
+							<h4 class="card-title text-center" th:text="${categoria.nombre}"></h4>
+							<p class="card-text" th:text="${categoria.descripcion}"></p>
+							<div class="container">
+								<div class="row">
+									<a class=" col-5 me-1  btn btn-light" th:data-id="${categoria.id}"
+										th:href="@{/editarCategoria/{id} (id=${categoria.id})}"
+										href="#offcanvasPantalon" role="button">Modificar</a>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-
 			</div>
-		</div>
+
 
 		</div>
 

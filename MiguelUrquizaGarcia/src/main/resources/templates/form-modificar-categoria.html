@@ -16,10 +16,9 @@
 
 </head>
 
-
-<body>
+<body class="bg-formulario text-primary">
 	<header>
-		<nav class=" navbar navbar-dark navbar-expand-lg nav-underline">
+		<nav class="navbar navbar-dark navbar-expand-lg nav-underline">
 			<div class="container-fluid">
 				<span class="navbar-brand">Tintoreria Urquiza</span>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
@@ -29,11 +28,7 @@
 				<div class="collapse navbar-collapse" id="navbarColor01">
 					<ul class="navbar-nav me-auto">
 						<li class="nav-item">
-							<a class="nav-link active" th:href="@{/}">Inicio
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" th:href="@{/categorias}">Categorias
+							<a class="nav-link active" href="main.html">Inicio
 							</a>
 						</li>
 					</ul>
@@ -43,39 +38,75 @@
 		</nav>
 
 	</header>
-
 	<main>
-		<div class="container mt-3">
-			<div class="row">
-				<a class=" col-2" href="#" th:href="@{/anadirPrenda}">Añadir Categoria</a>
-			</div>
-		</div>
+		<span class="h2 container-content d-block text-center bg-primary text-white py-2">Añadir Prenda
+		</span>
 		<div class="container">
 
 
-			<div class="row mt-3">
-				<div class="card col-12 col-xl-6" style="width: 24rem;" th:each="prenda : ${prenda}">
-					<img th:src="@{${prenda.urlImagen}}" class="card-img-top h-50" alt="pantalon">
-					<div class="card-body">
-						<h5 class="card-title" th:text="${prenda.nombre}"></h5>
-						<p class="card-text" th:text="${prenda.descripcion}"></p>
-						<div class="container">
-							<div class="row">
-								<a class=" col-5 me-1  btn btn-primary" th:data-id="${prenda.id}"
-									th:href="@{/editarPrenda/{id} (id=${prenda.id})}" href="#offcanvasPantalon"
-									role="button">Modificar</a>
-								<a class=" col-5 me-1 btn btn-primary" th:data-id="${prenda.id}"
-									th:href="@{/eliminarPrenda/{id} (id=${prenda.id})}" role="button">Eliminar</a>
-							</div>
+			<div class="row justify-content-center mt-3 mb-5">
+				<div class="col-12  col-lg-4">
+
+
+
+					<form method="POST" action="#" th:action="@{/editarPrenda/modificar}" th:object="${prenda}"
+						class="w-100" name="inicioSesion">
+						<div class="mb-3 ">
+							<input type="hidden" th:field="*{id}" />
+							<label for="inputNombre" class="form-label">Nombre Prenda<span
+									class="text-danger">*</span></label>
+							<input th:field="*{nombre}" type="text" class="form-control" id="inputNombre" required
+								placeholder="Introduzca el nombre." maxlength="9" pattern="[A-Za-z]*">
 						</div>
-					</div>
+
+						<div class="mb-3 ">
+							<label for="inputPrecio" class="form-label">Precio<span class="text-danger">*</span></label>
+							<input th:field="*{precio}" type="number" min="1" class="form-control" id="inputPrecio"
+								required placeholder="Ingrese el precio del producto.">
+						</div>
+						<!-- <div class="mb-3 ">
+							<label for="inputCategoria" class="form-label">Categoría<span
+									class="text-danger">*</span></label>
+							<select class="form-control form-select" required>
+								<option>
+									Otro
+								</option>
+								<option>
+									Piel
+								</option>
+								<option>
+									Sintetico
+								</option>
+
+							</select>
+	
+							
+						</div> -->
+						<div class="mb-3 ">
+							<label for="inputDescripcion" class="form-label">Descripción<span
+									class="text-danger">*</span></label>
+							<textarea th:field="*{descripcion}" class="form-control" id="inputDescripcion"
+								required></textarea>
+						</div>
+						<div class="mb-3 ">
+							<label for="inputImage" class="form-label">Url Imagen<span
+									class="text-danger">*</span></label>
+							<input th:field="*{urlImagen}" type="text" class="form-control" id="inputImage" required>
+						</div>
+						<div>
+							<button type="submit" class="btn btn-dark">Añadir Prenda</button>
+						</div>
+					</form>
+
 				</div>
 			</div>
-		</div>
 
+
+
+		</div>
 	</main>
 
-	<footer class=" fixed-bottom text-center bg-primary text-lg-start text-white mt-0">
+	<footer class="fixed-bottom  text-center bg-primary text-lg-start text-white mt-0">
 
 		<div>
 			<div class="container text-center text-md-start">
@@ -128,5 +159,3 @@
 		</div>
 	</footer>
 </body>
-
-</html>
