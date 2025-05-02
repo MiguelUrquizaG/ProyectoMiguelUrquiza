@@ -33,7 +33,7 @@ public class ControllerCategorias {
 	}
 	
 	@PostMapping("anadirCategoria/submit")
-	public String procesoAnadirCategoria(@ModelAttribute("categoria") Categoria categoria) {
+	public String procesoAnadirCategoria(@ModelAttribute Categoria categoria) {
 		
 		categoriaServicios.save(categoria);
 		return "redirect:/categorias";
@@ -47,7 +47,7 @@ public class ControllerCategorias {
 	}
 	
 	@PostMapping("/editarCategoria/submit")
-	public String procesarCategorias(@ModelAttribute("categoria") Categoria categoria) {
+	public String procesarCategorias(@ModelAttribute Categoria categoria) {
 		categoriaServicios.save(categoria);
 		return "redirect:/categorias";
 	}

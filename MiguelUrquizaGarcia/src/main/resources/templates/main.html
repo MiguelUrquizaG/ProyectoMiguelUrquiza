@@ -64,8 +64,7 @@
 								<a class=" col-5 me-1  btn btn-primary" th:data-id="${prenda.id}"
 									th:href="@{/editarPrenda/{id} (id=${prenda.id})}" href="#offcanvasPantalon"
 									role="button">Modificar</a>
-								<a class=" col-5 me-1 btn btn-primary" th:data-id="${prenda.id}"
-									th:href="@{/eliminarPrenda/{id} (id=${prenda.id})}" role="button">Eliminar</a>
+								<a class=" col-5 me-1 btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEliminar"  th:data-id="${prenda.id}" th:href="@{/eliminarPrenda/{id} (id=${prenda.id})}" role="button">Eliminar</a>
 							</div>
 						</div>
 					</div>
@@ -73,9 +72,30 @@
 			</div>
 		</div>
 
+		<div class="modal fade" id="modalEliminar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar</h1>
+		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+		      </div>
+		      <div class="modal-body">
+		        ¿Estás seguro que quieres eliminar?
+				<form th:method="DELETE" action="#" th:action="@{/eliminarPrenda/id}">
+					<button type="submit" class="btn btn-primary">Eliminar</button>
+				</form>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+		        
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		
 	</main>
 
-	<footer class=" fixed-bottom text-center bg-primary text-lg-start text-white mt-0">
+	<footer class="text-center bg-primary text-lg-start text-white mt-0">
 
 		<div>
 			<div class="container text-center text-md-start">
@@ -107,7 +127,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="d-flex justify-content-center justify-content-between">
+		<div class=" d-flex justify-content-center justify-content-between">
 			<div>
 				<span>Nuestras Redes</span>
 			</div>

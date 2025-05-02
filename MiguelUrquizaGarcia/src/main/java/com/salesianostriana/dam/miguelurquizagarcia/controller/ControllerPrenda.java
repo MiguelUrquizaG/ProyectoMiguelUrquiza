@@ -55,30 +55,22 @@ public class ControllerPrenda {
 		return "form-modificar";
 	}
 	
-//	@GetMapping("/eliminarPrenda/{id}")
-//	public String eliminarPrenda(@PathVariable long id, Model model) {
-//		Prenda p = service.findById(id);
-//		model.addAttribute("prenda", p);
-//		return "delete";
-//	}
 	
 	@PostMapping("/editarPrenda/modificar")
-	public String procesarModificado(@ModelAttribute("prenda") Prenda prenda) {
+	public String procesarModificado(@ModelAttribute Prenda prenda) {
 		service.edit(prenda);
 		System.out.println("Holaaa");
 		return "redirect:/";
 	}
 	
-	@DeleteMapping("/eliminarPrenda/{id}")
-	public String procesarEliminar(@PathVariable long  id) {
-		
-		service.deleteById(id);
-		
-		return "main";
+	@DeleteMapping("/eliminarPrenda/id")
+	public String procesarEliminar(@ModelAttribute Prenda p) {
+		service.deleteById(p.getId());
+		return "redirect:/";
 	}
 	
 	@PostMapping("/anadirPrenda/submit")
-	public String procesarPrenda(@ModelAttribute("prenda")Prenda prenda) {
+	public String procesarPrenda(@ModelAttribute Prenda prenda) {
 		service.save(prenda);
 		return "redirect:/";
 	}

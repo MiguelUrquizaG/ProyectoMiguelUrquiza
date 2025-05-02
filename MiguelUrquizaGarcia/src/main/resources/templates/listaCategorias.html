@@ -54,11 +54,10 @@
 
 
 			<div class="row mt-3">
-					<div class="col-12  col-xl-6 card text-white bg-primary mb-3 mx-3" style="width: 24rem;"
+					<div class="col-12  col-xl-6 card text-white bg-primary mb-3 mx-3 mt-3" style="width: 24rem;"
 						th:each="categoria : ${categoria}">
-						<div class="card-header">Header</div>
 						<div class="card-body">
-							<h4 class="card-title text-center" th:text="${categoria.nombre}"></h4>
+							<h4 class="card-title text-center mt-3" th:text="${categoria.nombre}"></h4>
 							<p class="card-text" th:text="${categoria.descripcion}"></p>
 							<div class="container">
 								<div class="row">
@@ -77,7 +76,7 @@
 
 	</main>
 
-	<footer class=" fixed-bottom text-center bg-primary text-lg-start text-white mt-0">
+	<footer class=" text-center bg-primary text-lg-start text-white mt-0">
 
 		<div>
 			<div class="container text-center text-md-start">
