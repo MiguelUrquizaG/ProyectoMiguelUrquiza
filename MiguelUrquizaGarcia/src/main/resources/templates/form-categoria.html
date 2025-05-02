@@ -27,15 +27,15 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarColor01">
 					<ul class="navbar-nav me-auto">
-						<li class="nav-item">
-							<a class="nav-link " th:href="@{/}">Prendas
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link active" th:href="@{/categorias}">Categorias
-							</a>
-						</li>
-					</ul>
+											<li class="nav-item">
+												<a class="nav-link " th:href="@{/}">Prendas
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link active" th:href="@{/categorias}">Categorias
+												</a>
+											</li>
+										</ul>
 					<a href="inicioSesion.html"><i class=" h2 bi bi-person-fill text-white"></i></a>
 				</div>
 			</div>
@@ -43,7 +43,7 @@
 
 	</header>
 	<main>
-		<span class="h2 container-content d-block text-center bg-primary text-white py-2">Añadir Prenda
+		<span class="h2 container-content d-block text-center bg-primary text-white py-2">Añadir Categoria
 		</span>
 		<div class="container">
 
@@ -51,34 +51,14 @@
 			<div class="row justify-content-center mt-3 mb-5">
 				<div class="col-12  col-lg-4">
 
-
-
-					<form method="POST" action="#" th:action="@{/anadirPrenda/submit}" th:object="${prenda}"
-						class="w-100" name="inicioSesion">
+					<form method="POST" action="#" th:action="@{/anadirCategoria/submit}" th:object="${categoria}"
+						class="w-100" name="anadirCategoria">
 						<div class="mb-3 ">
-							<label for="inputNombre" class="form-label">Nombre Prenda<span
+							
+							<label for="inputNombre" class="form-label">Nombre Categoria<span
 									class="text-danger">*</span></label>
 							<input th:field="*{nombre}" type="text" class="form-control" id="inputNombre" required
 								placeholder="Introduzca el nombre." maxlength="9" pattern="[A-Za-z]*">
-						</div>
-
-						<div class="mb-3 ">
-							<label for="inputPrecio" class="form-label">Precio<span class="text-danger">*</span></label>
-							<input th:field="*{precio}" type="number" min="1" class="form-control" id="inputPrecio"
-								required placeholder="Ingrese el precio del producto.">
-						</div>
-						<div class="mb-3 ">
-							<label for="inputCategoria" class="form-label">Categoría<span
-									class="text-danger">*</span></label>
-							<select th:field="*{categoria}" class="form-control form-select" required>
-								<option th:each="categoria : ${categoria}" th:text="${categoria.nombre}"
-									th:value="${categoria.id}">
-
-								</option>
-
-							</select>
-
-
 						</div>
 						<div class="mb-3 ">
 							<label for="inputDescripcion" class="form-label">Descripción<span
@@ -86,13 +66,9 @@
 							<textarea th:field="*{descripcion}" class="form-control" id="inputDescripcion"
 								required></textarea>
 						</div>
-						<div class="mb-3 ">
-							<label for="inputImage" class="form-label">Url Imagen<span
-									class="text-danger">*</span></label>
-							<input th:field="*{urlImagen}" type="text" class="form-control" id="inputImage" required>
-						</div>
+
 						<div>
-							<button type="submit" class="btn btn-dark">Añadir Prenda</button>
+							<button type="submit" class="btn btn-dark">Añadir Categoria</button>
 						</div>
 					</form>
 
