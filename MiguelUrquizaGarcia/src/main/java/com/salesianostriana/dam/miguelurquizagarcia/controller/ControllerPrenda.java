@@ -56,6 +56,7 @@ public class ControllerPrenda {
 	public String editarPrenda(@PathVariable long id ,Model model) {
 		Prenda p = service.findById(id);
 		model.addAttribute("prenda", p);
+		System.out.println("Entro");
 		model.addAttribute("categoria", categoriaService.findAll());
 		return "form-modificar";
 	}

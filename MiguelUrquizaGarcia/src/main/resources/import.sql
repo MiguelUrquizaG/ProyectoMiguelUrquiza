@@ -1,0 +1,1 @@
+INSERT INTO CATEGORIA VALUES (0,'','Por Defecto')
