@@ -8,14 +8,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.salesianostriana.dam.miguelurquizagarcia.model.Prenda;
+import com.salesianostriana.dam.miguelurquizagarcia.repository.CategoriaRepository;
 import com.salesianostriana.dam.miguelurquizagarcia.repository.PrendaRepository;
 import com.salesianostriana.dam.miguelurquizagarcia.service.ServiceCategorias;
 import com.salesianostriana.dam.miguelurquizagarcia.service.Services;
 
 @Controller
 public class ControllerPrenda {
+
+    private final CategoriaRepository categoriaRepository;
 
     private final PrendaRepository prendaRepository;
 	
@@ -24,9 +28,10 @@ public class ControllerPrenda {
 	 @Autowired
 	private ServiceCategorias categoriaService;
 	
-	public ControllerPrenda (Services service, PrendaRepository prendaRepository) {
+	public ControllerPrenda (Services service, PrendaRepository prendaRepository, CategoriaRepository categoriaRepository) {
 		this.service = service;
 		this.prendaRepository = prendaRepository;
+		this.categoriaRepository = categoriaRepository;
 	}
 	
 	@GetMapping("/")
@@ -63,9 +68,19 @@ public class ControllerPrenda {
 		return "redirect:/";
 	}
 	
-	@DeleteMapping("/eliminarPrenda/id")
-	public String procesarEliminar(@ModelAttribute Prenda p) {
-		service.deleteById(p.getId());
+//	@DeleteMapping("/eliminarPrenda/{id}")
+//	public String procesarEliminar(@PathVariable Long id) {
+//			System.out.println(id);
+//			service.deleteById(id);
+//		
+//		return "redirect:/";
+//	}
+	
+	@DeleteMapping("/eliminarPrenda/submit")
+	public String procesarEliminar(@RequestParam Long id) {
+			System.out.println(id);
+			service.deleteById(id);
+		
 		return "redirect:/";
 	}
 	

@@ -29,7 +29,7 @@ public class Categoria {
 		this.descripcion=descripcion;
 	}
 	
-	@OneToMany
+	@OneToMany(mappedBy = "categoria")
 	private List<Prenda> listaPrendas;
 	
 
