@@ -55,6 +55,7 @@ public class ControllerCategorias {
 	
 	@DeleteMapping("/eliminarCategoria/submit")
 	public String eliminarCategoria(@RequestParam Long id) {
+		System.out.println(id);
 		categoriaServicios.delete(id);
 		return "redirect:/categorias";
 	}

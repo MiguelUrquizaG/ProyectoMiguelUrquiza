@@ -10,7 +10,7 @@ public class ServiceCategorias extends BaseService<Categoria, Long, CategoriaRep
 
 	public void delete(Long id) {
 		Categoria c =  findById(id);
-		Categoria porDefecto = findById(1L);
+		Categoria porDefecto = findById(0L);
 		if(c!=null) {
 			c.getListaPrendas().stream().forEach(prenda -> prenda.setCategoria(porDefecto));
 			delete(c);
