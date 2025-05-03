@@ -71,7 +71,7 @@
 						<div class="mb-3 ">
 							<label for="inputCategoria" class="form-label">Categoría<span
 									class="text-danger">*</span></label>
-							<select th:field="*{categoria}" class="form-control form-select" required>
+							<select th:field="*{categoria.id}" class="form-control form-select" required>
 								<option th:each="categoria : ${categoria}" th:text="${categoria.nombre}"
 									th:value="${categoria.id}">
 
