@@ -3,12 +3,15 @@ package com.salesianostriana.dam.miguelurquizagarcia.model;
 import java.util.List;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @Data
@@ -29,7 +32,9 @@ public class Categoria {
 		this.descripcion=descripcion;
 	}
 	
-	@OneToMany(mappedBy = "categoria")
+	@ToString.Exclude
+	@EqualsAndHashCode.Exclude
+	@OneToMany(mappedBy = "categoria", fetch= FetchType.EAGER)
 	private List<Prenda> listaPrendas;
 	
 
