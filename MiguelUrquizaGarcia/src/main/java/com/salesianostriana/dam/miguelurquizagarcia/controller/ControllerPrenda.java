@@ -37,6 +37,8 @@ public class ControllerPrenda {
 	@GetMapping("/")
 	public String main(Model model) {
 		model.addAttribute("prenda",service.findAll());
+		model.addAttribute("nuevaprenda", new Prenda());
+		model.addAttribute("categoria", categoriaService.findAll());
 //		for(Prenda p : service.getList()) {
 //			System.out.println(p.toString());
 //		}
@@ -87,6 +89,7 @@ public class ControllerPrenda {
 	
 	@PostMapping("/anadirPrenda/submit")
 	public String procesarPrenda(@ModelAttribute Prenda prenda) {
+		prenda.addToCategoria(prenda.getCategoria());
 		service.save(prenda);
 		return "redirect:/";
 	}

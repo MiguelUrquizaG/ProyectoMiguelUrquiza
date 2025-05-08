@@ -47,7 +47,9 @@
 	<main>
 		<div class="container mt-3">
 			<div class="row">
-				<a class=" col-2" href="#" th:href="@{/anadirPrenda}">Añadir Prenda</a>
+				<button type="button" class="btn btn-primary col-2 mx-2" data-bs-toggle="modal" data-bs-target="#anadirPrenda"
+					data-bs-whatever="@mdo">Añadir Prenda</button>
+				
 			</div>
 		</div>
 		<div class="container">
@@ -62,42 +64,97 @@
 						<div class="container">
 							<div class="row">
 								<a class=" col-5 me-1  btn btn-primary" th:data-id="${prenda.id}"
-									th:href="@{/editarPrenda/{id} (id=${prenda.id})}"
-									role="button">Modificar</a>
-								<a class=" col-5 me-1 btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEliminar"  th:attr="data-bs-target='#modalEliminar-' + ${prenda.id}"  th:data-id="${prenda.id}" role="button">Eliminar</a>
+									th:href="@{/editarPrenda/{id} (id=${prenda.id})}" role="button">Modificar</a>
+								<a class=" col-5 me-1 btn btn-primary" data-bs-toggle="modal"
+									data-bs-target="#modalEliminar"
+									th:attr="data-bs-target='#modalEliminar-' + ${prenda.id}" th:data-id="${prenda.id}"
+									role="button">Eliminar</a>
 							</div>
 						</div>
 					</div>
-					
-					<div class="modal fade" id="modalEliminar" th:attr="id='modalEliminar-' + ${prenda.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-							  <div class="modal-dialog">
-							    <div class="modal-content">
-							      <div class="modal-header">
-							        <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar</h1>
-							        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-							      </div>
-							      <div class="modal-body">
+
+					<div class="modal fade" id="modalEliminar" th:attr="id='modalEliminar-' + ${prenda.id}"
+						tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar</h1>
+									<button type="button" class="btn-close" data-bs-dismiss="modal"
+										aria-label="Cerrar"></button>
+								</div>
+								<div class="modal-body">
 									<!-- th:action="@{/eliminarPrenda/{id} (id=${prenda.id})} -->
-							        ¿Estás seguro que quieres eliminar?
-									<form th:method="post" action="#"  th:action="@{/eliminarPrenda/submit}">
+									¿Estás seguro que quieres eliminar?
+									<form th:method="post" action="#" th:action="@{/eliminarPrenda/submit}">
 										<input type="hidden" name="id" th:value="${prenda.id}" />
 										<input type="hidden" name="_method" value="delete">
 										<button type="submit" class="btn btn-primary">Eliminar</button>
 									</form>
-							      </div>
-							      <div class="modal-footer">
-							        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-							        
-							      </div>
-							    </div>
-							  </div>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary"
+										data-bs-dismiss="modal">Cerrar</button>
+
+								</div>
 							</div>
+						</div>
+					</div>
+
+
 				</div>
 			</div>
 		</div>
 
-		
-		
+		<div class="modal fade" id="anadirPrenda" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h1 class="modal-title fs-5" id="exampleModalLabel">Añadir Prenda</h1>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<form method="POST" action="#" th:action="@{/anadirPrenda/submit}" th:object="${nuevaprenda}">
+							<div class="mb-3">
+								<label for="recipient-name" class="col-form-label">Nombre Prenda</label>
+								<input th:field="*{nombre}" type="text" class="form-control" id="recipient-name">
+							</div>
+							<div class="mb-3">
+								<label for="message-text" class="col-form-label">Precio</label>
+								<input th:field="*{precio}" type="number" class="form-control"
+									id="message-text"></input>
+							</div>
+							<div class="mb-3">
+								<label for="categoria" class="col-form-label">Precio</label>
+								<select th:field="*{categoria}" class="form-control form-select" required>
+									<option th:each="categoria : ${categoria}" th:text="${categoria.nombre}"
+										th:value="${categoria.id}">
+								</select>
+							</div>
+							<div class="mb-3 ">
+								<label for="inputDescripcion" class="form-label">Descripción<span
+										class="text-danger">*</span></label>
+								<textarea th:field="*{descripcion}" class="form-control" id="inputDescripcion"
+									required></textarea>
+							</div>
+							<div class="mb-3 ">
+								<label for="inputImage" class="form-label">Url Imagen<span
+										class="text-danger">*</span></label>
+								<input th:field="*{urlImagen}" type="text" class="form-control" id="inputImage"
+									required>
+							</div>
+
+							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+							<button type="submit" class="btn btn-primary">Send message</button>
+
+						</form>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
+
 	</main>
 
 	<footer class="text-center bg-primary text-lg-start text-white mt-0">
