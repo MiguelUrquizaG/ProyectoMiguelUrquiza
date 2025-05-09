@@ -23,6 +23,7 @@ public class ControllerCategorias {
 	public String showCategorias(Model model) {
 		
 		model.addAttribute("categoria", categoriaServicios.findAll());
+		model.addAttribute("nuevacategoria", new Categoria());
 		
 		return "listaCategorias";
 	}
