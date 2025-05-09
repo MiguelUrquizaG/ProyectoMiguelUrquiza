@@ -124,12 +124,12 @@
 						<form method="POST" action="#" th:action="@{/anadirPrenda/submit}" th:object="${nuevaprenda}">
 							<div class="mb-3">
 								<label for="recipient-name" class="col-form-label">Nombre Prenda</label>
-								<input th:field="*{nombre}" type="text" class="form-control" id="recipient-name">
+								<input th:field="*{nombre}" type="text" class="form-control" id="recipient-name" maxlength="9" pattern="[A-Za-z_ ]*">
 							</div>
 							<div class="mb-3">
 								<label for="message-text" class="col-form-label">Precio</label>
 								<input th:field="*{precio}" type="number" class="form-control"
-									id="message-text"></input>
+									id="message-text" ></input>
 							</div>
 							<div class="mb-3">
 								<label for="categoria" class="col-form-label">Precio</label>

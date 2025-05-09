@@ -16,7 +16,7 @@
 
 </head>
 
-<body class="bg-formulario text-primary">
+<body class="bg-formulario text-primary d-flex flex-column min-vh-100">
 	<header>
 		<nav class="navbar navbar-dark navbar-expand-lg nav-underline">
 			<div class="container-fluid">
@@ -40,14 +40,14 @@
 				</div>
 			</div>
 		</nav>
-
+		<span class="h2 container-content d-block text-center bg-primary text-white py-2">Modificar Prenda
+						</span>
 	</header>
-	<main>
-		<span class="h2 container-content d-block text-center bg-primary text-white py-2">Añadir Prenda
-		</span>
+	<main class="flex-fill container my-4">
+	
 		<div class="container">
 
-
+			
 			<div class="row justify-content-center mt-3 mb-5">
 				<div class="col-12  col-lg-4">
 
@@ -60,7 +60,7 @@
 							<label for="inputNombre" class="form-label">Nombre Prenda<span
 									class="text-danger">*</span></label>
 							<input th:field="*{nombre}" type="text" class="form-control" id="inputNombre" required
-								placeholder="Introduzca el nombre." maxlength="9" pattern="[A-Za-z]*">
+								placeholder="Introduzca el nombre." maxlength="9" pattern="[A-Za-z_ ]*">
 						</div>
 
 						<div class="mb-3 ">

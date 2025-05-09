@@ -16,7 +16,7 @@
 
 </head>
 
-<body class="bg-formulario text-primary">
+<body class="bg-formulario text-primary d-flex flex-column min-vh-100">
 	<header>
 		<nav class="navbar navbar-dark navbar-expand-lg nav-underline">
 			<div class="container-fluid">
@@ -27,24 +27,26 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarColor01">
 					<ul class="navbar-nav me-auto">
-											<li class="nav-item">
-												<a class="nav-link " th:href="@{/}">Prendas
-												</a>
-											</li>
-											<li class="nav-item">
-												<a class="nav-link active" th:href="@{/categorias}">Categorias
-												</a>
-											</li>
-										</ul>
+						<li class="nav-item">
+							<a class="nav-link " th:href="@{/}">Prendas
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" th:href="@{/categorias}">Categorias
+							</a>
+						</li>
+					</ul>
 					<a href="inicioSesion.html"><i class=" h2 bi bi-person-fill text-white"></i></a>
 				</div>
 			</div>
 		</nav>
+		
+		<span class="h2 container-content d-block text-center bg-primary text-white py-2">Modificar Categoria
+				</span>
 
 	</header>
-	<main>
-		<span class="h2 container-content d-block text-center bg-primary text-white py-2">Añadir Prenda
-		</span>
+	<main class="flex-fill container my-4">
+		
 		<div class="container">
 
 
@@ -60,7 +62,7 @@
 							<label for="inputNombre" class="form-label">Nombre Prenda<span
 									class="text-danger">*</span></label>
 							<input th:field="*{nombre}" type="text" class="form-control" id="inputNombre" required
-								placeholder="Introduzca el nombre." maxlength="9" pattern="[A-Za-z]*">
+								placeholder="Introduzca el nombre." maxlength="20" pattern="[A-Za-z_ ]*">
 						</div>
 
 						<div class="mb-3 ">
