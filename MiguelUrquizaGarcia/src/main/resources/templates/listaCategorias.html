@@ -65,7 +65,7 @@
 				<div class="col-12  col-xl-6 card text-white bg-primary mb-3 mx-3 mt-3" style="width: 24rem;"
 					th:each="categoria : ${categoria}">
 					<div class="card-body">
-						<h4 class="card-title text-center mt-3" th:text="${categoria.nombre}"></h4>
+						<a class="card-title text-center mt-3 h3" role="button" th:href="@{/mostrarCategoria/{id} (id=${categoria.id})}" href="#" th:data-id="${categoria.id}" th:text="${categoria.nombre}"></a>
 						<p class="card-text" th:text="${categoria.descripcion}"></p>
 						<div class="container">
 							<div class="row">
@@ -96,9 +96,10 @@
 										<input type="hidden" name="id" th:value="${categoria.id}" />
 										<input type="hidden" name="_method" value="delete">
 										<div class="modal-footer">
+											<button type="submit" class="btn btn-primary">Eliminar</button>
 											<button type="button" class="btn btn-secondary"
 												data-bs-dismiss="modal">Cerrar</button>
-											<button type="submit" class="btn btn-primary"  >Eliminar</button>
+
 										</div>
 
 									</form>
@@ -135,9 +136,9 @@
 								<textarea th:field="*{descripcion}" class="form-control" id="inputDescripcion"
 									required></textarea>
 							</div>
-
-							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
 							<button type="submit" class="btn btn-primary">Crear Categoría</button>
+							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+
 
 						</form>
 					</div>

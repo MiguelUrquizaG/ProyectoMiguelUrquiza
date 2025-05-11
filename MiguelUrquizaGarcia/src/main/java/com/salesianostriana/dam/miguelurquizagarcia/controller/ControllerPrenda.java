@@ -81,7 +81,8 @@ public class ControllerPrenda {
 	
 	@DeleteMapping("/eliminarPrenda/submit")
 	public String procesarEliminar(@RequestParam Long id) {
-			System.out.println(id);
+			Prenda p = service.findById(id);
+			p.removeFromCategoria(p.getCategoria());
 			service.deleteById(id);
 		
 		return "redirect:/";

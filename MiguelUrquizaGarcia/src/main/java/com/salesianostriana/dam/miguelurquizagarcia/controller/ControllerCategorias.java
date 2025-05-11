@@ -62,4 +62,11 @@ public class ControllerCategorias {
 	}
 	
 	
+	@GetMapping("/mostrarCategoria/{id}")
+	public String mostrarCategoria(@PathVariable Long id, Model model) {
+		Categoria c = categoriaServicios.findById(id);
+		model.addAttribute("prendasCategoria", c.getListaPrendas());
+		return "mostrar-categoria";
+	}
+	
 }
