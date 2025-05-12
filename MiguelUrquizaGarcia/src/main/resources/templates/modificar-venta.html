@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+	<link href="../static/bootstrap.min.css" th:href="@{/bootstrap.min.css}" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	<link href="../static/estilo.css" th:href="@{/estilosMain.css}" rel="stylesheet" type="text/css">
+	<title>Tintoreria Urquiza</title>
+
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+	<header>
+		<nav class=" navbar navbar-dark navbar-expand-lg nav-underline">
+			<div class="container-fluid">
+				<span class="navbar-brand">Tintoreria Urquiza</span>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+					aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarColor01">
+					<ul class="navbar-nav me-auto">
+						<li class="nav-item">
+							<a class="nav-link " th:href="@{/}">Prendas
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/categorias}">Categorias
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" th:href="@{/ventas}">Ventas
+							</a>
+						</li>
+					</ul>
+					<a href="inicioSesion.html"><i class=" h2 bi bi-person-fill text-white"></i></a>
+				</div>
+			</div>
+		</nav>
+
+	</header>
+	<main class="flex-fill container my-4">
+
+		<div class="container">
+			<form class="form" th:method="POST" th:action="@{/anadirVenta/submit}" th:object="${venta}">
+				<div>
+
+					<div>
+						<label for="nombreCliente" class="label">Nombre Cliente</label>
+						<input type="text" id="nombreCliente" th:field="*{nombreCliente}">
+					</div>
+					<div>
+						<label class="label" for="fechaEntrega">Fecha Entrega</label>
+						<input type="date" id="fechaEntrega" th:field="*{fechaEntrega}">
+					</div>
+					<div>
+						<label class="label" for="fechaRecogida">Fecha Recogida</label>
+						<input type="date" id="fechaRecogida" th:field="*{fechaRecogida}">
+					</div>
+				</div>
+				<div>
+					<a class="btn btn-primary" data-bs-target="#anadirLineaVenta" data-bs-toggle="modal">Añadir Línea
+						Venta</a>
+				</div>
+				<button class="btn btn-primary" type="submit">Guardar Venta</button>
+			</form>
+		</div> 
+
+		<div class="dropdown">
+					<button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+						aria-expanded="false">
+						Añadir Prenda
+					</button>
+					<ul class="dropdown-menu">
+						<li th:each="categoria : ${categoria}"><a class="dropdown-item dr" data-bs-target="#exampleModal"
+								th:attr="data-bs-target= '#exampleModal' + ${categoria.id}" th:data-id="${categoria.id}"
+								data-bs-toggle="modal" th:text="${categoria.nombre}"></a></li>
+					</ul>
+				</div>
+
+
+				<div th:each="categoria:${categoria}">
+
+
+					<div class="modal fade" id="exampleModal" th:attr="id='exampleModal' + ${categoria.id}" tabindex="-1"
+						aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h1 class="modal-title fs-5" id="exampleModalLabel " th:text="${categoria.nombre}">New
+										message</h1>
+									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+									<form th:method="POST" th:action="@{/anadirLineaVenta/submit}">
+										<div class="dropdown">
+											<button class="btn btn-primary dropdown-toggle" type="button"
+												data-bs-toggle="dropdown" aria-expanded="false">
+												Mostrar Prendas
+											</button>
+											<ul class="dropdown-menu">
+												<li th:each="prenda : ${categoria.listaPrendas}">
+													<div class="dropdown-item dr form-check">
+														<input type="hidden" name="prendaId" th:value="${prenda.id}">
+														<input type="hidden" name="categoriaId" th:value="${categoria.id}">
+														<label th:text="${prenda.nombre}"></label>
+														<input type="checkbox" class="prenda-checkbox"
+															th:data-nombre="${prenda.nombre}"
+															th:data-precio="${categoria.precioServicio}"
+															th:data-categoriaid="${categoria.id}">
+													</div>
+												</li>
+											</ul>
+										</div>
+										<table class="table table-bordered mt-3">
+											<thead>
+												<tr class="mt-3">
+													<th>Prenda</th>
+													<th>Precio (Categoría)</th>
+													<th>Cantidad</th>
+												</tr>
+											</thead>
+											<tbody th:attr="id='tabla-prendas-seleccionadas-' + ${categoria.id}">
+											</tbody>
+										</table>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary"
+												data-bs-dismiss="modal">Close</button>
+											<button type="submit" class="btn btn-primary">Send message</button>
+										</div>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+	</main>
+
+	<footer class=" text-center bg-primary text-lg-start text-white mt-0">
+
+		<div>
+			<div class="container text-center text-md-start">
+				<div class="row">
+					<div class="col-md-3 col-lg-4 col-xl-3 mx-auto  mt-4">
+						<p class="h5 text-uppercase fw-bold  text-white">
+							Tintoreria Urquiza
+						</p>
+						<p>
+							Nuestra Tintorería cuidará tu ropa de una forma única.
+						</p>
+					</div>
+					<div class="col-md-3 col-lg-2 col-xl-2 mx-auto  mt-4">
+						<p class="h5 text-uppercase fw-bold text-white">
+							Contáctanos
+						</p>
+						<p class="h6 text-white"><i class="bi bi-house"></i> C/San Vicente de Paúl 13</p>
+						<p class="h6 text-white"><i class="bi bi-telephone"></i> +34 954 04 79 25</p>
+
+					</div>
+
+					<div class="col-md-3 col-lg-2 col-xl-2 mx-auto  mt-4">
+						<p class="h5 text-uppercase fw-bold text-white">
+							Avisos Legales
+						</p>
+						<a class="h6 text-white text-decoration-none" href="">Aviso legal</a>
+						<a class="h6 text-white text-decoration-none" href="">Políticas</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="d-flex justify-content-center justify-content-between">
+			<div>
+				<span>Nuestras Redes</span>
+			</div>
+			<div>
+				<a href="" class=" h5 me-4 text-reset text-decoration-none">
+					<i class="bi bi-facebook"></i>
+				</a>
+				<a href="" class="me-4 text-reset text-decoration-none">
+					<i class="bi bi-twitter-x"></i>
+				</a>
+				<a href="" class="me-4 text-reset text-decoration-none">
+					<i class="bi bi-google"></i>
+				</a>
+				<a href="" class="me-4 text-reset text-decoration-none">
+					<i class="bi bi-instagram"></i>
+				</a>
+			</div>
+		</div>
+	</footer>
+</body>
+
+<script>
+
+	document.addEventListener('DOMContentLoaded', function () {
+		const checkboxes = document.querySelectorAll('.prenda-checkbox');
+
+		checkboxes.forEach(cb => {
+			cb.addEventListener('change', function () {
+				const nombre = this.dataset.nombre;
+				const precio = this.dataset.precio;
+				const categoriaId = this.dataset.categoriaid;
+				const prendaId = this.previousElementSibling.value; // obtener prendaId desde input hidden
+
+				const tablaBody = document.getElementById('tabla-prendas-seleccionadas-' + categoriaId);
+
+				if (this.checked) {
+					const fila = document.createElement('tr');
+					fila.setAttribute('data-nombre', nombre);
+
+					fila.innerHTML = `
+	          <td>${nombre}
+	            <input type="hidden" name="prendaId" value="${prendaId}">
+	            <input type="hidden" name="categoriaId" value="${categoriaId}">
+	          </td>
+	          <td>${precio} €</td>
+			  <td class="px-0"><input type="number" name="cantidad"> </td>
+	        `;
+					tablaBody.appendChild(fila);
+				} else {
+					const fila = tablaBody.querySelector(`tr[data-nombre="${nombre}"]`);
+					if (fila) {
+						fila.remove();
+					}
+				}
+			});
+		});
+	});
+
+</script>
+
+</html>

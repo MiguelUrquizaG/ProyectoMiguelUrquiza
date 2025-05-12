@@ -36,6 +36,10 @@
 							<a class="nav-link active" th:href="@{/categorias}">Categorias
 							</a>
 						</li>
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/ventas}">Ventas
+							</a>
+						</li>
 					</ul>
 					<a href="inicioSesion.html"><i class=" h2 bi bi-person-fill text-white"></i></a>
 				</div>
@@ -65,7 +69,9 @@
 				<div class="col-12  col-xl-6 card text-white bg-primary mb-3 mx-3 mt-3" style="width: 24rem;"
 					th:each="categoria : ${categoria}">
 					<div class="card-body">
-						<a class="card-title text-center mt-3 h3" role="button" th:href="@{/mostrarCategoria/{id} (id=${categoria.id})}" href="#" th:data-id="${categoria.id}" th:text="${categoria.nombre}"></a>
+						<a class="card-title text-center mt-3 h3" role="button"
+							th:href="@{/mostrarCategoria/{id} (id=${categoria.id})}" href="#"
+							th:data-id="${categoria.id}" th:text="${categoria.nombre}"></a>
 						<p class="card-text" th:text="${categoria.descripcion}"></p>
 						<div class="container">
 							<div class="row">
@@ -131,17 +137,27 @@
 									maxlength="20" pattern="[A-Za-z_ ]*">
 							</div>
 							<div class="mb-3 ">
+								<label for="inputPrecio" class="form-label">Precio<span
+										class="text-danger">*</span></label>
+								<input type="number" th:field="*{precioServicio}" class="form-control" id="inputPrecio"
+									required></input>
+							</div>
+							<div class="mb-3 ">
 								<label for="inputDescripcion" class="form-label">Descripción<span
 										class="text-danger">*</span></label>
 								<textarea th:field="*{descripcion}" class="form-control" id="inputDescripcion"
 									required></textarea>
 							</div>
+
 							<button type="submit" class="btn btn-primary">Crear Categoría</button>
 							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
 
 
 						</form>
 					</div>
+				</div>
+			</div>
+		</div>
 
 	</main>
 

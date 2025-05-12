@@ -36,6 +36,10 @@
 							<a class="nav-link" th:href="@{/categorias}">Categorias
 							</a>
 						</li>
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/ventas}">Ventas
+							</a>
+						</li>
 					</ul>
 					<a href="inicioSesion.html"><i class=" h2 bi bi-person-fill text-white"></i></a>
 				</div>
@@ -96,7 +100,7 @@
 									<form th:method="post" action="#" th:action="@{/eliminarPrenda/submit}">
 										<input type="hidden" name="id" th:value="${prenda.id}" />
 										<input type="hidden" name="_method" value="delete">
-										
+
 										<div class="modal-footer">
 											<button type="submit" class="btn btn-primary">Eliminar</button>
 											<button type="button" class="btn btn-secondary"
@@ -130,12 +134,7 @@
 									maxlength="9" pattern="[A-Za-z_ ]*">
 							</div>
 							<div class="mb-3">
-								<label for="message-text" class="col-form-label">Precio</label>
-								<input th:field="*{precio}" type="number" class="form-control"
-									id="message-text"></input>
-							</div>
-							<div class="mb-3">
-								<label for="categoria" class="col-form-label">Precio</label>
+								<label for="categoria" class="col-form-label">Categoria</label>
 								<select th:field="*{categoria}" class="form-control form-select" required>
 									<option th:each="categoria : ${categoria}" th:text="${categoria.nombre}"
 										th:value="${categoria.id}">
@@ -155,7 +154,7 @@
 							</div>
 							<button type="submit" class="btn btn-primary">Crear Prenda</button>
 							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-							
+
 
 						</form>
 					</div>

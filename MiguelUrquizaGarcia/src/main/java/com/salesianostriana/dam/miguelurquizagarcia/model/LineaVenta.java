@@ -14,28 +14,25 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Prenda {
+public class LineaVenta {
 
 	@Id
 	@GeneratedValue
 	private long id;
 	
-	private String nombre;
-	private String descripcion;
-	private String urlImagen;
+	@ManyToOne
+	@JoinColumn(foreignKey = @ForeignKey(name="fk_venta"))
+	private Venta venta;
+	
 	
 	@ManyToOne
-	@JoinColumn(foreignKey = @ForeignKey(name="fk_prenda_categoria"))	
+	@JoinColumn(foreignKey = @ForeignKey(name="fk_categoria"))
 	private Categoria categoria;
 	
+	@ManyToOne
+	@JoinColumn(foreignKey = @ForeignKey(name="fk_prenda"))
+	private Prenda prenda;
 	
-	public void addToCategoria(Categoria categoria) {
-		this.categoria = categoria;
-		categoria.getListaPrendas().add(this);
-	}
+	private double cantidad;
 	
-	public void removeFromCategoria(Categoria categoria) {
-		categoria.getListaPrendas().remove(this);
-		this.categoria = null;		
-	}
 }
