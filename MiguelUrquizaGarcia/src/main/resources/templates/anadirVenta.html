@@ -92,18 +92,11 @@
 					<button type="submit" class="btn btn-dark">Guardar Venta</button>
 				</div>
 			</form>
-			<button class="btn btn-primary" onclick="generarLineasVenta">Añadir Linea</button>
+			<button class="btn btn-primary" id="btnAnadirLinea">Añadir Linea</button>
 			<div id="lineasVenta">
 
 			</div>
 		</div>
-		</div>
-
-
-
-		</div>
-
-
 
 	</main>
 
@@ -159,18 +152,46 @@
 			</div>
 		</div>
 	</footer>
+	
+	<span th:each=" cat : ${categoria}" th:text="cat"></span>
+	
 </body>
 
-<script>
+<script th:inline="javascript">
 
-	function generarLineasVenta() {
+	let categorias = [[${categoria}]];
+	console.log("Categorías cargadas:", categorias);
+	function generarLineasVenta()  {
 		const container = document.getElementById('lineasVenta')
-		const fila = document.createElement('tr');
+		const fila = document.createElement('div');
+		fila.classList.add('row', 'mb-3')
 
-		fila.innerHTML = `<td><select th:each=categoria:${categoria}></td>  <td><select th:each=prenda:${prenda.categoria}></td>`
-
+		let select = document.createElement('select');
+		select.classList.add('form-select');
+		select.name="categoria";
+		
+		let defaultOption = document.createElement('option');
+		defaultOption.text='Seleccione Categoria'
+		defaultOption.value="";
+		select.appendChild(defaultOption);
+		
+		categorias.forEach(function(cat){
+			let option = document.createElement('option')
+			option.value = cat.id;
+			option.text=cat.nombre;
+			select.appendChild(option);
+		})
+	
+		let col = document.createElement('div')
+		col.classList.add('col-4')
+		col.appendChild(select)
+		fila.appendChild(col);
 		container.appendChild(fila);
-	}	
+	};	
+	
+	document.addEventListener('DOMContentLoaded', function(){
+		document.getElementById('btnAnadirLinea').addEventListener('click' ,generarLineasVenta);
+	})
 </script>
 
 </html>
