@@ -18,6 +18,8 @@ import com.salesianostriana.dam.miguelurquizagarcia.service.Services;
 @Controller
 public class ControllerVenta {
 
+    private final ControllerCategorias controllerCategorias;
+
 	@Autowired
 	private ServiceVenta servicioVentas;
 	@Autowired
@@ -25,6 +27,10 @@ public class ControllerVenta {
 	
 	@Autowired
 	private Services servicePrenda;
+
+    ControllerVenta(ControllerCategorias controllerCategorias) {
+        this.controllerCategorias = controllerCategorias;
+    }
 	
 	@GetMapping("/ventas")
 	public String ventas(Model model) {
@@ -37,13 +43,15 @@ public class ControllerVenta {
 	@GetMapping("/anadirVenta")
 	public String anadirVenta( Model model) {
 		model.addAttribute("nuevaVenta", new Venta());
-
+		model.addAttribute("categoria", serviceCategoria.findAll());
+		model.addAttribute("prenda", servicePrenda.findAll());
 		return "anadirVenta";
 	}
 	@PostMapping("/anadirVenta/submit")
 	public String confirmarVenta(@ModelAttribute Venta v) {
 		
 		servicioVentas.save(v);
+		
 		return "redirect:/ventas";
 	}
 	
@@ -51,10 +59,14 @@ public class ControllerVenta {
 	public String modificarVenta(@PathVariable long id, Model model) {
 		Venta v = servicioVentas.findById(id);
 		model.addAttribute("venta", v);
-		model.addAttribute("lineaVenta", new LineaVenta());
-		model.addAttribute("categoria", serviceCategoria.findAll());
-		model.addAttribute("prenda",servicePrenda.findAll());
 		
+		System.out.println(v);
 		return "modificar-venta";
+	}
+	@PostMapping("/modificarVenta/submit")
+	public String confirmarModificar(@ModelAttribute Venta v) {
+		servicioVentas.save(v);
+		System.out.println(v);
+		return "redirect:/ventas";
 	}
 }

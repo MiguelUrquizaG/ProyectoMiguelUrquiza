@@ -49,31 +49,61 @@
 	<main class="flex-fill container my-4">
 
 		<div class="container">
-			<form class="form" th:method="POST" th:action="@{/anadirVenta/submit}" th:object="${nuevaVenta}">
-				<div>
 
-					<div>
-						<label for="nombreCliente" class="label">Nombre Cliente</label>
-						<input type="text" id="nombreCliente" th:field="*{nombreCliente}">
+
+
+
+
+
+
+			<form method="POST" action="#" th:action="@{/anadirVenta/submit}" th:object="${nuevaVenta}" class="w-100"
+				name="inicioSesion">
+				<div class="row justify-content-center mt-3 mb-5">
+					<div class="col-3  col-lg-3 ">
+						<label for="inputNombre" class="form-label">Nombre Prenda<span
+								class="text-danger">*</span></label>
+						<input th:field="*{nombreCliente}" type="text" class="form-control" id="inputNombre" required
+							placeholder="Introduzca el nombre." maxlength="9" pattern="[A-Za-z_ ]*">
 					</div>
-					<div>
-						<label class="label" for="fechaEntrega">Fecha Entrega</label>
-						<input type="date" id="fechaEntrega" th:field="*{fechaEntrega}">
+					<div class="col-3 ">
+						<label for="inputFechaEntrega" class="form-label">Fecha Entrega<span
+								class="text-danger">*</span></label>
+						<input th:field="*{fechaEntrega}" type="date" min="1" class="form-control"
+							id="inputFechaEntrega" required placeholder="Ingrese el precio del producto.">
 					</div>
-					<div>
-						<label class="label" for="fechaRecogida">Fecha Recogida</label>
-						<input type="date" id="fechaRecogida" th:field="*{fechaRecogida}">
+					<div class="col-3 ">
+						<label for="inputFechaRecogida" class="form-label">Fecha Recogida<span
+								class="text-danger">*</span></label>
+						<input th:field="*{fechaRecogida}" type="date" min="1" class="form-control"
+							id="inputFechaRecogida" required placeholder="Ingrese el precio del producto.">
 					</div>
+				</div>
+
+
+
+
+				<div class="mb-3 ">
+
+				</div>
+				<div class="mb-3 ">
+
 				</div>
 				<div>
-					<a class="btn btn-primary" data-bs-target="#anadirLineaVenta" data-bs-toggle="modal">Añadir Línea
-						Venta</a>
+					<button type="submit" class="btn btn-dark">Guardar Venta</button>
 				</div>
-				<button class="btn btn-primary" type="submit">Guardar Venta</button>
 			</form>
-		</div> 
+			<button class="btn btn-primary" onclick="generarLineasVenta">Añadir Linea</button>
+			<div id="lineasVenta">
 
-		
+			</div>
+		</div>
+		</div>
+
+
+
+		</div>
+
+
 
 	</main>
 
@@ -131,6 +161,16 @@
 	</footer>
 </body>
 
+<script>
 
+	function generarLineasVenta() {
+		const container = document.getElementById('lineasVenta')
+		const fila = document.createElement('tr');
+
+		fila.innerHTML = `<td><select th:each=categoria:${categoria}></td>  <td><select th:each=prenda:${prenda.categoria}></td>`
+
+		container.appendChild(fila);
+	}	
+</script>
 
 </html>

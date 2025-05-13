@@ -49,9 +49,9 @@
 	<main class="flex-fill container my-4">
 
 		<div class="container">
-			<form class="form" th:method="POST" th:action="@{/anadirVenta/submit}" th:object="${venta}">
+			<form class="form" th:method="POST" th:action="@{/modificarVenta/submit}" th:object="${venta}">
 				<div>
-
+					<input hidden th:field="*{id}">
 					<div>
 						<label for="nombreCliente" class="label">Nombre Cliente</label>
 						<input type="text" id="nombreCliente" th:field="*{nombreCliente}">
@@ -65,16 +65,12 @@
 						<input type="date" id="fechaRecogida" th:field="*{fechaRecogida}">
 					</div>
 				</div>
-				<div>
-					<a class="btn btn-primary" data-bs-target="#anadirLineaVenta" data-bs-toggle="modal">Añadir Línea
-						Venta</a>
-				</div>
 				<button class="btn btn-primary" type="submit">Guardar Venta</button>
 			</form>
 		</div> 
 
 		<div class="dropdown">
-					<button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+					<button class="btn btn-primary dropdown-toggle mt-3" type="button" data-bs-toggle="dropdown"
 						aria-expanded="false">
 						Añadir Prenda
 					</button>
