@@ -45,6 +45,8 @@ public class ControllerVenta {
 		model.addAttribute("nuevaVenta", new Venta());
 		model.addAttribute("categoria", serviceCategoria.findAll());
 		model.addAttribute("prenda", servicePrenda.findAll());
+		System.out.println(model.getAttribute("prenda"));
+		
 		return "anadirVenta";
 	}
 	@PostMapping("/anadirVenta/submit")

@@ -80,22 +80,16 @@
 				</div>
 
 
-
-
-				<div class="mb-3 ">
+				<div id="lineasVenta">
 
 				</div>
-				<div class="mb-3 ">
 
-				</div>
 				<div>
 					<button type="submit" class="btn btn-dark">Guardar Venta</button>
 				</div>
 			</form>
 			<button class="btn btn-primary" id="btnAnadirLinea">Añadir Linea</button>
-			<div id="lineasVenta">
 
-			</div>
 		</div>
 
 	</main>
@@ -152,46 +146,138 @@
 			</div>
 		</div>
 	</footer>
-	
-	<span th:each=" cat : ${categoria}" th:text="cat"></span>
-	
+
 </body>
 
 <script th:inline="javascript">
 
 	let categorias = [[${categoria}]];
+	let prendas = [[${prenda}]];
 	console.log("Categorías cargadas:", categorias);
-	function generarLineasVenta()  {
+	console.log("Prendas:", prendas)
+
+	document.addEventListener('DOMContentLoaded', function () {
+		console.log("DOM completamente cargado, evento añadido");
+		document.getElementById('btnAnadirLinea').addEventListener('click', function () {
+			console.log("Boton Pulsado")
+			generarLineasVenta();
+		});
+	})
+
+	function generarLineasVenta() {
+		console.log("Generando línea de venta...");
 		const container = document.getElementById('lineasVenta')
 		const fila = document.createElement('div');
 		fila.classList.add('row', 'mb-3')
 
-		let select = document.createElement('select');
-		select.classList.add('form-select');
-		select.name="categoria";
-		
+		let selectCategoria = document.createElement('select');
+		selectCategoria.classList.add('form-select');
+		selectCategoria.name = "categoria";
+
 		let defaultOption = document.createElement('option');
-		defaultOption.text='Seleccione Categoria'
-		defaultOption.value="";
-		select.appendChild(defaultOption);
-		
-		categorias.forEach(function(cat){
+		defaultOption.text = 'Seleccione Categoria'
+		defaultOption.value = "";
+		selectCategoria.appendChild(defaultOption);
+
+		let selectPrenda = document.createElement('select');
+		selectPrenda.classList.add('form-select');
+		selectPrenda.name = "prenda"
+
+		let defaultPrenda = document.createElement('option')
+		defaultPrenda.text = 'Seleccione Prenda'
+		defaultPrenda.value = ""
+		selectPrenda.appendChild(defaultPrenda);
+
+		let inputNumero = document.createElement('input')
+		inputNumero.classList.add('form-control')
+		inputNumero.type = 'number';
+		inputNumero.min = '1';
+		inputNumero.name = "cantidad";
+
+
+
+		categorias.forEach(function (cat) {
 			let option = document.createElement('option')
 			option.value = cat.id;
-			option.text=cat.nombre;
-			select.appendChild(option);
+			option.text = cat.nombre;
+			selectCategoria.appendChild(option);
 		})
-	
-		let col = document.createElement('div')
-		col.classList.add('col-4')
-		col.appendChild(select)
-		fila.appendChild(col);
+
+
+		let precio = document.createElement('input')
+		precio.classList.add('form-control')
+		precio.value='0.00';
+		precio.name='subtotal'
+		precio.readOnly=true;
+		precio.type = 'number'
+
+		selectCategoria.addEventListener('change', function () {
+			const categoriaSeleccionadaId = this.value;
+			console.log(categoriaSeleccionadaId);
+
+			selectPrenda.innerHTML = '';
+			selectPrenda.appendChild(defaultPrenda);
+			prendas.forEach(function (prenda) {
+				console.log(prenda.categoria);
+				if (prenda.categoria.id == categoriaSeleccionadaId) {
+
+					let option = document.createElement('option');
+					option.value = prenda.id;
+					option.text = prenda.nombre;
+					selectPrenda.appendChild(option);
+
+
+
+				}
+
+				});
+				const categoriaSeleccionada = categorias.find(cat => cat.id == categoriaSeleccionadaId);
+				if(categoriaSeleccionada){
+					precio.setAttribute('data-precio-unitario',categoriaSeleccionada.precioServicio);
+					actualizarSubtotal();
+				}
+				
+				console.log("Cat seleccionada: ",categoriaSeleccionada);
+				
+		});
+		
+		inputNumero.addEventListener('input', actualizarSubtotal);
+		
+		function actualizarSubtotal(){
+			const cantidad = parseInt(inputNumero.value)||0;
+			const precioUnitario = parseFloat(precio.getAttribute('data-precio-unitario')) || 0;
+			const subtotal = cantidad * precioUnitario;
+			precio.value=subtotal.toFixed(2);
+		}
+
+
+		const colCategoria = document.createElement('div');
+		colCategoria.classList.add('col-3');
+		colCategoria.appendChild(selectCategoria);
+
+		const colPrenda = document.createElement('div');
+		colPrenda.classList.add('col-3');
+		colPrenda.appendChild(selectPrenda);
+
+		const colCantidad = document.createElement('div');
+		colCantidad.classList.add('col-3');
+		colCantidad.appendChild(inputNumero);
+
+		const colSubtotal = document.createElement('div');
+		colSubtotal.classList.add('col-3');
+		colSubtotal.appendChild(precio);
+
+		fila.appendChild(colCategoria);
+		fila.appendChild(colPrenda);
+		fila.appendChild(colCantidad);
+		fila.appendChild(colSubtotal);
 		container.appendChild(fila);
-	};	
-	
-	document.addEventListener('DOMContentLoaded', function(){
-		document.getElementById('btnAnadirLinea').addEventListener('click' ,generarLineasVenta);
-	})
+		/*console.log("Prendas recibidas:");
+		prendas.forEach(p => {
+			console.log(p.nombre, p.categoria.id, p.descripcion);
+		});*/
+	}
+
 </script>
 
 </html>

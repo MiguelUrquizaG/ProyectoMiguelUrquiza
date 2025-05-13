@@ -1,5 +1,7 @@
 package com.salesianostriana.dam.miguelurquizagarcia.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.ForeignKey;
 import jakarta.persistence.GeneratedValue;
@@ -25,6 +27,7 @@ public class Prenda {
 	private String urlImagen;
 	
 	@ManyToOne
+	@JsonIgnoreProperties("listaPrendas")
 	@JoinColumn(foreignKey = @ForeignKey(name="fk_prenda_categoria"))	
 	private Categoria categoria;
 	
