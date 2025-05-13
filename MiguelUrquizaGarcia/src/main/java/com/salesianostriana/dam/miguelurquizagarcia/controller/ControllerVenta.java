@@ -51,8 +51,7 @@ public class ControllerVenta {
 	}
 	@PostMapping("/anadirVenta/submit")
 	public String confirmarVenta(@ModelAttribute Venta v) {
-		
-		servicioVentas.save(v);
+		servicioVentas.saveVenta(v);
 		
 		return "redirect:/ventas";
 	}

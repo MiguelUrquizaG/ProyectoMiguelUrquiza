@@ -35,4 +35,6 @@ public class LineaVenta {
 	
 	private double cantidad;
 	
+	private double subTotal;
+	
 }

@@ -3,6 +3,7 @@ package com.salesianostriana.dam.miguelurquizagarcia.model;
 import java.time.LocalDate;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -26,8 +27,12 @@ public class Venta {
 	private LocalDate fechaRecogida;
 	private double precioTotal;
 	
-	@OneToMany(mappedBy="venta", fetch= FetchType.EAGER)
+	@OneToMany(mappedBy="venta", fetch= FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<LineaVenta>lineasVenta;
 	
+	public void addLineaVenta(LineaVenta linea) {
+		linea.setVenta(this);
+		this.lineasVenta.add(linea);
+	}
 	
 }

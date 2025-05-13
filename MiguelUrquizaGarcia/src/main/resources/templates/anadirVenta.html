@@ -153,6 +153,7 @@
 
 	let categorias = [[${categoria}]];
 	let prendas = [[${prenda}]];
+	let indiceLineaVenta = 0;
 	console.log("Categorías cargadas:", categorias);
 	console.log("Prendas:", prendas)
 
@@ -172,7 +173,7 @@
 
 		let selectCategoria = document.createElement('select');
 		selectCategoria.classList.add('form-select');
-		selectCategoria.name = "categoria";
+		selectCategoria.name = `lineasVenta[${indiceLineaVenta}].categoria.id`;
 
 		let defaultOption = document.createElement('option');
 		defaultOption.text = 'Seleccione Categoria'
@@ -181,7 +182,7 @@
 
 		let selectPrenda = document.createElement('select');
 		selectPrenda.classList.add('form-select');
-		selectPrenda.name = "prenda"
+		selectPrenda.name = `lineasVenta[${indiceLineaVenta}].prenda.id` 
 
 		let defaultPrenda = document.createElement('option')
 		defaultPrenda.text = 'Seleccione Prenda'
@@ -192,7 +193,7 @@
 		inputNumero.classList.add('form-control')
 		inputNumero.type = 'number';
 		inputNumero.min = '1';
-		inputNumero.name = "cantidad";
+		inputNumero.name = `lineasVenta[${indiceLineaVenta}].cantidad`;
 
 
 
@@ -207,7 +208,7 @@
 		let precio = document.createElement('input')
 		precio.classList.add('form-control')
 		precio.value='0.00';
-		precio.name='subtotal'
+		precio.name=`lineasVenta[${indiceLineaVenta}].subtotal`
 		precio.readOnly=true;
 		precio.type = 'number'
 
@@ -276,6 +277,7 @@
 		prendas.forEach(p => {
 			console.log(p.nombre, p.categoria.id, p.descripcion);
 		});*/
+		indiceLineaVenta++;
 	}
 
 </script>
