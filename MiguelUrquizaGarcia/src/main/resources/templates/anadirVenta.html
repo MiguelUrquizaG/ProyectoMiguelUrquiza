@@ -158,6 +158,7 @@
 	console.log("Prendas:", prendas)
 
 	document.addEventListener('DOMContentLoaded', function () {
+		generarLineasVenta();
 		console.log("DOM completamente cargado, evento añadido");
 		document.getElementById('btnAnadirLinea').addEventListener('click', function () {
 			console.log("Boton Pulsado")
@@ -170,10 +171,12 @@
 		const container = document.getElementById('lineasVenta')
 		const fila = document.createElement('div');
 		fila.classList.add('row', 'mb-3')
+		fila.setAttribute('data-linea-id',indiceLineaVenta);
 
 		let selectCategoria = document.createElement('select');
 		selectCategoria.classList.add('form-select');
 		selectCategoria.name = `lineasVenta[${indiceLineaVenta}].categoria.id`;
+		selectCategoria.required=true;
 
 		let defaultOption = document.createElement('option');
 		defaultOption.text = 'Seleccione Categoria'
@@ -183,6 +186,7 @@
 		let selectPrenda = document.createElement('select');
 		selectPrenda.classList.add('form-select');
 		selectPrenda.name = `lineasVenta[${indiceLineaVenta}].prenda.id` 
+		selectPrenda.required=true;
 
 		let defaultPrenda = document.createElement('option')
 		defaultPrenda.text = 'Seleccione Prenda'
@@ -193,6 +197,7 @@
 		inputNumero.classList.add('form-control')
 		inputNumero.type = 'number';
 		inputNumero.min = '1';
+		inputNumero.required=true;
 		inputNumero.name = `lineasVenta[${indiceLineaVenta}].cantidad`;
 
 
@@ -211,6 +216,19 @@
 		precio.name=`lineasVenta[${indiceLineaVenta}].subtotal`
 		precio.readOnly=true;
 		precio.type = 'number'
+		
+		let btnEliminar = document.createElement('button');
+		btnEliminar.classList.add('btn','btn-danger','btn-sm')
+		btnEliminar.textContent='Eliminar'
+		
+		if(indiceLineaVenta === 0){
+			btnEliminar.disabled=true;
+			btnEliminar.classList.add('disabled');
+		}
+		
+		btnEliminar.addEventListener('click',function(){
+			container.removeChild(fila);
+		})
 
 		selectCategoria.addEventListener('change', function () {
 			const categoriaSeleccionadaId = this.value;
@@ -253,25 +271,31 @@
 
 
 		const colCategoria = document.createElement('div');
-		colCategoria.classList.add('col-3');
+		colCategoria.classList.add('col-auto');
 		colCategoria.appendChild(selectCategoria);
 
 		const colPrenda = document.createElement('div');
-		colPrenda.classList.add('col-3');
+		colPrenda.classList.add('col-auto');
 		colPrenda.appendChild(selectPrenda);
 
 		const colCantidad = document.createElement('div');
-		colCantidad.classList.add('col-3');
+		colCantidad.classList.add('col-auto');
 		colCantidad.appendChild(inputNumero);
 
 		const colSubtotal = document.createElement('div');
-		colSubtotal.classList.add('col-3');
+		colSubtotal.classList.add('col-auto');
 		colSubtotal.appendChild(precio);
+		
+		const colEliminar = document.createElement('div')
+		colEliminar.classList.add('col-auto')
+		colEliminar.appendChild(btnEliminar);
 
 		fila.appendChild(colCategoria);
 		fila.appendChild(colPrenda);
 		fila.appendChild(colCantidad);
 		fila.appendChild(colSubtotal);
+		fila.appendChild(colEliminar);
+		
 		container.appendChild(fila);
 		/*console.log("Prendas recibidas:");
 		prendas.forEach(p => {
