@@ -1,6 +1,8 @@
 package com.salesianostriana.dam.miguelurquizagarcia.controller;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -60,14 +62,17 @@ public class ControllerVenta {
 	public String modificarVenta(@PathVariable long id, Model model) {
 		Venta v = servicioVentas.findById(id);
 		model.addAttribute("venta", v);
-		
+		model.addAttribute("categoria", serviceCategoria.findAll());
+		model.addAttribute("prenda", servicePrenda.findAll());
 		System.out.println(v);
+		System.out.println("Lineas de venta: " + v.getLineasVenta());
 		return "modificar-venta";
 	}
 	@PostMapping("/modificarVenta/submit")
 	public String confirmarModificar(@ModelAttribute Venta v) {
 		servicioVentas.save(v);
-		System.out.println(v);
+		System.out.println("Resultado: "+v);
+		System.out.println("Pso por el POST");
 		return "redirect:/ventas";
 	}
 }

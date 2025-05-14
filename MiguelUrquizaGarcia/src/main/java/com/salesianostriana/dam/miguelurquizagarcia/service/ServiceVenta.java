@@ -14,7 +14,7 @@ public class ServiceVenta extends BaseService<Venta, Long, VentaRepository>{
 	public void saveVenta(Venta nuevaVenta) {
 		for(LineaVenta linea: nuevaVenta.getLineasVenta()) {
 			linea.setVenta(nuevaVenta);
-			System.out.println(linea.getSubTotal());
+			System.out.println(linea.getSubtotal());
 		}
 		nuevaVenta.setPrecioTotal(calcularPrecioTotalVenta(nuevaVenta));
 		save(nuevaVenta);
@@ -30,7 +30,7 @@ public class ServiceVenta extends BaseService<Venta, Long, VentaRepository>{
 		double total=0;
 		for(LineaVenta l: v.getLineasVenta()) {
 			
-			total+=l.getSubTotal();
+			total+=l.getSubtotal();
 		}
 		
 		return total;

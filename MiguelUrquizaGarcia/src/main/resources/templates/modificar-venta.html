@@ -49,97 +49,79 @@
 	<main class="flex-fill container my-4">
 
 		<div class="container">
-			<form class="form" th:method="POST" th:action="@{/modificarVenta/submit}" th:object="${venta}">
-				<div>
-					<input hidden th:field="*{id}">
-					<div>
-						<label for="nombreCliente" class="label">Nombre Cliente</label>
-						<input type="text" id="nombreCliente" th:field="*{nombreCliente}">
+
+
+
+
+
+
+
+			<form method="POST" action="#" th:action="@{/modificarVenta/submit}" th:object="${venta}" class="w-100"
+				name="inicioSesion">
+				<input th:field="*{id}" hidden>
+				<div class="row justify-content-center mt-3 mb-5">
+					<div class="col-3  col-lg-3 ">
+						<label for="inputNombre" class="form-label">Nombre Prenda<span
+								class="text-danger">*</span></label>
+						<input th:field="*{nombreCliente}" type="text" class="form-control" id="inputNombre" required
+							placeholder="Introduzca el nombre." maxlength="9" pattern="[A-Za-z_ ]*">
 					</div>
-					<div>
-						<label class="label" for="fechaEntrega">Fecha Entrega</label>
-						<input type="date" id="fechaEntrega" th:field="*{fechaEntrega}">
+					<div class="col-3 ">
+						<label for="inputFechaEntrega" class="form-label">Fecha Entrega<span
+								class="text-danger">*</span></label>
+						<input th:field="*{fechaEntrega}" type="date" min="1" class="form-control"
+							id="inputFechaEntrega" required placeholder="Ingrese el precio del producto.">
 					</div>
-					<div>
-						<label class="label" for="fechaRecogida">Fecha Recogida</label>
-						<input type="date" id="fechaRecogida" th:field="*{fechaRecogida}">
+					<div class="col-3 ">
+						<label for="inputFechaRecogida" class="form-label">Fecha Recogida<span
+								class="text-danger">*</span></label>
+						<input th:field="*{fechaRecogida}" type="date" min="1" class="form-control"
+							id="inputFechaRecogida" required placeholder="Ingrese el precio del producto.">
 					</div>
 				</div>
-				<button class="btn btn-primary" type="submit">Guardar Venta</button>
-			</form>
-		</div> 
-
-		<div class="dropdown">
-					<button class="btn btn-primary dropdown-toggle mt-3" type="button" data-bs-toggle="dropdown"
-						aria-expanded="false">
-						Añadir Prenda
-					</button>
-					<ul class="dropdown-menu">
-						<li th:each="categoria : ${categoria}"><a class="dropdown-item dr" data-bs-target="#exampleModal"
-								th:attr="data-bs-target= '#exampleModal' + ${categoria.id}" th:data-id="${categoria.id}"
-								data-bs-toggle="modal" th:text="${categoria.nombre}"></a></li>
-					</ul>
-				</div>
 
 
-				<div th:each="categoria:${categoria}">
+				<div id="lineasVenta">
+					<div th:each="linea, iterStat : ${venta.lineasVenta}" class="row mb-3">
+						<div class="col-3">
+							<select class="form-select" th:field="*{lineasVenta[__${iterStat.index}__].categoria.id}">
+								<option th:each="categoria : ${categoria}"
+										th:value="${categoria.id}"
+										th:text="${categoria.nombre}"
+										th:selected="${categoria.id == linea.categoria.id}">
+								</option>
+							</select>
+						</div>
 
+						<div class="col-3">
+							<select class="form-select" th:field="*{lineasVenta[__${iterStat.index}__].prenda.id}">
+								<option th:each="prenda : ${prenda}"
+										th:value="${prenda.id}"
+										th:text="${prenda.nombre}"
+										th:selected="${prenda.id == linea.prenda.id}">
+								</option>
+							</select>
+						</div>
 
-					<div class="modal fade" id="exampleModal" th:attr="id='exampleModal' + ${categoria.id}" tabindex="-1"
-						aria-labelledby="exampleModalLabel" aria-hidden="true">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h1 class="modal-title fs-5" id="exampleModalLabel " th:text="${categoria.nombre}">New
-										message</h1>
-									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-								</div>
-								<div class="modal-body">
-									<form th:method="POST" th:action="@{/anadirLineaVenta/submit}">
-										<div class="dropdown">
-											<button class="btn btn-primary dropdown-toggle" type="button"
-												data-bs-toggle="dropdown" aria-expanded="false">
-												Mostrar Prendas
-											</button>
-											<ul class="dropdown-menu">
-												<li th:each="prenda : ${categoria.listaPrendas}">
-													<div class="dropdown-item dr form-check">
-														<input type="hidden" name="prendaId" th:value="${prenda.id}">
-														<input type="hidden" name="categoriaId" th:value="${categoria.id}">
-														<label th:text="${prenda.nombre}"></label>
-														<input type="checkbox" class="prenda-checkbox"
-															th:data-nombre="${prenda.nombre}"
-															th:data-precio="${categoria.precioServicio}"
-															th:data-categoriaid="${categoria.id}">
-													</div>
-												</li>
-											</ul>
-										</div>
-										<table class="table table-bordered mt-3">
-											<thead>
-												<tr class="mt-3">
-													<th>Prenda</th>
-													<th>Precio (Categoría)</th>
-													<th>Cantidad</th>
-												</tr>
-											</thead>
-											<tbody th:attr="id='tabla-prendas-seleccionadas-' + ${categoria.id}">
-											</tbody>
-										</table>
-										<div class="modal-footer">
-											<button type="button" class="btn btn-secondary"
-												data-bs-dismiss="modal">Close</button>
-											<button type="submit" class="btn btn-primary">Send message</button>
-										</div>
-									</form>
-								</div>
+						<div class="col-3">
+							<input type="number" class="form-control"
+								   th:field="*{lineasVenta[__${iterStat.index}__].cantidad}" min="1"/>
+						</div>
 
-							</div>
+						<div class="col-3">
+							<input type="number" class="form-control"
+								   th:field="*{lineasVenta[__${iterStat.index}__].subtotal}" readonly/>
 						</div>
 					</div>
 				</div>
 
+				<div>
+					<button type="submit" class="btn btn-dark">Guardar Venta</button>
+				</div>
+			</form>
+			<button class="btn btn-primary" id="btnAnadirLinea">Añadir Linea</button>
 
+		</div>
 
 	</main>
 
@@ -195,44 +177,144 @@
 			</div>
 		</div>
 	</footer>
+
 </body>
 
-<script>
+<script th:inline="javascript">
+
+	let lineasExistentes = [[${venta.lineasVenta}]];
+	lineasExistentes.forEach(function (linea) {
+		generarLineasVentaExistente(linea);
+	});
+	let categorias = [[${categoria}]];
+	let prendas = [[${prenda}]];
+	let indiceLineaVenta = 0;
+	console.log("Categorías cargadas:", categorias);
+	console.log("Prendas:", prendas)
+	console.log("Lineas",lineasExistentes);
 
 	document.addEventListener('DOMContentLoaded', function () {
-		const checkboxes = document.querySelectorAll('.prenda-checkbox');
-
-		checkboxes.forEach(cb => {
-			cb.addEventListener('change', function () {
-				const nombre = this.dataset.nombre;
-				const precio = this.dataset.precio;
-				const categoriaId = this.dataset.categoriaid;
-				const prendaId = this.previousElementSibling.value; // obtener prendaId desde input hidden
-
-				const tablaBody = document.getElementById('tabla-prendas-seleccionadas-' + categoriaId);
-
-				if (this.checked) {
-					const fila = document.createElement('tr');
-					fila.setAttribute('data-nombre', nombre);
-
-					fila.innerHTML = `
-	          <td>${nombre}
-	            <input type="hidden" name="prendaId" value="${prendaId}">
-	            <input type="hidden" name="categoriaId" value="${categoriaId}">
-	          </td>
-	          <td>${precio} €</td>
-			  <td class="px-0"><input type="number" name="cantidad"> </td>
-	        `;
-					tablaBody.appendChild(fila);
-				} else {
-					const fila = tablaBody.querySelector(`tr[data-nombre="${nombre}"]`);
-					if (fila) {
-						fila.remove();
-					}
-				}
-			});
+		console.log("DOM completamente cargado, evento añadido");
+		document.getElementById('btnAnadirLinea').addEventListener('click', function () {
+			console.log("Boton Pulsado")
+			generarLineasVenta();
 		});
-	});
+	})
+
+	function generarLineasVenta() {
+		console.log("Generando línea de venta...");
+		const container = document.getElementById('lineasVenta')
+		const fila = document.createElement('div');
+		fila.classList.add('row', 'mb-3')
+
+		let selectCategoria = document.createElement('select');
+		selectCategoria.classList.add('form-select');
+		selectCategoria.name = `lineasVenta[${indiceLineaVenta}].categoria.id`;
+
+		let defaultOption = document.createElement('option');
+		defaultOption.text = 'Seleccione Categoria'
+		defaultOption.value = "";
+		selectCategoria.appendChild(defaultOption);
+
+		let selectPrenda = document.createElement('select');
+		selectPrenda.classList.add('form-select');
+		selectPrenda.name = `lineasVenta[${indiceLineaVenta}].prenda.id`
+
+		let defaultPrenda = document.createElement('option')
+		defaultPrenda.text = 'Seleccione Prenda'
+		defaultPrenda.value = ""
+		selectPrenda.appendChild(defaultPrenda);
+
+		let inputNumero = document.createElement('input')
+		inputNumero.classList.add('form-control')
+		inputNumero.type = 'number';
+		inputNumero.min = '1';
+		inputNumero.name = `lineasVenta[${indiceLineaVenta}].cantidad`;
+
+
+
+		categorias.forEach(function (cat) {
+			let option = document.createElement('option')
+			option.value = cat.id;
+			option.text = cat.nombre;
+			selectCategoria.appendChild(option);
+		})
+
+
+		let precio = document.createElement('input')
+		precio.classList.add('form-control')
+		precio.value = ' ';
+		precio.name = `lineasVenta[${indiceLineaVenta}].subtotal`
+		precio.readOnly = true;
+		precio.type = 'number'
+
+		selectCategoria.addEventListener('change', function () {
+			const categoriaSeleccionadaId = this.value;
+			console.log(categoriaSeleccionadaId);
+
+			selectPrenda.innerHTML = '';
+			selectPrenda.appendChild(defaultPrenda);
+			prendas.forEach(function (prenda) {
+				console.log(prenda.categoria);
+				if (prenda.categoria.id == categoriaSeleccionadaId) {
+
+					let option = document.createElement('option');
+					option.value = prenda.id;
+					option.text = prenda.nombre;
+					selectPrenda.appendChild(option);
+
+
+
+				}
+
+			});
+			const categoriaSeleccionada = categorias.find(cat => cat.id == categoriaSeleccionadaId);
+			if (categoriaSeleccionada) {
+				precio.setAttribute('data-precio-unitario', categoriaSeleccionada.precioServicio);
+				actualizarSubtotal();
+			}
+
+			console.log("Cat seleccionada: ", categoriaSeleccionada);
+
+		});
+
+		inputNumero.addEventListener('input', actualizarSubtotal);
+
+		function actualizarSubtotal() {
+			const cantidad = parseInt(inputNumero.value) || 0;
+			const precioUnitario = parseFloat(precio.getAttribute('data-precio-unitario')) || 0;
+			const subtotal = cantidad * precioUnitario;
+			precio.value = subtotal.toFixed(2);
+		}
+
+
+		const colCategoria = document.createElement('div');
+		colCategoria.classList.add('col-3');
+		colCategoria.appendChild(selectCategoria);
+
+		const colPrenda = document.createElement('div');
+		colPrenda.classList.add('col-3');
+		colPrenda.appendChild(selectPrenda);
+
+		const colCantidad = document.createElement('div');
+		colCantidad.classList.add('col-3');
+		colCantidad.appendChild(inputNumero);
+
+		const colSubtotal = document.createElement('div');
+		colSubtotal.classList.add('col-3');
+		colSubtotal.appendChild(precio);
+
+		fila.appendChild(colCategoria);
+		fila.appendChild(colPrenda);
+		fila.appendChild(colCantidad);
+		fila.appendChild(colSubtotal);
+		container.appendChild(fila);
+		/*console.log("Prendas recibidas:");
+		prendas.forEach(p => {
+			console.log(p.nombre, p.categoria.id, p.descripcion);
+		});*/
+		indiceLineaVenta++;
+	}
 
 </script>
 

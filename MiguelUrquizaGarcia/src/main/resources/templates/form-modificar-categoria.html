@@ -64,7 +64,11 @@
 							<input th:field="*{nombre}" type="text" class="form-control" id="inputNombre" required
 								placeholder="Introduzca el nombre." maxlength="20" pattern="[A-Za-z_ ]*">
 						</div>
-
+						<div class="mb-3">
+							<label for="inputDescripcion" class="form-label">Precio<span
+																class="text-danger">*</span></label>
+							<input id="inputDescripcion" class="form-control" th:field="*{precioServicio}">
+						</div>
 						<div class="mb-3 ">
 							<label for="inputDescripcion" class="form-label">Descripción<span
 									class="text-danger">*</span></label>
