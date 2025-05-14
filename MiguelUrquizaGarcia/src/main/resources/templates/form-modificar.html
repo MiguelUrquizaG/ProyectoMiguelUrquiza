@@ -41,13 +41,13 @@
 			</div>
 		</nav>
 		<span class="h2 container-content d-block text-center bg-primary text-white py-2">Modificar Prenda
-						</span>
+		</span>
 	</header>
 	<main class="flex-fill container my-4">
-	
+
 		<div class="container">
 
-			
+
 			<div class="row justify-content-center mt-3 mb-5">
 				<div class="col-12  col-lg-4">
 
@@ -86,6 +86,11 @@
 							<label for="inputImage" class="form-label">Url Imagen<span
 									class="text-danger">*</span></label>
 							<input th:field="*{urlImagen}" type="text" class="form-control" id="inputImage" required>
+						</div>
+						<div class="mb-3  form-check">
+							<label for="inputCheck" class="form-check-label">Top Venta<span
+									class="text-danger">*</span></label>
+							<input th:field="*{topVenta}" type="checkbox" class="form-check-input" id="inputCheck">
 						</div>
 						<div>
 							<button type="submit" class="btn btn-dark">Editar Prenda</button>
