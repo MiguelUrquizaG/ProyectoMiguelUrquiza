@@ -25,6 +25,7 @@ public class Prenda {
 	private String nombre;
 	private String descripcion;
 	private String urlImagen;
+	private boolean topVenta;
 	
 	@ManyToOne
 	@JsonIgnoreProperties("listaPrendas")

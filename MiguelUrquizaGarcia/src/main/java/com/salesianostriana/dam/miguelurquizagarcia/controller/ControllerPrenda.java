@@ -1,5 +1,7 @@
 package com.salesianostriana.dam.miguelurquizagarcia.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,7 +25,7 @@ public class ControllerPrenda {
 
     private final PrendaRepository prendaRepository;
 	
-   
+   @Autowired
 	private Services service;
 	 @Autowired
 	private ServiceCategorias categoriaService;
@@ -36,9 +38,16 @@ public class ControllerPrenda {
 	
 	@GetMapping("/")
 	public String main(Model model) {
-		model.addAttribute("prenda",service.findAll());
+		
+		List<Prenda>lista = service.findAll();
+		
+		lista = service.ordenarTopVentas(lista);
+		
+		model.addAttribute("prenda",lista);
 		model.addAttribute("nuevaprenda", new Prenda());
 		model.addAttribute("categoria", categoriaService.findAll());
+		
+		
 //		for(Prenda p : service.getList()) {
 //			System.out.println(p.toString());
 //		}

@@ -69,6 +69,9 @@
 
 			<div class="row mt-3">
 				<div class="card col-12 col-xl-6" style="width: 24rem;" th:each="prenda : ${prenda}">
+					<div th:if="${prenda.topVenta}" class="badge bg-warning text-dark position-absolute top-0 start-0 m-3">
+					               Top Venta
+					           </div>
 					<img th:src="@{${prenda.urlImagen}}" class="card-img-top h-50" alt="pantalon">
 					<div class="card-body">
 						<h5 class="card-title" th:text="${prenda.nombre}"></h5>
@@ -121,9 +124,9 @@
 
 		<div class="modal fade" id="anadirPrenda" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
-				<div class="modal-content">
+				<div class="modal-content bg-primary text-white">
 					<div class="modal-header">
-						<h1 class="modal-title fs-5" id="exampleModalLabel">Añadir Prenda</h1>
+						<h1 class="modal-title fs-5 text-white" id="exampleModalLabel">Añadir Prenda</h1>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
@@ -151,6 +154,12 @@
 										class="text-danger">*</span></label>
 								<input th:field="*{urlImagen}" type="text" class="form-control" id="inputImage"
 									required>
+							</div>
+							<div class="mb-3  form-check">
+								<label for="inputCheck" class="form-check-label">Top Venta<span
+										class="text-danger">*</span></label>
+								<input th:field="*{topVenta}" type="checkbox" class="form-check-input" id="inputCheck"
+									>
 							</div>
 							<button type="submit" class="btn btn-primary">Crear Prenda</button>
 							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
