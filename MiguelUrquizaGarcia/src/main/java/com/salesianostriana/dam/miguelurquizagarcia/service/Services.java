@@ -2,6 +2,7 @@ package com.salesianostriana.dam.miguelurquizagarcia.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.salesianostriana.dam.miguelurquizagarcia.model.Prenda;
@@ -11,7 +12,8 @@ import com.salesianostriana.dam.miguelurquizagarcia.repository.PrendaRepository;
 
 public class Services extends BaseService<Prenda, Long, PrendaRepository>{
 	
-
+@Autowired
+PrendaRepository repoPrenda;
 
 //	private List<Prenda>list = new ArrayList<Prenda>();
 //	private long id = 0;
@@ -47,6 +49,10 @@ public class Services extends BaseService<Prenda, Long, PrendaRepository>{
 	public List<Prenda> ordenarTopVentas(List<Prenda> lista) {
 		lista.sort((p1,p2)-> Boolean.compare(p2.isTopVenta(), p1.isTopVenta()));
 		return lista;
+	}
+	
+	public List<Prenda> buscarPorNombre(String nombre){
+		return repoPrenda.findByNombreContainingIgnoreCase(nombre);
 	}
 	
 }

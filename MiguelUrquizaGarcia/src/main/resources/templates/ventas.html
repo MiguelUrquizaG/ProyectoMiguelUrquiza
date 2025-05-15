@@ -54,7 +54,7 @@
 			<div class="card" th:each="venta : ${ventas}">
 				<div class="card-body">
 					<h5 class="card-title" th:text="${venta.nombreCliente}"></h5>
-					<!--<a class="btn btn-primary" th:href="@{/modificarVenta/{id} (id=${venta.id})}" >Modificar</a>-->
+					<a class="btn btn-primary" th:href="@{/modificarVenta/{id} (id=${venta.id})}" >Modificar</a>
 					<a class="btn btn-primary" th:attr="data-bs-target='#modalEliminar-' + ${venta.id}"
 						th:data-id="${venta.id}" data-bs-toggle="modal" data-bs-target="#modalEliminar" role="button">Eliminar</a>
 				</div>
@@ -92,7 +92,7 @@
 
 	</main>
 	<footer class=" text-center bg-primary text-lg-start text-white mt-0">
-
+		
 		<div>
 			<div class="container text-center text-md-start">
 				<div class="row">

@@ -182,16 +182,16 @@
 
 <script th:inline="javascript">
 
-	let lineasExistentes = [[${venta.lineasVenta}]];
-	lineasExistentes.forEach(function (linea) {
-		generarLineasVentaExistente(linea);
+	let venta = [[${venta}]];
+	venta.lineasVenta.forEach(function (linea) {
+		generarLineasVenta(linea);
 	});
 	let categorias = [[${categoria}]];
 	let prendas = [[${prenda}]];
 	let indiceLineaVenta = 0;
 	console.log("Categorías cargadas:", categorias);
 	console.log("Prendas:", prendas)
-	console.log("Lineas",lineasExistentes);
+	console.log("Lineas",venta.lineasVenta);
 
 	document.addEventListener('DOMContentLoaded', function () {
 		console.log("DOM completamente cargado, evento añadido");

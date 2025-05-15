@@ -1,10 +1,11 @@
 package com.salesianostriana.dam.miguelurquizagarcia.service;
 
-import java.util.OptionalDouble;
+import java.util.List;
 
 import org.springframework.stereotype.Service;
 
 import com.salesianostriana.dam.miguelurquizagarcia.model.LineaVenta;
+import com.salesianostriana.dam.miguelurquizagarcia.model.Prenda;
 import com.salesianostriana.dam.miguelurquizagarcia.model.Venta;
 import com.salesianostriana.dam.miguelurquizagarcia.repository.VentaRepository;
 @Service
@@ -18,6 +19,15 @@ public class ServiceVenta extends BaseService<Venta, Long, VentaRepository>{
 		}
 		nuevaVenta.setPrecioTotal(calcularPrecioTotalVenta(nuevaVenta));
 		save(nuevaVenta);
+	}
+	
+	public void editVenta(Venta nuevaVenta) {
+		for(LineaVenta linea: nuevaVenta.getLineasVenta()) {
+			linea.setVenta(nuevaVenta);
+			System.out.println(linea.getSubtotal());
+		}
+		nuevaVenta.setPrecioTotal(calcularPrecioTotalVenta(nuevaVenta));
+		edit(nuevaVenta);
 	}
 	
 	public double calcularPrecioTotalVenta(Venta v) {
@@ -34,6 +44,10 @@ public class ServiceVenta extends BaseService<Venta, Long, VentaRepository>{
 		}
 		
 		return total;
+	}
+	
+	public List<Prenda>buscarPorNombre(String nombre){
+		return buscarPorNombre(nombre);
 	}
 	
 }

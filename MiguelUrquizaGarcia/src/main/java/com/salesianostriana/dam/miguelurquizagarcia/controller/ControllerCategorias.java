@@ -1,5 +1,7 @@
 package com.salesianostriana.dam.miguelurquizagarcia.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -67,6 +69,16 @@ public class ControllerCategorias {
 		Categoria c = categoriaServicios.findById(id);
 		model.addAttribute("prendasCategoria", c.getListaPrendas());
 		return "mostrar-categoria";
+	}
+	
+	@GetMapping("/buscarCategoria")
+	public String buscarCategoria(@RequestParam String query, Model model) {
+		List<Categoria>lista = categoriaServicios.findAll();
+		lista =  categoriaServicios.buscarPorNombre(query);
+
+		model.addAttribute("categoria", lista);
+		model.addAttribute("nuevacategoria", new Categoria());
+		return "listaCategorias";
 	}
 	
 }

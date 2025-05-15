@@ -35,7 +35,7 @@ public class LineaVenta {
 	
 	@ManyToOne
 	@JoinColumn(foreignKey = @ForeignKey(name="fk_prenda"))
-	 @JsonBackReference
+	@JsonBackReference
 	private Prenda prenda;
 	
 	private double cantidad;
