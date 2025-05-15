@@ -71,7 +71,7 @@ public class ControllerVenta {
 			Categoria categoriaCompleta = serviceCategoria.findById(linea.getCategoria().getId());
 			linea.setCategoria(categoriaCompleta);
 		 });
-		
+		 v.setPrecioTotal(servicioVentas.calcularPrecioDescuento(v));
 		servicioVentas.saveVenta(v);
 		
 		return "ticket";
