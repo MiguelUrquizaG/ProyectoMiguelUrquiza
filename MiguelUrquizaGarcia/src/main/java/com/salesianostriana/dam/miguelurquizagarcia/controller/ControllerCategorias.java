@@ -24,7 +24,10 @@ public class ControllerCategorias {
 	@GetMapping("/categorias")
 	public String showCategorias(Model model) {
 		
-		model.addAttribute("categoria", categoriaServicios.findAll());
+		List<Categoria> lista = categoriaServicios.findAll();
+		lista = categoriaServicios.ordenarTopVentas(lista);
+		
+		model.addAttribute("categoria",lista);
 		model.addAttribute("nuevacategoria", new Categoria());
 		
 		return "listaCategorias";

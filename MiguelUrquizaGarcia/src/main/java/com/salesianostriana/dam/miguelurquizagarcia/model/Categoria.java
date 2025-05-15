@@ -27,6 +27,7 @@ public class Categoria {
 	private String descripcion;
 	private double precioServicio;
 	private boolean topVenta;
+	private double descuento;
 	
 	public Categoria (Long id, String nombre, String descripcion) {
 		this.id = id;

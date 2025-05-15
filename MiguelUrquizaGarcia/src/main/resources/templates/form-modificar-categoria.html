@@ -65,9 +65,8 @@
 								placeholder="Introduzca el nombre." maxlength="20" pattern="[A-Za-z_ ]*">
 						</div>
 						<div class="mb-3">
-							<label for="inputDescripcion" class="form-label">Precio<span
-																class="text-danger">*</span></label>
-							<input id="inputDescripcion" class="form-control" th:field="*{precioServicio}">
+							<label for="inputPrecio" class="form-label">Precio<span class="text-danger">*</span></label>
+							<input id="inputPrecio" class="form-control" th:field="*{precioServicio}">
 						</div>
 						<div class="mb-3 ">
 							<label for="inputDescripcion" class="form-label">Descripción<span
@@ -75,6 +74,17 @@
 							<textarea th:field="*{descripcion}" class="form-control" id="inputDescripcion"
 								required></textarea>
 						</div>
+						<div class="mb-3  form-check">
+							<label for="inputCheck" class="form-check-label">Top Venta<span
+									class="text-danger">*</span></label>
+							<input th:field="*{topVenta}" type="checkbox" class="form-check-input" id="inputCheck">
+						</div>
+
+						<div class="mb-3">
+							<label for="inputDescuento" class="form-label">Descuento<span class="text-danger">*</span></label>
+							<input id="inputDescuento" class="form-control" th:field="*{descuento}">
+						</div>
+
 						<div>
 							<button type="submit" class="btn btn-dark">Editar Categoria</button>
 						</div>

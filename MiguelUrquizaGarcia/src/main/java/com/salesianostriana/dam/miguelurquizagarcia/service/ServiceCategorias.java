@@ -24,13 +24,51 @@ public class ServiceCategorias extends BaseService<Categoria, Long, CategoriaRep
 		}
 	}
 	
+	public void agregar (Categoria c) {
+		calcularDescuento(c);
+		repoCategoria.save(c);
+	}
+	
+	public void editar(Categoria c) {
+		
+		reestablecerPrecio(c);
+		calcularDescuento(c);
+		
+		repoCategoria.save(c);	
+	}
+	
 	public List<Categoria> ordenarTopVentas(List<Categoria> lista) {
-		lista.sort((p1,p2)-> Boolean.compare(p2.isTopVenta(), p1.isTopVenta()));
-		return lista;
+		return repoCategoria.findAllByOrderByTopVentaDesc();
 	}
 	
 	public List<Categoria> buscarPorNombre(String nombre){
-		return repoCategoria.findByNombreContainingIgnoreCase(nombre);
+		
+		List<Categoria> lista = repoCategoria.findByNombreContainingIgnoreCase(nombre);
+		return ordenarTopVentas(lista);
+	}
+	
+	public double calcularDescuento(Categoria c) {
+		
+		if(c.getDescuento()>0) {
+			c.setPrecioServicio(c.getPrecioServicio()*c.getDescuento()/100);
+		}
+		
+		return c.getPrecioServicio();
+		
+
+	}
+	
+	public double reestablecerPrecio(Categoria c) {
+		Categoria categoria = repoCategoria.findById(c.getId()).orElse(null);
+		double precio = categoria.getPrecioServicio();
+		if(c.getDescuento()!=categoria.getDescuento()&&categoria.getDescuento()!=0&&c.getPrecioServicio()==categoria.getPrecioServicio()) {
+			precio=(c.getPrecioServicio()*100/categoria.getDescuento());
+			
+		}else if(c.getPrecioServicio()!=categoria.getPrecioServicio()) {
+			precio = c.getPrecioServicio();
+		}
+		
+		return precio;
 	}
 	
 }

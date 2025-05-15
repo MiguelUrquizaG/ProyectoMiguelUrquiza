@@ -10,4 +10,6 @@ import com.salesianostriana.dam.miguelurquizagarcia.model.Prenda;
 public interface CategoriaRepository extends JpaRepository<Categoria, Long> {
 
 	public List<Categoria> findByNombreContainingIgnoreCase(String nombre);
+	public List<Categoria> findAllByOrderByTopVentaDesc();
+
 }

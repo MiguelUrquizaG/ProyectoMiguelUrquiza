@@ -56,17 +56,17 @@
 
 			</div>
 		</div>
-		
+
 		<div class="container my-3 w-25 ms-0">
-				<form method="get" th:action="@{/buscarCategoria}" class="d-flex flex-column">
-					<label class="col-form-label">Buscar Por Nombre</label>
-					<input type="text" name="query" class="form-control ">
-					<button type="submit" class="btn btn-primary  mt-2">Buscar</button>
+			<form method="get" th:action="@{/buscarCategoria}" class="d-flex flex-column">
+				<label class="col-form-label">Buscar Por Nombre</label>
+				<input type="text" name="query" class="form-control ">
+				<button type="submit" class="btn btn-primary  mt-2">Buscar</button>
 
-				</form>
+			</form>
 
-			</div>
-		
+		</div>
+
 		<div th:if="${#lists.isEmpty(categoria)}" class="mt-3">
 			<p class="text-center text-dark display-6">
 				No hay categorias cargadas.
@@ -168,6 +168,12 @@
 								<label for="inputCheck" class="form-check-label">Top Venta<span
 										class="text-danger">*</span></label>
 								<input th:field="*{topVenta}" type="checkbox" class="form-check-input" id="inputCheck">
+							</div>
+
+							<div class="mb-3">
+								<label for="inputDescuento" class="form-label">Descuento<span
+										class="text-danger">*</span></label>
+								<input id="inputDescuento" required class="form-control" th:field="*{descuento}">
 							</div>
 
 							<button type="submit" class="btn btn-primary">Crear Categoría</button>
