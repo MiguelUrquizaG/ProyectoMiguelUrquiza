@@ -71,4 +71,6 @@ public class ServiceCategorias extends BaseService<Categoria, Long, CategoriaRep
 		return precio;
 	}
 	
+	
+	
 }

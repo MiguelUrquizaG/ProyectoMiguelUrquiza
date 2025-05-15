@@ -51,75 +51,56 @@
 		<div class="container">
 
 
+			<div class="row justify-content-center mt-3 mb-5">
+			           <div class="col-3">
+			               <label class="form-label">Nombre Cliente</label>
+			               <input type="text" class="form-control" th:value="${venta.nombreCliente}" readonly>
+			           </div>
+			           <div class="col-3">
+			               <label class="form-label">Fecha Entrega</label>
+			               <input type="date" class="form-control" th:value="${venta.fechaEntrega}" readonly>
+			           </div>
+			           <div class="col-3">
+			               <label class="form-label">Fecha Recogida</label>
+			               <input type="date" class="form-control" th:value="${venta.fechaRecogida}" readonly>
+			           </div>
+			       </div>
 
+			       <!-- Mostrar líneas de venta -->
+			       <div th:each="linea : ${venta.lineasVenta}" class="row mb-3">
+			           <div class="col-auto">
+			               <label class="form-label">Categoría</label>
+			               <input type="text" class="form-control" th:value="${linea.categoria.nombre}" readonly>
+			           </div>
+			           <div class="col-auto">
+			               <label class="form-label">Prenda</label>
+			               <input type="text" class="form-control" th:value="${linea.prenda.nombre}" readonly>
+			           </div>
+			           <div class="col-auto">
+			               <label class="form-label">Cantidad</label>
+			               <input type="number" class="form-control" th:value="${linea.cantidad}" readonly>
+			           </div>
+			           <div class="col-auto">
+			               <label class="form-label">Subtotal</label>
+			               <input type="text" class="form-control" th:value="${linea.subtotal}" readonly>
+			           </div>
+			       </div>
 
-
-
-
-			<form method="POST" action="#" th:action="@{/modificarVenta/submit}" th:object="${venta}" class="w-100"
-				name="inicioSesion">
-				<input th:field="*{id}" hidden>
-				<div class="row justify-content-center mt-3 mb-5">
-					<div class="col-3  col-lg-3 ">
-						<label for="inputNombre" class="form-label">Nombre Prenda<span
-								class="text-danger">*</span></label>
-						<input th:field="*{nombreCliente}" type="text" class="form-control" id="inputNombre" required
-							placeholder="Introduzca el nombre." maxlength="9" pattern="[A-Za-z_ ]*">
-					</div>
-					<div class="col-3 ">
-						<label for="inputFechaEntrega" class="form-label">Fecha Entrega<span
-								class="text-danger">*</span></label>
-						<input th:field="*{fechaEntrega}" type="date" min="1" class="form-control"
-							id="inputFechaEntrega" required placeholder="Ingrese el precio del producto.">
-					</div>
-					<div class="col-3 ">
-						<label for="inputFechaRecogida" class="form-label">Fecha Recogida<span
-								class="text-danger">*</span></label>
-						<input th:field="*{fechaRecogida}" type="date" min="1" class="form-control"
-							id="inputFechaRecogida" required placeholder="Ingrese el precio del producto.">
-					</div>
-				</div>
-
-
-				<div id="lineasVenta">
-					<div th:each="linea, iterStat : ${venta.lineasVenta}" class="row mb-3">
-						<div class="col-3">
-							<select class="form-select" th:field="*{lineasVenta[__${iterStat.index}__].categoria.id}">
-								<option th:each="categoria : ${categoria}"
-										th:value="${categoria.id}"
-										th:text="${categoria.nombre}"
-										th:selected="${categoria.id == linea.categoria.id}">
-								</option>
-							</select>
-						</div>
-
-						<div class="col-3">
-							<select class="form-select" th:field="*{lineasVenta[__${iterStat.index}__].prenda.id}">
-								<option th:each="prenda : ${prenda}"
-										th:value="${prenda.id}"
-										th:text="${prenda.nombre}"
-										th:selected="${prenda.id == linea.prenda.id}">
-								</option>
-							</select>
-						</div>
-
-						<div class="col-3">
-							<input type="number" class="form-control"
-								   th:field="*{lineasVenta[__${iterStat.index}__].cantidad}" min="1"/>
-						</div>
-
-						<div class="col-3">
-							<input type="number" class="form-control"
-								   th:field="*{lineasVenta[__${iterStat.index}__].subtotal}" readonly/>
-						</div>
+			       <div class="row mt-5 mb-3 justify-content-end">
+			           <div class="col-3">
+			               <label class="form-label">Precio Total</label>
+			               <input type="text" class="form-control" th:value="${venta.precioTotal}" readonly>
+			           </div>
+			       </div>
 					</div>
 				</div>
-
-				<div>
-					<button type="submit" class="btn btn-dark">Guardar Venta</button>
+			
 				</div>
+
 			</form>
-			<button class="btn btn-primary" id="btnAnadirLinea">Añadir Linea</button>
+			<div>
+				<a th:href="@{/ventas}" class="btn btn-dark">Volver</a>
+			</div>
 
 		</div>
 
@@ -191,7 +172,7 @@
 	let indiceLineaVenta = 0;
 	console.log("Categorías cargadas:", categorias);
 	console.log("Prendas:", prendas)
-	console.log("Lineas",venta.lineasVenta);
+	console.log("Lineas", venta.lineasVenta);
 
 	document.addEventListener('DOMContentLoaded', function () {
 		console.log("DOM completamente cargado, evento añadido");

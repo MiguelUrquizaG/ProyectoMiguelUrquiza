@@ -50,12 +50,6 @@
 
 		<div class="container">
 
-
-
-
-
-
-
 			<form method="POST" action="#" th:action="@{/anadirVenta/submit}" th:object="${nuevaVenta}" class="w-100"
 				name="inicioSesion">
 				<div class="row justify-content-center mt-3 mb-5">
@@ -82,6 +76,13 @@
 
 				<div id="lineasVenta">
 
+				</div>
+				<div class="row mt-5 mb-3 justify-content-end">
+					<div class="col-3">
+						<label for="precioTotalFinal" class="form-label">Precio Total</label>
+						<input th:field="*{precioTotal}" type="number" id="precioTotalFinal" class="form-control"
+							readonly>
+					</div>
 				</div>
 
 				<div>
@@ -171,35 +172,51 @@
 		const container = document.getElementById('lineasVenta')
 		const fila = document.createElement('div');
 		fila.classList.add('row', 'mb-3')
-		fila.setAttribute('data-linea-id',indiceLineaVenta);
+		fila.setAttribute('data-linea-id', indiceLineaVenta);
+
 
 		let selectCategoria = document.createElement('select');
 		selectCategoria.classList.add('form-select');
 		selectCategoria.name = `lineasVenta[${indiceLineaVenta}].categoria.id`;
-		selectCategoria.required=true;
+		selectCategoria.required = true;
 
 		let defaultOption = document.createElement('option');
 		defaultOption.text = 'Seleccione Categoria'
 		defaultOption.value = "";
 		selectCategoria.appendChild(defaultOption);
 
+
+		let labelCategoria = document.createElement('label')
+		labelCategoria.setAttribute('for', selectCategoria.id)
+		labelCategoria.textContent = 'Categoria'
+		labelCategoria.classList.add('form-label')
+
 		let selectPrenda = document.createElement('select');
 		selectPrenda.classList.add('form-select');
-		selectPrenda.name = `lineasVenta[${indiceLineaVenta}].prenda.id` 
-		selectPrenda.required=true;
+		selectPrenda.name = `lineasVenta[${indiceLineaVenta}].prenda.id`
+		selectPrenda.required = true;
 
 		let defaultPrenda = document.createElement('option')
 		defaultPrenda.text = 'Seleccione Prenda'
 		defaultPrenda.value = ""
 		selectPrenda.appendChild(defaultPrenda);
 
+		let labelPrenda = document.createElement('label')
+		labelPrenda.setAttribute('for', selectPrenda.id)
+		labelPrenda.textContent = 'Prenda'
+		labelPrenda.classList.add('form-label')
+
 		let inputNumero = document.createElement('input')
 		inputNumero.classList.add('form-control')
 		inputNumero.type = 'number';
 		inputNumero.min = '1';
-		inputNumero.required=true;
+		inputNumero.required = true;
 		inputNumero.name = `lineasVenta[${indiceLineaVenta}].cantidad`;
 
+		let labelCantidad = document.createElement('label')
+		labelCantidad.setAttribute('for', inputNumero.id)
+		labelCantidad.textContent = 'Servicio'
+		labelCantidad.classList.add('form-label')
 
 
 		categorias.forEach(function (cat) {
@@ -212,22 +229,28 @@
 
 		let precio = document.createElement('input')
 		precio.classList.add('form-control')
-		precio.value=' ';
-		precio.name=`lineasVenta[${indiceLineaVenta}].subtotal`
-		precio.readOnly=true;
+		precio.value = ' ';
+		precio.name = `lineasVenta[${indiceLineaVenta}].subtotal`
+		precio.readOnly = true;
 		precio.type = 'number'
-		
+
+		let labelSubtotal = document.createElement('label')
+		labelSubtotal.setAttribute('for', precio.id)
+		labelSubtotal.textContent = 'Subtotal'
+		labelSubtotal.classList.add('form-label')
+
 		let btnEliminar = document.createElement('button');
-		btnEliminar.classList.add('btn','btn-danger','btn-sm')
-		btnEliminar.textContent='Eliminar'
-		
-		if(indiceLineaVenta === 0){
-			btnEliminar.disabled=true;
+		btnEliminar.classList.add('btn', 'btn-danger', 'btn-sm')
+		btnEliminar.textContent = 'Eliminar'
+
+		if (indiceLineaVenta === 0) {
+			btnEliminar.disabled = true;
 			btnEliminar.classList.add('disabled');
 		}
-		
-		btnEliminar.addEventListener('click',function(){
+
+		btnEliminar.addEventListener('click', function () {
 			container.removeChild(fila);
+			calcularTotal();
 		})
 
 		selectCategoria.addEventListener('change', function () {
@@ -249,54 +272,111 @@
 
 				}
 
-				});
-				const categoriaSeleccionada = categorias.find(cat => cat.id == categoriaSeleccionadaId);
-				if(categoriaSeleccionada){
-					precio.setAttribute('data-precio-unitario',categoriaSeleccionada.precioServicio);
-					actualizarSubtotal();
-				}
-				
-				console.log("Cat seleccionada: ",categoriaSeleccionada);
-				
+			});
+			const categoriaSeleccionada = categorias.find(cat => cat.id == categoriaSeleccionadaId);
+			if (categoriaSeleccionada) {
+				precio.setAttribute('data-precio-unitario', categoriaSeleccionada.precioServicio);
+				actualizarSubtotal();
+			}
+
+			console.log("Cat seleccionada: ", categoriaSeleccionada);
+
 		});
-		
+
 		inputNumero.addEventListener('input', actualizarSubtotal);
-		
-		function actualizarSubtotal(){
-			const cantidad = parseInt(inputNumero.value)||0;
+
+		function actualizarSubtotal() {
+			const cantidad = parseInt(inputNumero.value) || 0;
 			const precioUnitario = parseFloat(precio.getAttribute('data-precio-unitario')) || 0;
 			const subtotal = cantidad * precioUnitario;
-			precio.value=subtotal.toFixed(2);
+			precio.value = subtotal.toFixed(2);
+			calcularTotal();
+		}
+		async function actualizarTotalConFetch() {
+					// Construir objeto Venta con lineasVenta según lo que hay en el DOM
+					let venta = { lineasVenta: [] };
+					const filas = container.querySelectorAll('div[data-linea-id]');
+
+					filas.forEach(fila => {
+						const idLinea = fila.getAttribute('data-linea-id');
+						const categoriaId = fila.querySelector(`select[name="lineasVenta[${idLinea}].categoria.id"]`).value;
+						const prendaId = fila.querySelector(`select[name="lineasVenta[${idLinea}].prenda.id"]`).value;
+						const cantidad = fila.querySelector(`input[name="lineasVenta[${idLinea}].cantidad"]`).value;
+
+						if (categoriaId && prendaId && cantidad > 0) {
+							venta.lineasVenta.push({
+								categoria: { id: Number(categoriaId) },
+								prenda: { id: Number(prendaId) },
+								cantidad: Number(cantidad)
+							});
+						}
+					});
+
+					try {
+						const response = await fetch('/calcular-total', {
+							method: 'POST',
+							headers: { 'Content-Type': 'application/json' },
+							body: JSON.stringify(venta)
+						});
+
+						if (!response.ok) throw new Error("Error en el cálculo");
+
+						const total = await response.json();
+						document.getElementById('precioTotalFinal').value = total.toFixed(2);
+					} catch (error) {
+						console.error('Error al calcular total:', error);
+					}
+				}
+
+		function calcularTotal() {
+			let total = 0;
+			const subtotales = document.querySelectorAll('input[name^="lineasVenta"][name$=".subtotal"]')
+
+			subtotales.forEach(el => {
+				total += parseFloat(el.value) || 0;
+
+				precioTotalFinal.value = total.value;
+			})
+
+			document.getElementById('precioTotalFinal').value = total.toFixed(2);
 		}
 
 
 		const colCategoria = document.createElement('div');
 		colCategoria.classList.add('col-auto');
+		colCategoria.appendChild(labelCategoria);
 		colCategoria.appendChild(selectCategoria);
 
 		const colPrenda = document.createElement('div');
 		colPrenda.classList.add('col-auto');
+		colPrenda.appendChild(labelPrenda)
 		colPrenda.appendChild(selectPrenda);
 
 		const colCantidad = document.createElement('div');
 		colCantidad.classList.add('col-auto');
+		colCantidad.appendChild(labelCantidad)
 		colCantidad.appendChild(inputNumero);
 
 		const colSubtotal = document.createElement('div');
 		colSubtotal.classList.add('col-auto');
+		colSubtotal.appendChild(labelSubtotal);
 		colSubtotal.appendChild(precio);
 		
+
 		const colEliminar = document.createElement('div')
 		colEliminar.classList.add('col-auto')
 		colEliminar.appendChild(btnEliminar);
+
 
 		fila.appendChild(colCategoria);
 		fila.appendChild(colPrenda);
 		fila.appendChild(colCantidad);
 		fila.appendChild(colSubtotal);
 		fila.appendChild(colEliminar);
-		
+
+
 		container.appendChild(fila);
+
 		/*console.log("Prendas recibidas:");
 		prendas.forEach(p => {
 			console.log(p.nombre, p.categoria.id, p.descripcion);

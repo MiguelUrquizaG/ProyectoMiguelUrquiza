@@ -28,6 +28,7 @@ public class Categoria {
 	private double precioServicio;
 	private boolean topVenta;
 	private double descuento;
+	private double numeroPrendasDescuento;
 	
 	public Categoria (Long id, String nombre, String descripcion) {
 		this.id = id;
@@ -35,6 +36,21 @@ public class Categoria {
 		this.descripcion=descripcion;
 	}
 	
+	
+	
+	public Categoria(Long id, String nombre, String descripcion, double precioServicio, boolean topVenta,
+			List<Prenda> listaPrendas) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.precioServicio = precioServicio;
+		this.topVenta = topVenta;
+		this.listaPrendas = listaPrendas;
+	}
+
+
+
 	@ToString.Exclude
 	@EqualsAndHashCode.Exclude
 	@OneToMany(mappedBy = "categoria", fetch= FetchType.EAGER)

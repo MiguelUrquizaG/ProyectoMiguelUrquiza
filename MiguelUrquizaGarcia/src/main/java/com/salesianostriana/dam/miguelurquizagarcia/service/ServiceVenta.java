@@ -2,8 +2,10 @@ package com.salesianostriana.dam.miguelurquizagarcia.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.salesianostriana.dam.miguelurquizagarcia.model.Categoria;
 import com.salesianostriana.dam.miguelurquizagarcia.model.LineaVenta;
 import com.salesianostriana.dam.miguelurquizagarcia.model.Prenda;
 import com.salesianostriana.dam.miguelurquizagarcia.model.Venta;
@@ -11,6 +13,8 @@ import com.salesianostriana.dam.miguelurquizagarcia.repository.VentaRepository;
 @Service
 public class ServiceVenta extends BaseService<Venta, Long, VentaRepository>{
 
+	@Autowired
+	ServiceCategorias categoriaService;
 	
 	public void saveVenta(Venta nuevaVenta) {
 		for(LineaVenta linea: nuevaVenta.getLineasVenta()) {
@@ -48,6 +52,31 @@ public class ServiceVenta extends BaseService<Venta, Long, VentaRepository>{
 	
 	public List<Prenda>buscarPorNombre(String nombre){
 		return buscarPorNombre(nombre);
+	}
+	
+	public double calcularPrecioDescuento(Venta v) {
+		
+		List<LineaVenta>listaLineas = v.getLineasVenta();
+		
+		double total=0;
+		for(LineaVenta l : listaLineas) {
+			
+			Categoria c = l.getCategoria();
+			double precioUnitario = c.getPrecioServicio();
+			double cantidad = l.getCantidad();
+			double subtotal;
+			subtotal = cantidad*precioUnitario;
+			if(cantidad>c.getNumeroPrendasDescuento()) {
+				
+				
+				subtotal = subtotal*(precioUnitario*c.getDescuento()/100);
+			}
+			
+			
+			total+=subtotal;
+		}
+		
+		return total;
 	}
 	
 }

@@ -42,4 +42,21 @@ public class LineaVenta {
 	
 	private double subtotal;
 	
+	private double descuento;
+	
+	private double subTotalFinal;
+
+	public LineaVenta(long id, Venta venta, Categoria categoria, Prenda prenda, double cantidad, double subtotal) {
+		super();
+		this.id = id;
+		this.venta = venta;
+		this.categoria = categoria;
+		this.prenda = prenda;
+		this.cantidad = cantidad;
+		this.subtotal = subtotal;
+	}
+	
+	
+	
+	
 }

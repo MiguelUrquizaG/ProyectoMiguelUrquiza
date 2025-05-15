@@ -81,10 +81,15 @@
 						</div>
 
 						<div class="mb-3">
-							<label for="inputDescuento" class="form-label">Descuento<span class="text-danger">*</span></label>
+							<label for="inputDescuento" class="form-label">Descuento<span
+									class="text-danger">*</span></label>
 							<input id="inputDescuento" class="form-control" th:field="*{descuento}">
 						</div>
-
+						<div class="mb-3">
+							<label for="inputCantidadDescuento" class="form-label">Cantidad Descuento<span
+									class="text-danger">*</span></label>
+							<input id="inputCantidadDescuento" class="form-control" th:field="*{numeroPrendasDescuento}">
+						</div>
 						<div>
 							<button type="submit" class="btn btn-dark">Editar Categoria</button>
 						</div>
