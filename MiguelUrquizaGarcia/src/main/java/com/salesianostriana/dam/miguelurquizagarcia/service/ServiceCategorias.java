@@ -44,7 +44,7 @@ public class ServiceCategorias extends BaseService<Categoria, Long, CategoriaRep
 	public List<Categoria> buscarPorNombre(String nombre){
 		
 		List<Categoria> lista = repoCategoria.findByNombreContainingIgnoreCase(nombre);
-		return ordenarTopVentas(lista);
+		return lista;
 	}
 	
 	public double calcularDescuento(Categoria c) {

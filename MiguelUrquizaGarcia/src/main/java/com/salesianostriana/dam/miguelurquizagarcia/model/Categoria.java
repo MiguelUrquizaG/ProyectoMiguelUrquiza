@@ -56,5 +56,7 @@ public class Categoria {
 	@OneToMany(mappedBy = "categoria", fetch= FetchType.EAGER)
 	private List<Prenda> listaPrendas;
 	
+	@OneToMany
+	private List<LineaVenta>lineasVenta;
 
 }

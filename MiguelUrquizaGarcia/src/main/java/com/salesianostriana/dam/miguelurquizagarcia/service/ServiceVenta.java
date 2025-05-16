@@ -54,6 +54,7 @@ public class ServiceVenta extends BaseService<Venta, Long, VentaRepository>{
 		return buscarPorNombre(nombre);
 	}
 	
+	
 	public double calcularPrecioDescuento(Venta v) {
 		
 		List<LineaVenta>listaLineas = v.getLineasVenta();

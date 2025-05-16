@@ -67,6 +67,7 @@ public class ControllerCategorias {
 	}
 	
 	
+	
 	@GetMapping("/mostrarCategoria/{id}")
 	public String mostrarCategoria(@PathVariable Long id, Model model) {
 		Categoria c = categoriaServicios.findById(id);
@@ -77,6 +78,7 @@ public class ControllerCategorias {
 	@GetMapping("/buscarCategoria")
 	public String buscarCategoria(@RequestParam String query, Model model) {
 		List<Categoria>lista = categoriaServicios.findAll();
+		System.out.println(query);
 		lista =  categoriaServicios.buscarPorNombre(query);
 
 		model.addAttribute("categoria", lista);

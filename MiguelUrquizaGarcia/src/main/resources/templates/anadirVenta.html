@@ -285,6 +285,11 @@
 
 		inputNumero.addEventListener('input', actualizarSubtotal);
 
+	
+		
+		
+		
+		
 		function actualizarSubtotal() {
 			const cantidad = parseInt(inputNumero.value) || 0;
 			const precioUnitario = parseFloat(precio.getAttribute('data-precio-unitario')) || 0;
@@ -292,42 +297,10 @@
 			precio.value = subtotal.toFixed(2);
 			calcularTotal();
 		}
-		async function actualizarTotalConFetch() {
-					// Construir objeto Venta con lineasVenta según lo que hay en el DOM
-					let venta = { lineasVenta: [] };
-					const filas = container.querySelectorAll('div[data-linea-id]');
-
-					filas.forEach(fila => {
-						const idLinea = fila.getAttribute('data-linea-id');
-						const categoriaId = fila.querySelector(`select[name="lineasVenta[${idLinea}].categoria.id"]`).value;
-						const prendaId = fila.querySelector(`select[name="lineasVenta[${idLinea}].prenda.id"]`).value;
-						const cantidad = fila.querySelector(`input[name="lineasVenta[${idLinea}].cantidad"]`).value;
-
-						if (categoriaId && prendaId && cantidad > 0) {
-							venta.lineasVenta.push({
-								categoria: { id: Number(categoriaId) },
-								prenda: { id: Number(prendaId) },
-								cantidad: Number(cantidad)
-							});
-						}
-					});
-
-					try {
-						const response = await fetch('/calcular-total', {
-							method: 'POST',
-							headers: { 'Content-Type': 'application/json' },
-							body: JSON.stringify(venta)
-						});
-
-						if (!response.ok) throw new Error("Error en el cálculo");
-
-						const total = await response.json();
-						document.getElementById('precioTotalFinal').value = total.toFixed(2);
-					} catch (error) {
-						console.error('Error al calcular total:', error);
-					}
-				}
-
+	
+		
+		
+		
 		function calcularTotal() {
 			let total = 0;
 			const subtotales = document.querySelectorAll('input[name^="lineasVenta"][name$=".subtotal"]')
@@ -340,6 +313,8 @@
 
 			document.getElementById('precioTotalFinal').value = total.toFixed(2);
 		}
+		
+		
 		
 	
 
@@ -379,10 +354,7 @@
 
 		container.appendChild(fila);
 
-		/*console.log("Prendas recibidas:");
-		prendas.forEach(p => {
-			console.log(p.nombre, p.categoria.id, p.descripcion);
-		});*/
+	
 		indiceLineaVenta++;
 	}
 
