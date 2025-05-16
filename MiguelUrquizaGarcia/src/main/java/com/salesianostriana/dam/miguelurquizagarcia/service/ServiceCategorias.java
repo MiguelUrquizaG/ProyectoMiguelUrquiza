@@ -17,12 +17,16 @@ public class ServiceCategorias extends BaseService<Categoria, Long, CategoriaRep
 	public void delete(Long id) {
 		Categoria c =  findById(id);
 		Categoria porDefecto = findById(0L);
-		if(c!=null) {
-			c.getListaPrendas().stream().forEach(prenda -> prenda.setCategoria(porDefecto));
-			delete(c);
+		
+		if(!c.getListaPrendas().isEmpty() && c!=null) {
 			
+		}else {
+			delete(c);
+			c.getListaPrendas().stream().forEach(prenda -> prenda.setCategoria(porDefecto));
 		}
+		
 	}
+
 	
 	public void agregar (Categoria c) {
 		calcularDescuento(c);

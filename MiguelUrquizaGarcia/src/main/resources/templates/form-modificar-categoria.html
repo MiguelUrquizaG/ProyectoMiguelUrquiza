@@ -103,56 +103,5 @@
 		</div>
 	</main>
 
-	<footer class="text-center bg-primary text-lg-start text-white mt-0">
-
-		<div>
-			<div class="container text-center text-md-start">
-				<div class="row">
-					<div class="col-md-3 col-lg-4 col-xl-3 mx-auto  mt-4">
-						<p class="h5 text-uppercase fw-bold  text-white">
-							Tintoreria Urquiza
-						</p>
-						<p>
-							Nuestra Tintorería cuidará tu ropa de una forma única.
-						</p>
-					</div>
-					<div class="col-md-3 col-lg-2 col-xl-2 mx-auto  mt-4">
-						<p class="h5 text-uppercase fw-bold text-white">
-							Contáctanos
-						</p>
-						<p class="h6 text-white"><i class="bi bi-house"></i> C/San Vicente de Paúl 13</p>
-						<p class="h6 text-white"><i class="bi bi-telephone"></i> +34 954 04 79 25</p>
-
-					</div>
-
-					<div class="col-md-3 col-lg-2 col-xl-2 mx-auto  mt-4">
-						<p class="h5 text-uppercase fw-bold text-white">
-							Avisos Legales
-						</p>
-						<a class="h6 text-white text-decoration-none" href="">Aviso legal</a>
-						<a class="h6 text-white text-decoration-none" href="">Políticas</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="d-flex justify-content-center justify-content-between">
-			<div>
-				<span>Nuestras Redes</span>
-			</div>
-			<div>
-				<a href="" class=" h5 me-4 text-reset text-decoration-none">
-					<i class="bi bi-facebook"></i>
-				</a>
-				<a href="" class="me-4 text-reset text-decoration-none">
-					<i class="bi bi-twitter-x"></i>
-				</a>
-				<a href="" class="me-4 text-reset text-decoration-none">
-					<i class="bi bi-google"></i>
-				</a>
-				<a href="" class="me-4 text-reset text-decoration-none">
-					<i class="bi bi-instagram"></i>
-				</a>
-			</div>
-		</div>
-	</footer>
+	<div th:replace="~{fragments/footer :: footer}"></div>
 </body>
