@@ -64,7 +64,6 @@ public class ControllerVenta {
 	}
 	@PostMapping("/anadirVenta/submit")
 	public String confirmarVenta(@ModelAttribute Venta v) {
-	    // Primero, guardar cada LineaVenta
 	    List<LineaVenta> lineasGuardadas = new ArrayList<>();
 	    for (LineaVenta linea : v.getLineasVenta()) {
 	        // Asignar prendas y categorías
@@ -74,15 +73,14 @@ public class ControllerVenta {
 	        Categoria categoriaCompleta = serviceCategoria.buscar(linea.getCategoria().getId());
 	        linea.setCategoria(categoriaCompleta);
 	        
-	        // Guardar la línea de venta primero
-	        LineaVenta lineaGuardada = serviceLineaVenta.save(linea); // Asumiendo que tienes un servicio para LineaVenta
+	
+	        LineaVenta lineaGuardada = serviceLineaVenta.save(linea); 
 	        lineasGuardadas.add(lineaGuardada);
 	    }
 	    
-	    // Reemplazar las líneas no persistidas con las guardadas
+	  
 	    v.setLineasVenta(lineasGuardadas);
 	    
-	    // Ahora que todas las líneas están guardadas, podemos establecer las relaciones bidireccionales
 	    for (LineaVenta lineaGuardada : lineasGuardadas) {
 	        Prenda prenda = lineaGuardada.getPrenda();
 	        if (prenda.getLineasVenta() == null) {
@@ -91,6 +89,11 @@ public class ControllerVenta {
 	        if (!prenda.getLineasVenta().contains(lineaGuardada)) {
 	            prenda.getLineasVenta().add(lineaGuardada);
 	            servicePrenda.save(prenda);
+	            if(prenda.getLineasVenta()==null) {
+	            	System.out.println("Soy nulo");
+	            }else {
+	            	  System.out.println("LineasVenta: "+prenda.getDescripcion());
+	            }
 	          
 	        }
 	        
@@ -105,9 +108,13 @@ public class ControllerVenta {
 	        
 	       
 	    }
-	    
+	    System.out.println("Venta"+v);
+	    System.out.println("Precio1: "+servicioVentas.calcularPrecioDescuento(v));
 	    v.setPrecioTotal(servicioVentas.calcularPrecioDescuento(v));
 	    servicioVentas.saveVenta(v);
+	    v.setPrecioTotal(servicioVentas.calcularPrecioDescuento(v));
+	    servicioVentas.save(v);
+	    System.out.println("Venta2:"+v);
 
 	    return "ticket";
 	}

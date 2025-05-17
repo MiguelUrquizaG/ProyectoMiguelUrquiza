@@ -67,16 +67,21 @@ public class ServiceVenta extends BaseService<Venta, Long, VentaRepository>{
 			Categoria c = l.getCategoria();
 			double precioUnitario = c.getPrecioServicio();
 			double cantidad = l.getCantidad();
-			double subtotal;
+			double subtotal ;
+			
 			subtotal = cantidad*precioUnitario;
 			if(cantidad>c.getNumeroPrendasDescuento()) {
 				
-				
-				subtotal = subtotal*(precioUnitario*c.getDescuento()/100);
+				System.out.println("Cantidad: "+cantidad);
+				System.out.println("PrecioUnitario: "+precioUnitario);
+				System.out.println("Descuento: "+c.getDescuento());
+				subtotal = subtotal-((subtotal)*c.getDescuento()/100);
+				System.out.println("Subtotal: "+subtotal);
 			}
 			
 			
 			total+=subtotal;
+			System.out.println("Total: "+total);
 		}
 		
 		return total;
