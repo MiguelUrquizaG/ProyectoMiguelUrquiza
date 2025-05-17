@@ -39,6 +39,9 @@
 							<a class="nav-link active" th:href="@{/ventas}">Ventas
 							</a>
 						</li>
+						<li class="nav-item">
+							<a class="nav-link " th:href="@{/quienesSomos}">Quienes Somos</a>
+						</li>
 					</ul>
 					<a href="inicioSesion.html"><i class=" h2 bi bi-person-fill text-white"></i></a>
 				</div>
@@ -234,11 +237,11 @@
 
 		inputNumero.addEventListener('input', actualizarSubtotal);
 
-	
-		
-		
-		
-		
+
+
+
+
+
 		function actualizarSubtotal() {
 			const cantidad = parseInt(inputNumero.value) || 0;
 			const precioUnitario = parseFloat(precio.getAttribute('data-precio-unitario')) || 0;
@@ -246,10 +249,10 @@
 			precio.value = subtotal.toFixed(2);
 			calcularTotal();
 		}
-	
-		
-		
-		
+
+
+
+
 		function calcularTotal() {
 			let total = 0;
 			const subtotales = document.querySelectorAll('input[name^="lineasVenta"][name$=".subtotal"]')
@@ -262,10 +265,10 @@
 
 			document.getElementById('precioTotalFinal').value = total.toFixed(2);
 		}
-		
-		
-		
-	
+
+
+
+
 
 
 		const colCategoria = document.createElement('div');
@@ -287,7 +290,7 @@
 		colSubtotal.classList.add('col-auto');
 		colSubtotal.appendChild(labelSubtotal);
 		colSubtotal.appendChild(precio);
-		
+
 
 		const colEliminar = document.createElement('div')
 		colEliminar.classList.add('col-auto')
@@ -303,7 +306,7 @@
 
 		container.appendChild(fila);
 
-	
+
 		indiceLineaVenta++;
 	}
 

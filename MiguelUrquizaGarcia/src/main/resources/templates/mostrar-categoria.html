@@ -35,6 +35,9 @@
 							<a class="nav-link active" th:href="@{/categorias}">Categorias
 							</a>
 						</li>
+						<li class="nav-item">
+							<a class="nav-link " th:href="@{/quienesSomos}">Quienes Somos</a>
+						</li>
 					</ul>
 					<a href="inicioSesion.html"><i class=" h2 bi bi-person-fill text-white"></i></a>
 				</div>
@@ -55,9 +58,7 @@
 					<th>
 						Imagen
 					</th>
-					<th>
-						Precio
-					</th>
+
 					<th>
 						Descripción
 					</th>
@@ -66,17 +67,14 @@
 			</thead>
 			<tbody>
 				<tr th:each="prendasCategoria : ${prendasCategoria}" class="align-middle">
-		
+
 					<td th:text="${prendasCategoria.nombre}">
 					</td>
 					<td>
-						<img th:src="@{${prendasCategoria.urlImagen}}"  style="width:8rem;">
-					</td>
-					<td th:text="${prendasCategoria.precio} + €">
-						
+						<img th:src="@{${prendasCategoria.urlImagen}}" style="width:8rem;">
 					</td>
 					<td th:text="${prendasCategoria.descripcion}">
-						
+
 					</td>
 				</tr>
 			</tbody>

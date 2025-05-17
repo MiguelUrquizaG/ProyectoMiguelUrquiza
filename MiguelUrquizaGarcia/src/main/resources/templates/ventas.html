@@ -39,6 +39,9 @@
 							<a class="nav-link active" th:href="@{/ventas}">Ventas
 							</a>
 						</li>
+						<li class="nav-item">
+							<a class="nav-link " th:href="@{/quienesSomos}">Quienes Somos</a>
+						</li>
 					</ul>
 					<a href="inicioSesion.html"><i class=" h2 bi bi-person-fill text-white"></i></a>
 				</div>
@@ -54,9 +57,10 @@
 			<div class="card" th:each="venta : ${ventas}">
 				<div class="card-body">
 					<h5 class="card-title" th:text="${venta.nombreCliente}"></h5>
-					<a class="btn btn-primary" th:href="@{/ticket/{id} (id=${venta.id})}" >Ver Venta</a>
+					<a class="btn btn-primary" th:href="@{/ticket/{id} (id=${venta.id})}">Ver Venta</a>
 					<a class="btn btn-primary" th:attr="data-bs-target='#modalEliminar-' + ${venta.id}"
-						th:data-id="${venta.id}" data-bs-toggle="modal" data-bs-target="#modalEliminar" role="button">Eliminar</a>
+						th:data-id="${venta.id}" data-bs-toggle="modal" data-bs-target="#modalEliminar"
+						role="button">Eliminar</a>
 				</div>
 				<div class="modal fade" id="modalEliminar" th:attr="id='modalEliminar-' + ${venta.id}" tabindex="-1"
 					aria-labelledby="exampleModalLabel" aria-hidden="true">

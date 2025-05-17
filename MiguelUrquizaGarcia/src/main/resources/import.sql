@@ -1,2 +1,2 @@
-INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO) VALUES
-(1, 'camisas', 'camisas', 5.50, false, 10.0, 3);
+INSERT INTO CATEGORIA (id, nombre, descripcion, precio_Servicio, top_Venta, descuento, numero_Prendas_Descuento) VALUES
+(1, '', '', 0, FALSE, 0, 0);

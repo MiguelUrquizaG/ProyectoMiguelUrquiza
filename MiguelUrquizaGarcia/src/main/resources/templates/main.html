@@ -40,6 +40,9 @@
 							<a class="nav-link" th:href="@{/ventas}">Ventas
 							</a>
 						</li>
+						<li class="nav-item">
+							<a class="nav-link " th:href="@{/quienesSomos}">Quienes Somos</a>
+						</li>
 					</ul>
 					<a href="inicioSesion.html"><i class=" h2 bi bi-person-fill text-white"></i></a>
 				</div>
@@ -57,23 +60,27 @@
 			</div>
 		</div>
 		<div class="row my-3 w-75 ms-0">
-					<form method="get" th:action="@{/buscar}" class="d-flex flex-column col-4">
-						<label class="col-form-label">Buscar Por Nombre</label>
-						<input type="text" name="query" class="form-control ">
-						<button type="submit" class="btn btn-primary  mt-2">Buscar</button>
-					</form>
+			<form method="get" th:action="@{/buscar}" class="d-flex flex-column col-4">
+				<label class="col-form-label">Buscar Por Nombre</label>
+				<input type="text" name="query" class="form-control ">
+				<button type="submit" class="btn btn-primary  mt-2">Buscar</button>
+			</form>
 
-					<form method="get"class="col-4 d-flex align-items-center justify-content-center" th:action="@{/ordenarPrendas}">
-						<input type="hidden" name="orden" value="asc" />
-						<button type="submit" class="btn btn-dark btn-lg text-white  shadow mx-2 fw-semibold">Ordenar Por Nombre <i class="bi bi-arrow-up"></i></button>
-					</form>
+			<form method="get" class="col-4 d-flex align-items-center justify-content-center"
+				th:action="@{/ordenarPrendas}">
+				<input type="hidden" name="orden" value="asc" />
+				<button type="submit" class="btn btn-dark btn-lg text-white  shadow mx-2 fw-semibold">Ordenar Por Nombre
+					<i class="bi bi-arrow-up"></i></button>
+			</form>
 
-					<form method="get" class="col-4 d-flex align-items-center justify-content-center" th:action="@{/ordenarPrendas}">
-						<input type="hidden" name="orden" value="desc" />
-						<button type="submit" class="btn btn-dark btn-lg text-white  shadow mx-2 fw-semibold">Ordenar Por Nombre <i class="bi bi-arrow-down"></i></button>
-					</form>
+			<form method="get" class="col-4 d-flex align-items-center justify-content-center"
+				th:action="@{/ordenarPrendas}">
+				<input type="hidden" name="orden" value="desc" />
+				<button type="submit" class="btn btn-dark btn-lg text-white  shadow mx-2 fw-semibold">Ordenar Por Nombre
+					<i class="bi bi-arrow-down"></i></button>
+			</form>
 
-				</div>
+		</div>
 
 
 		<div th:if="${#lists.isEmpty(prenda)}" class="mt-3">
