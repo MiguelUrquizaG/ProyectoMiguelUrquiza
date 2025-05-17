@@ -8603,3 +8603,483 @@ INSERT INTO CATEGORIA VALUES (0,'','Por Defecto') [21002-232]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351)
 	at com.salesianostriana.dam.miguelurquizagarcia.MiguelUrquizaGarciaApplication.main(MiguelUrquizaGarciaApplication.java:10)
+2025-05-17 02:57:58.061441+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id) [42001-232]
+2025-05-17 02:57:58.070417+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id) [42001-232]
+2025-05-17 02:57:58.072463+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id) [42001-232]
+2025-05-17 02:57:58.073409+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id) [42001-232]
+2025-05-17 02:57:58.074406+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id) [42001-232]
+2025-05-17 02:57:58.075404+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "ALTER TABLE prenda [*]AUTO_INCREMENT = 6"; se esperaba "., ADD, SET, RENAME, DROP, ALTER"
+Syntax error in SQL statement "ALTER TABLE prenda [*]AUTO_INCREMENT = 6"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+ALTER TABLE prenda AUTO_INCREMENT = 6 [42001-232]
+2025-05-17 02:57:58.076401+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) [42001-232]
+2025-05-17 02:57:58.077398+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) [42001-232]
+2025-05-17 02:57:58.078395+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) [42001-232]
+2025-05-17 02:57:58.079393+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "ALTER TABLE categoria [*]AUTO_INCREMENT = 4"; se esperaba "., ADD, SET, RENAME, DROP, ALTER"
+Syntax error in SQL statement "ALTER TABLE categoria [*]AUTO_INCREMENT = 4"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+ALTER TABLE categoria AUTO_INCREMENT = 4 [42001-232]
+2025-05-17 02:58:55.558099+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id) [42001-232]
+2025-05-17 02:58:55.568045+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id) [42001-232]
+2025-05-17 02:58:55.569042+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id) [42001-232]
+2025-05-17 02:58:55.571036+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id) [42001-232]
+2025-05-17 02:58:55.572034+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id) [42001-232]
+2025-05-17 02:58:55.582007+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) [42001-232]
+2025-05-17 02:58:55.584002+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) [42001-232]
+2025-05-17 02:58:55.584999+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) [42001-232]
+2025-05-17 03:00:20.972244+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id) [42001-232]
+2025-05-17 03:00:20.978255+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "VALUES[*]"; se esperaba "ROW (, (, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "VALUES[*]"; expected "ROW (, (, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+VALUES [42001-232]
+2025-05-17 03:00:20.978255+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 'Camisa Blanca', 'Camisa formal blanca', 'https://example.com/camisa.jpg', true, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 'Camisa Blanca', 'Camisa formal blanca', 'https://example.com/camisa.jpg', true, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 'Camisa Blanca', 'Camisa formal blanca', 'https://example.com/camisa.jpg', true, 1), [42001-232]
+2025-05-17 03:00:20.980222+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 'Vaquero Azul', 'Pantalón vaquero clásico', 'https://example.com/vaquero.jpg', false, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 'Vaquero Azul', 'Pantalón vaquero clásico', 'https://example.com/vaquero.jpg', false, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 'Vaquero Azul', 'Pantalón vaquero clásico', 'https://example.com/vaquero.jpg', false, 2), [42001-232]
+2025-05-17 03:00:20.981220+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 'Camisa Negra', 'Camisa negra informal', 'https://example.com/negra.jpg', false, 1)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 'Camisa Negra', 'Camisa negra informal', 'https://example.com/negra.jpg', false, 1)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 'Camisa Negra', 'Camisa negra informal', 'https://example.com/negra.jpg', false, 1) [42001-232]
+2025-05-17 03:00:20.991481+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) [42001-232]
+2025-05-17 03:00:20.992478+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "VALUES (1, 'Camisas', 'Camisas de algodón', 5.50, false, 10.0, 3),[*]"; se esperaba "ROW (, (, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "VALUES (1, 'Camisas', 'Camisas de algodón', 5.50, false, 10.0, 3),[*]"; expected "ROW (, (, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+VALUES (1, 'Camisas', 'Camisas de algodón', 5.50, false, 10.0, 3), [42001-232]
+2025-05-17 03:00:20.993476+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 'Pantalones', 'Pantalones vaqueros', 6.75, true, 5.0, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 'Pantalones', 'Pantalones vaqueros', 6.75, true, 5.0, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 'Pantalones', 'Pantalones vaqueros', 6.75, true, 5.0, 2), [42001-232]
+2025-05-17 03:00:20.994473+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 'Abrigos', 'Abrigos de invierno', 8.00, true, 15.0, 1)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 'Abrigos', 'Abrigos de invierno', 8.00, true, 15.0, 1)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 'Abrigos', 'Abrigos de invierno', 8.00, true, 15.0, 1) [42001-232]
+2025-05-17 03:02:03.676072+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) [42001-232]
+2025-05-17 03:02:03.683124+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "VALUES[*]"; se esperaba "ROW (, (, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "VALUES[*]"; expected "ROW (, (, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+VALUES [42001-232]
+2025-05-17 03:02:03.684123+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 'Camisas', 'Camisas de algodón', 5.50, false, 10.0, 3),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 'Camisas', 'Camisas de algodón', 5.50, false, 10.0, 3),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 'Camisas', 'Camisas de algodón', 5.50, false, 10.0, 3), [42001-232]
+2025-05-17 03:02:03.684123+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 'Pantalones', 'Pantalones vaqueros', 6.75, true, 5.0, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 'Pantalones', 'Pantalones vaqueros', 6.75, true, 5.0, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 'Pantalones', 'Pantalones vaqueros', 6.75, true, 5.0, 2), [42001-232]
+2025-05-17 03:02:03.685149+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 'Abrigos', 'Abrigos de invierno', 8.00, true, 15.0, 1)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 'Abrigos', 'Abrigos de invierno', 8.00, true, 15.0, 1)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 'Abrigos', 'Abrigos de invierno', 8.00, true, 15.0, 1) [42001-232]
+2025-05-17 03:02:03.695092+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id) [42001-232]
+2025-05-17 03:02:03.696090+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "VALUES[*]"; se esperaba "ROW (, (, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "VALUES[*]"; expected "ROW (, (, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+VALUES [42001-232]
+2025-05-17 03:02:03.697088+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 'Camisa Blanca', 'Camisa formal blanca', 'https://example.com/camisa.jpg', true, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 'Camisa Blanca', 'Camisa formal blanca', 'https://example.com/camisa.jpg', true, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 'Camisa Blanca', 'Camisa formal blanca', 'https://example.com/camisa.jpg', true, 1), [42001-232]
+2025-05-17 03:02:03.697088+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 'Vaquero Azul', 'Pantalón vaquero clásico', 'https://example.com/vaquero.jpg', false, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 'Vaquero Azul', 'Pantalón vaquero clásico', 'https://example.com/vaquero.jpg', false, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 'Vaquero Azul', 'Pantalón vaquero clásico', 'https://example.com/vaquero.jpg', false, 2), [42001-232]
+2025-05-17 03:02:03.698086+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 'Camisa Negra', 'Camisa negra informal', 'https://example.com/negra.jpg', false, 1)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 'Camisa Negra', 'Camisa negra informal', 'https://example.com/negra.jpg', false, 1)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 'Camisa Negra', 'Camisa negra informal', 'https://example.com/negra.jpg', false, 1) [42001-232]
+2025-05-17 03:05:26.384880+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO) [42001-232]
+2025-05-17 03:05:26.396486+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO) [42001-232]
+2025-05-17 03:05:26.397473+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO) [42001-232]
+2025-05-17 03:05:26.398470+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID) [42001-232]
+2025-05-17 03:05:26.399468+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID) [42001-232]
+2025-05-17 03:05:26.400465+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID) [42001-232]
+2025-05-17 03:05:26.401462+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID) [42001-232]
+2025-05-17 03:06:59.597509+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO) [42001-232]
+2025-05-17 03:06:59.607564+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO) [42001-232]
+2025-05-17 03:06:59.608561+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO) [42001-232]
+2025-05-17 03:06:59.610556+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID) [42001-232]
+2025-05-17 03:06:59.611562+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID) [42001-232]
+2025-05-17 03:06:59.612551+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID) [42001-232]
+2025-05-17 03:06:59.613548+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID) [42001-232]
+2025-05-17 03:09:02.126576+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "'Miguelito' (CATEGORIA: ""NUMERO_PRENDAS_DESCUENTO"" FLOAT(53) NOT NULL)"
+Data conversion error converting "'Miguelito' (CATEGORIA: ""NUMERO_PRENDAS_DESCUENTO"" FLOAT(53) NOT NULL)"; SQL statement:
+INSERT INTO CATEGORIA VALUES(0,'Miguelito','Vestir',20,true,2,3) [22018-232]
+2025-05-17 03:09:31.002601+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "'Miguelito' (CATEGORIA: ""NUMERO_PRENDAS_DESCUENTO"" FLOAT(53) NOT NULL)"
+Data conversion error converting "'Miguelito' (CATEGORIA: ""NUMERO_PRENDAS_DESCUENTO"" FLOAT(53) NOT NULL)"; SQL statement:
+INSERT INTO CATEGORIA VALUES(0,'Miguelito','Vestir',20,true,2,3) [22018-232]
+2025-05-17 03:10:31.849930+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO) [42001-232]
+2025-05-17 03:10:31.859908+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO) [42001-232]
+2025-05-17 03:10:31.860901+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO) [42001-232]
+2025-05-17 03:10:31.862895+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID) [42001-232]
+2025-05-17 03:10:31.863893+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID) [42001-232]
+2025-05-17 03:10:31.864890+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID) [42001-232]
+2025-05-17 03:10:31.865887+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO PRENDA (ID, NOMBRE, DESCRIPCION, URL_IMAGEN, TOP_VENTA, CATEGORIA_ID) [42001-232]
+2025-05-17 03:15:57.240050+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO)[*]"; se esperaba "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO)[*]"; expected "OVERRIDING USER VALUE, OVERRIDING SYSTEM VALUE, DIRECT, DEFAULT VALUES, VALUES, SET, WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO) [42001-232]
+2025-05-17 03:17:17.541440+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO categoria (nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO categoria (nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO categoria (nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) VALUES [42001-232]
+2025-05-17 03:17:17.548394+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Camisas', 'Camisas de algodón', 5.50, false, 10.0, 3),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Camisas', 'Camisas de algodón', 5.50, false, 10.0, 3),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Camisas', 'Camisas de algodón', 5.50, false, 10.0, 3), [42001-232]
+2025-05-17 03:17:17.549417+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Pantalones', 'Pantalones vaqueros', 6.75, true, 5.0, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Pantalones', 'Pantalones vaqueros', 6.75, true, 5.0, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Pantalones', 'Pantalones vaqueros', 6.75, true, 5.0, 2), [42001-232]
+2025-05-17 03:17:17.550389+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Abrigos', 'Abrigos de invierno', 8.00, true, 15.0, 1)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Abrigos', 'Abrigos de invierno', 8.00, true, 15.0, 1)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Abrigos', 'Abrigos de invierno', 8.00, true, 15.0, 1) [42001-232]
+2025-05-17 03:17:17.550389+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO prenda (nombre, descripcion, url_imagen, top_venta, categoria_id) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO prenda (nombre, descripcion, url_imagen, top_venta, categoria_id) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO prenda (nombre, descripcion, url_imagen, top_venta, categoria_id) VALUES [42001-232]
+2025-05-17 03:17:17.552384+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Camisa Blanca', 'Camisa formal blanca', 'https://example.com/camisa.jpg', true, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Camisa Blanca', 'Camisa formal blanca', 'https://example.com/camisa.jpg', true, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Camisa Blanca', 'Camisa formal blanca', 'https://example.com/camisa.jpg', true, 1), [42001-232]
+2025-05-17 03:17:17.553405+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Vaquero Azul', 'Pantalón vaquero clásico', 'https://example.com/vaquero.jpg', false, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Vaquero Azul', 'Pantalón vaquero clásico', 'https://example.com/vaquero.jpg', false, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Vaquero Azul', 'Pantalón vaquero clásico', 'https://example.com/vaquero.jpg', false, 2), [42001-232]
+2025-05-17 03:17:17.553405+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Camisa Negra', 'Camisa negra informal', 'https://example.com/negra.jpg', false, 1)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Camisa Negra', 'Camisa negra informal', 'https://example.com/negra.jpg', false, 1)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Camisa Negra', 'Camisa negra informal', 'https://example.com/negra.jpg', false, 1) [42001-232]
+2025-05-17 03:17:37.150496+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) VALUES [42001-232]
+2025-05-17 03:17:37.156479+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 'Camisas', 'Camisas de algodón', 5.50, false, 10.0, 3),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 'Camisas', 'Camisas de algodón', 5.50, false, 10.0, 3),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 'Camisas', 'Camisas de algodón', 5.50, false, 10.0, 3), [42001-232]
+2025-05-17 03:17:37.157477+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 'Pantalones', 'Pantalones vaqueros', 6.75, true, 5.0, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 'Pantalones', 'Pantalones vaqueros', 6.75, true, 5.0, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 'Pantalones', 'Pantalones vaqueros', 6.75, true, 5.0, 2), [42001-232]
+2025-05-17 03:17:37.158474+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 'Abrigos', 'Abrigos de invierno', 8.00, true, 15.0, 1)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 'Abrigos', 'Abrigos de invierno', 8.00, true, 15.0, 1)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 'Abrigos', 'Abrigos de invierno', 8.00, true, 15.0, 1) [42001-232]
+2025-05-17 03:17:37.159471+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id) VALUES [42001-232]
+2025-05-17 03:17:37.159471+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 'Camisa Blanca', 'Camisa formal blanca', 'https://example.com/camisa.jpg', true, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 'Camisa Blanca', 'Camisa formal blanca', 'https://example.com/camisa.jpg', true, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 'Camisa Blanca', 'Camisa formal blanca', 'https://example.com/camisa.jpg', true, 1), [42001-232]
+2025-05-17 03:17:37.160469+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 'Vaquero Azul', 'Pantalón vaquero clásico', 'https://example.com/vaquero.jpg', false, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 'Vaquero Azul', 'Pantalón vaquero clásico', 'https://example.com/vaquero.jpg', false, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 'Vaquero Azul', 'Pantalón vaquero clásico', 'https://example.com/vaquero.jpg', false, 2), [42001-232]
+2025-05-17 03:17:37.161466+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 'Camisa Negra', 'Camisa negra informal', 'https://example.com/negra.jpg', false, 1)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 'Camisa Negra', 'Camisa negra informal', 'https://example.com/negra.jpg', false, 1)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 'Camisa Negra', 'Camisa negra informal', 'https://example.com/negra.jpg', false, 1) [42001-232]
+2025-05-17 03:18:25.864427+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) VALUES [42001-232]
+2025-05-17 03:18:25.871408+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 'Camisas', 'Camisas de algodón', 5.50, false, 10.0, 3),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 'Camisas', 'Camisas de algodón', 5.50, false, 10.0, 3),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 'Camisas', 'Camisas de algodón', 5.50, false, 10.0, 3), [42001-232]
+2025-05-17 03:18:25.872405+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 'Pantalones', 'Pantalones vaqueros', 6.75, true, 5.0, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 'Pantalones', 'Pantalones vaqueros', 6.75, true, 5.0, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 'Pantalones', 'Pantalones vaqueros', 6.75, true, 5.0, 2), [42001-232]
+2025-05-17 03:18:25.873960+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 'Abrigos', 'Abrigos de invierno', 8.00, true, 15.0, 1)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 'Abrigos', 'Abrigos de invierno', 8.00, true, 15.0, 1)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 'Abrigos', 'Abrigos de invierno', 8.00, true, 15.0, 1) [42001-232]
+2025-05-17 03:18:25.874920+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id) VALUES [42001-232]
+2025-05-17 03:18:25.875918+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 'Camisa Blanca', 'Camisa formal blanca', 'https://example.com/camisa.jpg', true, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 'Camisa Blanca', 'Camisa formal blanca', 'https://example.com/camisa.jpg', true, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 'Camisa Blanca', 'Camisa formal blanca', 'https://example.com/camisa.jpg', true, 1), [42001-232]
+2025-05-17 03:18:25.876915+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 'Vaquero Azul', 'Pantalón vaquero clásico', 'https://example.com/vaquero.jpg', false, 2),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 'Vaquero Azul', 'Pantalón vaquero clásico', 'https://example.com/vaquero.jpg', false, 2),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 'Vaquero Azul', 'Pantalón vaquero clásico', 'https://example.com/vaquero.jpg', false, 2), [42001-232]
+2025-05-17 03:18:25.876915+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]3, 'Camisa Negra', 'Camisa negra informal', 'https://example.com/negra.jpg', false, 1)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]3, 'Camisa Negra', 'Camisa negra informal', 'https://example.com/negra.jpg', false, 1)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(3, 'Camisa Negra', 'Camisa negra informal', 'https://example.com/negra.jpg', false, 1) [42001-232]
+2025-05-17 03:19:13.753354+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) VALUES [42001-232]
+2025-05-17 03:19:13.759311+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 'Camisas', 'Camisas de algodón', 5.50, false, 10.0, 3)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 'Camisas', 'Camisas de algodón', 5.50, false, 10.0, 3)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 'Camisas', 'Camisas de algodón', 5.50, false, 10.0, 3) [42001-232]
+2025-05-17 03:22:08.648025+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) VALUES [42001-232]
+2025-05-17 03:22:08.654978+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, ""Camisas"", ""Camisas de algodón"", 5.50, false, 10.0, 3)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, ""Camisas"", ""Camisas de algodón"", 5.50, false, 10.0, 3)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, "Camisas", "Camisas de algodón", 5.50, false, 10.0, 3) [42001-232]
+2025-05-17 03:22:35.561615+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO CATEGORIA (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO CATEGORIA (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO CATEGORIA (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) VALUES [42001-232]
+2025-05-17 03:22:35.568596+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, ""Camisas"", ""Camisas de algodón"", 5.50, false, 10.0, 3)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, ""Camisas"", ""Camisas de algodón"", 5.50, false, 10.0, 3)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, "Camisas", "Camisas de algodón", 5.50, false, 10.0, 3) [42001-232]
+2025-05-17 03:23:37.184454+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO CATEGORIA (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO CATEGORIA (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO CATEGORIA (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) VALUES [42001-232]
+2025-05-17 03:23:37.191431+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 'camisas', 'camisas', 5.50, false, 10.0, 3)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 'camisas', 'camisas', 5.50, false, 10.0, 3)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 'camisas', 'camisas', 5.50, false, 10.0, 3) [42001-232]
+2025-05-17 03:27:25.479655+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO categoria SET[*]"; se esperaba "identifier"
+Syntax error in SQL statement "INSERT INTO categoria SET[*]"; expected "identifier"; SQL statement:
+INSERT INTO categoria SET [42001-232]
+2025-05-17 03:27:25.485671+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]id = 1,"; se esperaba "INSERT"
+Syntax error in SQL statement "[*]id = 1,"; expected "INSERT"; SQL statement:
+id = 1, [42001-232]
+2025-05-17 03:27:25.486637+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]nombre = 'Camisetas',"
+Syntax error in SQL statement "[*]nombre = 'Camisetas',"; SQL statement:
+nombre = 'Camisetas', [42000-232]
+2025-05-17 03:27:25.486637+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]descripcion = 'Camisetas básicas de algodón',"; se esperaba "DELETE, DROP"
+Syntax error in SQL statement "[*]descripcion = 'Camisetas básicas de algodón',"; expected "DELETE, DROP"; SQL statement:
+descripcion = 'Camisetas básicas de algodón', [42001-232]
+2025-05-17 03:27:25.488659+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]precio_servicio = 15.99,"; se esperaba "PREPARE"
+Syntax error in SQL statement "[*]precio_servicio = 15.99,"; expected "PREPARE"; SQL statement:
+precio_servicio = 15.99, [42001-232]
+2025-05-17 03:27:25.489627+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]top_venta = true,"; se esperaba "TRUNCATE"
+Syntax error in SQL statement "[*]top_venta = true,"; expected "TRUNCATE"; SQL statement:
+top_venta = true, [42001-232]
+2025-05-17 03:27:25.490626+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]descuento = 10.0,"; se esperaba "DELETE, DROP"
+Syntax error in SQL statement "[*]descuento = 10.0,"; expected "DELETE, DROP"; SQL statement:
+descuento = 10.0, [42001-232]
+2025-05-17 03:27:25.490626+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]numero_prendas_descuento = 2"
+Syntax error in SQL statement "[*]numero_prendas_descuento = 2"; SQL statement:
+numero_prendas_descuento = 2 [42000-232]
+2025-05-17 03:27:56.220382+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO categoria Values[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO categoria Values[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO categoria Values [42001-232]
+2025-05-17 03:27:56.226343+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]id = 1,"; se esperaba "INSERT"
+Syntax error in SQL statement "[*]id = 1,"; expected "INSERT"; SQL statement:
+id = 1, [42001-232]
+2025-05-17 03:27:56.227341+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]nombre = 'Camisetas',"
+Syntax error in SQL statement "[*]nombre = 'Camisetas',"; SQL statement:
+nombre = 'Camisetas', [42000-232]
+2025-05-17 03:27:56.228339+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]descripcion = 'Camisetas básicas de algodón',"; se esperaba "DELETE, DROP"
+Syntax error in SQL statement "[*]descripcion = 'Camisetas básicas de algodón',"; expected "DELETE, DROP"; SQL statement:
+descripcion = 'Camisetas básicas de algodón', [42001-232]
+2025-05-17 03:27:56.229335+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]precio_servicio = 15.99,"; se esperaba "PREPARE"
+Syntax error in SQL statement "[*]precio_servicio = 15.99,"; expected "PREPARE"; SQL statement:
+precio_servicio = 15.99, [42001-232]
+2025-05-17 03:27:56.230333+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]top_venta = true,"; se esperaba "TRUNCATE"
+Syntax error in SQL statement "[*]top_venta = true,"; expected "TRUNCATE"; SQL statement:
+top_venta = true, [42001-232]
+2025-05-17 03:27:56.231330+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]descuento = 10.0,"; se esperaba "DELETE, DROP"
+Syntax error in SQL statement "[*]descuento = 10.0,"; expected "DELETE, DROP"; SQL statement:
+descuento = 10.0, [42001-232]
+2025-05-17 03:27:56.232328+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]numero_prendas_descuento = 2"
+Syntax error in SQL statement "[*]numero_prendas_descuento = 2"; SQL statement:
+numero_prendas_descuento = 2 [42000-232]
+2025-05-17 03:29:22.303949+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) VALUES [42001-232]
+2025-05-17 03:29:22.309905+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 'Camisetas', 'Algodón 100%', 19.99, TRUE, 10.0, 3),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 'Camisetas', 'Algodón 100%', 19.99, TRUE, 10.0, 3),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 'Camisetas', 'Algodón 100%', 19.99, TRUE, 10.0, 3), [42001-232]
+2025-05-17 03:29:22.310903+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 'Pantalones', 'Jeans clásicos', 39.99, FALSE, 15.0, 2)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 'Pantalones', 'Jeans clásicos', 39.99, FALSE, 15.0, 2)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 'Pantalones', 'Jeans clásicos', 39.99, FALSE, 15.0, 2) [42001-232]
+2025-05-17 03:29:22.311901+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id) VALUES [42001-232]
+2025-05-17 03:29:22.312898+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 'Camiseta blanca', 'Tallaje normal', '/img/cam1.jpg', TRUE, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 'Camiseta blanca', 'Tallaje normal', '/img/cam1.jpg', TRUE, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 'Camiseta blanca', 'Tallaje normal', '/img/cam1.jpg', TRUE, 1), [42001-232]
+2025-05-17 03:29:22.313895+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]2, 'Jeans azul', 'Corte slim', '/img/jeans1.jpg', FALSE, 2)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]2, 'Jeans azul', 'Corte slim', '/img/jeans1.jpg', FALSE, 2)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(2, 'Jeans azul', 'Corte slim', '/img/jeans1.jpg', FALSE, 2) [42001-232]
+2025-05-17 03:30:57.389358+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO categoria (nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento, id) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO categoria (nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento, id) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO categoria (nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento, id) VALUES [42001-232]
+2025-05-17 03:30:57.397307+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Camisetas', 'Camisetas básicas de algodón', 15.99, TRUE, 10.0, 2, 1),"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Camisetas', 'Camisetas básicas de algodón', 15.99, TRUE, 10.0, 2, 1),"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Camisetas', 'Camisetas básicas de algodón', 15.99, TRUE, 10.0, 2, 1), [42001-232]
+2025-05-17 03:30:57.398303+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'Pantalones', 'Jeans y pantalones formales', 39.99, FALSE, 15.0, 1, 2)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'Pantalones', 'Jeans y pantalones formales', 39.99, FALSE, 15.0, 1, 2)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('Pantalones', 'Jeans y pantalones formales', 39.99, FALSE, 15.0, 1, 2) [42001-232]
+2025-05-17 03:34:12.641432+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO) VALUES[*]"; se esperaba "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"
+Syntax error in SQL statement "INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO) VALUES[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO CATEGORIA (ID, NOMBRE, DESCRIPCION, PRECIO_SERVICIO, TOP_VENTA, DESCUENTO, NUMERO_PRENDAS_DESCUENTO) VALUES [42001-232]
+2025-05-17 03:34:12.648388+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]1, 'camisas', 'camisas', 5.50, false, 10.0, 3)"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]1, 'camisas', 'camisas', 5.50, false, 10.0, 3)"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+(1, 'camisas', 'camisas', 5.50, false, 10.0, 3) [42001-232]
