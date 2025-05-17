@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.salesianostriana.dam.miguelurquizagarcia.model.Categoria;
 import com.salesianostriana.dam.miguelurquizagarcia.model.Prenda;
 import com.salesianostriana.dam.miguelurquizagarcia.repository.CategoriaRepository;
 import com.salesianostriana.dam.miguelurquizagarcia.repository.PrendaRepository;
@@ -64,7 +65,7 @@ public class ControllerPrenda {
 
 	@GetMapping("/editarPrenda/{id}")
 	public String editarPrenda(@PathVariable long id, Model model) {
-		Prenda p = service.findById(id);
+		Prenda p = service.buscarPrenda(id);
 		model.addAttribute("prenda", p);
 		System.out.println("Entro");
 		model.addAttribute("categoria", categoriaService.findAll());
@@ -88,7 +89,7 @@ public class ControllerPrenda {
 
 	@DeleteMapping("/eliminarPrenda/submit")
 	public String procesarEliminar(@RequestParam Long id) {
-		Prenda p = service.findById(id);
+		Prenda p = service.buscarPrenda(id);
 		p.removeFromCategoria(p.getCategoria());
 		service.deleteById(id);
 
@@ -112,5 +113,24 @@ public class ControllerPrenda {
 		model.addAttribute("nuevaprenda", new Prenda());
 		model.addAttribute("categoria", categoriaService.findAll());
 		return "main";
+	}
+	@GetMapping("/ordenarPrendas")
+	public String ordenarPrendas(@RequestParam(defaultValue = "asc") String orden, Model model) {
+	    List<Prenda> lista;
+
+	    if ("asc".equalsIgnoreCase(orden)) {
+	        lista = service.findAllOrderByNombreAsc();
+	    } else if ("desc".equalsIgnoreCase(orden)) {
+	        lista = service.findAllOrderByNombreDesc();
+	    } else {
+	        lista = service.findAll();
+	    }
+
+	    model.addAttribute("prenda", lista);
+	    model.addAttribute("nuevaprenda", new Prenda());
+	    model.addAttribute("categoria", categoriaService.findAll());
+	    model.addAttribute("orden", orden);
+
+	    return "main";
 	}
 }

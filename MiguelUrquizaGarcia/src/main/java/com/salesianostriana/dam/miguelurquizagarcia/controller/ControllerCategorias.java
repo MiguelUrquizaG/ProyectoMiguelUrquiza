@@ -48,7 +48,7 @@ public class ControllerCategorias {
 	
 	@GetMapping("/editarCategoria/{id}")
 	public String editarCategoria(@PathVariable Long id,Model model) {
-		Categoria c =categoriaServicios.findById(id);
+		Categoria c =categoriaServicios.buscar(id);
 		model.addAttribute("categoria", c);
 		return "form-modificar-categoria";
 	}
@@ -70,7 +70,7 @@ public class ControllerCategorias {
 	
 	@GetMapping("/mostrarCategoria/{id}")
 	public String mostrarCategoria(@PathVariable Long id, Model model) {
-		Categoria c = categoriaServicios.findById(id);
+		Categoria c = categoriaServicios.buscar(id);
 		model.addAttribute("prendasCategoria", c.getListaPrendas());
 		return "mostrar-categoria";
 	}
@@ -85,5 +85,13 @@ public class ControllerCategorias {
 		model.addAttribute("nuevacategoria", new Categoria());
 		return "listaCategorias";
 	}
+	
+	  @GetMapping("/filtrarPrecioMax")
+	    public String filtrarCategoriasEconomicas(@RequestParam("precioMax") Double precioMax, Model model) {
+	        List<Categoria> categoriasFiltradas = categoriaServicios.buscarCategoriasEconomicasNoTopVenta(precioMax);
+	        model.addAttribute("categoria", categoriasFiltradas);
+	        model.addAttribute("nuevacategoria", new Categoria());
+	        return "listaCategorias"; 
+	    }
 	
 }

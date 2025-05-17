@@ -10,6 +10,8 @@ import com.salesianostriana.dam.miguelurquizagarcia.model.LineaVenta;
 import com.salesianostriana.dam.miguelurquizagarcia.model.Prenda;
 import com.salesianostriana.dam.miguelurquizagarcia.model.Venta;
 import com.salesianostriana.dam.miguelurquizagarcia.repository.VentaRepository;
+
+import jakarta.persistence.EntityNotFoundException;
 @Service
 public class ServiceVenta extends BaseService<Venta, Long, VentaRepository>{
 
@@ -79,5 +81,10 @@ public class ServiceVenta extends BaseService<Venta, Long, VentaRepository>{
 		
 		return total;
 	}
+	
+	public Venta buscarVenta (Long id) {
+		return repositorio.findById(id).orElseThrow(() -> new EntityNotFoundException("Venta con id " + id + " no encontrada"));
+	}
+	
 	
 }

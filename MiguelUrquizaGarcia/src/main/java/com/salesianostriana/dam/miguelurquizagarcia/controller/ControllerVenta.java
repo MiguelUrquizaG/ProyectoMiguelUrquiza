@@ -63,12 +63,12 @@ public class ControllerVenta {
 	
 		 
 		 v.getLineasVenta().forEach(linea ->{
-			 Prenda prendaCompleta = servicePrenda.findById(linea.getPrenda().getId());
+			 Prenda prendaCompleta = servicePrenda.buscarPrenda(linea.getPrenda().getId());
 			 linea.setPrenda(prendaCompleta);
 		 });
 		 	
 		 v.getLineasVenta().forEach(linea ->{
-			Categoria categoriaCompleta = serviceCategoria.findById(linea.getCategoria().getId());
+			Categoria categoriaCompleta = serviceCategoria.buscar(linea.getCategoria().getId());
 			linea.setCategoria(categoriaCompleta);
 		 });
 		 v.setPrecioTotal(servicioVentas.calcularPrecioDescuento(v));
@@ -77,33 +77,15 @@ public class ControllerVenta {
 		return "ticket";
 	}
 	
-	@GetMapping("/modificarVenta/{id}")
-	public String modificarVenta(@PathVariable long id, Model model) {
-		Venta v = servicioVentas.findById(id);
-		model.addAttribute("venta", v);
-		model.addAttribute("categoria", serviceCategoria.findAll());
-		model.addAttribute("prenda", servicePrenda.findAll());
-		System.out.println(v);
-		System.out.println("Lineas de venta: " + v.getLineasVenta());
-		return "modificar-venta";
-	}
-	@PostMapping("/modificarVenta/submit")
-	public String confirmarModificar(@ModelAttribute Venta v) {
-		List<LineaVenta> lineas = v.getLineasVenta();
-		servicioVentas.editVenta(v);
-		System.out.println("Resultado: "+v);
-		System.out.println("Pso por el POST");
-		return "redirect:/ventas";
-	}
 	
 	@DeleteMapping("/eliminarVenta/submit")
 	public String eliminarVenta(@RequestParam Long id ) {
-		servicioVentas.delete(servicioVentas.findById(id));
+		servicioVentas.delete(servicioVentas.buscarVenta(id));
 		return "redirect:/ventas";
 	}
 	@GetMapping("/ticket/{id}")
 	public String verVenta(@PathVariable long id, Model model) {
-		Venta v = servicioVentas.findById(id);
+		Venta v = servicioVentas.buscarVenta(id);
 		model.addAttribute("venta", v);
 		return "ticket";
 	}

@@ -24,7 +24,7 @@ public class ControllerLineaVenta {
 	@Autowired
 	private Services services;
 	
-	@PostMapping("/anadirLineaVenta/submit")
+	/*@PostMapping("/anadirLineaVenta/submit")
 	public String anadirLineaVenta(@ModelAttribute LineaVenta lineaVenta,@RequestParam long prendaId,
             @RequestParam long categoriaId,
             @RequestParam double cantidad, Model model) {
@@ -33,12 +33,9 @@ public class ControllerLineaVenta {
 	    linea.setCantidad(cantidad);
 	    linea.setCategoria(categoriaService.findById(categoriaId));
 	    linea.setPrenda(services.findById(prendaId));
-
-	    // ⚠️ FALTA asociar VENTA_ID si aún no lo estás haciendo
-	    // linea.setVenta(venta);  ← esto es importante
-
+	    
 	    lineaVentaService.save(linea);
 		return "anadirVenta";
 		
-	}
+	}*/
 }

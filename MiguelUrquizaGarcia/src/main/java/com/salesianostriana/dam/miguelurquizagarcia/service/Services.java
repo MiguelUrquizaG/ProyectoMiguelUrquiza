@@ -5,15 +5,18 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.salesianostriana.dam.miguelurquizagarcia.model.Categoria;
 import com.salesianostriana.dam.miguelurquizagarcia.model.Prenda;
 import com.salesianostriana.dam.miguelurquizagarcia.repository.PrendaRepository;
+
+import jakarta.persistence.EntityNotFoundException;
 
 @Service
 
 public class Services extends BaseService<Prenda, Long, PrendaRepository>{
 	
 @Autowired
-PrendaRepository repoPrenda;
+private PrendaRepository repoPrenda;
 
 //	private List<Prenda>list = new ArrayList<Prenda>();
 //	private long id = 0;
@@ -53,6 +56,18 @@ PrendaRepository repoPrenda;
 	
 	public List<Prenda> buscarPorNombre(String nombre){
 		return repoPrenda.findByNombreContainingIgnoreCase(nombre);
+	}
+	
+	public Prenda buscarPrenda(Long id) {
+		return repoPrenda.findById(id).orElseThrow(() -> new EntityNotFoundException("Prenda con id " + id + " no encontrada"));
+	}
+	
+	public List<Prenda> findAllOrderByNombreAsc() {
+	    return repoPrenda.findAllByOrderByNombreAsc();
+	}
+
+	public List<Prenda> findAllOrderByNombreDesc() {
+	    return repoPrenda.findAllByOrderByNombreDesc();
 	}
 	
 }

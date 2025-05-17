@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import com.salesianostriana.dam.miguelurquizagarcia.model.Categoria;
 import com.salesianostriana.dam.miguelurquizagarcia.repository.CategoriaRepository;
 
+import jakarta.persistence.EntityNotFoundException;
+
 @Service
 public class ServiceCategorias extends BaseService<Categoria, Long, CategoriaRepository>{
 
@@ -15,16 +17,21 @@ public class ServiceCategorias extends BaseService<Categoria, Long, CategoriaRep
 	private CategoriaRepository repoCategoria;
 	
 	public void delete(Long id) {
-		Categoria c =  findById(id);
-		Categoria porDefecto = findById(0L);
+		Categoria c =  buscar(id);
+		//Categoria porDefecto = buscar(0L);
 		
 		if(!c.getListaPrendas().isEmpty() && c!=null) {
 			
 		}else {
 			delete(c);
-			c.getListaPrendas().stream().forEach(prenda -> prenda.setCategoria(porDefecto));
+			//c.getListaPrendas().stream().forEach(prenda -> prenda.setCategoria(porDefecto));
 		}
 		
+	}
+	
+	public Categoria buscar(Long id) {
+	    return repositorio.findById(id)
+	        .orElseThrow(() -> new EntityNotFoundException("Categoría con id " + id + " no encontrada"));
 	}
 
 	
@@ -75,6 +82,8 @@ public class ServiceCategorias extends BaseService<Categoria, Long, CategoriaRep
 		return precio;
 	}
 	
-	
+	public List<Categoria> buscarCategoriasEconomicasNoTopVenta(Double precioMax) {
+        return repoCategoria.buscarCategoriasNoTopVentaPorPrecioMenor(precioMax);
+    }
 	
 }

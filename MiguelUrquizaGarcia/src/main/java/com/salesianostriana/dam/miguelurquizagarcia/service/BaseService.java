@@ -1,5 +1,7 @@
 package com.salesianostriana.dam.miguelurquizagarcia.service;
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -55,7 +57,7 @@ public abstract class BaseService<T, ID, R extends JpaRepository<T, ID>> {
 	 * @param id
 	 * @return
 	 */
-	public T findById(ID id) {
+	public Optional<T> findById(ID id) {
 
 		// Devolvemos la entidad si la encuentra u otro si no lo encuentra,
 		// en este caso, hemos dicho que ese "otro" sea null
@@ -65,8 +67,14 @@ public abstract class BaseService<T, ID, R extends JpaRepository<T, ID>> {
 		 * @Override public Optional<T> findById(ID id) { return
 		 * Optional.ofNullable(repositorio.findById(id).orElse(null)); }
 		 */
+		
+		 Optional<T> resultado = repositorio.findById(id);
 
-		return repositorio.findById(id).orElse(null);
+		    if (resultado.isPresent()) {
+		        return resultado;
+		    } else {
+		        return Optional.empty();
+		    }
 	}
 
 	/**
