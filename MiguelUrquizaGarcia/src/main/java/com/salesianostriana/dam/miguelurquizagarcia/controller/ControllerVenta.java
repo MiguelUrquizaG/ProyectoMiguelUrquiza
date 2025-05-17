@@ -1,6 +1,7 @@
 package com.salesianostriana.dam.miguelurquizagarcia.controller;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ import com.salesianostriana.dam.miguelurquizagarcia.model.Categoria;
 import com.salesianostriana.dam.miguelurquizagarcia.model.LineaVenta;
 import com.salesianostriana.dam.miguelurquizagarcia.model.Prenda;
 import com.salesianostriana.dam.miguelurquizagarcia.model.Venta;
+import com.salesianostriana.dam.miguelurquizagarcia.service.LineaVentaService;
 import com.salesianostriana.dam.miguelurquizagarcia.service.ServiceCategorias;
 import com.salesianostriana.dam.miguelurquizagarcia.service.ServiceVenta;
 import com.salesianostriana.dam.miguelurquizagarcia.service.Services;
@@ -35,6 +37,9 @@ public class ControllerVenta {
 	
 	@Autowired
 	private Services servicePrenda;
+	
+	@Autowired
+	private LineaVentaService serviceLineaVenta;
 
     ControllerVenta(ControllerCategorias controllerCategorias) {
         this.controllerCategorias = controllerCategorias;
@@ -59,24 +64,53 @@ public class ControllerVenta {
 	}
 	@PostMapping("/anadirVenta/submit")
 	public String confirmarVenta(@ModelAttribute Venta v) {
-		
-	
-		 
-		 v.getLineasVenta().forEach(linea ->{
-			 Prenda prendaCompleta = servicePrenda.buscarPrenda(linea.getPrenda().getId());
-			 linea.setPrenda(prendaCompleta);
-		 });
-		 	
-		 v.getLineasVenta().forEach(linea ->{
-			Categoria categoriaCompleta = serviceCategoria.buscar(linea.getCategoria().getId());
-			linea.setCategoria(categoriaCompleta);
-		 });
-		 v.setPrecioTotal(servicioVentas.calcularPrecioDescuento(v));
-		servicioVentas.saveVenta(v);
-		
-		return "ticket";
+	    // Primero, guardar cada LineaVenta
+	    List<LineaVenta> lineasGuardadas = new ArrayList<>();
+	    for (LineaVenta linea : v.getLineasVenta()) {
+	        // Asignar prendas y categorías
+	        Prenda prendaCompleta = servicePrenda.buscarPrenda(linea.getPrenda().getId());
+	        linea.setPrenda(prendaCompleta);
+	        
+	        Categoria categoriaCompleta = serviceCategoria.buscar(linea.getCategoria().getId());
+	        linea.setCategoria(categoriaCompleta);
+	        
+	        // Guardar la línea de venta primero
+	        LineaVenta lineaGuardada = serviceLineaVenta.save(linea); // Asumiendo que tienes un servicio para LineaVenta
+	        lineasGuardadas.add(lineaGuardada);
+	    }
+	    
+	    // Reemplazar las líneas no persistidas con las guardadas
+	    v.setLineasVenta(lineasGuardadas);
+	    
+	    // Ahora que todas las líneas están guardadas, podemos establecer las relaciones bidireccionales
+	    for (LineaVenta lineaGuardada : lineasGuardadas) {
+	        Prenda prenda = lineaGuardada.getPrenda();
+	        if (prenda.getLineasVenta() == null) {
+	            prenda.setLineasVenta(new ArrayList<>());
+	        }
+	        if (!prenda.getLineasVenta().contains(lineaGuardada)) {
+	            prenda.getLineasVenta().add(lineaGuardada);
+	            servicePrenda.save(prenda);
+	          
+	        }
+	        
+	        Categoria categoria = lineaGuardada.getCategoria();
+	        if (categoria.getLineasVenta() == null) {
+	            categoria.setLineasVenta(new ArrayList<>());
+	        }
+	        if (!categoria.getLineasVenta().contains(lineaGuardada)) {
+	            categoria.getLineasVenta().add(lineaGuardada);
+	            serviceCategoria.save(categoria);
+	        }
+	        
+	       
+	    }
+	    
+	    v.setPrecioTotal(servicioVentas.calcularPrecioDescuento(v));
+	    servicioVentas.saveVenta(v);
+
+	    return "ticket";
 	}
-	
 	
 	@DeleteMapping("/eliminarVenta/submit")
 	public String eliminarVenta(@RequestParam Long id ) {

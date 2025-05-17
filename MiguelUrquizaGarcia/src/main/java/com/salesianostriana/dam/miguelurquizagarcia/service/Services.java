@@ -70,4 +70,16 @@ private PrendaRepository repoPrenda;
 	    return repoPrenda.findAllByOrderByNombreDesc();
 	}
 	
+	public void eliminarPrenda(Long id) {
+		
+		Prenda p = buscarPrenda(id);
+		
+		if(!p.getLineasVenta().isEmpty()) {
+			
+		}else {
+			delete(p);
+		}
+		
+	}
+	
 }

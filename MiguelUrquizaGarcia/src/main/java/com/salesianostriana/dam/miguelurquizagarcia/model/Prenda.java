@@ -2,6 +2,7 @@ package com.salesianostriana.dam.miguelurquizagarcia.model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Entity;
@@ -37,7 +38,8 @@ public class Prenda {
 	@JoinColumn(foreignKey = @ForeignKey(name="fk_prenda_categoria"))	
 	private Categoria categoria;
 	
-	@OneToMany
+	@OneToMany (mappedBy="prenda")
+	@JsonIgnore
 	private List<LineaVenta>lineasVenta;
 	
 	public void addToCategoria(Categoria categoria) {
@@ -48,5 +50,13 @@ public class Prenda {
 	public void removeFromCategoria(Categoria categoria) {
 		categoria.getListaPrendas().remove(this);
 		this.categoria = null;		
+	}
+	
+	@Override
+	public String toString() {
+	    return "Prenda{" +
+	           "id=" + id +
+	           ", nombre='" + nombre + '\'' +
+	           '}';
 	}
 }

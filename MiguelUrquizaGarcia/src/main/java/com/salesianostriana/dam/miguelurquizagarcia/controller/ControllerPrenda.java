@@ -91,7 +91,7 @@ public class ControllerPrenda {
 	public String procesarEliminar(@RequestParam Long id) {
 		Prenda p = service.buscarPrenda(id);
 		p.removeFromCategoria(p.getCategoria());
-		service.deleteById(id);
+		service.eliminarPrenda(id);
 
 		return "redirect:/";
 	}

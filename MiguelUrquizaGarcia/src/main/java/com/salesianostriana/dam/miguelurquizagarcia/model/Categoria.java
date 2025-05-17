@@ -2,6 +2,8 @@ package com.salesianostriana.dam.miguelurquizagarcia.model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -51,6 +53,18 @@ public class Categoria {
 		this.listaPrendas = listaPrendas;
 	}
 
+	
+	@Override
+	public String toString() {
+	    return "Categoria{" +
+	           "id=" + id +
+	           ", nombre='" + nombre + '\'' +
+	           ", descripcion='" + descripcion + '\'' +
+	           ", precioServicio=" + precioServicio +
+	           ", descuento=" + descuento +
+	           ", numeroPrendasDescuento=" + numeroPrendasDescuento +
+	           '}';
+	}
 
 
 	@ToString.Exclude
@@ -58,7 +72,8 @@ public class Categoria {
 	@OneToMany(mappedBy = "categoria", fetch= FetchType.EAGER)
 	private List<Prenda> listaPrendas;
 	
-	@OneToMany
+	@OneToMany(mappedBy="categoria")
+	@JsonIgnore
 	private List<LineaVenta>lineasVenta;
 
 }

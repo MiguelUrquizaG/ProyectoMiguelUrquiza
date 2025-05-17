@@ -1,6 +1,7 @@
 package com.salesianostriana.dam.miguelurquizagarcia.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.ForeignKey;
@@ -31,6 +32,7 @@ public class LineaVenta {
 	
 	@ManyToOne
 	@JoinColumn(foreignKey = @ForeignKey(name="fk_categoria"))
+	@JsonIgnore
 	private Categoria categoria;
 	
 	@ManyToOne
@@ -46,6 +48,17 @@ public class LineaVenta {
 	
 	private double subTotalFinal;
 
+	
+	@Override
+	public String toString() {
+	    return "LineaVenta{" +
+	           "id=" + id +
+	           ", cantidad=" + cantidad +
+	           ", subtotal=" + subtotal +
+	           ", prenda=" + (prenda != null ? prenda.getNombre() : "null") + // ✅ Solo el nombre, no el objeto completo
+	           '}';
+	}
+	
 	public LineaVenta(long id, Venta venta, Categoria categoria, Prenda prenda, double cantidad, double subtotal) {
 		super();
 		this.id = id;
