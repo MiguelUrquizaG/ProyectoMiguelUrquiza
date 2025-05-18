@@ -94,19 +94,19 @@
 			</form>
 
 			<div class="row mt-5 mb-3 justify-content-end">
-							<div class="col-3">
-								<span>Cantidad Descuento</span>
-								<input type="number" id="cantidadDescuento" class="form-control text-danger" readonly>
-							</div>
-						</div>
-			
+				<div class="col-3">
+					<span>Cantidad Descuento</span>
+					<input type="number" id="cantidadDescuento" class="form-control text-danger" readonly>
+				</div>
+			</div>
+
 			<div class="row mt-5 mb-3 justify-content-end">
 				<div class="col-3">
 					<span>Precio Final</span>
 					<input type="number" id="precioTotalDescuento" class="form-control text-success" readonly>
 				</div>
 			</div>
-			
+
 			<button class="btn btn-primary" id="btnAnadirLinea">Añadir Linea</button>
 
 		</div>
@@ -206,6 +206,19 @@
 		labelSubtotal.textContent = 'Subtotal'
 		labelSubtotal.classList.add('form-label')
 
+		let precioDescuento = document.createElement('input')
+		precioDescuento.classList.add('form-control','text-success');
+		precioDescuento.value = '';
+		precioDescuento.type='number'
+		precioDescuento.step = '0.01';
+		precioDescuento.readOnly = true;
+		
+		let labelPrecioDescuento = document.createElement('label')
+		labelPrecioDescuento.setAttribute('for',precioDescuento.id)
+		labelPrecioDescuento.textContent = 'Subtotal Con Descuento'
+		labelPrecioDescuento.classList.add('form-label','mt-3')
+
+
 		let btnEliminar = document.createElement('button');
 		btnEliminar.classList.add('btn', 'btn-danger', 'btn-sm')
 		btnEliminar.textContent = 'Eliminar'
@@ -246,6 +259,9 @@
 			if (categoriaSeleccionada) {
 				precio.setAttribute('data-precio-unitario', categoriaSeleccionada.precioServicio);
 				actualizarSubtotal();
+				precioDescuento.setAttribute('data-descuento', categoriaSeleccionada.descuento)
+				precioDescuento.setAttribute('data-cantidadPrendas', categoriaSeleccionada.numeroPrendasDescuento)
+				calcularPrecioDescontado();
 			}
 
 			console.log("Cat seleccionada: ", categoriaSeleccionada);
@@ -253,6 +269,7 @@
 		});
 
 		inputNumero.addEventListener('input', actualizarSubtotal);
+
 
 
 
@@ -267,8 +284,19 @@
 			calcularTotal();
 			calcularPrecioTotalConDescuento();
 			calcularCantidadDescuento();
+			calcularPrecioDescontado();
 		}
+		function calcularPrecioDescontado() {
 
+			const precioT = parseFloat(precio.value) || 0;
+			const precioDescontado = parseFloat(precioDescuento.getAttribute('data-descuento')) || 0
+			const cantidadPrendas = parseFloat(precioDescuento.getAttribute('data-cantidadPrendas')) || 0
+
+			if (inputNumero.value > cantidadPrendas) {
+				precioDescuento.value = precioT - (precioT * precioDescontado / 100).toFixed(2);
+			}
+
+		}
 
 		function calcularPrecioTotalConDescuento() {
 			let totalConDescuento = 0;
@@ -279,14 +307,14 @@
 				const cantidad = parseInt(fila.querySelector('input[name^="lineasVenta["][name$=".cantidad"]').value) || 0;
 				const precioUnitario = parseFloat(fila.querySelector('input[name^="lineasVenta["][name$=".subtotal"]').getAttribute('data-precio-unitario')) || 0;
 
-				
+
 				const categoriaSeleccionada = categorias.find(cat => cat.id == categoriaSeleccionadaId);
 				const descuento = categoriaSeleccionada ? categoriaSeleccionada.descuento : 0;
 				const numPrendasDescuento = categoriaSeleccionada ? categoriaSeleccionada.numeroPrendasDescuento : 0;
 
 				let subtotal = cantidad * precioUnitario;
 
-				
+
 				if (cantidad > numPrendasDescuento) {
 					subtotal -= subtotal * (descuento / 100);
 				}
@@ -307,14 +335,14 @@
 				const cantidad = parseInt(fila.querySelector('input[name^="lineasVenta["][name$=".cantidad"]').value) || 0;
 				const precioUnitario = parseFloat(fila.querySelector('input[name^="lineasVenta["][name$=".subtotal"]').getAttribute('data-precio-unitario')) || 0;
 
-			
+
 				const categoriaSeleccionada = categorias.find(cat => cat.id == categoriaSeleccionadaId);
 				const descuentoPorcentaje = categoriaSeleccionada ? categoriaSeleccionada.descuento : 0;
 				const numPrendasDescuento = categoriaSeleccionada ? categoriaSeleccionada.numeroPrendasDescuento : 0;
 
 				let descuentoAplicado = 0;
 
-			
+
 				if (cantidad > numPrendasDescuento) {
 					let subtotalSinDescuento = cantidad * precioUnitario;
 					descuentoAplicado = subtotalSinDescuento * (descuentoPorcentaje / 100);
@@ -366,6 +394,10 @@
 		colSubtotal.appendChild(labelSubtotal);
 		colSubtotal.appendChild(precio);
 
+		const colDescontado = document.createElement('div');
+		colDescontado.classList.add('col-auto')
+		colDescontado.appendChild(labelPrecioDescuento)
+		colDescontado.appendChild(precioDescuento)
 
 		const colEliminar = document.createElement('div')
 		colEliminar.classList.add('col-auto')
@@ -377,6 +409,7 @@
 		fila.appendChild(colCantidad);
 		fila.appendChild(colSubtotal);
 		fila.appendChild(colEliminar);
+		fila.appendChild(colDescontado);
 
 
 		container.appendChild(fila);
