@@ -207,17 +207,28 @@
 		labelSubtotal.classList.add('form-label')
 
 		let precioDescuento = document.createElement('input')
-		precioDescuento.classList.add('form-control','text-success');
+		precioDescuento.classList.add('form-control', 'text-success');
 		precioDescuento.value = '';
-		precioDescuento.type='number'
+		precioDescuento.type = 'number'
 		precioDescuento.step = '0.01';
 		precioDescuento.readOnly = true;
-		
-		let labelPrecioDescuento = document.createElement('label')
-		labelPrecioDescuento.setAttribute('for',precioDescuento.id)
-		labelPrecioDescuento.textContent = 'Subtotal Con Descuento'
-		labelPrecioDescuento.classList.add('form-label','mt-3')
 
+		let labelPrecioDescuento = document.createElement('label')
+		labelPrecioDescuento.setAttribute('for', precioDescuento.id)
+		labelPrecioDescuento.textContent = 'Subtotal Con Descuento'
+		labelPrecioDescuento.classList.add('form-label', 'mt-3')
+
+
+		let diferenciaDescuento = document.createElement('input')
+		diferenciaDescuento.classList.add('form-control', 'text-danger');
+		diferenciaDescuento.value = '';
+		diferenciaDescuento.type = 'number';
+		diferenciaDescuento.readOnly = true;
+
+		let labelDiferencia = document.createElement('label')
+		labelDiferencia.setAttribute('for', diferenciaDescuento.id)
+		labelDiferencia.textContent = 'Diferencia Descuento'
+		labelDiferencia.classList.add('form-label', 'mt-3')
 
 		let btnEliminar = document.createElement('button');
 		btnEliminar.classList.add('btn', 'btn-danger', 'btn-sm')
@@ -262,6 +273,7 @@
 				precioDescuento.setAttribute('data-descuento', categoriaSeleccionada.descuento)
 				precioDescuento.setAttribute('data-cantidadPrendas', categoriaSeleccionada.numeroPrendasDescuento)
 				calcularPrecioDescontado();
+				
 			}
 
 			console.log("Cat seleccionada: ", categoriaSeleccionada);
@@ -285,6 +297,8 @@
 			calcularPrecioTotalConDescuento();
 			calcularCantidadDescuento();
 			calcularPrecioDescontado();
+			
+			
 		}
 		function calcularPrecioDescontado() {
 
@@ -294,8 +308,16 @@
 
 			if (inputNumero.value > cantidadPrendas) {
 				precioDescuento.value = precioT - (precioT * precioDescontado / 100).toFixed(2);
+				calcularDiferenciaDescuento();
 			}
 
+		}
+
+		function calcularDiferenciaDescuento() {
+		
+				diferenciaDescuento.value = parseFloat(precio.value) - parseFloat(precioDescuento.value)
+			
+			
 		}
 
 		function calcularPrecioTotalConDescuento() {
@@ -399,6 +421,14 @@
 		colDescontado.appendChild(labelPrecioDescuento)
 		colDescontado.appendChild(precioDescuento)
 
+		const colDiferencia = document.createElement('div');
+		colDiferencia.classList.add('col-auto')
+		colDiferencia.appendChild(labelDiferencia)
+		colDiferencia.appendChild(diferenciaDescuento)
+		
+
+
+
 		const colEliminar = document.createElement('div')
 		colEliminar.classList.add('col-auto')
 		colEliminar.appendChild(btnEliminar);
@@ -409,7 +439,9 @@
 		fila.appendChild(colCantidad);
 		fila.appendChild(colSubtotal);
 		fila.appendChild(colEliminar);
+		fila.appendChild(colDiferencia);
 		fila.appendChild(colDescontado);
+
 
 
 		container.appendChild(fila);
