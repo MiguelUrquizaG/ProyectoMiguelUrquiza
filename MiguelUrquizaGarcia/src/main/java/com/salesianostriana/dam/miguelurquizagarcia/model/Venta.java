@@ -33,6 +33,8 @@ public class Venta {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate fechaRecogida;
 	private double precioTotal;
+	private double precioDescontado;
+	private double cantidadDescontada;
 	
 	@OneToMany(mappedBy="venta", fetch= FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference

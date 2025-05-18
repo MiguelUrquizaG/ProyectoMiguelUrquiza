@@ -73,7 +73,10 @@ public class ControllerVenta {
 	        Categoria categoriaCompleta = serviceCategoria.buscar(linea.getCategoria().getId());
 	        linea.setCategoria(categoriaCompleta);
 	        
-	
+	        linea.setSubtotal(serviceLineaVenta.calcularSubtotal(linea));
+	        linea.setSubTotalDescuento(serviceLineaVenta.calcularSubtotalDescuento(linea));
+	        linea.setSubtotalDescontado(serviceLineaVenta.calcularDiferenciaSubtotal(linea));
+	        
 	        LineaVenta lineaGuardada = serviceLineaVenta.save(linea); 
 	        lineasGuardadas.add(lineaGuardada);
 	    }
@@ -112,7 +115,9 @@ public class ControllerVenta {
 	    System.out.println("Precio1: "+servicioVentas.calcularPrecioDescuento(v));
 	    v.setPrecioTotal(servicioVentas.calcularPrecioDescuento(v));
 	    servicioVentas.saveVenta(v);
-	    v.setPrecioTotal(servicioVentas.calcularPrecioDescuento(v));
+	    v.setPrecioDescontado(servicioVentas.calcularPrecioDescuento(v));
+	    v.setPrecioTotal(servicioVentas.calcularPrecioSinDescuento(v));
+	    v.setCantidadDescontada(servicioVentas.calcularCantidadDescontada(v));
 	    servicioVentas.save(v);
 	    System.out.println("Venta2:"+v);
 

@@ -44,9 +44,9 @@ public class LineaVenta {
 	
 	private double subtotal;
 	
-	private double descuento;
+	private double subTotalDescuento;
 	
-	private double subTotalFinal;
+	private double subtotalDescontado;
 
 	
 	@Override

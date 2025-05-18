@@ -4,6 +4,8 @@ INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, desc
 INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) VALUES (3, 'Quitamanchas', 'Tratamiento especializado para eliminar manchas difíciles', 7.25, false, 0.0, 0);
 INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) VALUES (4, 'Teñido', 'Servicio de teñido personalizado para renovar prendas', 12.99, false, 20.0, 2);
 INSERT INTO categoria (id, nombre, descripcion, precio_servicio, top_venta, descuento, numero_prendas_descuento) VALUES (5, 'Lavado estándar', 'Lavado con agua y detergentes suaves', 6.50, true, 12.0, 4);
+ALTER TABLE categoria ALTER COLUMN id RESTART WITH 6;
+
 
 -- Insertar prendas
 INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id) VALUES (1, 'Traje formal', 'Traje de dos piezas para ocasiones especiales', 'img/traje-formal.jpg', true, 1);
@@ -16,3 +18,4 @@ INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id
 INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id) VALUES (8, 'Blusa descolorida', 'Blusa para recuperar color original', 'img/blusa-descolorida.jpg', false, 4);
 INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id) VALUES (9, 'Camiseta deportiva', 'Camiseta para ejercicio', 'img/camiseta-deportiva.jpg', true, 5);
 INSERT INTO prenda (id, nombre, descripcion, url_imagen, top_venta, categoria_id) VALUES (10, 'Falda plisada', 'Falda con pliegues elegantes', 'img/falda-plisada.jpg', false, 5);
+ALTER TABLE prenda ALTER COLUMN id RESTART WITH 11;

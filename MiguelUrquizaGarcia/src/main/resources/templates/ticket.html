@@ -76,16 +76,37 @@
 								<span><span th:text="${linea.cantidad}">1</span> x <span
 										th:text="${linea.prenda.nombre}">Prenda</span></span>
 							</div>
-							<span class="badge bg-success rounded-pill" th:text="${linea.subtotal} + ' €'">10.00
+							<span class="badge bg-primary rounded-pill" th:text="${#numbers.formatDecimal(linea.subtotal,1,2)} + ' €'">10.00
+								€</span>
+							<span class="badge bg-danger rounded-pill " 
+								th:text="${#numbers.formatDecimal(linea.subtotalDescontado,1,2)} + ' €'">10.00
+								€</span>
+
+							<span class="badge bg-success rounded-pill"
+								th:text="${#numbers.formatDecimal(linea.subTotalDescuento,1,2)} + ' €'">10.00
 								€</span>
 						</li>
+
 					</ul>
 
-					<div class="text-end fs-4 fw-bold text-success">
-						Total: <span th:text="${venta.precioTotal} + ' €'">50.00 €</span>
+
+
+
+					<div class="text-end fs-4 fw-bold">
+						Total: <span th:text="${#numbers.formatDecimal(venta.precioTotal,1,2)} + ' €'">50.00 €</span>
 					</div>
 
-					<div class="text-center mt-4">
+					<div class="text-end fs-4 fw-bold text-danger">
+						Descuento Aplicado: <span
+							th:text="${#numbers.formatDecimal(venta.cantidadDescontada,1,2)} + ' €'">50.00 €</span>
+					</div>
+
+					<div class="text-end fs-4 fw-bold text-success">
+						Total con Descuento: <span
+							th:text="${#numbers.formatDecimal(venta.precioDescontado, 1,2)} + ' €'">50.00 €</span>
+					</div>
+
+					<div class="text-center mt-4 ">
 						<a th:href="@{/ventas}" class="btn btn-outline-success">
 							<i class="bi bi-arrow-left-circle me-1"></i> Volver a Ventas
 						</a>

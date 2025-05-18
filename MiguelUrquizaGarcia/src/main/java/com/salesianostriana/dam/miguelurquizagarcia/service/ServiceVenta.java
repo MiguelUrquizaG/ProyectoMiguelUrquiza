@@ -87,6 +87,20 @@ public class ServiceVenta extends BaseService<Venta, Long, VentaRepository>{
 		return total;
 	}
 	
+	public double calcularPrecioSinDescuento(Venta v) {
+		return v.getLineasVenta().stream()
+			.mapToDouble(linea -> linea.getCantidad()*linea.getCategoria().getPrecioServicio())
+			.sum();
+		
+		
+	}
+	
+	public double calcularCantidadDescontada(Venta v) {
+		double precioSinDescuento = calcularPrecioSinDescuento(v);
+		double precioDescontado = calcularPrecioDescuento(v);
+		return precioSinDescuento-precioDescontado;
+	}
+	
 	public Venta buscarVenta (Long id) {
 		return repositorio.findById(id).orElseThrow(() -> new EntityNotFoundException("Venta con id " + id + " no encontrada"));
 	}

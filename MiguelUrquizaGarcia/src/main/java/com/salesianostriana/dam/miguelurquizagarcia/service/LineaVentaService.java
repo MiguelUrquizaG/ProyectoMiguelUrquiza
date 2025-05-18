@@ -8,4 +8,22 @@ import com.salesianostriana.dam.miguelurquizagarcia.repository.LineaVentaReposit
 @Service
 public class LineaVentaService extends BaseService<LineaVenta, Long, LineaVentaRepository>{
 
+	
+	public double calcularSubtotal(LineaVenta linea) {
+		double total;
+		
+		total = linea.getCantidad()*linea.getCategoria().getPrecioServicio();
+		
+		return total;
+		
+	}
+	
+	public double calcularSubtotalDescuento(LineaVenta linea) {
+		return calcularSubtotal(linea) - calcularSubtotal(linea)*linea.getCategoria().getDescuento()/100;
+	}
+	
+	public double calcularDiferenciaSubtotal(LineaVenta linea) {
+		return calcularSubtotal(linea) - calcularSubtotalDescuento(linea);
+	}
+	
 }
