@@ -19,7 +19,10 @@ public class LineaVentaService extends BaseService<LineaVenta, Long, LineaVentaR
 	}
 	
 	public double calcularSubtotalDescuento(LineaVenta linea) {
-		return calcularSubtotal(linea) - calcularSubtotal(linea)*linea.getCategoria().getDescuento()/100;
+		if(linea.getCantidad()>linea.getCategoria().getNumeroPrendasDescuento()) {
+			return calcularSubtotal(linea) - calcularSubtotal(linea)*linea.getCategoria().getDescuento()/100;
+		}
+		return calcularSubtotal(linea);
 	}
 	
 	public double calcularDiferenciaSubtotal(LineaVenta linea) {
