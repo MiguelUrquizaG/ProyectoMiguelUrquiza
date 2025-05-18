@@ -92,6 +92,21 @@
 					<button type="submit" class="btn btn-dark">Guardar Venta</button>
 				</div>
 			</form>
+
+			<div class="row mt-5 mb-3 justify-content-end">
+							<div class="col-3">
+								<span>Cantidad Descuento</span>
+								<input type="number" id="cantidadDescuento" class="form-control text-danger" readonly>
+							</div>
+						</div>
+			
+			<div class="row mt-5 mb-3 justify-content-end">
+				<div class="col-3">
+					<span>Precio Final</span>
+					<input type="number" id="precioTotalDescuento" class="form-control text-success" readonly>
+				</div>
+			</div>
+			
 			<button class="btn btn-primary" id="btnAnadirLinea">Añadir Linea</button>
 
 		</div>
@@ -203,6 +218,8 @@
 		btnEliminar.addEventListener('click', function () {
 			container.removeChild(fila);
 			calcularTotal();
+			calcularPrecioTotalConDescuento();
+			calcularCantidadDescuento();
 		})
 
 		selectCategoria.addEventListener('change', function () {
@@ -248,10 +265,65 @@
 			const subtotal = cantidad * precioUnitario;
 			precio.value = subtotal.toFixed(2);
 			calcularTotal();
+			calcularPrecioTotalConDescuento();
+			calcularCantidadDescuento();
 		}
 
 
+		function calcularPrecioTotalConDescuento() {
+			let totalConDescuento = 0;
 
+			document.querySelectorAll('div[data-linea-id]').forEach(fila => {
+				const selectCategoria = fila.querySelector('select[name^="lineasVenta["][name$=".categoria.id"]');
+				const categoriaSeleccionadaId = selectCategoria.value;
+				const cantidad = parseInt(fila.querySelector('input[name^="lineasVenta["][name$=".cantidad"]').value) || 0;
+				const precioUnitario = parseFloat(fila.querySelector('input[name^="lineasVenta["][name$=".subtotal"]').getAttribute('data-precio-unitario')) || 0;
+
+				
+				const categoriaSeleccionada = categorias.find(cat => cat.id == categoriaSeleccionadaId);
+				const descuento = categoriaSeleccionada ? categoriaSeleccionada.descuento : 0;
+				const numPrendasDescuento = categoriaSeleccionada ? categoriaSeleccionada.numeroPrendasDescuento : 0;
+
+				let subtotal = cantidad * precioUnitario;
+
+				
+				if (cantidad > numPrendasDescuento) {
+					subtotal -= subtotal * (descuento / 100);
+				}
+
+				totalConDescuento += subtotal;
+			});
+
+			document.getElementById('precioTotalDescuento').value = totalConDescuento.toFixed(2);
+		}
+
+
+		function calcularCantidadDescuento() {
+			let totalDescuento = 0;
+
+			document.querySelectorAll('div[data-linea-id]').forEach(fila => {
+				const selectCategoria = fila.querySelector('select[name^="lineasVenta["][name$=".categoria.id"]');
+				const categoriaSeleccionadaId = selectCategoria.value;
+				const cantidad = parseInt(fila.querySelector('input[name^="lineasVenta["][name$=".cantidad"]').value) || 0;
+				const precioUnitario = parseFloat(fila.querySelector('input[name^="lineasVenta["][name$=".subtotal"]').getAttribute('data-precio-unitario')) || 0;
+
+			
+				const categoriaSeleccionada = categorias.find(cat => cat.id == categoriaSeleccionadaId);
+				const descuentoPorcentaje = categoriaSeleccionada ? categoriaSeleccionada.descuento : 0;
+				const numPrendasDescuento = categoriaSeleccionada ? categoriaSeleccionada.numeroPrendasDescuento : 0;
+
+				let descuentoAplicado = 0;
+
+			
+				if (cantidad > numPrendasDescuento) {
+					let subtotalSinDescuento = cantidad * precioUnitario;
+					descuentoAplicado = subtotalSinDescuento * (descuentoPorcentaje / 100);
+					totalDescuento += descuentoAplicado;
+				}
+			});
+
+			document.getElementById('cantidadDescuento').value = totalDescuento.toFixed(2);
+		}
 
 		function calcularTotal() {
 			let total = 0;
@@ -265,9 +337,9 @@
 
 			document.getElementById('precioTotalFinal').value = total.toFixed(2);
 		}
-		
-		
-		
+
+
+
 
 
 
@@ -311,6 +383,7 @@
 
 
 		indiceLineaVenta++;
+		console.log("Total con descuento actualizado:", precioTotalDescuento.value);
 	}
 
 </script>
