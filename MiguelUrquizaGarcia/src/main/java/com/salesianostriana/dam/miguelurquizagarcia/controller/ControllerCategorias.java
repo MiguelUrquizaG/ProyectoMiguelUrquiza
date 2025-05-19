@@ -93,5 +93,27 @@ public class ControllerCategorias {
 	        model.addAttribute("nuevacategoria", new Categoria());
 	        return "listaCategorias"; 
 	    }
+	  
+	  @GetMapping("/administrarDescuentos")
+	  public String administrarDescuento(Model model,Categoria c) {
+		  model.addAttribute("categorias", categoriaServicios.findAll());
+		  System.out.println(categoriaServicios.findAll());
+		  model.addAttribute("categoria", c);
+		  return "administrarDescuentos";
+	  }
+	  
+	  @PostMapping("/editarDescuentos/submit/{id}")
+	  public String editarDescuentos(@PathVariable Long id, @RequestParam(required=false) Double descuento, @RequestParam(required=false) Double cantidadPrendas) {
+		  System.out.println("Edito los descuentos");
+		  System.out.println(id);
+		  System.out.println(descuento);
+		  System.out.println(cantidadPrendas);
+		  Categoria c = categoriaServicios.buscar(id);
+		  c.setDescuento(descuento);
+		  c.setNumeroPrendasDescuento(cantidadPrendas);
+		  categoriaServicios.agregar(c);	
+		  
+		  return "redirect:/administrarDescuentos";
+	  }
 	
 }

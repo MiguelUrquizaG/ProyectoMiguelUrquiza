@@ -37,12 +37,6 @@ public class ServiceVenta extends BaseService<Venta, Long, VentaRepository>{
 	}
 	
 	public double calcularPrecioTotalVenta(Venta v) {
-//		OptionalDouble total = v.getLineasVenta().stream()
-//		.mapToDouble(l -> l.getSubTotal())
-//		.average();
-//		System.out.println(total);
-//		return total.getAsDouble();
-		
 		double total=0;
 		for(LineaVenta l: v.getLineasVenta()) {
 			
