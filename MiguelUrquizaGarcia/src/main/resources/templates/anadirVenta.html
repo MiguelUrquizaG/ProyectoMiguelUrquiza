@@ -51,63 +51,74 @@
 	</header>
 	<main class="flex-fill container my-4">
 
+		
+		
 		<div class="container">
-
-			<form method="POST" action="#" th:action="@{/anadirVenta/submit}" th:object="${nuevaVenta}" class="w-100"
-				name="inicioSesion">
-				<div class="row justify-content-center mt-3 mb-5">
-					<div class="col-3  col-lg-3 ">
-						<label for="inputNombre" class="form-label">Nombre Prenda<span
-								class="text-danger">*</span></label>
-						<input th:field="*{nombreCliente}" type="text" class="form-control" id="inputNombre" required
-							placeholder="Introduzca el nombre." maxlength="9" pattern="[A-Za-z_ ]*">
+			<div class="card shadow-sm p-4 mb-5">
+				<form method="POST" action="#" th:action="@{/anadirVenta/submit}" th:object="${nuevaVenta}"
+					class="w-100" name="inicioSesion">
+					<div class="row g-3 mb-4">
+						<div class="col-md-4">
+							<label for="inputNombre" class="form-label">Nombre Prenda <span
+									class="text-danger">*</span></label>
+							<input th:field="*{nombreCliente}" type="text" class="form-control" id="inputNombre"
+								required placeholder="Introduzca el nombre." maxlength="9" pattern="[A-Za-z_ ]*">
+						</div>
+						<div class="col-md-4">
+							<label for="inputFechaEntrega" class="form-label">Fecha Entrega <span
+									class="text-danger">*</span></label>
+							<input th:field="*{fechaEntrega}" disabled type="date" class="form-control"
+								id="inputFechaEntrega" required>
+						</div>
+						<div class="col-md-4">
+							<label for="inputFechaRecogida" class="form-label">Fecha Recogida <span
+									class="text-danger">*</span></label>
+							<input th:field="*{fechaRecogida}" type="date" th:min="${nuevaVenta.fechaRecogida}"
+								class="form-control" id="inputFechaRecogida" required>
+						</div>
 					</div>
-					<div class="col-3 ">
-						<label for="inputFechaEntrega" class="form-label">Fecha Entrega<span
-								class="text-danger">*</span></label>
-						<input th:field="*{fechaEntrega}" disabled type="date" class="form-control"
-							id="inputFechaEntrega" required placeholder="Ingrese el precio del producto.">
+
+
+					<div class="d-flex justify-content-start mb-5">
+						<button type="button" class="btn btn-outline-primary rounded-pill" id="btnAnadirLinea">
+							<i class="bi bi-plus-circle"></i> Añadir Línea
+							</butto>
 					</div>
-					<div class="col-3 ">
-						<label for="inputFechaRecogida" class="form-label">Fecha Recogida<span
-								 class="text-danger">*</span></label>
-						<input th:field="*{fechaRecogida}" type="date" th:min="${nuevaVenta.fechaRecogida}" class="form-control"
-							id="inputFechaRecogida" required placeholder="Ingrese el precio del producto.">
+
+
+					<div id="lineasVenta" class="mb-4"></div>
+
+					<div class="row justify-content-end mb-3">
+						<div class="col-md-4">
+							<label for="precioTotalFinal" class="form-label">Precio Total</label>
+							<input th:field="*{precioTotal}" disabled type="number" id="precioTotalFinal"
+								class="form-control" readonly>
+						</div>
 					</div>
-				</div>
 
-
-				<div id="lineasVenta">
-
-				</div>
-				<div class="row mt-5 mb-3 justify-content-end">
-					<div class="col-3">
-						<label for="precioTotalFinal" class="form-label">Precio Total</label>
-						<input th:field="*{precioTotal}" type="number" id="precioTotalFinal" class="form-control"
-							readonly>
+					<div class="row justify-content-end mb-3">
+						<div class="col-md-4">
+							<label for="cantidadDescuento" class="form-label">Cantidad Descuento</label>
+							<input type="number" disabled id="cantidadDescuento" class="form-control text-danger"
+								readonly>
+						</div>
 					</div>
-				</div>
 
-				<div>
-					<button type="submit" class="btn btn-dark">Guardar Venta</button>
-				</div>
-			</form>
+					<div class="row justify-content-end mb-4">
+						<div class="col-md-4">
+							<label for="precioTotalDescuento" class="form-label">Precio Final</label>
+							<input type="number" id="precioTotalDescuento" class="form-control text-success" readonly>
+						</div>
+					</div>
 
-			<div class="row mt-5 mb-3 justify-content-end">
-				<div class="col-3">
-					<span>Cantidad Descuento</span>
-					<input type="number" id="cantidadDescuento" class="form-control text-danger" readonly>
-				</div>
+
+					<div class="d-flex justify-content-end mb-4">
+						<button type="submit" class="btn btn-dark px-4">Guardar Venta</button>
+					</div>
+				</form>
 			</div>
 
-			<div class="row mt-5 mb-3 justify-content-end">
-				<div class="col-3">
-					<span>Precio Final</span>
-					<input type="number" id="precioTotalDescuento" class="form-control text-success" readonly>
-				</div>
-			</div>
 
-			<button class="btn btn-primary" id="btnAnadirLinea">Añadir Linea</button>
 
 		</div>
 
@@ -143,7 +154,7 @@
 
 
 		let selectCategoria = document.createElement('select');
-		selectCategoria.classList.add('form-select');
+		selectCategoria.classList.add('form-select', 'form-select-sm', 'rounded-3', 'shadow-sm');
 		selectCategoria.name = `lineasVenta[${indiceLineaVenta}].categoria.id`;
 		selectCategoria.required = true;
 
@@ -159,7 +170,7 @@
 		labelCategoria.classList.add('form-label')
 
 		let selectPrenda = document.createElement('select');
-		selectPrenda.classList.add('form-select');
+		selectPrenda.classList.add('form-select', 'form-select-sm', 'rounded-3', 'shadow-sm');
 		selectPrenda.name = `lineasVenta[${indiceLineaVenta}].prenda.id`
 		selectPrenda.required = true;
 
@@ -174,11 +185,13 @@
 		labelPrenda.classList.add('form-label')
 
 		let inputNumero = document.createElement('input')
-		inputNumero.classList.add('form-control')
+		inputNumero.classList.add('form-control', 'form-control-sm', 'rounded-3', 'shadow-sm')
 		inputNumero.type = 'number';
 		inputNumero.min = '1';
 		inputNumero.required = true;
 		inputNumero.name = `lineasVenta[${indiceLineaVenta}].cantidad`;
+		inputNumero.style.maxWidth = '70px';
+
 
 		let labelCantidad = document.createElement('label')
 		labelCantidad.setAttribute('for', inputNumero.id)
@@ -195,11 +208,12 @@
 
 
 		let precio = document.createElement('input')
-		precio.classList.add('form-control')
+		precio.classList.add('form-control', 'form-control-sm', 'rounded-3', 'shadow-sm');
 		precio.value = ' ';
 		precio.name = `lineasVenta[${indiceLineaVenta}].subtotal`
 		precio.readOnly = true;
 		precio.type = 'number'
+
 
 		let labelSubtotal = document.createElement('label')
 		labelSubtotal.setAttribute('for', precio.id)
@@ -207,28 +221,31 @@
 		labelSubtotal.classList.add('form-label')
 
 		let precioDescuento = document.createElement('input')
-		precioDescuento.classList.add('form-control', 'text-success');
+		precioDescuento.classList.add('form-control', 'form-control-sm', 'rounded-3', 'shadow-sm', 'text-success');
 		precioDescuento.value = '';
 		precioDescuento.type = 'number'
 		precioDescuento.step = '0.01';
 		precioDescuento.readOnly = true;
 
+
 		let labelPrecioDescuento = document.createElement('label')
 		labelPrecioDescuento.setAttribute('for', precioDescuento.id)
 		labelPrecioDescuento.textContent = 'Subtotal Con Descuento'
-		labelPrecioDescuento.classList.add('form-label', 'mt-3')
+		labelPrecioDescuento.classList.add('form-label')
 
 
 		let diferenciaDescuento = document.createElement('input')
-		diferenciaDescuento.classList.add('form-control', 'text-danger');
+		diferenciaDescuento.classList.add('form-control', 'form-control-sm', 'rounded-3', 'shadow-sm', 'text-danger');
 		diferenciaDescuento.value = '';
 		diferenciaDescuento.type = 'number';
 		diferenciaDescuento.readOnly = true;
 
+
+
 		let labelDiferencia = document.createElement('label')
 		labelDiferencia.setAttribute('for', diferenciaDescuento.id)
 		labelDiferencia.textContent = 'Diferencia Descuento'
-		labelDiferencia.classList.add('form-label', 'mt-3')
+		labelDiferencia.classList.add('form-label')
 
 		let btnEliminar = document.createElement('button');
 		btnEliminar.classList.add('btn', 'btn-danger', 'btn-sm')
@@ -273,7 +290,7 @@
 				precioDescuento.setAttribute('data-descuento', categoriaSeleccionada.descuento)
 				precioDescuento.setAttribute('data-cantidadPrendas', categoriaSeleccionada.numeroPrendasDescuento)
 				calcularPrecioDescontado();
-				
+
 			}
 
 			console.log("Cat seleccionada: ", categoriaSeleccionada);
@@ -297,8 +314,8 @@
 			calcularPrecioTotalConDescuento();
 			calcularCantidadDescuento();
 			calcularPrecioDescontado();
-			
-			
+
+
 		}
 		function calcularPrecioDescontado() {
 
@@ -309,15 +326,15 @@
 			if (inputNumero.value > cantidadPrendas) {
 				precioDescuento.value = (precioT - (precioT * precioDescontado / 100)).toFixed(2);
 				calcularDiferenciaDescuento();
-			}
 
+			}
 		}
 
 		function calcularDiferenciaDescuento() {
-		
-				diferenciaDescuento.value = (parseFloat(precio.value) - parseFloat(precioDescuento.value)).toFixed(2);
-			
-			
+
+			diferenciaDescuento.value = (parseFloat(precio.value) - parseFloat(precioDescuento.value)).toFixed(2);
+
+
 		}
 
 		function calcularPrecioTotalConDescuento() {
@@ -417,20 +434,17 @@
 		colSubtotal.appendChild(precio);
 
 		const colDescontado = document.createElement('div');
-		colDescontado.classList.add('col-auto')
+		colDescontado.classList.add('col-auto');
 		colDescontado.appendChild(labelPrecioDescuento)
 		colDescontado.appendChild(precioDescuento)
 
 		const colDiferencia = document.createElement('div');
-		colDiferencia.classList.add('col-auto')
+		colDiferencia.classList.add('col-auto');
 		colDiferencia.appendChild(labelDiferencia)
 		colDiferencia.appendChild(diferenciaDescuento)
-		
-
-
 
 		const colEliminar = document.createElement('div')
-		colEliminar.classList.add('col-auto')
+		colEliminar.classList.add('col-auto');
 		colEliminar.appendChild(btnEliminar);
 
 
@@ -438,9 +452,10 @@
 		fila.appendChild(colPrenda);
 		fila.appendChild(colCantidad);
 		fila.appendChild(colSubtotal);
-		fila.appendChild(colEliminar);
 		fila.appendChild(colDiferencia);
 		fila.appendChild(colDescontado);
+		fila.appendChild(colEliminar);
+
 
 
 

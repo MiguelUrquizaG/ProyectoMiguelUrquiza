@@ -50,60 +50,53 @@
 	</header>
 	<main class="flex-fill container my-4">
 
-		<div class="container">
+		<div class="row justify-content-center mt-3 mb-5">
+		  <div class="col-12 col-lg-4">
+		    <form method="POST" action="#" th:action="@{/editarCategoria/submit}" th:object="${categoria}"
+		      class="bg-white rounded-3 shadow-sm p-4 w-100" name="modificarCategoria">
 
+		      <input type="hidden" th:field="*{id}" />
 
-			<div class="row justify-content-center mt-3 mb-5">
-				<div class="col-12  col-lg-4">
+		      <div class="mb-4">
+		        <label for="inputNombre" class="form-label fw-semibold">Nombre Prenda <span class="text-danger">*</span></label>
+		        <input th:field="*{nombre}" type="text" class="form-control border-primary" id="inputNombre" required
+		          placeholder="Introduzca el nombre." maxlength="20" pattern="[A-Za-z_ ]*" />
+		        <div class="invalid-feedback">
+		          Por favor, introduzca un nombre válido (solo letras y espacios).
+		        </div>
+		      </div>
 
+		      <div class="mb-4">
+		        <label for="inputPrecio" class="form-label fw-semibold">Precio <span class="text-danger">*</span></label>
+		        <input id="inputPrecio" class="form-control border-primary" th:field="*{precioServicio}" required />
+		      </div>
 
+		      <div class="mb-4">
+		        <label for="inputDescripcion" class="form-label fw-semibold">Descripción <span class="text-danger">*</span></label>
+		        <textarea th:field="*{descripcion}" class="form-control border-success" id="inputDescripcion" required></textarea>
+		        <div class="invalid-feedback">La descripción es obligatoria.</div>
+		      </div>
 
-					<form method="POST" action="#" th:action="@{/editarCategoria/submit}" th:object="${categoria}"
-						class="w-100" name="inicioSesion">
-						<div class="mb-3 ">
-							<input type="hidden" th:field="*{id}" />
-							<label for="inputNombre" class="form-label">Nombre Prenda<span
-									class="text-danger">*</span></label>
-							<input th:field="*{nombre}" type="text" class="form-control" id="inputNombre" required
-								placeholder="Introduzca el nombre." maxlength="20" pattern="[A-Za-z_ ]*">
-						</div>
-						<div class="mb-3">
-							<label for="inputPrecio" class="form-label">Precio<span class="text-danger">*</span></label>
-							<input id="inputPrecio" class="form-control" th:field="*{precioServicio}">
-						</div>
-						<div class="mb-3 ">
-							<label for="inputDescripcion" class="form-label">Descripción<span
-									class="text-danger">*</span></label>
-							<textarea th:field="*{descripcion}" class="form-control" id="inputDescripcion"
-								required></textarea>
-						</div>
-						<div class="mb-3  form-check">
-							<label for="inputCheck" class="form-check-label">Top Venta<span
-									class="text-danger">*</span></label>
-							<input th:field="*{topVenta}" type="checkbox" class="form-check-input" id="inputCheck">
-						</div>
+		      <div class="form-check mb-4">
+		        <input th:field="*{topVenta}" type="checkbox" class="form-check-input bg-danger border-danger shadow-sm" id="inputCheck" />
+		        <label for="inputCheck" class="form-check-label fw-semibold text-danger">Top Venta</label>
+		      </div>
 
-						<div class="mb-3">
-							<label for="inputDescuento" class="form-label">Descuento<span
-									class="text-danger">*</span></label>
-							<input id="inputDescuento" class="form-control" th:field="*{descuento}">
-						</div>
-						<div class="mb-3">
-							<label for="inputCantidadDescuento" class="form-label">Cantidad Descuento<span
-									class="text-danger">*</span></label>
-							<input id="inputCantidadDescuento" class="form-control"
-								th:field="*{numeroPrendasDescuento}">
-						</div>
-						<div>
-							<button type="submit" class="btn btn-dark">Editar Categoria</button>
-						</div>
-					</form>
+		      <div class="mb-4">
+		        <label for="inputDescuento" class="form-label fw-semibold">Descuento <span class="text-danger">*</span></label>
+		        <input id="inputDescuento" class="form-control border-warning" th:field="*{descuento}" required />
+		      </div>
 
-				</div>
-			</div>
+		      <div class="mb-4">
+		        <label for="inputCantidadDescuento" class="form-label fw-semibold">Cantidad Descuento <span class="text-danger">*</span></label>
+		        <input id="inputCantidadDescuento" class="form-control border-warning" th:field="*{numeroPrendasDescuento}" required />
+		      </div>
 
-
-
+		      <div class="d-grid">
+		        <button type="submit" class="btn btn-dark shadow-sm fw-semibold">Editar Categoria</button>
+		      </div>
+		    </form>
+		  </div>
 		</div>
 	</main>
 

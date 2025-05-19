@@ -54,42 +54,57 @@
 	</header>
 	<main class="flex-fill px-0 container-fluid text-primary">
 
-		<table>
-			<thead>
-				<tr>
-					<th>ID</th>
-					<th>Nombre</th>
-					<th>Descripción</th>
-					<th>Precio Servicio</th>
-					<th>Top Venta</th>
-					<th>Descuento (%)</th>
-					<th>Nº Prendas Descuento</th>
-					<th>Acciones</th>
-				</tr>
-			</thead>
-			<tbody>
-
-				<tr th:each="cat : ${categorias}">
-					<td th:text="${cat.id}">1</td>
-					<td th:text="${cat.nombre}">Nombre</td>
-					<td th:text="${cat.descripcion}">Descripción</td>
-					<td th:text="${cat.precioServicio}">0.0</td>
-					<td th:text="${cat.topVenta ? 'Sí' : 'No'}">Sí</td>
-					<form action="#" method="post" th:action="@{/editarDescuentos/submit/{id} (id=${cat.id})}">
-						<td>
-							<input type="number" step="0.01" min="0" name="descuento" th:value="${cat.descuento}" />
-							<input type="number" step="0.01" min="0" name="cantidadPrendas"
-								th:value="${cat.numeroPrendasDescuento}" />
-						</td>
-
-						<td>
-							<button type="submit" name="guardar">Guardar</button>
-						</td>
-					</form>
-				</tr>
-			</tbody>
-		</table>
-
+		<div class="card shadow">
+			<div class="card-header bg-primary text-white">
+				<h5 class="mt-0 mb-0">Gestión de Categorías</h5>
+			</div>
+			<div class="card-body table-responsive">
+				<table class="table table-hover align-middle text-center">
+					<thead class="table-light">
+						<tr>
+							<th>ID</th>
+							<th>Nombre</th>
+							<th>Descripción</th>
+							<th>Precio Servicio (€)</th>
+							<th>Top Venta</th>
+							<th>Descuento (%)</th>
+							<th>Nº Prendas Descuento</th>
+							<th>Acciones</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="cat : ${categorias}">
+							<td th:text="${cat.id}"></td>
+							<td th:text="${cat.nombre}"></td>
+							<td th:text="${cat.descripcion}"></td>
+							<td th:text="${cat.precioServicio}"></td>
+							<td>
+								<span class="badge" th:classappend="${cat.topVenta} ? 'bg-success' : 'bg-secondary'"
+									th:text="${cat.topVenta ? 'Sí' : 'No'}"></span>
+							</td>
+							<form action="#" method="post" th:action="@{/editarDescuentos/submit/{id}(id=${cat.id})}">
+								<td>
+									<input type="number" step="0.01" min="0" name="descuento"
+										th:value="${cat.descuento}"
+										class="form-control form-control-sm border-primary shadow-sm">
+								</td>
+								<td>
+									<input type="number" step="1" min="0" name="cantidadPrendas"
+										th:value="${cat.numeroPrendasDescuento}"
+										class="form-control form-control-sm border-primary shadow-sm">
+								</td>
+								<td>
+									<button type="submit" name="guardar"
+										class="btn btn-sm btn-outline-success shadow-sm">
+										<i class="bi bi-save"></i> Guardar
+									</button>
+								</td>
+							</form>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
 	</main>
 
 	<div th:replace="~{fragments/footer :: footer}"></div>

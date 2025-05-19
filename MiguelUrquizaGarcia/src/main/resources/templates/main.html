@@ -53,35 +53,36 @@
 
 	<main class="flex-fill container my-4">
 		<div class="d-flex justify-content-between align-items-center mb-4">
-					<button type="button" class="btn btn-primary shadow" data-bs-toggle="modal" data-bs-target="#anadirPrenda">
-						<i class="bi bi-plus-circle me-1"></i> Añadir Prenda
-					</button>
+			<h2 class="text-primary">Gestión de Prendas</h2>
+			<button class="btn btn-outline-primary shadow-sm" data-bs-toggle="modal" data-bs-target="#anadirPrenda">
+				<i class="bi bi-plus-circle me-1"></i> Añadir Prenda
+			</button>
+		</div>
+
+		<div class="row g-3 mb-5">
+			<form method="get" th:action="@{/buscar}" class="col-md-4 col-12">
+				<label for="buscarNombrePrenda" class="form-label fw-semibold">Buscar por Nombre</label>
+				<div class="input-group">
+					<input type="text" id="buscarNombrePrenda" name="query" class="form-control"
+						placeholder="Nombre de categoría" />
+					<button type="submit" class="btn btn-dark fw-semibold">Buscar</button>
 				</div>
+			</form>
 
-				<div class="row mb-4 g-3">
-					<form method="get" th:action="@{/buscar}" class="col-md-4">
-						<label class="form-label">Buscar por nombre</label>
-						<div class="input-group">
-							<input type="text" name="query" class="form-control" placeholder="Nombre de la prenda">
-							<button type="submit" class="btn btn-primary"><i class="bi bi-search"></i></button>
-						</div>
-					</form>
+			<form method="get" th:action="@{/ordenarPrendas}" class="col-md-4 d-flex align-items-end">
+				<input type="hidden" name="orden" value="asc" />
+				<button type="submit" class="btn btn-outline-dark w-100">
+					Ordenar A-Z <i class="bi bi-arrow-up ms-2"></i>
+				</button>
+			</form>
 
-					<form method="get" th:action="@{/ordenarPrendas}" class="col-md-4 d-flex align-items-end">
-						<input type="hidden" name="orden" value="asc" />
-						<button type="submit" class="btn btn-outline-dark w-100">
-							Ordenar A-Z <i class="bi bi-arrow-up ms-2"></i>
-						</button>
-					</form>
-
-					<form method="get" th:action="@{/ordenarPrendas}" class="col-md-4 d-flex align-items-end">
-						<input type="hidden" name="orden" value="desc" />
-						<button type="submit" class="btn btn-outline-dark w-100">
-							Ordenar Z-A <i class="bi bi-arrow-down ms-2"></i>
-						</button>
-					</form>
-				</div>
-
+			<form method="get" th:action="@{/ordenarPrendas}" class="col-md-4 d-flex align-items-end">
+				<input type="hidden" name="orden" value="desc" />
+				<button type="submit" class="btn btn-outline-dark w-100">
+					Ordenar Z-A <i class="bi bi-arrow-down ms-2"></i>
+				</button>
+			</form>
+		</div>
 
 		<div th:if="${#lists.isEmpty(prenda)}" class="mt-3">
 			<p class="text-center text-dark display-6">
@@ -92,115 +93,117 @@
 
 		<div class="container">
 
+			<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-3">
+				<div class="col" th:each="prenda : ${prenda}">
+					<div
+						class="card shadow-sm h-100 d-flex flex-column position-relative border border-2 border-primary">
 
-
-			<div class="row mt-3">
-				<div class="card col-12 col-xl-6" style="width: 24rem;" th:each="prenda : ${prenda}">
-					<div th:if="${prenda.topVenta}"
-						class="badge bg-warning text-dark position-absolute top-0 start-0 m-3">
-						Top Venta
-					</div>
-					<img th:src="@{${prenda.urlImagen}}" class="card-img-top h-50" alt="pantalon">
-					<div class="card-body">
-						<h5 class="card-title" th:text="${prenda.nombre}"></h5>
-						<p class="card-text" th:text="${prenda.descripcion}"></p>
-						<div class="container">
-							<div class="row">
-								<a class=" col-5 me-1  btn btn-primary" th:data-id="${prenda.id}"
-									th:href="@{/editarPrenda/{id} (id=${prenda.id})}" role="button">Modificar</a>
-								<a class=" col-5 me-1 btn btn-primary" data-bs-toggle="modal"
-									data-bs-target="#modalEliminar"
-									th:attr="data-bs-target='#modalEliminar-' + ${prenda.id}" th:data-id="${prenda.id}"
-									role="button">Eliminar</a>
+						<img th:src="@{${prenda.urlImagen}}" class="card-img-top object-fit-cover mb-3" height="250"
+							alt="Imagen de la prenda">
+						<div class="card-body d-flex flex-column">
+							<div th:if="${prenda.topVenta}" class="badge bg-warning text-dark mb-2 col-4">
+								Top Venta
+							</div>
+							<h5 class="card-title text-capitalize text-primary mb-3" th:text="${prenda.nombre}"></h5>
+							<p class="card-text flex-grow-1 text-muted" th:text="${prenda.descripcion}"></p>
+							<div class="mt-3 d-flex gap-2">
+								<a class="btn btn-outline-primary flex-grow-1"
+									th:href="@{/editarPrenda/{id}(id=${prenda.id})}">
+									<i class="bi bi-pencil-fill me-1"></i>Modificar
+								</a>
+								<button class="btn btn-danger flex-grow-1" data-bs-toggle="modal"
+									th:attr="data-bs-target='#modalEliminar-' + ${prenda.id}">
+									<i class="bi bi-trash-fill me-1"></i>Eliminar
+								</button>
 							</div>
 						</div>
 					</div>
 
-					<div class="modal fade" id="modalEliminar" th:attr="id='modalEliminar-' + ${prenda.id}"
-						tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar</h1>
-									<button type="button" class="btn-close" data-bs-dismiss="modal"
+
+					<div class="modal fade" th:attr="id='modalEliminar-' + ${prenda.id}" tabindex="-1"
+						aria-labelledby="modalEliminarLabel" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered">
+							<div class="modal-content border-0 shadow">
+								<div class="modal-header bg-danger text-white">
+									<h5 class="modal-title" id="modalEliminarLabel">
+										<i class="bi bi-exclamation-triangle-fill me-2"></i>Confirmar eliminación
+									</h5>
+									<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
 										aria-label="Cerrar"></button>
 								</div>
 								<div class="modal-body">
-									<!-- th:action="@{/eliminarPrenda/{id} (id=${prenda.id})} -->
-									¿Estás seguro que quieres eliminar?
-									<form th:method="post" action="#" th:action="@{/eliminarPrenda/submit}">
+									<p class="fs-7 text-dark mb-4">¿Estás seguro de que deseas eliminar esta prenda?
+										Esta acción no se puede deshacer.</p>
+									<form th:method="post" th:action="@{/eliminarPrenda/submit}">
 										<input type="hidden" name="id" th:value="${prenda.id}" />
 										<input type="hidden" name="_method" value="delete">
-
-										<div class="modal-footer">
-											<button type="submit" class="btn btn-primary">Eliminar</button>
-											<button type="button" class="btn btn-secondary"
-												data-bs-dismiss="modal">Cerrar</button>
-
+										<div class="d-flex justify-content-end gap-2">
+											<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+												<i class="bi bi-x-circle me-1"></i> Cancelar
+											</button>
+											<button type="submit" class="btn btn-danger">
+												<i class="bi bi-trash3-fill me-1"></i> Eliminar
+											</button>
 										</div>
 									</form>
 								</div>
-
 							</div>
 						</div>
 					</div>
-
-
 				</div>
+
+
 			</div>
 		</div>
 
 		<div class="modal fade" id="anadirPrenda" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
-				<div class="modal-content bg-primary text-white">
-					<div class="modal-header">
-						<h1 class="modal-title fs-5 text-white" id="exampleModalLabel">Añadir Prenda</h1>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				<div class="modal-content border-0 shadow-lg">
+					<div class="modal-header bg-primary text-white">
+						<h1 class="modal-title fs-5 text-light" id="exampleModalLabel">Añadir Prenda</h1>
+						<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+							aria-label="Cerrar"></button>
 					</div>
 					<div class="modal-body">
-						<form method="POST" action="#" th:action="@{/anadirPrenda/submit}" th:object="${nuevaprenda}">
+						<form method="POST" th:action="@{/anadirPrenda/submit}" th:object="${nuevaprenda}">
 							<div class="mb-3">
-								<label for="recipient-name" class="col-form-label">Nombre Prenda</label>
-								<input th:field="*{nombre}" type="text" class="form-control" id="recipient-name"
-									maxlength="9" pattern="[A-Za-z_ ]*">
+								<label class="form-label fw-bold">Nombre Prenda</label>
+								<input th:field="*{nombre}" type="text" class="form-control border-primary shadow-sm"
+									maxlength="9" pattern="[A-Za-z_ ]*" placeholder="Ejemplo: Camisa Blanca">
 							</div>
 							<div class="mb-3">
-								<label for="categoria" class="col-form-label">Categoria</label>
-								<select th:field="*{categoria}" class="form-control form-select" required>
+								<label class="form-label fw-bold">Categoría</label>
+								<select th:field="*{categoria}" class="form-select border-secondary shadow-sm" required>
 									<option th:each="categoria : ${categoria}" th:text="${categoria.nombre}"
-										th:value="${categoria.id}">
+										th:value="${categoria.id}"></option>
 								</select>
 							</div>
-							<div class="mb-3 ">
-								<label for="inputDescripcion" class="form-label">Descripción<span
-										class="text-danger">*</span></label>
-								<textarea th:field="*{descripcion}" class="form-control" id="inputDescripcion"
-									required></textarea>
+							<div class="mb-3">
+								<label class="form-label fw-bold">Descripción</label>
+								<textarea th:field="*{descripcion}" class="form-control border-success shadow-sm"
+									style="min-height: 100px;" required
+									placeholder="Escribe detalles sobre la prenda"></textarea>
 							</div>
-							<div class="mb-3 ">
-								<label for="inputImage" class="form-label">Url Imagen<span
-										class="text-danger">*</span></label>
-								<input th:field="*{urlImagen}" type="text" class="form-control" id="inputImage"
-									required>
+							<div class="mb-3">
+								<label class="form-label fw-bold">URL Imagen</label>
+								<input th:field="*{urlImagen}" type="text" class="form-control border-warning shadow-sm"
+									required placeholder="Añade la URL de la imagen">
 							</div>
-							<div class="mb-3  form-check">
-								<label for="inputCheck" class="form-check-label">Top Venta<span
-										class="text-danger">*</span></label>
-								<input th:field="*{topVenta}" type="checkbox" class="form-check-input" id="inputCheck">
+							<div class="form-check mb-3">
+								<input th:field="*{topVenta}" type="checkbox"
+									class="form-check-input bg-danger border-danger shadow-sm" id="inputCheck">
+								<label class="form-check-label fw-bold text-danger" for="inputCheck">Top Venta</label>
 							</div>
-							<button type="submit" class="btn btn-primary">Crear Prenda</button>
-							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-
-
+							<div class="d-flex justify-content-end gap-2">
+								<button type="submit" class="btn btn-primary shadow-sm">Crear</button>
+								<button type="button" class="btn btn-secondary shadow-sm"
+									data-bs-dismiss="modal">Cerrar</button>
+							</div>
 						</form>
 					</div>
-
 				</div>
 			</div>
 		</div>
-
-
-
 	</main>
 
 	<div th:replace="~{fragments/footer :: footer}"></div>

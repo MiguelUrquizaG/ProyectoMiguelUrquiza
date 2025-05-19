@@ -16,6 +16,7 @@
 
 </head>
 
+
 <body class="bg-formulario text-primary d-flex flex-column min-vh-100">
 	<header>
 		<nav class="navbar navbar-dark navbar-expand-lg nav-underline">
@@ -28,85 +29,84 @@
 				<div class="collapse navbar-collapse" id="navbarColor01">
 					<ul class="navbar-nav me-auto">
 						<li class="nav-item">
-							<a class="nav-link active" th:href="@{/}">Prendas
-							</a>
+							<a class="nav-link active" th:href="@{/}">Prendas</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link " th:href="@{/categorias}">Categorias
-							</a>
+							<a class="nav-link" th:href="@{/categorias}">Categorias</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link " th:href="@{/quienesSomos}">Quienes Somos</a>
+							<a class="nav-link" th:href="@{/quienesSomos}">Quienes Somos</a>
 						</li>
 					</ul>
-					<a href="inicioSesion.html"><i class=" h2 bi bi-person-fill text-white"></i></a>
+					<a href="inicioSesion.html"><i class="h2 bi bi-person-fill text-white"></i></a>
 				</div>
 			</div>
 		</nav>
-		<span class="h2 container-content d-block text-center bg-primary text-white py-2">Modificar Prenda
-		</span>
+		<span class="h2 container-content d-block text-center bg-primary text-white py-3 fw-semibold">Modificar
+			Prenda</span>
 	</header>
-	<main class="flex-fill container my-4">
 
-		<div class="container">
+	<main class="flex-fill container my-5">
+		<div class="row justify-content-center">
+			<div class="col-12 col-md-6 col-lg-4">
+				<form method="POST" action="#" th:action="@{/editarPrenda/modificar}" th:object="${prenda}"
+					class="bg-white rounded-3 shadow-sm p-4" name="modificarPrenda">
+					<input type="hidden" th:field="*{id}" />
 
-
-			<div class="row justify-content-center mt-3 mb-5">
-				<div class="col-12  col-lg-4">
-
-
-
-					<form method="POST" action="#" th:action="@{/editarPrenda/modificar}" th:object="${prenda}"
-						class="w-100" name="inicioSesion">
-						<div class="mb-3 ">
-							<input type="hidden" th:field="*{id}" />
-							<label for="inputNombre" class="form-label">Nombre Prenda<span
-									class="text-danger">*</span></label>
-							<input th:field="*{nombre}" type="text" class="form-control" id="inputNombre" required
-								placeholder="Introduzca el nombre." maxlength="9" pattern="[A-Za-z_ ]*">
+					<div class="mb-4">
+						<label for="inputNombre" class="form-label fw-semibold">Nombre Prenda <span
+								class="text-danger">*</span></label>
+						<input th:field="*{nombre}" type="text" class="form-control border-primary" id="inputNombre"
+							required placeholder="Introduzca el nombre" maxlength="9" pattern="[A-Za-z_ ]*" />
+						<div class="invalid-feedback">
+							Por favor, introduzca un nombre válido (solo letras y espacios).
 						</div>
+					</div>
 
-						<div class="mb-3 ">
-							<label for="inputCategoria" class="form-label">Categoría<span
-									class="text-danger">*</span></label>
-							<select th:field="*{categoria.id}" class="form-control form-select" required>
-								<option th:each="categoria : ${categoria}" th:text="${categoria.nombre}"
-									th:value="${categoria.id}">
+					<div class="mb-4">
+						<label for="inputCategoria" class="form-label fw-semibold">Categoría <span
+								class="text-danger">*</span></label>
+						<select th:field="*{categoria.id}" class="form-select border-secondary" id="inputCategoria"
+							required>
+							<option value="" disabled selected>Seleccione una categoría</option>
+							<option th:each="categoria : ${categoria}" th:text="${categoria.nombre}"
+								th:value="${categoria.id}"></option>
+						</select>
+						<div class="invalid-feedback">Seleccione una categoría válida.</div>
+					</div>
 
-								</option>
+					<div class="mb-4">
+						<label for="inputDescripcion" class="form-label fw-semibold">Descripción <span
+								class="text-danger">*</span></label>
+						<textarea th:field="*{descripcion}" class="form-control border-success" id="inputDescripcion"
+							rows="3" required placeholder="Describa detalles de la prenda"></textarea>
+						<div class="invalid-feedback">La descripción es obligatoria.</div>
+					</div>
 
-							</select>
+					<div class="mb-4">
+						<label for="inputImage" class="form-label fw-semibold">URL Imagen</label>
+						<input th:field="*{urlImagen}" type="text" class="form-control border-warning" id="inputImage"
+							 placeholder="https://ejemplo.com/imagen.jpg" />
+						<div class="invalid-feedback">Introduzca una URL válida.</div>
+					</div>
 
+					<div class="form-check mb-4">
+						<input th:field="*{topVenta}" type="checkbox" class="form-check-input bg-danger border-danger shadow-smr"
+							id="inputCheck" />
+						<label for="inputCheck" class="form-check-label fw-semibold text-danger">Top Venta</label>
+					</div>
 
-						</div>
-						<div class="mb-3 ">
-							<label for="inputDescripcion" class="form-label">Descripción<span
-									class="text-danger">*</span></label>
-							<textarea th:field="*{descripcion}" class="form-control" id="inputDescripcion"
-								required></textarea>
-						</div>
-						<div class="mb-3 ">
-							<label for="inputImage" class="form-label">Url Imagen<span
-									class="text-danger">*</span></label>
-							<input th:field="*{urlImagen}" type="text" class="form-control" id="inputImage" required>
-						</div>
-						<div class="mb-3  form-check">
-							<label for="inputCheck" class="form-check-label">Top Venta<span
-									class="text-danger">*</span></label>
-							<input th:field="*{topVenta}" type="checkbox" class="form-check-input" id="inputCheck">
-						</div>
-						<div>
-							<button type="submit" class="btn btn-dark">Editar Prenda</button>
-						</div>
-					</form>
-
-				</div>
+					<div class="d-grid">
+						<button type="submit" class="btn btn-dark shadow-sm fw-semibold">
+							Editar Prenda
+						</button>
+					</div>
+				</form>
 			</div>
-
-
-
 		</div>
 	</main>
 
 	<div th:replace="~{fragments/footer :: footer}"></div>
 </body>
+
+</html>
