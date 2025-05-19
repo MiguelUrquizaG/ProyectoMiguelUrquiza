@@ -307,7 +307,7 @@
 			const cantidadPrendas = parseFloat(precioDescuento.getAttribute('data-cantidadPrendas')) || 0
 
 			if (inputNumero.value > cantidadPrendas) {
-				precioDescuento.value = precioT - (precioT * precioDescontado / 100).toFixed(2);
+				precioDescuento.value = (precioT - (precioT * precioDescontado / 100)).toFixed(2);
 				calcularDiferenciaDescuento();
 			}
 
@@ -315,7 +315,7 @@
 
 		function calcularDiferenciaDescuento() {
 		
-				diferenciaDescuento.value = parseFloat(precio.value) - parseFloat(precioDescuento.value)
+				diferenciaDescuento.value = (parseFloat(precio.value) - parseFloat(precioDescuento.value)).toFixed(2);
 			
 			
 		}
