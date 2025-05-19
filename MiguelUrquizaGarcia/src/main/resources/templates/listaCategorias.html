@@ -52,15 +52,20 @@
 	</header>
 
 	<main class="flex-fill container my-4">
-		<h2 class="text-primary">Gestión de Categorías</h2>
-		<div class="d-flex flex-wrap justify-content-start gap-3 mb-4">
-			<button type="button" class="btn btn-outline-primary px-4 d-flex align-items-center gap-2"
-				data-bs-toggle="modal" data-bs-target="#anadirCategoria">
-				<i class="bi bi-plus-circle me-2"></i>Añadir Categoría
-			</button>
-			<a class="btn btn-outline-primary px-4 d-flex align-items-center gap-2" th:href="@{/administrarDescuentos}">
-				Ajustar Descuentos <i class="bi bi-gear-fill"></i>
-			</a>
+
+		<div class="d-flex justify-content-between align-items-center mb-4">
+			<h2 class="text-primary">Gestión de Categorías</h2>
+			<div class="d-flex">
+				<button type="button" class="btn btn-outline-primary px-4 d-flex align-items-center gap-2 mx-2"
+					data-bs-toggle="modal" data-bs-target="#anadirCategoria">
+					<i class="bi bi-plus-circle me-2"></i>Añadir Categoría
+				</button>
+				<a class="btn btn-outline-primary px-4 d-flex align-items-center gap-2"
+					th:href="@{/administrarDescuentos}">
+					Ajustar Descuentos <i class="bi bi-gear-fill"></i>
+				</a>
+			</div>
+
 		</div>
 
 
@@ -101,31 +106,32 @@
 
 			<div class="row mt-3">
 				<div class="col-12 col-md-6 col-xl-4 mb-3" th:each="categoria : ${categoria}">
-					<div class="card shadow-sm h-100 d-flex flex-column position-relative border border-2 border-primary">
-					   <div class="card-body d-flex flex-column">
-					     <div th:if="${categoria.topVenta}" class="badge bg-warning text-dark mb-2">
-					       Top Venta
-					     </div>
-					     <a th:href="@{/mostrarCategoria/{id} (id=${categoria.id})}"
-					       class="card-title text-primary h4 text-decoration-none mb-3"
-					       th:text="${categoria.nombre}"></a>
-					     <p class="card-text flex-grow-1" th:text="${categoria.descripcion}"></p>
-					     <p class="card-text fw-semibold"
-					       th:text="'Precio Servicio: ' + ${categoria.precioServicio} + ' €'"></p>
-					     <div class="mt-3 d-flex gap-2">
-					       <a class="btn btn-outline-primary flex-grow-1"
-					         th:href="@{/editarCategoria/{id} (id=${categoria.id})}"
-					         th:if="${categoria.id != 0}">
-					         <i class="bi bi-pencil-fill me-1"></i>Modificar
-					       </a>
-					       <button class="btn btn-danger flex-grow-1" data-bs-toggle="modal"
-					         th:attr="data-bs-target='#modalEliminar-' + ${categoria.id}"
-					         th:if="${categoria.id != 0}">
-					         <i class="bi bi-trash-fill me-1"></i>Eliminar
-					       </button>
-					     </div>
-					   </div>
-					 </div>
+					<div
+						class="card shadow-sm h-100 d-flex flex-column position-relative border border-2 border-primary">
+						<div class="card-body d-flex flex-column">
+							<div th:if="${categoria.topVenta}" class="badge bg-warning text-dark mb-2">
+								Top Venta
+							</div>
+							<a th:href="@{/mostrarCategoria/{id} (id=${categoria.id})}"
+								class="card-title text-primary h4 text-decoration-none mb-3"
+								th:text="${categoria.nombre}"></a>
+							<p class="card-text flex-grow-1" th:text="${categoria.descripcion}"></p>
+							<p class="card-text fw-semibold"
+								th:text="'Precio Servicio: ' + ${categoria.precioServicio} + ' €'"></p>
+							<div class="mt-3 d-flex gap-2">
+								<a class="btn btn-outline-primary flex-grow-1"
+									th:href="@{/editarCategoria/{id} (id=${categoria.id})}"
+									th:if="${categoria.id != 0}">
+									<i class="bi bi-pencil-fill me-1"></i>Modificar
+								</a>
+								<button class="btn btn-danger flex-grow-1" data-bs-toggle="modal"
+									th:attr="data-bs-target='#modalEliminar-' + ${categoria.id}"
+									th:if="${categoria.id != 0}">
+									<i class="bi bi-trash-fill me-1"></i>Eliminar
+								</button>
+							</div>
+						</div>
+					</div>
 
 					<div class="modal fade" th:id="'modalEliminar-' + ${categoria.id}" tabindex="-1"
 						aria-labelledby="modalEliminarLabel" aria-hidden="true">
@@ -157,19 +163,21 @@
 
 
 		</div>
-		<div class="modal fade" id="anadirCategoria" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal fade" id="anadirCategoria" tabindex="-1" aria-labelledby="exampleModalLabel"
+			aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content border-0 shadow-lg">
 					<div class="modal-header bg-primary text-white">
 						<h1 class="modal-title fs-5 text-light" id="exampleModalLabel">Añadir Categoría</h1>
-						<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+						<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+							aria-label="Cerrar"></button>
 					</div>
 					<div class="modal-body">
-						<form method="POST" action="#" th:action="@{/anadirCategoria/submit}" th:object="${nuevacategoria}">
+						<form method="POST" action="#" th:action="@{/anadirCategoria/submit}"
+							th:object="${nuevacategoria}">
 							<div class="mb-3">
 								<label class="form-label fw-bold">Nombre Categoría</label>
-								<input th:field="*{nombre}" type="text" 
-									class="form-control border-primary shadow-sm" 
+								<input th:field="*{nombre}" type="text" class="form-control border-primary shadow-sm"
 									maxlength="20" pattern="[A-Za-z_ ]*" placeholder="Ejemplo: Ropa Formal">
 							</div>
 							<div class="mb-3">
@@ -179,16 +187,18 @@
 							</div>
 							<div class="mb-3">
 								<label class="form-label fw-bold">Descripción</label>
-								<textarea th:field="*{descripcion}" class="form-control border-success shadow-sm" style="min-height: 100px;" required
-									placeholder="Describe la categoría"></textarea>
+								<textarea th:field="*{descripcion}" class="form-control border-success shadow-sm"
+									style="min-height: 100px;" required placeholder="Describe la categoría"></textarea>
 							</div>
 							<div class="form-check mb-3">
-								<input th:field="*{topVenta}" type="checkbox" class="form-check-input bg-danger border-danger shadow-sm" id="inputCheck">
+								<input th:field="*{topVenta}" type="checkbox"
+									class="form-check-input bg-danger border-danger shadow-sm" id="inputCheck">
 								<label class="form-check-label fw-bold text-danger" for="inputCheck">Top Venta</label>
 							</div>
 							<div class="d-flex justify-content-end gap-2">
 								<button type="submit" class="btn btn-primary shadow-sm">Crear Categoría</button>
-								<button type="button" class="btn btn-secondary shadow-sm" data-bs-dismiss="modal">Cerrar</button>
+								<button type="button" class="btn btn-secondary shadow-sm"
+									data-bs-dismiss="modal">Cerrar</button>
 							</div>
 						</form>
 					</div>
