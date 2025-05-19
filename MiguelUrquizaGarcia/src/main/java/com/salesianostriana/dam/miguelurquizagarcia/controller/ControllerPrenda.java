@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.salesianostriana.dam.miguelurquizagarcia.model.Categoria;
 import com.salesianostriana.dam.miguelurquizagarcia.model.Prenda;
@@ -88,10 +89,12 @@ public class ControllerPrenda {
 //	}
 
 	@DeleteMapping("/eliminarPrenda/submit")
-	public String procesarEliminar(@RequestParam Long id) {
+	public String procesarEliminar(@RequestParam Long id,RedirectAttributes redirectAttributes) {
 		Prenda p = service.buscarPrenda(id);
 		p.removeFromCategoria(p.getCategoria());
-		service.eliminarPrenda(id);
+		boolean eliminado = service.eliminarPrenda(id);
+		
+		 redirectAttributes.addFlashAttribute("eliminado", eliminado);
 
 		return "redirect:/";
 	}

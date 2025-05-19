@@ -70,7 +70,9 @@ private PrendaRepository repoPrenda;
 	    return repoPrenda.findAllByOrderByNombreDesc();
 	}
 	
-	public void eliminarPrenda(Long id) {
+	public boolean eliminarPrenda(Long id) {
+		
+		boolean isEliminado=false;
 		
 		Prenda p = buscarPrenda(id);
 		
@@ -78,8 +80,10 @@ private PrendaRepository repoPrenda;
 			
 		}else {
 			delete(p);
+			isEliminado = true;
 		}
 		
+		return isEliminado;
 	}
 	
 }
