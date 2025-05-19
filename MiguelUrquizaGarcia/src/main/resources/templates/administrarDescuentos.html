@@ -77,15 +77,13 @@
 					<td th:text="${cat.topVenta ? 'Sí' : 'No'}">Sí</td>
 					<form action="#" method="post" th:action="@{/editarDescuentos/submit/{id} (id=${cat.id})}">
 						<td>
-							<input type="number" step="0.01" min="0" name="descuento"
-								th:value="${cat.descuento}" />
-						</td>
-						<td>
-							<input type="number"  min="0" name="numeroPrendasDescuento"
+							<input type="number" step="0.01" min="0" name="descuento" th:value="${cat.descuento}" />
+							<input type="number" step="0.01" min="0" name="cantidadPrendas"
 								th:value="${cat.numeroPrendasDescuento}" />
 						</td>
+
 						<td>
-							<button type="submit" name="guardar" th:value="${cat.id}">Guardar</button>
+							<button type="submit" name="guardar">Guardar</button>
 						</td>
 					</form>
 				</tr>

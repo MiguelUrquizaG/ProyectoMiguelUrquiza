@@ -79,7 +79,7 @@
 							<span class="badge bg-primary rounded-pill" th:text="${#numbers.formatDecimal(linea.subtotal,1,2)} + ' €'">10.00
 								€</span>
 							<span class="badge bg-danger rounded-pill " 
-								th:text="${#numbers.formatDecimal(linea.subtotalDescontado,1,2)} + ' €'">10.00
+								th:text="'-'+${#numbers.formatDecimal(linea.subtotalDescontado,1,2)} + ' €'">10.00
 								€</span>
 
 							<span class="badge bg-success rounded-pill"
@@ -98,7 +98,7 @@
 
 					<div class="text-end fs-4 fw-bold text-danger">
 						Descuento Aplicado: <span
-							th:text="${#numbers.formatDecimal(venta.cantidadDescontada,1,2)} + ' €'">50.00 €</span>
+							th:text="'-'+${#numbers.formatDecimal(venta.cantidadDescontada,1,2)} + ' €'">50.00 €</span>
 					</div>
 
 					<div class="text-end fs-4 fw-bold text-success">

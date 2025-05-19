@@ -65,13 +65,13 @@
 					<div class="col-3 ">
 						<label for="inputFechaEntrega" class="form-label">Fecha Entrega<span
 								class="text-danger">*</span></label>
-						<input th:field="*{fechaEntrega}" type="date" min="1" class="form-control"
+						<input th:field="*{fechaEntrega}" disabled type="date" class="form-control"
 							id="inputFechaEntrega" required placeholder="Ingrese el precio del producto.">
 					</div>
 					<div class="col-3 ">
 						<label for="inputFechaRecogida" class="form-label">Fecha Recogida<span
-								class="text-danger">*</span></label>
-						<input th:field="*{fechaRecogida}" type="date" min="1" class="form-control"
+								 class="text-danger">*</span></label>
+						<input th:field="*{fechaRecogida}" type="date" th:min="${nuevaVenta.fechaRecogida}" class="form-control"
 							id="inputFechaRecogida" required placeholder="Ingrese el precio del producto.">
 					</div>
 				</div>

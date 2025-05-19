@@ -36,14 +36,12 @@ public class ServiceCategorias extends BaseService<Categoria, Long, CategoriaRep
 
 	
 	public void agregar (Categoria c) {
-		calcularDescuento(c);
 		repoCategoria.save(c);
 	}
 	
 	public void editar(Categoria c) {
 		
-		reestablecerPrecio(c);
-		calcularDescuento(c);
+
 		
 		repoCategoria.save(c);	
 	}
@@ -58,29 +56,6 @@ public class ServiceCategorias extends BaseService<Categoria, Long, CategoriaRep
 		return lista;
 	}
 	
-	public double calcularDescuento(Categoria c) {
-		
-		if(c.getDescuento()>0) {
-			c.setPrecioServicio(c.getPrecioServicio()*c.getDescuento()/100);
-		}
-		
-		return c.getPrecioServicio();
-		
-
-	}
-	
-	public double reestablecerPrecio(Categoria c) {
-		Categoria categoria = repoCategoria.findById(c.getId()).orElse(null);
-		double precio = categoria.getPrecioServicio();
-		if(c.getDescuento()!=categoria.getDescuento()&&categoria.getDescuento()!=0&&c.getPrecioServicio()==categoria.getPrecioServicio()) {
-			precio=(c.getPrecioServicio()*100/categoria.getDescuento());
-			
-		}else if(c.getPrecioServicio()!=categoria.getPrecioServicio()) {
-			precio = c.getPrecioServicio();
-		}
-		
-		return precio;
-	}
 	
 	public List<Categoria> buscarCategoriasEconomicasNoTopVenta(Double precioMax) {
         return repoCategoria.buscarCategoriasNoTopVentaPorPrecioMenor(precioMax);

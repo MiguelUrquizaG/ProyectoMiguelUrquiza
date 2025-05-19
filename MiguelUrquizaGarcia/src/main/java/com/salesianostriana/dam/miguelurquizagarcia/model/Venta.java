@@ -29,9 +29,9 @@ public class Venta {
 	
 	private String nombreCliente;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private LocalDate fechaEntrega;
+	private LocalDate fechaEntrega = LocalDate.now();
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private LocalDate fechaRecogida;
+	private LocalDate fechaRecogida = LocalDate.now().plusDays(1);
 	private double precioTotal;
 	private double precioDescontado;
 	private double cantidadDescontada;

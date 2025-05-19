@@ -59,6 +59,7 @@ public class ControllerVenta {
 		model.addAttribute("categoria", serviceCategoria.findAll());
 		model.addAttribute("prenda", servicePrenda.findAll());
 		System.out.println(model.getAttribute("prenda"));
+		System.out.println("Fecha Recogida"+new Venta().getFechaRecogida());
 		
 		return "anadirVenta";
 	}
@@ -66,7 +67,7 @@ public class ControllerVenta {
 	public String confirmarVenta(@ModelAttribute Venta v) {
 	    List<LineaVenta> lineasGuardadas = new ArrayList<>();
 	    for (LineaVenta linea : v.getLineasVenta()) {
-	        // Asignar prendas y categorías
+	        
 	        Prenda prendaCompleta = servicePrenda.buscarPrenda(linea.getPrenda().getId());
 	        linea.setPrenda(prendaCompleta);
 	        

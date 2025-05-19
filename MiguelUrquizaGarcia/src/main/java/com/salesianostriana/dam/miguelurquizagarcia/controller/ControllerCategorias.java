@@ -111,7 +111,7 @@ public class ControllerCategorias {
 		  Categoria c = categoriaServicios.buscar(id);
 		  c.setDescuento(descuento);
 		  c.setNumeroPrendasDescuento(cantidadPrendas);
-		  categoriaServicios.agregar(c);	
+		  categoriaServicios.save(c);	
 		  
 		  return "redirect:/administrarDescuentos";
 	  }
