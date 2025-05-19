@@ -14,6 +14,28 @@
 	<link href="../static/estilo.css" th:href="@{/estilosMain.css}" rel="stylesheet" type="text/css">
 	<title>Tintoreria Urquiza</title>
 
+	<script th:inline="javascript">
+	
+		document.addEventListener("DOMContentLoaded", function () {
+			let eliminado = [[${eliminado}]];
+
+			if (eliminado === true) {
+				const modalExitoEl = document.getElementById('modalExito');
+				if (modalExitoEl) {
+					let modalExito = new bootstrap.Modal(modalExitoEl);
+					modalExito.show();
+				}
+			} else if (eliminado === false) {
+				const modalErrorEl = document.getElementById('modalError');
+				if (modalErrorEl) {
+					let modalError = new bootstrap.Modal(modalErrorEl);
+					modalError.show();
+				}
+			}
+		});
+	
+	</script>
+
 </head>
 
 
@@ -103,7 +125,6 @@
 		</div>
 		<div class="container">
 
-
 			<div class="row mt-3">
 				<div class="col-12 col-md-6 col-xl-4 mb-3" th:each="categoria : ${categoria}">
 					<div
@@ -147,7 +168,8 @@
 								<div class="modal-body">
 									<p class="fs-7 text-dark mb-4">
 										¿Estás seguro de que deseas eliminar la categoría
-										<strong th:text="${categoria.nombre}"></strong>? Esta acción no se puede deshacer.
+										<strong th:text="${categoria.nombre}"></strong>? Esta acción no se puede
+										deshacer.
 									</p>
 									<form method="post" th:action="@{/eliminarCategoria/submit}">
 										<input type="hidden" name="id" th:value="${categoria.id}" />
@@ -213,6 +235,40 @@
 			</div>
 		</div>
 
+
+		<div class="modal fade" id="modalExito" tabindex="-1" aria-labelledby="modalExitoLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content border-success">
+					<div class="modal-header bg-success text-white">
+						<h5 class="modal-title" id="modalExitoLabel">Eliminación exitosa</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+					</div>
+					<div class="modal-body">
+						La categoría ha sido eliminada correctamente.
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-success" data-bs-dismiss="modal">Aceptar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="modalError" tabindex="-1" aria-labelledby="modalErrorLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content border-danger">
+					<div class="modal-header bg-danger text-white">
+						<h5 class="modal-title" id="modalErrorLabel">Error al eliminar</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+					</div>
+					<div class="modal-body">
+						No se pudo eliminar la categoría. Verifica que no esté en uso.
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
 	</main>
 

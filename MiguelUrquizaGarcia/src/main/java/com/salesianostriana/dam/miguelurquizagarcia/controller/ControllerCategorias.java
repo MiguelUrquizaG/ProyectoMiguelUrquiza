@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.salesianostriana.dam.miguelurquizagarcia.model.Categoria;
 import com.salesianostriana.dam.miguelurquizagarcia.service.ServiceCategorias;
@@ -22,7 +23,7 @@ public class ControllerCategorias {
 	private ServiceCategorias categoriaServicios;
 	
 	@GetMapping("/categorias")
-	public String showCategorias(Model model) {
+	public String showCategorias(Model model ) {
 		
 		List<Categoria> lista = categoriaServicios.findAll();
 		lista = categoriaServicios.ordenarTopVentas(lista);
@@ -60,9 +61,10 @@ public class ControllerCategorias {
 	}
 	
 	@DeleteMapping("/eliminarCategoria/submit")
-	public String eliminarCategoria(@RequestParam Long id) {
+	public String eliminarCategoria(@RequestParam Long id, RedirectAttributes redirectAttributes	) {
 		System.out.println(id);
-		categoriaServicios.delete(id);
+		boolean eliminado = categoriaServicios.delete(id);
+		redirectAttributes.addFlashAttribute("eliminado", eliminado);
 		return "redirect:/categorias";
 	}
 	

@@ -11,54 +11,53 @@ import com.salesianostriana.dam.miguelurquizagarcia.repository.CategoriaReposito
 import jakarta.persistence.EntityNotFoundException;
 
 @Service
-public class ServiceCategorias extends BaseService<Categoria, Long, CategoriaRepository>{
+public class ServiceCategorias extends BaseService<Categoria, Long, CategoriaRepository> {
 
 	@Autowired
 	private CategoriaRepository repoCategoria;
-	
-	public void delete(Long id) {
+
+	public boolean delete(Long id) {
 		Categoria c =  buscar(id);
+		boolean isEliminado =false;
 		//Categoria porDefecto = buscar(0L);
 		
 		if(!c.getListaPrendas().isEmpty() && c!=null) {
 			
 		}else {
 			delete(c);
+			isEliminado=true;
 			//c.getListaPrendas().stream().forEach(prenda -> prenda.setCategoria(porDefecto));
 		}
 		
-	}
-	
-	public Categoria buscar(Long id) {
-	    return repositorio.findById(id)
-	        .orElseThrow(() -> new EntityNotFoundException("Categoría con id " + id + " no encontrada"));
+		return isEliminado;
 	}
 
-	
-	public void agregar (Categoria c) {
+	public Categoria buscar(Long id) {
+		return repositorio.findById(id)
+				.orElseThrow(() -> new EntityNotFoundException("Categoría con id " + id + " no encontrada"));
+	}
+
+	public void agregar(Categoria c) {
 		repoCategoria.save(c);
 	}
-	
-	public void editar(Categoria c) {
-		
 
-		
-		repoCategoria.save(c);	
+	public void editar(Categoria c) {
+
+		repoCategoria.save(c);
 	}
-	
+
 	public List<Categoria> ordenarTopVentas(List<Categoria> lista) {
 		return repoCategoria.findAllByOrderByTopVentaDesc();
 	}
-	
-	public List<Categoria> buscarPorNombre(String nombre){
-		
+
+	public List<Categoria> buscarPorNombre(String nombre) {
+
 		List<Categoria> lista = repoCategoria.findByNombreContainingIgnoreCase(nombre);
 		return lista;
 	}
-	
-	
+
 	public List<Categoria> buscarCategoriasEconomicasNoTopVenta(Double precioMax) {
-        return repoCategoria.buscarCategoriasNoTopVentaPorPrecioMenor(precioMax);
-    }
-	
+		return repoCategoria.buscarCategoriasNoTopVentaPorPrecioMenor(precioMax);
+	}
+
 }
