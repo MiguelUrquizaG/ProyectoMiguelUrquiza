@@ -59,7 +59,7 @@ private PrendaRepository repoPrenda;
 	}
 	
 	public Prenda buscarPrenda(Long id) {
-		return repoPrenda.findById(id).orElseThrow(() -> new EntityNotFoundException("Prenda con id " + id + " no encontrada"));
+		return findById(id).orElseThrow(() -> new EntityNotFoundException("Prenda con id " + id + " no encontrada"));
 	}
 	
 	public List<Prenda> findAllOrderByNombreAsc() {

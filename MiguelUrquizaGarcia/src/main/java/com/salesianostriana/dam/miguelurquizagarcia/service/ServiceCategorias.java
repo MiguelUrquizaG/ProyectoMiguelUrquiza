@@ -33,7 +33,7 @@ public class ServiceCategorias extends BaseService<Categoria, Long, CategoriaRep
 	}
 
 	public Categoria buscar(Long id) {
-		return repositorio.findById(id)
+		return findById(id)
 				.orElseThrow(() -> new EntityNotFoundException("Categoría con id " + id + " no encontrada"));
 	}
 

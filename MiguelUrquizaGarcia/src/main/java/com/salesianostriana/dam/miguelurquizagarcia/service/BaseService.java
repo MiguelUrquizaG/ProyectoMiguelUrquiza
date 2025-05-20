@@ -70,11 +70,7 @@ public abstract class BaseService<T, ID, R extends JpaRepository<T, ID>> {
 		
 		 Optional<T> resultado = repositorio.findById(id);
 
-		    if (resultado.isPresent()) {
-		        return resultado;
-		    } else {
-		        return Optional.empty();
-		    }
+		    return resultado;
 	}
 
 	/**

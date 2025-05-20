@@ -96,7 +96,7 @@ public class ServiceVenta extends BaseService<Venta, Long, VentaRepository>{
 	}
 	
 	public Venta buscarVenta (Long id) {
-		return repositorio.findById(id).orElseThrow(() -> new EntityNotFoundException("Venta con id " + id + " no encontrada"));
+		return findById(id).orElseThrow(() -> new EntityNotFoundException("Venta con id " + id + " no encontrada"));
 	}
 	
 	

@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import com.salesianostriana.dam.miguelurquizagarcia.model.LineaVenta;
 import com.salesianostriana.dam.miguelurquizagarcia.repository.LineaVentaRepository;
 
+import jakarta.persistence.EntityNotFoundException;
+
 @Service
 public class LineaVentaService extends BaseService<LineaVenta, Long, LineaVentaRepository>{
 
@@ -27,6 +29,10 @@ public class LineaVentaService extends BaseService<LineaVenta, Long, LineaVentaR
 	
 	public double calcularDiferenciaSubtotal(LineaVenta linea) {
 		return calcularSubtotal(linea) - calcularSubtotalDescuento(linea);
+	}
+	
+	public LineaVenta buscarPorId(Long id) {
+		return findById(id).orElseThrow(() -> new EntityNotFoundException("Venta con id " + id + " no encontrada"));
 	}
 	
 }
