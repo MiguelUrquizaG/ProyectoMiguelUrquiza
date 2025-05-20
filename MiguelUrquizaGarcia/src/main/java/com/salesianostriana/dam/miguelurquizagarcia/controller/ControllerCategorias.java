@@ -81,6 +81,8 @@ public class ControllerCategorias {
 		return "redirect:/mostrarCategoria/"+idCategoria;
 	}
 	
+	
+	
 	@GetMapping("/mostrarCategoria/{id}")
 	public String mostrarCategoria(@PathVariable Long id, Model model) {
 		Categoria c = categoriaServicios.buscar(id);
