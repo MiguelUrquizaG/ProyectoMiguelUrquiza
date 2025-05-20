@@ -27,7 +27,7 @@ public class Venta {
 	@GeneratedValue
 	private long id;
 	
-	private String nombreCliente;
+	private String numeroCliente;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate fechaEntrega = LocalDate.now();
 	@DateTimeFormat(pattern = "yyyy-MM-dd")

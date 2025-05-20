@@ -60,7 +60,7 @@
 		      <div class="mb-4">
 		        <label for="inputNombre" class="form-label fw-semibold">Nombre Prenda <span class="text-danger">*</span></label>
 		        <input th:field="*{nombre}" type="text" class="form-control border-primary" id="inputNombre" required
-		          placeholder="Introduzca el nombre." maxlength="20" pattern="[A-Za-z_ ]*" />
+		          placeholder="Introduzca el nombre." maxlength="20" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ_ ]*" />
 		        <div class="invalid-feedback">
 		          Por favor, introduzca un nombre válido (solo letras y espacios).
 		        </div>
@@ -73,7 +73,7 @@
 
 		      <div class="mb-4">
 		        <label for="inputDescripcion" class="form-label fw-semibold">Descripción <span class="text-danger">*</span></label>
-		        <textarea th:field="*{descripcion}" class="form-control border-success" id="inputDescripcion" required></textarea>
+		        <textarea th:field="*{descripcion}" class="form-control border-success" id="inputDescripcion" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ_ ]*"></textarea>
 		        <div class="invalid-feedback">La descripción es obligatoria.</div>
 		      </div>
 
