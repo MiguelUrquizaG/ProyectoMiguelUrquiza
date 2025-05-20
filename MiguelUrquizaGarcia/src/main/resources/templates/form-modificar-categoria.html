@@ -28,11 +28,15 @@
 				<div class="collapse navbar-collapse" id="navbarColor01">
 					<ul class="navbar-nav me-auto">
 						<li class="nav-item">
-							<a class="nav-link " th:href="@{/}">Prendas
+							<a class="nav-link " th:href="@{/prendas}">Prendas
 							</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link active" th:href="@{/categorias}">Categorias
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/ventas}">Ventas
 							</a>
 						</li>
 						<li class="nav-item">
@@ -51,52 +55,63 @@
 	<main class="flex-fill container my-4">
 
 		<div class="row justify-content-center mt-3 mb-5">
-		  <div class="col-12 col-lg-4">
-		    <form method="POST" action="#" th:action="@{/editarCategoria/submit}" th:object="${categoria}"
-		      class="bg-white rounded-3 shadow-sm p-4 w-100" name="modificarCategoria">
+			<div class="col-12 col-lg-4">
+				<form method="POST" action="#" th:action="@{/editarCategoria/submit}" th:object="${categoria}"
+					class="bg-white rounded-3 shadow-sm p-4 w-100" name="modificarCategoria">
 
-		      <input type="hidden" th:field="*{id}" />
+					<input type="hidden" th:field="*{id}" />
 
-		      <div class="mb-4">
-		        <label for="inputNombre" class="form-label fw-semibold">Nombre Prenda <span class="text-danger">*</span></label>
-		        <input th:field="*{nombre}" type="text" class="form-control border-primary" id="inputNombre" required
-		          placeholder="Introduzca el nombre." maxlength="20" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ_ ]*" />
-		        <div class="invalid-feedback">
-		          Por favor, introduzca un nombre válido (solo letras y espacios).
-		        </div>
-		      </div>
+					<div class="mb-4">
+						<label for="inputNombre" class="form-label fw-semibold">Nombre Prenda <span
+								class="text-danger">*</span></label>
+						<input th:field="*{nombre}" type="text" class="form-control border-primary" id="inputNombre"
+							required placeholder="Introduzca el nombre." maxlength="20"
+							pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ_ ]*" />
+						<div class="invalid-feedback">
+							Por favor, introduzca un nombre válido (solo letras y espacios).
+						</div>
+					</div>
 
-		      <div class="mb-4">
-		        <label for="inputPrecio" class="form-label fw-semibold">Precio <span class="text-danger">*</span></label>
-		        <input id="inputPrecio" class="form-control border-primary" th:field="*{precioServicio}" required />
-		      </div>
+					<div class="mb-4">
+						<label for="inputPrecio" class="form-label fw-semibold">Precio <span
+								class="text-danger">*</span></label>
+						<input id="inputPrecio" class="form-control border-primary" th:field="*{precioServicio}"
+							required />
+					</div>
 
-		      <div class="mb-4">
-		        <label for="inputDescripcion" class="form-label fw-semibold">Descripción <span class="text-danger">*</span></label>
-		        <textarea th:field="*{descripcion}" class="form-control border-success" id="inputDescripcion" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ_ ]*"></textarea>
-		        <div class="invalid-feedback">La descripción es obligatoria.</div>
-		      </div>
+					<div class="mb-4">
+						<label for="inputDescripcion" class="form-label fw-semibold">Descripción <span
+								class="text-danger">*</span></label>
+						<textarea th:field="*{descripcion}" class="form-control border-success" id="inputDescripcion"
+							required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ_ ]*"></textarea>
+						<div class="invalid-feedback">La descripción es obligatoria.</div>
+					</div>
 
-		      <div class="form-check mb-4">
-		        <input th:field="*{topVenta}" type="checkbox" class="form-check-input bg-danger border-danger shadow-sm" id="inputCheck" />
-		        <label for="inputCheck" class="form-check-label fw-semibold text-danger">Top Venta</label>
-		      </div>
+					<div class="form-check mb-4">
+						<input th:field="*{topVenta}" type="checkbox"
+							class="form-check-input bg-danger border-danger shadow-sm" id="inputCheck" />
+						<label for="inputCheck" class="form-check-label fw-semibold text-danger">Top Venta</label>
+					</div>
 
-		      <div class="mb-4">
-		        <label for="inputDescuento" class="form-label fw-semibold">Descuento <span class="text-danger">*</span></label>
-		        <input id="inputDescuento" class="form-control border-warning" th:field="*{descuento}" required />
-		      </div>
+					<div class="mb-4">
+						<label for="inputDescuento" class="form-label fw-semibold">Descuento <span
+								class="text-danger">*</span></label>
+						<input id="inputDescuento" class="form-control border-warning" th:field="*{descuento}"
+							required />
+					</div>
 
-		      <div class="mb-4">
-		        <label for="inputCantidadDescuento" class="form-label fw-semibold">Cantidad Descuento <span class="text-danger">*</span></label>
-		        <input id="inputCantidadDescuento" class="form-control border-warning" th:field="*{numeroPrendasDescuento}" required />
-		      </div>
+					<div class="mb-4">
+						<label for="inputCantidadDescuento" class="form-label fw-semibold">Cantidad Descuento <span
+								class="text-danger">*</span></label>
+						<input id="inputCantidadDescuento" class="form-control border-warning"
+							th:field="*{numeroPrendasDescuento}" required />
+					</div>
 
-		      <div class="d-grid">
-		        <button type="submit" class="btn btn-dark shadow-sm fw-semibold">Editar Categoria</button>
-		      </div>
-		    </form>
-		  </div>
+					<div class="d-grid">
+						<button type="submit" class="btn btn-dark shadow-sm fw-semibold">Editar Categoria</button>
+					</div>
+				</form>
+			</div>
 		</div>
 	</main>
 

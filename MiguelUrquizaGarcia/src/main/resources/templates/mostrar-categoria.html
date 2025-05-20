@@ -28,11 +28,15 @@
 				<div class="collapse navbar-collapse" id="navbarColor01">
 					<ul class="navbar-nav me-auto">
 						<li class="nav-item">
-							<a class="nav-link " th:href="@{/}">Prendas
+							<a class="nav-link " th:href="@{/prendas}">Prendas
 							</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link active" th:href="@{/categorias}">Categorias
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/ventas}">Ventas
 							</a>
 						</li>
 						<li class="nav-item">
@@ -50,30 +54,30 @@
 	</header>
 	<main class="flex-fill container my-4 table-responsive ">
 		<div class="card shadow-sm">
-			
+
 			<div class="card-body bg-light rounded-bottom-4">
-					<div class="table-responsive">
-						<table class="table table-bordered table-hover align-middle text-center bg-white rounded shadow-sm">
-							<thead class="table-success text-dark">
-								<tr>
-									<th class="py-3">Nombre</th>
-									<th class="py-3">Imagen</th>
-									<th class="py-3">Descripción</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr th:each="prendasCategoria : ${prendasCategoria}">
-									<td class="fw-semibold" th:text="${prendasCategoria.nombre}"></td>
-									<td>
-										<img th:src="@{${prendasCategoria.urlImagen}}" class="rounded-3 shadow-sm border"
-											style="width: 8rem; height: auto;">
-									</td>
-									<td th:text="${prendasCategoria.descripcion}"></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
+				<div class="table-responsive">
+					<table class="table table-bordered table-hover align-middle text-center bg-white rounded shadow-sm">
+						<thead class="table-success text-dark">
+							<tr>
+								<th class="py-3">Nombre</th>
+								<th class="py-3">Imagen</th>
+								<th class="py-3">Descripción</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="prendasCategoria : ${prendasCategoria}">
+								<td class="fw-semibold" th:text="${prendasCategoria.nombre}"></td>
+								<td>
+									<img th:src="@{${prendasCategoria.urlImagen}}" class="rounded-3 shadow-sm border"
+										style="width: 8rem; height: auto;">
+								</td>
+								<td th:text="${prendasCategoria.descripcion}"></td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
+			</div>
 		</div>
 	</main>
 	<div th:replace="~{fragments/footer :: footer}"></div>

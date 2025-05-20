@@ -10,17 +10,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.salesianostriana.dam.miguelurquizagarcia.model.Categoria;
 import com.salesianostriana.dam.miguelurquizagarcia.model.Prenda;
-import com.salesianostriana.dam.miguelurquizagarcia.repository.CategoriaRepository;
-import com.salesianostriana.dam.miguelurquizagarcia.repository.PrendaRepository;
 import com.salesianostriana.dam.miguelurquizagarcia.service.ServiceCategorias;
 import com.salesianostriana.dam.miguelurquizagarcia.service.Services;
 
 @Controller
+@RequestMapping("/prendas")
 public class ControllerPrenda {
 
 
@@ -30,7 +29,7 @@ public class ControllerPrenda {
 	private ServiceCategorias categoriaService;
 
 
-	@GetMapping("/")
+	@GetMapping("")
 	public String main(Model model) {
 
 		List<Prenda> lista = service.findAll();
@@ -42,7 +41,7 @@ public class ControllerPrenda {
 		model.addAttribute("categoria", categoriaService.findAll());
 
 
-		return "main";
+		return "prendas";
 	}
 
 	@GetMapping("/anadirPrenda")
@@ -63,7 +62,7 @@ public class ControllerPrenda {
 	@PostMapping("/editarPrenda/modificar")
 	public String procesarModificado(@ModelAttribute Prenda prenda) {
 		service.edit(prenda);
-		return "redirect:/";
+		return "redirect:/prendas";
 	}
 
 	@DeleteMapping("/eliminarPrenda/submit")
@@ -74,14 +73,14 @@ public class ControllerPrenda {
 		
 		 redirectAttributes.addFlashAttribute("eliminado", eliminado);
 
-		return "redirect:/";
+		return "redirect:/prendas";
 	}
 
 	@PostMapping("/anadirPrenda/submit")
 	public String procesarPrenda(@ModelAttribute Prenda prenda) {
 		prenda.addToCategoria(prenda.getCategoria());
 		service.save(prenda);
-		return "redirect:/";
+		return "redirect:/prendas";
 	}
 
 	@GetMapping("/buscar")
@@ -93,7 +92,7 @@ public class ControllerPrenda {
 		model.addAttribute("prenda", lista);
 		model.addAttribute("nuevaprenda", new Prenda());
 		model.addAttribute("categoria", categoriaService.findAll());
-		return "main";
+		return "prendas";
 	}
 	@GetMapping("/ordenarPrendas")
 	public String ordenarPrendas(@RequestParam(defaultValue = "asc") String orden, Model model) {
@@ -112,6 +111,6 @@ public class ControllerPrenda {
 	    model.addAttribute("categoria", categoriaService.findAll());
 	    model.addAttribute("orden", orden);
 
-	    return "main";
+	    return "prendas";
 	}
 }

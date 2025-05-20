@@ -29,10 +29,14 @@
 				<div class="collapse navbar-collapse" id="navbarColor01">
 					<ul class="navbar-nav me-auto">
 						<li class="nav-item">
-							<a class="nav-link active" th:href="@{/}">Prendas</a>
+							<a class="nav-link active" th:href="@{/prendas}">Prendas</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" th:href="@{/categorias}">Categorias</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/ventas}">Ventas
+							</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" th:href="@{/quienesSomos}">Quienes Somos</a>
@@ -49,15 +53,16 @@
 	<main class="flex-fill container my-5">
 		<div class="row justify-content-center">
 			<div class="col-12 col-md-6 col-lg-4">
-				<form method="POST" action="#" th:action="@{/editarPrenda/modificar}" th:object="${prenda}"
-					class="bg-white rounded-3 shadow-sm p-4" name="modificarPrenda" >
+				<form method="POST" action="#" th:action="@{/prendas/editarPrenda/modificar}" th:object="${prenda}"
+					class="bg-white rounded-3 shadow-sm p-4" name="modificarPrenda">
 					<input type="hidden" th:field="*{id}" />
 
 					<div class="mb-4">
 						<label for="inputNombre" class="form-label fw-semibold">Nombre Prenda <span
 								class="text-danger">*</span></label>
 						<input th:field="*{nombre}" type="text" class="form-control border-primary" id="inputNombre"
-							required placeholder="Introduzca el nombre" maxlength="20" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ_ ]*" />
+							required placeholder="Introduzca el nombre" maxlength="20"
+							pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ_ ]*" />
 						<div class="invalid-feedback">
 							Por favor, introduzca un nombre válido (solo letras y espacios).
 						</div>
@@ -79,20 +84,21 @@
 						<label for="inputDescripcion" class="form-label fw-semibold">Descripción <span
 								class="text-danger">*</span></label>
 						<textarea th:field="*{descripcion}" class="form-control border-success" id="inputDescripcion"
-							rows="3" required placeholder="Describa detalles de la prenda" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ_ ]*"></textarea>
+							rows="3" required placeholder="Describa detalles de la prenda"
+							pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ_ ]*"></textarea>
 						<div class="invalid-feedback">La descripción es obligatoria.</div>
 					</div>
 
 					<div class="mb-4">
 						<label for="inputImage" class="form-label fw-semibold">URL Imagen</label>
 						<input th:field="*{urlImagen}" type="text" class="form-control border-warning" id="inputImage"
-							 placeholder="https://ejemplo.com/imagen.jpg" />
+							placeholder="https://ejemplo.com/imagen.jpg" />
 						<div class="invalid-feedback">Introduzca una URL válida.</div>
 					</div>
 
 					<div class="form-check mb-4">
-						<input th:field="*{topVenta}" type="checkbox" class="form-check-input bg-danger border-danger shadow-smr"
-							id="inputCheck" />
+						<input th:field="*{topVenta}" type="checkbox"
+							class="form-check-input bg-danger border-danger shadow-smr" id="inputCheck" />
 						<label for="inputCheck" class="form-check-label fw-semibold text-danger">Top Venta</label>
 					</div>
 
