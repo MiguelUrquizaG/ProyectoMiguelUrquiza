@@ -15,12 +15,16 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.salesianostriana.dam.miguelurquizagarcia.model.Categoria;
 import com.salesianostriana.dam.miguelurquizagarcia.service.CategoriaService;
+import com.salesianostriana.dam.miguelurquizagarcia.service.PrendaService;
 
 @Controller	
 public class ControllerCategorias {
 
 	@Autowired
 	private CategoriaService categoriaServicios;
+	
+	@Autowired
+	private PrendaService prendaServicios;
 	
 	@GetMapping("/categorias")
 	public String showCategorias(Model model ) {
@@ -68,12 +72,20 @@ public class ControllerCategorias {
 		return "redirect:/categorias";
 	}
 	
-	
+	@DeleteMapping("/eliminarPrendaTabla/submit")
+	public String eliminarCategoriaTabla(@RequestParam Long id, RedirectAttributes redirectAttributes	) {
+		long idCategoria = prendaServicios.buscarPrenda(id).getCategoria().getId();
+		System.out.println("ID:" +idCategoria);
+		boolean eliminado = prendaServicios.eliminarPrenda(id);
+		redirectAttributes.addFlashAttribute("eliminado", eliminado);
+		return "redirect:/mostrarCategoria/"+idCategoria;
+	}
 	
 	@GetMapping("/mostrarCategoria/{id}")
 	public String mostrarCategoria(@PathVariable Long id, Model model) {
 		Categoria c = categoriaServicios.buscar(id);
 		model.addAttribute("prendasCategoria", c.getListaPrendas());
+		
 		return "mostrar-categoria";
 	}
 	

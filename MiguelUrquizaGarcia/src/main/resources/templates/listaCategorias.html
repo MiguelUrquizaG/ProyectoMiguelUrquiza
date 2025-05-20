@@ -76,47 +76,56 @@
 	<main class="flex-fill container-fluid px-0">
 
 		<div class="row g-0">
-				<aside th:replace="~{fragments/aside :: aside}"></aside>
+			<aside th:replace="~{fragments/aside :: aside}"></aside>
 
-				<div class="col-md-9 px-3 py-3">
-					<div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2 mb-4">
-						<h2 class="text-primary m-0">Gestión de Categorías</h2>
-						<div class="d-flex flex-column flex-sm-row gap-2 w-50 w-md-auto justify-content-end">
-							<button type="button"
-								class="btn btn-outline-primary w-auto d-flex align-items-center justify-content-center gap-2"
-								data-bs-toggle="modal" data-bs-target="#anadirCategoria">
-								<i class="bi bi-plus-circle me-2"></i>Añadir Categoría
-							</button>
-							<a class="btn btn-outline-primary w-auto d-flex align-items-center justify-content-center gap-2"
-								th:href="@{/administrarDescuentos}">
-								Ajustar Descuentos <i class="bi bi-gear-fill"></i>
-							</a>
+			<div class="col-md-9 px-3 py-3">
+				<div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2 mb-4">
+					<h2 class="text-primary m-0">Gestión de Categorías</h2>
+					<div class="d-flex flex-column flex-sm-row gap-2 w-50 w-md-auto justify-content-end">
+						<button type="button"
+							class="btn btn-outline-primary w-auto d-flex align-items-center justify-content-center gap-2"
+							data-bs-toggle="modal" data-bs-target="#anadirCategoria">
+							<i class="bi bi-plus-circle me-2"></i>Añadir Categoría
+						</button>
+						<a class="btn btn-outline-primary w-auto d-flex align-items-center justify-content-center gap-2"
+							th:href="@{/administrarDescuentos}">
+							Ajustar Descuentos <i class="bi bi-gear-fill"></i>
+						</a>
+					</div>
+				</div>
+
+				<div class="row gy-3 mb-4">
+					<form method="get" th:action="@{/buscarCategoria}" class="col-12 col-md-4">
+						<label for="buscarNombre" class="form-label fw-semibold">Buscar por Nombre</label>
+						<div class="input-group">
+							<input type="text" name="query" id="buscarNombre" class="form-control"
+								placeholder="Nombre de categoría" />
+							<button type="submit" class="btn btn-dark fw-semibold">Buscar</button>
 						</div>
+					</form>
+
+					<form method="get" th:action="@{/filtrarPrecioMax}" class="col-12 col-md-5">
+						<label for="precioMax" class="form-label fw-semibold">Filtrar categorías sin Top Venta y precio
+							menor a mayor:</label>
+						<div class="input-group">
+							<input type="number" step="0.01" min="0" name="precioMax" id="precioMax"
+								class="form-control" placeholder="Precio máximo" required />
+							<button type="submit" class="btn btn-dark fw-semibold">Filtrar</button>
+						</div>
+					</form>
+
+					<form method="get" th:action="@{/categorias}" class="col-12 col-md-3 d-flex align-items-end">
+						<button type="submit" class="btn btn-outline-dark w-100">Resetear filtros</button>
+					</form>
+
+					<div th:if="${#lists.isEmpty(categoria)}" class="mt-3">
+						<p class="text-center text-dark display-6">
+							No hay categorias cargadas.
+						</p>
 					</div>
+				</div>
 
-					<div class="row gy-3 mb-4">
-						<form method="get" th:action="@{/buscarCategoria}" class="col-12 col-md-4">
-							<label for="buscarNombre" class="form-label fw-semibold">Buscar por Nombre</label>
-							<div class="input-group">
-								<input type="text" name="query" id="buscarNombre" class="form-control"
-									placeholder="Nombre de categoría" />
-								<button type="submit" class="btn btn-dark fw-semibold">Buscar</button>
-							</div>
-						</form>
 
-						<form method="get" th:action="@{/filtrarPrecioMax}" class="col-12 col-md-5">
-							<label for="precioMax" class="form-label fw-semibold">Filtrar categorías sin Top Venta y precio menor a mayor:</label>
-							<div class="input-group">
-								<input type="number" step="0.01" min="0" name="precioMax" id="precioMax" class="form-control"
-									placeholder="Precio máximo" required />
-								<button type="submit" class="btn btn-dark fw-semibold">Filtrar</button>
-							</div>
-						</form>
-
-						<form method="get" th:action="@{/categorias}" class="col-12 col-md-3 d-flex align-items-end">
-							<button type="submit" class="btn btn-outline-dark w-100">Resetear filtros</button>
-						</form>
-					</div>
 				<div class="container">
 
 					<div class="row mt-3">
@@ -128,8 +137,8 @@
 										Top Venta
 									</div>
 									<a th:href="@{/mostrarCategoria/{id} (id=${categoria.id})}"
-									   class="card-title link-primary fw-bold text-decoration-underline h4 cursor-pointer mb-3"
-									   th:text="${categoria.nombre}"></a>
+										class="card-title link-primary fw-bold text-decoration-underline h4 cursor-pointer mb-3"
+										th:text="${categoria.nombre}"></a>
 									<p class="card-text flex-grow-1" th:text="${categoria.descripcion}"></p>
 									<p class="card-text fw-semibold"
 										th:text="'Precio Servicio: ' + ${categoria.precioServicio} + ' €'"></p>
