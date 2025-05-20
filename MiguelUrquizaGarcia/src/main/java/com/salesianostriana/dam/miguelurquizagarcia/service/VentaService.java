@@ -14,10 +14,10 @@ import com.salesianostriana.dam.miguelurquizagarcia.repository.VentaRepository;
 
 import jakarta.persistence.EntityNotFoundException;
 @Service
-public class ServiceVenta extends BaseService<Venta, Long, VentaRepository>{
+public class VentaService extends BaseService<Venta, Long, VentaRepository>{
 
 	@Autowired
-	ServiceCategorias categoriaService;
+	CategoriaService categoriaService;
 	
 	@Autowired
 	private PrendaService servicePrenda;

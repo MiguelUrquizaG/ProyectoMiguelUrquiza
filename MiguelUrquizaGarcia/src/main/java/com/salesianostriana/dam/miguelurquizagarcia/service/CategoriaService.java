@@ -12,7 +12,7 @@ import com.salesianostriana.dam.miguelurquizagarcia.repository.CategoriaReposito
 import jakarta.persistence.EntityNotFoundException;
 
 @Service
-public class ServiceCategorias extends BaseService<Categoria, Long, CategoriaRepository> {
+public class CategoriaService extends BaseService<Categoria, Long, CategoriaRepository> {
 
 	@Autowired
 	private CategoriaRepository repoCategoria;

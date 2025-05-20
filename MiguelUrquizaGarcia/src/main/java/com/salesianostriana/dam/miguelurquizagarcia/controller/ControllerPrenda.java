@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.salesianostriana.dam.miguelurquizagarcia.model.Prenda;
-import com.salesianostriana.dam.miguelurquizagarcia.service.ServiceCategorias;
+import com.salesianostriana.dam.miguelurquizagarcia.service.CategoriaService;
 import com.salesianostriana.dam.miguelurquizagarcia.service.PrendaService;
 
 @Controller
@@ -26,7 +26,7 @@ public class ControllerPrenda {
 	@Autowired
 	private PrendaService service;
 	@Autowired
-	private ServiceCategorias categoriaService;
+	private CategoriaService categoriaService;
 
 
 	@GetMapping("")

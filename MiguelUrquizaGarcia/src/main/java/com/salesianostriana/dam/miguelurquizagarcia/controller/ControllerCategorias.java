@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.salesianostriana.dam.miguelurquizagarcia.model.Categoria;
-import com.salesianostriana.dam.miguelurquizagarcia.service.ServiceCategorias;
+import com.salesianostriana.dam.miguelurquizagarcia.service.CategoriaService;
 
 @Controller	
 public class ControllerCategorias {
 
 	@Autowired
-	private ServiceCategorias categoriaServicios;
+	private CategoriaService categoriaServicios;
 	
 	@GetMapping("/categorias")
 	public String showCategorias(Model model ) {

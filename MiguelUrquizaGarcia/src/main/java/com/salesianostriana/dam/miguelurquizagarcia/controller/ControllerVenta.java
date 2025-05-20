@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.salesianostriana.dam.miguelurquizagarcia.model.Venta;
 
-import com.salesianostriana.dam.miguelurquizagarcia.service.ServiceCategorias;
-import com.salesianostriana.dam.miguelurquizagarcia.service.ServiceVenta;
+import com.salesianostriana.dam.miguelurquizagarcia.service.CategoriaService;
+import com.salesianostriana.dam.miguelurquizagarcia.service.VentaService;
 import com.salesianostriana.dam.miguelurquizagarcia.service.PrendaService;
 
 @Controller
@@ -25,9 +25,9 @@ public class ControllerVenta {
 
 
 	@Autowired
-	private ServiceVenta servicioVentas;
+	private VentaService servicioVentas;
 	@Autowired
-	private ServiceCategorias serviceCategoria;
+	private CategoriaService serviceCategoria;
 	
 	@Autowired
 	private PrendaService servicePrenda;
