@@ -14,7 +14,7 @@
 	<link href="../static/estilo.css" th:href="@{/estilosMain.css}" rel="stylesheet" type="text/css">
 	<title>Tintoreria Urquiza</title>
 
-	<script th:inline="javascript">
+	<script th:inline="javascript" defer>
 
 		document.addEventListener("DOMContentLoaded", function () {
 			let eliminado = [[${eliminado}]];
@@ -74,106 +74,118 @@
 
 	</header>
 
-	<main class="flex-fill container my-4">
-		<div class="d-flex justify-content-between align-items-center mb-4">
-			<h2 class="text-primary">Gestión de Prendas</h2>
-			<button class="btn btn-outline-primary shadow-sm" data-bs-toggle="modal" data-bs-target="#anadirPrenda">
-				<i class="bi bi-plus-circle me-1"></i> Añadir Prenda
-			</button>
-		</div>
+	<main class="flex-fill container-fluid px-0">
+		<div class="row g-0">
 
-		<div class="row g-3 mb-5">
-			<form method="get" th:action="@{/buscar}" class="col-md-3 col-12">
-				<label for="buscarNombrePrenda" class="form-label fw-semibold">Buscar por Nombre</label>
-				<div class="input-group">
-					<input type="text" id="buscarNombrePrenda" name="query" class="form-control"
-						placeholder="Nombre de categoría" />
-					<button type="submit" class="btn btn-dark fw-semibold">Buscar</button>
+			<aside th:replace="~{fragments/aside :: aside}">
+			</aside>
+
+
+			<div class="col-md-9 px-4 py-3">
+				<div class="d-flex justify-content-between align-items-center mb-4">
+					<h2 class="text-primary">Gestión de Prendas</h2>
+					<button class="btn btn-outline-primary shadow-sm" data-bs-toggle="modal"
+						data-bs-target="#anadirPrenda">
+						<i class="bi bi-plus-circle me-1"></i> Añadir Prenda
+					</button>
 				</div>
-			</form>
 
-			<form method="get" th:action="@{/ordenarPrendas}" class="col-md-3 d-flex align-items-end">
-				<input type="hidden" name="orden" value="asc" />
-				<button type="submit" class="btn btn-outline-dark w-100">
-					Ordenar A-Z <i class="bi bi-arrow-up ms-2"></i>
-				</button>
-			</form>
-
-			<form method="get" th:action="@{/ordenarPrendas}" class="col-md-3 d-flex align-items-end">
-				<input type="hidden" name="orden" value="desc" />
-				<button type="submit" class="btn btn-outline-dark w-100">
-					Ordenar Z-A <i class="bi bi-arrow-down ms-2"></i>
-				</button>
-			</form>
-
-			<form method="get" th:action="@{/}"
-				class="col-md-3 col-12 d-flex align-items-end justify-content-end">
-				<button type="submit" class="btn btn-outline-dark w-100">Resetear filtros</button>
-			</form>
-		</div>
-
-		<div th:if="${#lists.isEmpty(prenda)}" class="mt-3">
-			<p class="text-center text-dark display-6">
-				No hay prendas cargadas.
-			</p>
-
-		</div>
-
-		<div class="container">
-
-			<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-3">
-				<div class="col" th:each="prenda : ${prenda}">
-					<div
-						class="card shadow-sm h-100 d-flex flex-column position-relative border border-2 border-primary">
-
-						<img th:src="@{${prenda.urlImagen}}" class="card-img-top object-fit-cover mb-3" height="450"
-							alt="Imagen de la prenda">
-						<div class="card-body d-flex flex-column">
-							<div th:if="${prenda.topVenta}" class="badge bg-warning text-dark mb-2 col-4">
-								Top Venta
-							</div>
-							<h5 class="card-title text-capitalize text-primary mb-3" th:text="${prenda.nombre}"></h5>
-							<p class="card-text flex-grow-1 text-muted" th:text="${prenda.descripcion}"></p>
-							<div class="mt-3 d-flex gap-2">
-								<a class="btn btn-outline-primary flex-grow-1"
-									th:href="@{/editarPrenda/{id}(id=${prenda.id})}">
-									<i class="bi bi-pencil-fill me-1"></i>Modificar
-								</a>
-								<button class="btn btn-danger flex-grow-1" data-bs-toggle="modal"
-									th:attr="data-bs-target='#modalEliminar-' + ${prenda.id}">
-									<i class="bi bi-trash-fill me-1"></i>Eliminar
-								</button>
-							</div>
+				<div class="row g-3 mb-4">
+					<form method="get" th:action="@{/buscar}" class="col-md-3 col-12">
+						<label for="buscarNombrePrenda" class="form-label fw-semibold">Buscar por Nombre</label>
+						<div class="input-group">
+							<input type="text" id="buscarNombrePrenda" name="query" class="form-control"
+								placeholder="Nombre de categoría" />
+							<button type="submit" class="btn btn-dark fw-semibold">Buscar</button>
 						</div>
-					</div>
+					</form>
 
+					<form method="get" th:action="@{/ordenarPrendas}" class="col-md-3 d-flex align-items-end">
+						<input type="hidden" name="orden" value="asc" />
+						<button type="submit" class="btn btn-outline-dark w-100">
+							Ordenar A-Z <i class="bi bi-arrow-up ms-2"></i>
+						</button>
+					</form>
 
-					<div class="modal fade" th:attr="id='modalEliminar-' + ${prenda.id}" tabindex="-1"
-						aria-labelledby="modalEliminarLabel" aria-hidden="true">
-						<div class="modal-dialog modal-dialog-centered">
-							<div class="modal-content border-0 shadow">
-								<div class="modal-header bg-danger text-white">
-									<h5 class="modal-title" id="modalEliminarLabel">
-										<i class="bi bi-exclamation-triangle-fill me-2"></i>Confirmar eliminación
+					<form method="get" th:action="@{/ordenarPrendas}" class="col-md-3 d-flex align-items-end">
+						<input type="hidden" name="orden" value="desc" />
+						<button type="submit" class="btn btn-outline-dark w-100">
+							Ordenar Z-A <i class="bi bi-arrow-down ms-2"></i>
+						</button>
+					</form>
+
+					<form method="get" th:action="@{/}"
+						class="col-md-3 col-12 d-flex align-items-end justify-content-end">
+						<button type="submit" class="btn btn-outline-dark w-100">Resetear filtros</button>
+					</form>
+				</div>
+
+				<div th:if="${#lists.isEmpty(prenda)}" class="mt-3">
+					<p class="text-center text-dark display-6">
+						No hay prendas cargadas.
+					</p>
+				</div>
+
+				<div class="container-fluid px-0">
+					<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+						<div class="col" th:each="prenda : ${prenda}">
+							<div
+								class="card shadow-sm h-100 d-flex flex-column position-relative border border-2 border-primary">
+
+								<img th:src="@{${prenda.urlImagen}}" class="card-img-top object-fit-cover mb-3"
+									height="450" alt="Imagen de la prenda">
+								<div class="card-body d-flex flex-column">
+									<div th:if="${prenda.topVenta}" class="badge bg-warning text-dark mb-2 col-4">
+										Top Venta
+									</div>
+									<h5 class="card-title text-capitalize text-primary mb-3" th:text="${prenda.nombre}">
 									</h5>
-									<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-										aria-label="Cerrar"></button>
+									<p class="card-text flex-grow-1 text-muted" th:text="${prenda.descripcion}"></p>
+									<div class="mt-3 d-flex gap-2">
+										<a class="btn btn-outline-primary flex-grow-1"
+											th:href="@{/editarPrenda/{id}(id=${prenda.id})}">
+											<i class="bi bi-pencil-fill me-1"></i>
+										</a>
+										<button class="btn btn-danger flex-grow-1" data-bs-toggle="modal"
+											th:attr="data-bs-target='#modalEliminar-' + ${prenda.id}">
+											<i class="bi bi-trash-fill me-1"></i>
+										</button>
+									</div>
 								</div>
-								<div class="modal-body">
-									<p class="fs-7 text-dark mb-4">¿Estás seguro de que deseas eliminar esta prenda?
-										Esta acción no se puede deshacer.</p>
-									<form th:method="post" th:action="@{/eliminarPrenda/submit}">
-										<input type="hidden" name="id" th:value="${prenda.id}" />
-										<input type="hidden" name="_method" value="delete">
-										<div class="d-flex justify-content-end gap-2">
-											<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-												<i class="bi bi-x-circle me-1"></i> Cancelar
-											</button>
-											<button type="submit" class="btn btn-danger">
-												<i class="bi bi-trash3-fill me-1"></i> Eliminar
-											</button>
+							</div>
+
+
+							<div class="modal fade" th:attr="id='modalEliminar-' + ${prenda.id}" tabindex="-1"
+								aria-labelledby="modalEliminarLabel" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-centered">
+									<div class="modal-content border-0 shadow">
+										<div class="modal-header bg-danger text-white">
+											<h5 class="modal-title" id="modalEliminarLabel">
+												<i class="bi bi-exclamation-triangle-fill me-2"></i>Confirmar
+												eliminación
+											</h5>
+											<button type="button" class="btn-close btn-close-white"
+												data-bs-dismiss="modal" aria-label="Cerrar"></button>
 										</div>
-									</form>
+										<div class="modal-body">
+											<p class="fs-7 text-dark mb-4">¿Estás seguro de que deseas eliminar esta
+												prenda?
+												Esta acción no se puede deshacer.</p>
+											<form th:method="post" th:action="@{/eliminarPrenda/submit}">
+												<input type="hidden" name="id" th:value="${prenda.id}" />
+												<input type="hidden" name="_method" value="delete">
+												<div class="d-flex justify-content-end gap-2">
+													<button type="button" class="btn btn-secondary"
+														data-bs-dismiss="modal">
+														<i class="bi bi-x-circle me-1"></i> Cancelar
+													</button>
+													<button type="submit" class="btn btn-danger">
+														<i class="bi bi-trash3-fill me-1"></i> Eliminar
+													</button>
+												</div>
+											</form>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -181,93 +193,100 @@
 				</div>
 
 
-			</div>
-		</div>
-
-		<div class="modal fade" id="anadirPrenda" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content border-0 shadow-lg">
-					<div class="modal-header bg-primary text-white">
-						<h1 class="modal-title fs-5 text-light" id="exampleModalLabel">Añadir Prenda</h1>
-						<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-							aria-label="Cerrar"></button>
+				<div class="modal fade" id="anadirPrenda" tabindex="-1" aria-labelledby="exampleModalLabel"
+					aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content border-0 shadow-lg">
+							<div class="modal-header bg-primary text-white">
+								<h1 class="modal-title fs-5 text-light" id="exampleModalLabel">Añadir Prenda</h1>
+								<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+									aria-label="Cerrar"></button>
+							</div>
+							<div class="modal-body">
+								<form method="POST" th:action="@{/anadirPrenda/submit}" th:object="${nuevaprenda}">
+									<div class="mb-3">
+										<label class="form-label fw-bold">Nombre Prenda</label>
+										<input th:field="*{nombre}" type="text"
+											class="form-control border-primary shadow-sm" maxlength="9"
+											pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ_ ]*" placeholder="Ejemplo: Camisa Blanca">
+									</div>
+									<div class="mb-3">
+										<label class="form-label fw-bold">Categoría</label>
+										<select th:field="*{categoria}" class="form-select border-secondary shadow-sm"
+											required>
+											<option th:each="categoria : ${categoria}" th:text="${categoria.nombre}"
+												th:value="${categoria.id}"></option>
+										</select>
+									</div>
+									<div class="mb-3">
+										<label class="form-label fw-bold">Descripción</label>
+										<textarea th:field="*{descripcion}"
+											class="form-control border-success shadow-sm" style="min-height: 100px;"
+											required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ_ ]*"
+											placeholder="Escribe detalles sobre la prenda"></textarea>
+									</div>
+									<div class="mb-3">
+										<label class="form-label fw-bold">URL Imagen</label>
+										<input th:field="*{urlImagen}" type="text"
+											class="form-control border-warning shadow-sm" required
+											placeholder="Añade la URL de la imagen">
+									</div>
+									<div class="form-check mb-3">
+										<input th:field="*{topVenta}" type="checkbox"
+											class="form-check-input bg-danger border-danger shadow-sm" id="inputCheck">
+										<label class="form-check-label fw-bold text-danger" for="inputCheck">Top
+											Venta</label>
+									</div>
+									<div class="d-flex justify-content-end gap-2">
+										<button type="submit" class="btn btn-primary shadow-sm">Crear</button>
+										<button type="button" class="btn btn-secondary shadow-sm"
+											data-bs-dismiss="modal">Cerrar</button>
+									</div>
+								</form>
+							</div>
+						</div>
 					</div>
-					<div class="modal-body">
-						<form method="POST" th:action="@{/anadirPrenda/submit}" th:object="${nuevaprenda}">
-							<div class="mb-3">
-								<label class="form-label fw-bold">Nombre Prenda</label>
-								<input th:field="*{nombre}" type="text" class="form-control border-primary shadow-sm"
-									maxlength="9" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ_ ]*" placeholder="Ejemplo: Camisa Blanca">
+				</div>
+
+				<div class="modal fade" id="modalExito" tabindex="-1" aria-labelledby="modalExitoLabel"
+					aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content border-success">
+							<div class="modal-header bg-success text-white">
+								<h5 class="modal-title" id="modalExitoLabel">Eliminación exitosa</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal"
+									aria-label="Cerrar"></button>
 							</div>
-							<div class="mb-3">
-								<label class="form-label fw-bold">Categoría</label>
-								<select th:field="*{categoria}" class="form-select border-secondary shadow-sm" required>
-									<option th:each="categoria : ${categoria}" th:text="${categoria.nombre}"
-										th:value="${categoria.id}"></option>
-								</select>
+							<div class="modal-body">
+								La prenda ha sido eliminada correctamente.
 							</div>
-							<div class="mb-3">
-								<label class="form-label fw-bold">Descripción</label>
-								<textarea th:field="*{descripcion}" class="form-control border-success shadow-sm"
-									style="min-height: 100px;" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ_ ]*"
-									placeholder="Escribe detalles sobre la prenda"></textarea>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-success" data-bs-dismiss="modal">Aceptar</button>
 							</div>
-							<div class="mb-3">
-								<label class="form-label fw-bold">URL Imagen</label>
-								<input th:field="*{urlImagen}" type="text" class="form-control border-warning shadow-sm"
-									required placeholder="Añade la URL de la imagen">
+						</div>
+					</div>
+				</div>
+
+				<div class="modal fade" id="modalError" tabindex="-1" aria-labelledby="modalErrorLabel"
+					aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content border-danger">
+							<div class="modal-header bg-danger text-white">
+								<h5 class="modal-title" id="modalErrorLabel">Error al eliminar</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal"
+									aria-label="Cerrar"></button>
 							</div>
-							<div class="form-check mb-3">
-								<input th:field="*{topVenta}" type="checkbox"
-									class="form-check-input bg-danger border-danger shadow-sm" id="inputCheck">
-								<label class="form-check-label fw-bold text-danger" for="inputCheck">Top Venta</label>
+							<div class="modal-body">
+								No se pudo eliminar la prenda. Verifica que no esté en una Linea de Venta.
 							</div>
-							<div class="d-flex justify-content-end gap-2">
-								<button type="submit" class="btn btn-primary shadow-sm">Crear</button>
-								<button type="button" class="btn btn-secondary shadow-sm"
-									data-bs-dismiss="modal">Cerrar</button>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
 							</div>
-						</form>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
-
-		<div class="modal fade" id="modalExito" tabindex="-1" aria-labelledby="modalExitoLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content border-success">
-					<div class="modal-header bg-success text-white">
-						<h5 class="modal-title" id="modalExitoLabel">Eliminación exitosa</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-					</div>
-					<div class="modal-body">
-						La prenda ha sido eliminada correctamente.
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-success" data-bs-dismiss="modal">Aceptar</button>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="modal fade" id="modalError" tabindex="-1" aria-labelledby="modalErrorLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content border-danger">
-					<div class="modal-header bg-danger text-white">
-						<h5 class="modal-title" id="modalErrorLabel">Error al eliminar</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-					</div>
-					<div class="modal-body">
-						No se pudo eliminar la prenda. Verifica que no esté en una Linea de Venta.
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-					</div>
-				</div>
-			</div>
-		</div>
-
 	</main>
 
 	<div th:replace="~{fragments/footer :: footer}"></div>
