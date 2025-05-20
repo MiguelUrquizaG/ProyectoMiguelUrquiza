@@ -17,7 +17,7 @@ import com.salesianostriana.dam.miguelurquizagarcia.model.Venta;
 
 import com.salesianostriana.dam.miguelurquizagarcia.service.ServiceCategorias;
 import com.salesianostriana.dam.miguelurquizagarcia.service.ServiceVenta;
-import com.salesianostriana.dam.miguelurquizagarcia.service.Services;
+import com.salesianostriana.dam.miguelurquizagarcia.service.PrendaService;
 
 @Controller
 public class ControllerVenta {
@@ -30,7 +30,7 @@ public class ControllerVenta {
 	private ServiceCategorias serviceCategoria;
 	
 	@Autowired
-	private Services servicePrenda;
+	private PrendaService servicePrenda;
 	
 
 

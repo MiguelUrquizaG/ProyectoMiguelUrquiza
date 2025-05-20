@@ -16,7 +16,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.salesianostriana.dam.miguelurquizagarcia.model.Prenda;
 import com.salesianostriana.dam.miguelurquizagarcia.service.ServiceCategorias;
-import com.salesianostriana.dam.miguelurquizagarcia.service.Services;
+import com.salesianostriana.dam.miguelurquizagarcia.service.PrendaService;
 
 @Controller
 @RequestMapping("/prendas")
@@ -24,7 +24,7 @@ public class ControllerPrenda {
 
 
 	@Autowired
-	private Services service;
+	private PrendaService service;
 	@Autowired
 	private ServiceCategorias categoriaService;
 

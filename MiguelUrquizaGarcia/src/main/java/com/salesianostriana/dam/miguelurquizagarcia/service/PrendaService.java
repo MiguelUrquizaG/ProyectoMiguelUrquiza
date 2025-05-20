@@ -13,7 +13,7 @@ import jakarta.persistence.EntityNotFoundException;
 
 @Service
 
-public class Services extends BaseService<Prenda, Long, PrendaRepository>{
+public class PrendaService extends BaseService<Prenda, Long, PrendaRepository>{
 	
 @Autowired
 private PrendaRepository repoPrenda;

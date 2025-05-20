@@ -20,7 +20,7 @@ public class ServiceVenta extends BaseService<Venta, Long, VentaRepository>{
 	ServiceCategorias categoriaService;
 	
 	@Autowired
-	private Services servicePrenda;
+	private PrendaService servicePrenda;
 	
 	@Autowired
 	private LineaVentaService serviceLineaVenta;
