@@ -52,6 +52,11 @@
 				<div class="collapse navbar-collapse" id="navbarColor01">
 					<ul class="navbar-nav me-auto">
 						<li class="nav-item">
+							<a class="nav-link " th:href="@{/}">Inicio
+							</a>
+						</li>
+
+						<li class="nav-item">
 							<a class="nav-link active" th:href="@{/prendas}">Prendas
 							</a>
 						</li>
@@ -67,7 +72,7 @@
 							<a class="nav-link " th:href="@{/quienesSomos}">Quienes Somos</a>
 						</li>
 					</ul>
-					<a href="inicioSesion.html"><i class=" h2 bi bi-person-fill text-white"></i></a>
+					
 				</div>
 			</div>
 		</nav>
@@ -203,7 +208,8 @@
 									aria-label="Cerrar"></button>
 							</div>
 							<div class="modal-body">
-								<form method="POST" th:action="@{prendas/anadirPrenda/submit}" th:object="${nuevaprenda}">
+								<form method="POST" th:action="@{prendas/anadirPrenda/submit}"
+									th:object="${nuevaprenda}">
 									<div class="mb-3">
 										<label class="form-label fw-bold">Nombre Prenda</label>
 										<input th:field="*{nombre}" type="text"

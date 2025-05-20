@@ -50,6 +50,10 @@
 				<div class="collapse navbar-collapse" id="navbarColor01">
 					<ul class="navbar-nav me-auto">
 						<li class="nav-item">
+							<a class="nav-link " th:href="@{/}">Inicio
+							</a>
+						</li>
+						<li class="nav-item">
 							<a class="nav-link " th:href="@{/prendas}">Prendas
 							</a>
 						</li>
@@ -65,7 +69,7 @@
 							<a class="nav-link " th:href="@{/quienesSomos}">Quienes Somos</a>
 						</li>
 					</ul>
-					<a href="inicioSesion.html"><i class=" h2 bi bi-person-fill text-white"></i></a>
+					
 				</div>
 			</div>
 		</nav>
@@ -114,8 +118,8 @@
 									</div>
 								</td>
 
-								<div class="modal fade" th:attr="id='modalEliminar-' + ${prendasCategoria.id}" tabindex="-1"
-									aria-labelledby="modalEliminarLabel" aria-hidden="true">
+								<div class="modal fade" th:attr="id='modalEliminar-' + ${prendasCategoria.id}"
+									tabindex="-1" aria-labelledby="modalEliminarLabel" aria-hidden="true">
 									<div class="modal-dialog modal-dialog-centered">
 										<div class="modal-content border-0 shadow">
 											<div class="modal-header bg-danger text-white">

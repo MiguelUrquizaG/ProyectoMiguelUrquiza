@@ -28,6 +28,10 @@
 				<div class="collapse navbar-collapse" id="navbarColor01">
 					<ul class="navbar-nav me-auto">
 						<li class="nav-item">
+							<a class="nav-link " th:href="@{/}">Inicio
+							</a>
+						</li>
+						<li class="nav-item">
 							<a class="nav-link " th:href="@{/prendas}">Prendas
 							</a>
 						</li>
@@ -43,7 +47,7 @@
 							<a class="nav-link " th:href="@{/quienesSomos}">Quienes Somos</a>
 						</li>
 					</ul>
-					<a href="inicioSesion.html"><i class=" h2 bi bi-person-fill text-white"></i></a>
+					
 				</div>
 			</div>
 		</nav>
@@ -55,84 +59,90 @@
 			<aside th:replace="~{fragments/aside :: aside}"></aside>
 
 			<div class="col-md-9 px-3 py-3">
-			    <div class="d-flex justify-content-between align-items-center mb-4">
-			        <h2 class="text-primary mb-0">Listado de Ventas</h2>
-			        <a class="btn btn-outline-primary shadow-sm" th:href="@{/anadirVenta}">
-			            <i class="bi bi-plus-circle me-1"></i> Añadir Venta
-			        </a>
-			    </div>
+				<div class="d-flex justify-content-between align-items-center mb-4">
+					<h2 class="text-primary mb-0">Listado de Ventas</h2>
+					<a class="btn btn-outline-primary shadow-sm" th:href="@{/anadirVenta}">
+						<i class="bi bi-plus-circle me-1"></i> Añadir Venta
+					</a>
+				</div>
 
-			    <div th:if="${#lists.isEmpty(ventas)}" class="alert alert-warning text-center">
-			        No hay ventas registradas por el momento.
-			    </div>
+				<div th:if="${#lists.isEmpty(ventas)}" class="alert alert-warning text-center">
+					No hay ventas registradas por el momento.
+				</div>
 
-			    <div th:if="${!#lists.isEmpty(ventas)}" class="table-responsive shadow-sm rounded">
-			        <table class="table table-bordered table-hover align-middle text-center bg-white">
-			            <thead class="table-primary text-dark">
-			                <tr>
-			                    <th>Telefono Cliente</th>
-			                    <th>Fecha</th>
-			                    <th>Total (€)</th>
-			                    <th>Acciones</th>
-			                </tr>
-			            </thead>
-			            <tbody>
-			                <tr th:each="venta : ${ventas}">
-			                    <td class="fw-semibold text-capitalize" th:text="${venta.numeroCliente}">Cliente</td>
-			                    <td th:text="${venta.fechaEntrega != null ? venta.fechaEntrega.format(T(java.time.format.DateTimeFormatter).ofPattern('dd/MM/yyyy')) : ''}"></td>
-			                    <td th:text="${venta.precioTotal}">0.00</td>
-			                    <td>
+				<div th:if="${!#lists.isEmpty(ventas)}" class="table-responsive shadow-sm rounded">
+					<table class="table table-bordered table-hover align-middle text-center bg-white">
+						<thead class="table-primary text-dark">
+							<tr>
+								<th>Telefono Cliente</th>
+								<th>Fecha</th>
+								<th>Total (€)</th>
+								<th>Acciones</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="venta : ${ventas}">
+								<td class="fw-semibold text-capitalize" th:text="${venta.numeroCliente}">Cliente</td>
+								<td
+									th:text="${venta.fechaEntrega != null ? venta.fechaEntrega.format(T(java.time.format.DateTimeFormatter).ofPattern('dd/MM/yyyy')) : ''}">
+								</td>
+								<td th:text="${venta.precioTotal}">0.00</td>
+								<td>
 									<div class="d-flex justify-content-center gap-2">
-									    <a class="btn btn-outline-primary btn-sm" th:href="@{/ticket/{id}(id=${venta.id})}">
-									        <i class="bi bi-receipt fs-4"></i>
-									    </a>
-									    <button class="btn btn-outline-danger btn-sm " data-bs-toggle="modal"
-									            th:attr="data-bs-target='#modalEliminar-' + ${venta.id}">
-									        <i class="bi bi-trash fs-4"></i>
-									    </button>
+										<a class="btn btn-outline-primary btn-sm"
+											th:href="@{/ticket/{id}(id=${venta.id})}">
+											<i class="bi bi-receipt fs-4"></i>
+										</a>
+										<button class="btn btn-outline-danger btn-sm " data-bs-toggle="modal"
+											th:attr="data-bs-target='#modalEliminar-' + ${venta.id}">
+											<i class="bi bi-trash fs-4"></i>
+										</button>
 									</div>
-			                      
-			                        <div class="modal fade" th:id="'modalEliminar-' + ${venta.id}" tabindex="-1"
-			                             aria-labelledby="modalEliminarLabel" aria-hidden="true">
-			                            <div class="modal-dialog modal-dialog-centered">
-			                                <div class="modal-content border-0 shadow">
-			                                    <div class="modal-header bg-danger text-white">
-			                                        <h5 class="modal-title" id="modalEliminarLabel">
-			                                            <i class="bi bi-exclamation-triangle-fill me-2"></i>Confirmar eliminación
-			                                        </h5>
-			                                        <button type="button" class="btn-close btn-close-white"
-			                                                data-bs-dismiss="modal" aria-label="Cerrar"></button>
-			                                    </div>
-			                                    <div class="modal-body">
-			                                        ¿Estás seguro de que deseas eliminar esta venta? Esta acción no se puede deshacer.
-			                                    </div>
-			                                    <div class="modal-footer">
-			                                        <form th:method="post" th:action="@{/eliminarVenta/submit}">
-			                                            <input type="hidden" name="id" th:value="${venta.id}" />
-			                                            <input type="hidden" name="_method" value="delete" />
-			                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-			                                                <i class="bi bi-x-circle me-1"></i> Cancelar
-			                                            </button>
-			                                            <button type="submit" class="btn btn-danger">
-			                                                <i class="bi bi-trash3-fill me-1"></i> Eliminar
-			                                            </button>
-			                                        </form>
-			                                    </div>
-			                                </div>
-			                            </div>
-			                        </div>
-			                       
-			                    </td>
-			                </tr>
-			            </tbody>
-			        </table>
-			    </div>
-			</div>
 
+									<div class="modal fade" th:id="'modalEliminar-' + ${venta.id}" tabindex="-1"
+										aria-labelledby="modalEliminarLabel" aria-hidden="true">
+										<div class="modal-dialog modal-dialog-centered">
+											<div class="modal-content border-0 shadow">
+												<div class="modal-header bg-danger text-white">
+													<h5 class="modal-title" id="modalEliminarLabel">
+														<i class="bi bi-exclamation-triangle-fill me-2"></i>Confirmar
+														eliminación
+													</h5>
+													<button type="button" class="btn-close btn-close-white"
+														data-bs-dismiss="modal" aria-label="Cerrar"></button>
+												</div>
+												<div class="modal-body">
+													¿Estás seguro de que deseas eliminar esta venta? Esta acción no se
+													puede deshacer.
+												</div>
+												<div class="modal-footer">
+													<form th:method="post" th:action="@{/eliminarVenta/submit}">
+														<input type="hidden" name="id" th:value="${venta.id}" />
+														<input type="hidden" name="_method" value="delete" />
+														<button type="button" class="btn btn-secondary"
+															data-bs-dismiss="modal">
+															<i class="bi bi-x-circle me-1"></i> Cancelar
+														</button>
+														<button type="submit" class="btn btn-danger">
+															<i class="bi bi-trash3-fill me-1"></i> Eliminar
+														</button>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
 
-					</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 			</div>
+
+
+		</div>
+		</div>
+		</div>
 		</div>
 
 
