@@ -65,64 +65,8 @@ public class ControllerVenta {
 	}
 	@PostMapping("/anadirVenta/submit")
 	public String confirmarVenta(@ModelAttribute Venta v) {
-	    List<LineaVenta> lineasGuardadas = new ArrayList<>();
-	    for (LineaVenta linea : v.getLineasVenta()) {
-	        
-	        Prenda prendaCompleta = servicePrenda.buscarPrenda(linea.getPrenda().getId());
-	        linea.setPrenda(prendaCompleta);
-	        
-	        Categoria categoriaCompleta = serviceCategoria.buscar(linea.getCategoria().getId());
-	        linea.setCategoria(categoriaCompleta);
-	        
-	        linea.setSubtotal(serviceLineaVenta.calcularSubtotal(linea));
-	        linea.setSubTotalDescuento(serviceLineaVenta.calcularSubtotalDescuento(linea));
-	        linea.setSubtotalDescontado(serviceLineaVenta.calcularDiferenciaSubtotal(linea));
-	        
-	        LineaVenta lineaGuardada = serviceLineaVenta.save(linea); 
-	        lineasGuardadas.add(lineaGuardada);
-	    }
-	    
-	  
-	    v.setLineasVenta(lineasGuardadas);
-	    
-	    for (LineaVenta lineaGuardada : lineasGuardadas) {
-	        Prenda prenda = lineaGuardada.getPrenda();
-	        if (prenda.getLineasVenta() == null) {
-	            prenda.setLineasVenta(new ArrayList<>());
-	        }
-	        if (!prenda.getLineasVenta().contains(lineaGuardada)) {
-	            prenda.getLineasVenta().add(lineaGuardada);
-	            servicePrenda.save(prenda);
-	            if(prenda.getLineasVenta()==null) {
-	            	System.out.println("Soy nulo");
-	            }else {
-	            	  System.out.println("LineasVenta: "+prenda.getDescripcion());
-	            }
-	          
-	        }
-	        
-	        Categoria categoria = lineaGuardada.getCategoria();
-	        if (categoria.getLineasVenta() == null) {
-	            categoria.setLineasVenta(new ArrayList<>());
-	        }
-	        if (!categoria.getLineasVenta().contains(lineaGuardada)) {
-	            categoria.getLineasVenta().add(lineaGuardada);
-	            serviceCategoria.save(categoria);
-	        }
-	        
-	       
-	    }
-	    System.out.println("Venta"+v);
-	    System.out.println("Precio1: "+servicioVentas.calcularPrecioDescuento(v));
-	    v.setPrecioTotal(servicioVentas.calcularPrecioDescuento(v));
-	    servicioVentas.saveVenta(v);
-	    v.setPrecioDescontado(servicioVentas.calcularPrecioDescuento(v));
-	    v.setPrecioTotal(servicioVentas.calcularPrecioSinDescuento(v));
-	    v.setCantidadDescontada(servicioVentas.calcularCantidadDescontada(v));
-	    servicioVentas.save(v);
-	    System.out.println("Venta2:"+v);
-
-	    return "ticket";
+		servicioVentas.saveVenta(v);
+		return "ticket";
 	}
 	
 	@DeleteMapping("/eliminarVenta/submit")

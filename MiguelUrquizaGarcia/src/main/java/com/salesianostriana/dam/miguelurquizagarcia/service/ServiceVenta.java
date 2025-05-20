@@ -1,5 +1,6 @@
 package com.salesianostriana.dam.miguelurquizagarcia.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,22 +19,89 @@ public class ServiceVenta extends BaseService<Venta, Long, VentaRepository>{
 	@Autowired
 	ServiceCategorias categoriaService;
 	
-	public void saveVenta(Venta nuevaVenta) {
-		for(LineaVenta linea: nuevaVenta.getLineasVenta()) {
-			linea.setVenta(nuevaVenta);
-			System.out.println(linea.getSubtotal());
-		}
-		nuevaVenta.setPrecioTotal(calcularPrecioTotalVenta(nuevaVenta));
-		save(nuevaVenta);
+	@Autowired
+	private Services servicePrenda;
+	
+	@Autowired
+	private LineaVentaService serviceLineaVenta;
+	
+	@Autowired 
+	private VentaRepository repo;
+	
+	public void saveVenta(Venta v) {
+		
+		
+		 List<LineaVenta> lineasGuardadas = new ArrayList<>();
+		    for (LineaVenta linea : v.getLineasVenta()) {
+		        
+		        Prenda prendaCompleta = servicePrenda.buscarPrenda(linea.getPrenda().getId());
+		        linea.setPrenda(prendaCompleta);
+		        
+		        Categoria categoriaCompleta = categoriaService.buscar(linea.getCategoria().getId());
+		        linea.setCategoria(categoriaCompleta);
+		        
+		        linea.setSubtotal(serviceLineaVenta.calcularSubtotal(linea));
+		        linea.setSubTotalDescuento(serviceLineaVenta.calcularSubtotalDescuento(linea));
+		        linea.setSubtotalDescontado(serviceLineaVenta.calcularDiferenciaSubtotal(linea));
+		        
+		        LineaVenta lineaGuardada = serviceLineaVenta.save(linea); 
+		        lineasGuardadas.add(lineaGuardada);
+		    }
+		    
+		  
+		    v.setLineasVenta(lineasGuardadas);
+		    
+		    for (LineaVenta lineaGuardada : lineasGuardadas) {
+		        Prenda prenda = lineaGuardada.getPrenda();
+		        if (prenda.getLineasVenta() == null) {
+		            prenda.setLineasVenta(new ArrayList<>());
+		        }
+		        if (!prenda.getLineasVenta().contains(lineaGuardada)) {
+		            prenda.getLineasVenta().add(lineaGuardada);
+		            servicePrenda.save(prenda);
+		            if(prenda.getLineasVenta()==null) {
+		            	System.out.println("Soy nulo");
+		            }else {
+		            	  System.out.println("LineasVenta: "+prenda.getDescripcion());
+		            }
+		          
+		        }
+		        
+		        Categoria categoria = lineaGuardada.getCategoria();
+		        if (categoria.getLineasVenta() == null) {
+		            categoria.setLineasVenta(new ArrayList<>());
+		        }
+		        if (!categoria.getLineasVenta().contains(lineaGuardada)) {
+		            categoria.getLineasVenta().add(lineaGuardada);
+		            categoriaService.save(categoria);
+		        }
+		        
+		       
+		    }
+		    
+		    for(LineaVenta linea: v.getLineasVenta()) {
+				linea.setVenta(v);
+				System.out.println(linea.getSubtotal());
+			}
+			v.setPrecioTotal(calcularPrecioTotalVenta(v));
+			save(v);
+		    v.setPrecioDescontado(calcularPrecioDescuento(v));
+		    v.setPrecioTotal(calcularPrecioSinDescuento(v));
+			v.setCantidadDescontada(calcularCantidadDescontada(v));
+		    System.out.println("Venta"+v);
+		    repo.save(v);
+		    System.out.println("Venta2:"+v);
+		
+		
 	}
 	
-	public void editVenta(Venta nuevaVenta) {
-		for(LineaVenta linea: nuevaVenta.getLineasVenta()) {
-			linea.setVenta(nuevaVenta);
+	public void editVenta(Venta v) {
+		for(LineaVenta linea: v.getLineasVenta()) {
+			linea.setVenta(v);
 			System.out.println(linea.getSubtotal());
 		}
-		nuevaVenta.setPrecioTotal(calcularPrecioTotalVenta(nuevaVenta));
-		edit(nuevaVenta);
+		v.setPrecioTotal(calcularPrecioTotalVenta(v));
+		edit(v);
 	}
 	
 	public double calcularPrecioTotalVenta(Venta v) {
