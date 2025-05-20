@@ -7,7 +7,7 @@
 }
 .hero-content {
     background-image: url('../img/Lavanderia-vs.-Lavaseco-La-Mejor-Opcion-para-el-Cuidado-de-sus-Prendas-en-Bogota.jpeg');
-    /* height: 73vh; */
+  
     background-position-y: 0px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -15,5 +15,5 @@
 }
 
 .dropdown-item:focus{
-    background-color: #afafaf; /* Color azul de Bootstrap */
+    background-color: #afafaf; 
 }
