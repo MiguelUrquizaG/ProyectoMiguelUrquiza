@@ -15,28 +15,28 @@
 	<title>Tintoreria Urquiza</title>
 
 	<script th:inline="javascript">
-		
-			document.addEventListener("DOMContentLoaded", function () {
-				let eliminado = [[${eliminado}]];
 
-				if (eliminado === true) {
-					const modalExitoEl = document.getElementById('modalExito');
-					if (modalExitoEl) {
-						let modalExito = new bootstrap.Modal(modalExitoEl);
-						modalExito.show();
-					}
-				} else if (eliminado === false) {
-					const modalErrorEl = document.getElementById('modalError');
-					if (modalErrorEl) {
-						let modalError = new bootstrap.Modal(modalErrorEl);
-						modalError.show();
-					}
+		document.addEventListener("DOMContentLoaded", function () {
+			let eliminado = [[${eliminado}]];
+
+			if (eliminado === true) {
+				const modalExitoEl = document.getElementById('modalExito');
+				if (modalExitoEl) {
+					let modalExito = new bootstrap.Modal(modalExitoEl);
+					modalExito.show();
 				}
-			});
-		
-		</script>
+			} else if (eliminado === false) {
+				const modalErrorEl = document.getElementById('modalError');
+				if (modalErrorEl) {
+					let modalError = new bootstrap.Modal(modalErrorEl);
+					modalError.show();
+				}
+			}
+		});
 
-	
+	</script>
+
+
 </head>
 
 
@@ -83,7 +83,7 @@
 		</div>
 
 		<div class="row g-3 mb-5">
-			<form method="get" th:action="@{/buscar}" class="col-md-4 col-12">
+			<form method="get" th:action="@{/buscar}" class="col-md-3 col-12">
 				<label for="buscarNombrePrenda" class="form-label fw-semibold">Buscar por Nombre</label>
 				<div class="input-group">
 					<input type="text" id="buscarNombrePrenda" name="query" class="form-control"
@@ -92,18 +92,23 @@
 				</div>
 			</form>
 
-			<form method="get" th:action="@{/ordenarPrendas}" class="col-md-4 d-flex align-items-end">
+			<form method="get" th:action="@{/ordenarPrendas}" class="col-md-3 d-flex align-items-end">
 				<input type="hidden" name="orden" value="asc" />
 				<button type="submit" class="btn btn-outline-dark w-100">
 					Ordenar A-Z <i class="bi bi-arrow-up ms-2"></i>
 				</button>
 			</form>
 
-			<form method="get" th:action="@{/ordenarPrendas}" class="col-md-4 d-flex align-items-end">
+			<form method="get" th:action="@{/ordenarPrendas}" class="col-md-3 d-flex align-items-end">
 				<input type="hidden" name="orden" value="desc" />
 				<button type="submit" class="btn btn-outline-dark w-100">
 					Ordenar Z-A <i class="bi bi-arrow-down ms-2"></i>
 				</button>
+			</form>
+
+			<form method="get" th:action="@{/}"
+				class="col-md-3 col-12 d-flex align-items-end justify-content-end">
+				<button type="submit" class="btn btn-outline-dark w-100">Resetear filtros</button>
 			</form>
 		</div>
 
@@ -227,7 +232,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 
 		<div class="modal fade" id="modalExito" tabindex="-1" aria-labelledby="modalExitoLabel" aria-hidden="true">
 			<div class="modal-dialog">
@@ -262,7 +267,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 	</main>
 
 	<div th:replace="~{fragments/footer :: footer}"></div>
