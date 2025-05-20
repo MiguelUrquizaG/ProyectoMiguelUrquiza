@@ -55,7 +55,7 @@ public class LineaVenta {
 	           "id=" + id +
 	           ", cantidad=" + cantidad +
 	           ", subtotal=" + subtotal +
-	           ", prenda=" + (prenda != null ? prenda.getNombre() : "null") + // ✅ Solo el nombre, no el objeto completo
+	           ", prenda=" + (prenda != null ? prenda.getNombre() : "null") + 
 	           '}';
 	}
 	
