@@ -15,27 +15,4 @@ import com.salesianostriana.dam.miguelurquizagarcia.service.Services;
 @Controller
 public class ControllerLineaVenta {
 
-	@Autowired
-	private LineaVentaService lineaVentaService;
-	
-	@Autowired
-	private ServiceCategorias categoriaService;
-	
-	@Autowired
-	private Services services;
-	
-	/*@PostMapping("/anadirLineaVenta/submit")
-	public String anadirLineaVenta(@ModelAttribute LineaVenta lineaVenta,@RequestParam long prendaId,
-            @RequestParam long categoriaId,
-            @RequestParam double cantidad, Model model) {
-		
-	    LineaVenta linea = new LineaVenta();
-	    linea.setCantidad(cantidad);
-	    linea.setCategoria(categoriaService.findById(categoriaId));
-	    linea.setPrenda(services.findById(prendaId));
-	    
-	    lineaVentaService.save(linea);
-		return "anadirVenta";
-		
-	}*/
 }

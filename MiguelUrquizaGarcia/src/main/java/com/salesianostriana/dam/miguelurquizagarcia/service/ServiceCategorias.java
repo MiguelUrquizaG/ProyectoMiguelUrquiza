@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.salesianostriana.dam.miguelurquizagarcia.model.Categoria;
 import com.salesianostriana.dam.miguelurquizagarcia.repository.CategoriaRepository;
@@ -19,14 +20,14 @@ public class ServiceCategorias extends BaseService<Categoria, Long, CategoriaRep
 	public boolean delete(Long id) {
 		Categoria c =  buscar(id);
 		boolean isEliminado =false;
-		//Categoria porDefecto = buscar(0L);
 		
-		if(!c.getListaPrendas().isEmpty() && c!=null) {
+		
+		if(!c.getListaPrendas().isEmpty() ||  !c.getLineasVenta().isEmpty() && c!=null ) {
 			
 		}else {
 			delete(c);
 			isEliminado=true;
-			//c.getListaPrendas().stream().forEach(prenda -> prenda.setCategoria(porDefecto));
+	
 		}
 		
 		return isEliminado;
@@ -58,6 +59,13 @@ public class ServiceCategorias extends BaseService<Categoria, Long, CategoriaRep
 
 	public List<Categoria> buscarCategoriasEconomicasNoTopVenta(Double precioMax) {
 		return repoCategoria.buscarCategoriasNoTopVentaPorPrecioMenor(precioMax);
+	}
+	
+	public void editarDescuentos(Long id,Double descuento, @RequestParam(required=false) Double cantidadPrendas) {
+		 Categoria c = buscar(id);
+		  c.setDescuento(descuento);
+		  c.setNumeroPrendasDescuento(cantidadPrendas);
+		  editar(c);	
 	}
 
 }

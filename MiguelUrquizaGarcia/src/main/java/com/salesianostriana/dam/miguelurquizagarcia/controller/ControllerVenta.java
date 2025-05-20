@@ -1,9 +1,6 @@
 package com.salesianostriana.dam.miguelurquizagarcia.controller;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,11 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.salesianostriana.dam.miguelurquizagarcia.model.Categoria;
-import com.salesianostriana.dam.miguelurquizagarcia.model.LineaVenta;
-import com.salesianostriana.dam.miguelurquizagarcia.model.Prenda;
 import com.salesianostriana.dam.miguelurquizagarcia.model.Venta;
-import com.salesianostriana.dam.miguelurquizagarcia.service.LineaVentaService;
+
 import com.salesianostriana.dam.miguelurquizagarcia.service.ServiceCategorias;
 import com.salesianostriana.dam.miguelurquizagarcia.service.ServiceVenta;
 import com.salesianostriana.dam.miguelurquizagarcia.service.Services;
@@ -28,7 +22,7 @@ import com.salesianostriana.dam.miguelurquizagarcia.service.Services;
 @Controller
 public class ControllerVenta {
 
-    private final ControllerCategorias controllerCategorias;
+
 
 	@Autowired
 	private ServiceVenta servicioVentas;
@@ -38,12 +32,9 @@ public class ControllerVenta {
 	@Autowired
 	private Services servicePrenda;
 	
-	@Autowired
-	private LineaVentaService serviceLineaVenta;
 
-    ControllerVenta(ControllerCategorias controllerCategorias) {
-        this.controllerCategorias = controllerCategorias;
-    }
+
+
 	
 	@GetMapping("/ventas")
 	public String ventas(Model model) {
@@ -57,9 +48,7 @@ public class ControllerVenta {
 	public String anadirVenta( Model model) {
 		model.addAttribute("nuevaVenta", new Venta());
 		model.addAttribute("categoria", serviceCategoria.findAll());
-		model.addAttribute("prenda", servicePrenda.findAll());
-		System.out.println(model.getAttribute("prenda"));
-		System.out.println("Fecha Recogida"+new Venta().getFechaRecogida());
+		model.addAttribute("prenda", servicePrenda.findAll());;
 		
 		return "anadirVenta";
 	}

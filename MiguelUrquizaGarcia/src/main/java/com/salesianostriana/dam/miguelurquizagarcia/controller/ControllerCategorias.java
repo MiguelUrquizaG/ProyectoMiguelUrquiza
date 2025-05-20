@@ -62,7 +62,7 @@ public class ControllerCategorias {
 	
 	@DeleteMapping("/eliminarCategoria/submit")
 	public String eliminarCategoria(@RequestParam Long id, RedirectAttributes redirectAttributes	) {
-		System.out.println(id);
+		
 		boolean eliminado = categoriaServicios.delete(id);
 		redirectAttributes.addFlashAttribute("eliminado", eliminado);
 		return "redirect:/categorias";
@@ -80,7 +80,7 @@ public class ControllerCategorias {
 	@GetMapping("/buscarCategoria")
 	public String buscarCategoria(@RequestParam String query, Model model) {
 		List<Categoria>lista = categoriaServicios.findAll();
-		System.out.println(query);
+		
 		lista =  categoriaServicios.buscarPorNombre(query);
 
 		model.addAttribute("categoria", lista);
@@ -99,22 +99,13 @@ public class ControllerCategorias {
 	  @GetMapping("/administrarDescuentos")
 	  public String administrarDescuento(Model model,Categoria c) {
 		  model.addAttribute("categorias", categoriaServicios.findAll());
-		  System.out.println(categoriaServicios.findAll());
 		  model.addAttribute("categoria", c);
 		  return "administrarDescuentos";
 	  }
 	  
 	  @PostMapping("/editarDescuentos/submit/{id}")
 	  public String editarDescuentos(@PathVariable Long id, @RequestParam(required=false) Double descuento, @RequestParam(required=false) Double cantidadPrendas) {
-		  System.out.println("Edito los descuentos");
-		  System.out.println(id);
-		  System.out.println(descuento);
-		  System.out.println(cantidadPrendas);
-		  Categoria c = categoriaServicios.buscar(id);
-		  c.setDescuento(descuento);
-		  c.setNumeroPrendasDescuento(cantidadPrendas);
-		  categoriaServicios.save(c);	
-		  
+		  categoriaServicios.editarDescuentos(id,descuento,cantidadPrendas);	
 		  return "redirect:/administrarDescuentos";
 	  }
 	

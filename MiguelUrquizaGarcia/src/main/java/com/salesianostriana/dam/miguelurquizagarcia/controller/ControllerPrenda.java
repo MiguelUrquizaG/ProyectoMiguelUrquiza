@@ -23,21 +23,12 @@ import com.salesianostriana.dam.miguelurquizagarcia.service.Services;
 @Controller
 public class ControllerPrenda {
 
-	private final CategoriaRepository categoriaRepository;
-
-	private final PrendaRepository prendaRepository;
 
 	@Autowired
 	private Services service;
 	@Autowired
 	private ServiceCategorias categoriaService;
 
-	public ControllerPrenda(Services service, PrendaRepository prendaRepository,
-			CategoriaRepository categoriaRepository) {
-		this.service = service;
-		this.prendaRepository = prendaRepository;
-		this.categoriaRepository = categoriaRepository;
-	}
 
 	@GetMapping("/")
 	public String main(Model model) {
@@ -50,9 +41,6 @@ public class ControllerPrenda {
 		model.addAttribute("nuevaprenda", new Prenda());
 		model.addAttribute("categoria", categoriaService.findAll());
 
-//		for(Prenda p : service.getList()) {
-//			System.out.println(p.toString());
-//		}
 
 		return "main";
 	}
@@ -68,7 +56,6 @@ public class ControllerPrenda {
 	public String editarPrenda(@PathVariable long id, Model model) {
 		Prenda p = service.buscarPrenda(id);
 		model.addAttribute("prenda", p);
-		System.out.println("Entro");
 		model.addAttribute("categoria", categoriaService.findAll());
 		return "form-modificar";
 	}
@@ -76,17 +63,8 @@ public class ControllerPrenda {
 	@PostMapping("/editarPrenda/modificar")
 	public String procesarModificado(@ModelAttribute Prenda prenda) {
 		service.edit(prenda);
-		System.out.println("Holaaa");
 		return "redirect:/";
 	}
-
-//	@DeleteMapping("/eliminarPrenda/{id}")
-//	public String procesarEliminar(@PathVariable Long id) {
-//			System.out.println(id);
-//			service.deleteById(id);
-//		
-//		return "redirect:/";
-//	}
 
 	@DeleteMapping("/eliminarPrenda/submit")
 	public String procesarEliminar(@RequestParam Long id,RedirectAttributes redirectAttributes) {
