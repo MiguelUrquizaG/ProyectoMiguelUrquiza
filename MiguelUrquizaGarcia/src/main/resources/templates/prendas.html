@@ -138,7 +138,7 @@
 								class="card shadow-sm h-100 d-flex flex-column position-relative border border-2 border-primary">
 
 								<img th:src="@{${prenda.urlImagen}}" class="card-img-top object-fit-cover mb-3"
-									height="450" alt="Imagen de la prenda">
+									height="450" th:alt="${prenda.descripcion}">
 								<div class="card-body d-flex flex-column">
 									<div th:if="${prenda.topVenta}" class="badge bg-warning text-dark mb-2 col-4">
 										Top Venta
