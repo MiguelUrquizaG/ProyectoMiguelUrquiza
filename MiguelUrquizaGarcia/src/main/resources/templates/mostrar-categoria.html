@@ -75,11 +75,14 @@
 			</div>
 		</nav>
 
-		<span class="h2 container-content d-block text-center bg-primary text-white py-2">Mostrar Categoria
+		<span class="h2 container-content d-block text-center bg-primary text-white py-2" th:text="${categoria.nombre}">Mostrar Categoria
 		</span>
 
 	</header>
 	<main class="flex-fill container my-4 table-responsive ">
+		<a type="button" class="btn btn-outline-primary shadow-sm w-25 mb-2" th:href="@{/categorias}">
+						Volver a Categorías
+					</a>
 		<div class="card shadow-sm">
 
 			<div class="card-body bg-light rounded-bottom-4">

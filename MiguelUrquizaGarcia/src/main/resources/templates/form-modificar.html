@@ -56,6 +56,9 @@
 	</header>
 
 	<main class="flex-fill container my-5">
+		<a type="button" class="btn btn-outline-primary shadow-sm w-25" th:href="@{/prendas}">
+			Volver a Prendas
+		</a>
 		<div class="row justify-content-center">
 			<div class="col-12 col-md-6 col-lg-4">
 				<form method="POST" action="#" th:action="@{/prendas/editarPrenda/modificar}" th:object="${prenda}"

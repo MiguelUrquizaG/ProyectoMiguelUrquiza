@@ -58,7 +58,9 @@
 
 	</header>
 	<main class="flex-fill container my-4">
-
+		<a type="button" class="btn btn-outline-primary shadow-sm w-25" th:href="@{/categorias}">
+			Volver a Categorías
+		</a>
 		<div class="row justify-content-center mt-3 mb-5">
 			<div class="col-12 col-lg-4">
 				<form method="POST" action="#" th:action="@{/editarCategoria/submit}" th:object="${categoria}"
