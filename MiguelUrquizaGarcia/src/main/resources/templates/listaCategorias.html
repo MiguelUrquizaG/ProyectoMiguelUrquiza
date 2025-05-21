@@ -122,7 +122,7 @@
 						<button type="submit" class="btn btn-outline-dark w-100">Resetear filtros</button>
 					</form>
 
-					<div th:if="${#lists.isEmpty(categoria)}" class="mt-3">
+					<div th:if="${#lists.isEmpty(categoria)}" class="alert alert-warning text-center">
 						<p class="text-center text-dark display-6">
 							No hay categorias cargadas.
 						</p>

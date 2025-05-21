@@ -73,7 +73,9 @@
 				</div>
 
 				<div th:if="${#lists.isEmpty(ventas)}" class="alert alert-warning text-center">
+					<p class="text-center text-dark display-6">
 					No hay ventas registradas por el momento.
+					</p>
 				</div>
 
 				<div th:if="${!#lists.isEmpty(ventas)}" class="table-responsive shadow-sm rounded">
