@@ -100,14 +100,14 @@
 					<div class="mb-4">
 						<label for="inputDescuento" class="form-label fw-semibold">Descuento <span
 								class="text-danger">*</span></label>
-						<input id="inputDescuento" class="form-control border-warning" th:field="*{descuento}"
+						<input id="inputDescuento" type="number"  min="1" step="0.01" class="form-control border-warning" th:field="*{descuento}"
 							required />
 					</div>
 
 					<div class="mb-4">
 						<label for="inputCantidadDescuento" class="form-label fw-semibold">Cantidad Descuento <span
 								class="text-danger">*</span></label>
-						<input id="inputCantidadDescuento" class="form-control border-warning"
+						<input id="inputCantidadDescuento" type="number" class="form-control border-primary" min="1" step="0.01"
 							th:field="*{numeroPrendasDescuento}" required />
 					</div>
 

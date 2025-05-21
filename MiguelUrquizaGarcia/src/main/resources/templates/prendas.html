@@ -214,7 +214,7 @@
 									<div class="mb-3">
 										<label class="form-label fw-bold">Nombre Prenda</label>
 										<input th:field="*{nombre}" type="text"
-											class="form-control border-primary shadow-sm" maxlength="20"
+											class="form-control border-primary shadow-sm" maxlength="20" required
 											pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ_ ]*" placeholder="Ejemplo: Camisa Blanca">
 									</div>
 									<div class="mb-3">
@@ -239,7 +239,7 @@
 											placeholder="Añade la URL de la imagen">
 									</div>
 									<div class="form-check mb-3">
-										<input th:field="*{topVenta}" type="checkbox"
+										<input th:field="*{topVenta}" type="checkbox" 
 											class="form-check-input bg-danger border-danger shadow-sm" id="inputCheck">
 										<label class="form-check-label fw-bold text-danger" for="inputCheck">Top
 											Venta</label>

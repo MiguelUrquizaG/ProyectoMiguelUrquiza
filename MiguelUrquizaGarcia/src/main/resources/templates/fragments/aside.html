@@ -44,43 +44,42 @@
 
 
 
-	<aside th:fragment="aside" class="col-md-2 d-none d-md-block  p-0">
-		<div class="card h-100 border-0 rounded-0">
-			<div class="card-header bg-primary text-white rounded-0">
-				<h5 class="mb-0">Navegación</h5>
+	<aside th:fragment="aside" class="col-12 col-md-3 col-lg-2 d-none d-md-block p-0">
+			<div class="card h-100 border-0 rounded-0">
+				<div class="card-header bg-primary text-white rounded-0">
+					<h5 class="mb-0">Navegación</h5>
+				</div>
+				<div class="card-body p-0">
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link active py-3 border-bottom" th:href="@{/}">
+								<i class="bi bi-house me-2"></i>Inicio
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active py-3 border-bottom" th:href="@{/prendas}">
+								<i class="bi bi-person"></i>Prendas
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link py-3 border-bottom" th:href="@{/categorias}">
+								<i class="bi bi-tags me-2"></i>Categorías
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link py-3 border-bottom" th:href="@{/ventas}">
+								<i class="bi bi-cash-stack me-2"></i>Ventas
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link py-3" th:href="@{/quienesSomos}">
+								<i class="bi bi-people me-2"></i>Quiénes Somos
+							</a>
+						</li>
+					</ul>
+				</div>
 			</div>
-			<div class="card-body p-0">
-				<ul class="nav flex-column">
-					<li class="nav-item">
-						<a class="nav-link active py-3 border-bottom" th:href="@{/}">
-							<i class="bi bi-house me-2"></i>Inicio
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link active py-3 border-bottom" th:href="@{/prendas}">
-							<i class="bi bi-person"></i>Prendas
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link py-3 border-bottom" th:href="@{/categorias}">
-							<i class="bi bi-tags me-2"></i>Categorias
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link py-3 border-bottom" th:href="@{/ventas}">
-							<i class="bi bi-cash-stack me-2"></i>Ventas
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link py-3" th:href="@{/quienesSomos}">
-							<i class="bi bi-people me-2"></i>Quienes Somos
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</aside>
-
+		</aside>
 </body>
 
 </html>
