@@ -78,18 +78,18 @@
 							<td th:text="${cat.descripcion}"></td>
 							<td th:text="${cat.precioServicio}"></td>
 							<td>
-								<span class="badge" th:classappend="${cat.topVenta} ? 'bg-success' : 'bg-secondary'"
+								<span class="badge" th:classappend="${cat.topVenta} ? 'bg-success' : 'bg-danger'"
 									th:text="${cat.topVenta ? 'Sí' : 'No'}"></span>
 							</td>
 							<form action="#" method="post" th:action="@{/editarDescuentos/submit/{id}(id=${cat.id})}">
 								<td>
-									<input type="number" step="0.01" min="0" name="descuento"
-										th:value="${cat.descuento}"
+									<input type="number" step="0.01" min="0" max="100" name="descuento"
+										th:value="${cat.descuento}" required
 										class="form-control form-control-sm border-primary shadow-sm">
 								</td>
 								<td>
-									<input type="number" step="1" min="0" name="cantidadPrendas"
-										th:value="${cat.numeroPrendasDescuento}"
+									<input type="number" step="1" min="0"  name="cantidadPrendas"
+										th:value="${cat.numeroPrendasDescuento}" required
 										class="form-control form-control-sm border-primary shadow-sm">
 								</td>
 								<td>

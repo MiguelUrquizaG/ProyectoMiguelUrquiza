@@ -79,7 +79,7 @@
 					<div class="mb-4">
 						<label for="inputPrecio" class="form-label fw-semibold">Precio <span
 								class="text-danger">*</span></label>
-						<input id="inputPrecio" class="form-control border-primary" th:field="*{precioServicio}"
+						<input id="inputPrecio" type="number" class="form-control border-primary" min="1" step="0.01" th:field="*{precioServicio}"
 							required />
 					</div>
 
