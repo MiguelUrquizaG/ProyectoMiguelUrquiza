@@ -75,4 +75,9 @@ public class ControllerVenta {
 	public double calcularTotalDesdeFront(@RequestBody Venta v) {
 		return servicioVentas.calcularPrecioDescuento(v);
 	}
+	
+	@GetMapping("/estasdisticasVenta")
+	public String estadisticasVenta() {
+		return "estadisticasVentas";
+	}
 }

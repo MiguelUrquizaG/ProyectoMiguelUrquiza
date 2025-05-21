@@ -167,5 +167,18 @@ public class VentaService extends BaseService<Venta, Long, VentaRepository>{
 		return findById(id).orElseThrow(() -> new EntityNotFoundException("Venta con id " + id + " no encontrada"));
 	}
 	
+	public double calcularTotalGeneradoSinDescuento() {
+		return  findAll().stream()
+				.mapToDouble(venta -> venta.getPrecioTotal()).sum();
+	}
 	
+	public double calcularTotalGeneradoConDescuento() {
+		return  findAll().stream()
+				.mapToDouble(venta -> venta.getPrecioDescontado()).sum();
+	}
+	
+	public double calcularTotalDescontado() {
+		return  findAll().stream()
+				.mapToDouble(venta -> venta.getCantidadDescontada()).sum();
+	}
 }
