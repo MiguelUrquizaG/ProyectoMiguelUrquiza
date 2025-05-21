@@ -215,13 +215,13 @@
 								<form method="POST" th:action="@{prendas/anadirPrenda/submit}"
 									th:object="${nuevaprenda}">
 									<div class="mb-3">
-										<label class="form-label fw-bold">Nombre Prenda</label>
+										<label class="form-label fw-bold">Nombre Prenda <span class="text-danger">*</span></label>
 										<input th:field="*{nombre}" type="text"
 											class="form-control border-primary shadow-sm" maxlength="20" required
 											pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ_ ]*" placeholder="Ejemplo: Camisa Blanca">
 									</div>
 									<div class="mb-3">
-										<label class="form-label fw-bold">Categoría</label>
+										<label class="form-label fw-bold">Categoría <span class="text-danger">*</span></label>
 										<select th:field="*{categoria}" class="form-select border-secondary shadow-sm"
 											required>
 											<option th:each="categoria : ${categoria}" th:text="${categoria.nombre}"
@@ -229,14 +229,15 @@
 										</select>
 									</div>
 									<div class="mb-3">
-										<label class="form-label fw-bold">Descripción</label>
+										<label class="form-label fw-bold">Descripción <span class="text-danger">*</span>
+										</label>
 										<textarea th:field="*{descripcion}"
 											class="form-control border-success shadow-sm" style="min-height: 100px;"
 											required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ_ ]*"
 											placeholder="Escribe detalles sobre la prenda"></textarea>
 									</div>
 									<div class="mb-3">
-										<label class="form-label fw-bold">URL Imagen</label>
+										<label class="form-label fw-bold">URL Imagen <span class="text-danger">*</span></label>
 										<input th:field="*{urlImagen}" type="text"
 											class="form-control border-warning shadow-sm" required
 											placeholder="Añade la URL de la imagen">
