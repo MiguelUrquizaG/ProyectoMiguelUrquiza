@@ -22,12 +22,10 @@ import com.salesianostriana.dam.miguelurquizagarcia.service.PrendaService;
 @RequestMapping("/prendas")
 public class ControllerPrenda {
 
-
 	@Autowired
 	private PrendaService service;
 	@Autowired
 	private CategoriaService categoriaService;
-
 
 	@GetMapping("")
 	public String main(Model model) {
@@ -39,7 +37,6 @@ public class ControllerPrenda {
 		model.addAttribute("prenda", lista);
 		model.addAttribute("nuevaprenda", new Prenda());
 		model.addAttribute("categoria", categoriaService.findAll());
-
 
 		return "prendas";
 	}
@@ -66,12 +63,12 @@ public class ControllerPrenda {
 	}
 
 	@DeleteMapping("/eliminarPrenda/submit")
-	public String procesarEliminar(@RequestParam Long id,RedirectAttributes redirectAttributes) {
+	public String procesarEliminar(@RequestParam Long id, RedirectAttributes redirectAttributes) {
 		Prenda p = service.buscarPrenda(id);
 		p.removeFromCategoria(p.getCategoria());
 		boolean eliminado = service.eliminarPrenda(id);
-		
-		 redirectAttributes.addFlashAttribute("eliminado", eliminado);
+
+		redirectAttributes.addFlashAttribute("eliminado", eliminado);
 
 		return "redirect:/prendas";
 	}
@@ -94,23 +91,24 @@ public class ControllerPrenda {
 		model.addAttribute("categoria", categoriaService.findAll());
 		return "prendas";
 	}
+
 	@GetMapping("/ordenarPrendas")
 	public String ordenarPrendas(@RequestParam(defaultValue = "asc") String orden, Model model) {
-	    List<Prenda> lista;
+		List<Prenda> lista;
 
-	    if ("asc".equalsIgnoreCase(orden)) {
-	        lista = service.findAllOrderByNombreAsc();
-	    } else if ("desc".equalsIgnoreCase(orden)) {
-	        lista = service.findAllOrderByNombreDesc();
-	    } else {
-	        lista = service.findAll();
-	    }
+		if ("asc".equalsIgnoreCase(orden)) {
+			lista = service.findAllOrderByNombreAsc();
+		} else if ("desc".equalsIgnoreCase(orden)) {
+			lista = service.findAllOrderByNombreDesc();
+		} else {
+			lista = service.findAll();
+		}
 
-	    model.addAttribute("prenda", lista);
-	    model.addAttribute("nuevaprenda", new Prenda());
-	    model.addAttribute("categoria", categoriaService.findAll());
-	    model.addAttribute("orden", orden);
+		model.addAttribute("prenda", lista);
+		model.addAttribute("nuevaprenda", new Prenda());
+		model.addAttribute("categoria", categoriaService.findAll());
+		model.addAttribute("orden", orden);
 
-	    return "prendas";
+		return "prendas";
 	}
 }

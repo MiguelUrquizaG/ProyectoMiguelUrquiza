@@ -82,7 +82,7 @@
 
 			let labelCantidad = document.createElement('label')
 			labelCantidad.setAttribute('for', inputNumero.id)
-			labelCantidad.textContent = 'Servicio'
+			labelCantidad.textContent = 'Cantidad'
 			labelCantidad.classList.add('form-label')
 
 
@@ -135,7 +135,7 @@
 			labelDiferencia.classList.add('form-label')
 
 			let btnEliminar = document.createElement('button');
-			btnEliminar.classList.add('btn', 'btn-danger', 'btn-sm','mt-4')
+			btnEliminar.classList.add('btn', 'btn-danger', 'btn-sm', 'mt-4')
 			btnEliminar.textContent = 'Eliminar'
 
 			if (indiceLineaVenta === 0) {
@@ -387,7 +387,7 @@
 							<a class="nav-link " th:href="@{/quienesSomos}">Quienes Somos</a>
 						</li>
 					</ul>
-				
+
 				</div>
 			</div>
 		</nav>
@@ -403,10 +403,10 @@
 					class="w-100" name="inicioSesion">
 					<div class="row g-3 mb-4">
 						<div class="col-md-4">
-							<label for="inputNombre" class="form-label">Número Prenda <span
+							<label for="inputNombre" class="form-label">Número Teléfono <span
 									class="text-danger">*</span></label>
 							<input th:field="*{numeroCliente}" type="text" class="form-control" id="inputNombre"
-								required placeholder="Introduzca el nombre." maxlength="9" pattern="^[0-9]{9}$"
+								required placeholder="Introduzca el número de teléfono." maxlength="9" pattern="^[0-9]{9}$"
 								title="Debe ingresar exactamente 9 dígitos numéricos.">
 
 						</div>
@@ -428,7 +428,7 @@
 					<div class="d-flex justify-content-start mb-5">
 						<button type="button" class="btn btn-outline-primary rounded-pill" id="btnAnadirLinea">
 							<i class="bi bi-plus-circle"></i> Añadir Línea
-							</button>
+						</button>
 					</div>
 
 

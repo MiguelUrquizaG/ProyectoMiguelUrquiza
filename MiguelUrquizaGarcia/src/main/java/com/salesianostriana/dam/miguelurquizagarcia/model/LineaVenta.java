@@ -18,47 +18,41 @@ import lombok.ToString;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString(exclude = "venta")	
+@ToString(exclude = "venta")
 public class LineaVenta {
 
 	@Id
 	@GeneratedValue
 	private long id;
-	
+
 	@ManyToOne
-	@JoinColumn(foreignKey = @ForeignKey(name="fk_venta"))
+	@JoinColumn(foreignKey = @ForeignKey(name = "fk_venta"))
 	private Venta venta;
-	
-	
+
 	@ManyToOne
-	@JoinColumn(foreignKey = @ForeignKey(name="fk_categoria"))
+	@JoinColumn(foreignKey = @ForeignKey(name = "fk_categoria"))
 	@JsonIgnore
 	private Categoria categoria;
-	
+
 	@ManyToOne
-	@JoinColumn(foreignKey = @ForeignKey(name="fk_prenda"))
+	@JoinColumn(foreignKey = @ForeignKey(name = "fk_prenda"))
 	@JsonBackReference
 	private Prenda prenda;
-	
+
 	private double cantidad;
-	
+
 	private double subtotal;
-	
+
 	private double subTotalDescuento;
-	
+
 	private double subtotalDescontado;
 
-	
 	@Override
 	public String toString() {
-	    return "LineaVenta{" +
-	           "id=" + id +
-	           ", cantidad=" + cantidad +
-	           ", subtotal=" + subtotal +
-	           ", prenda=" + (prenda != null ? prenda.getNombre() : "null") + 
-	           '}';
+		return "LineaVenta{" + "id=" + id + ", cantidad=" + cantidad + ", subtotal=" + subtotal + ", prenda="
+				+ (prenda != null ? prenda.getNombre() : "null") + '}';
 	}
-	
+
 	public LineaVenta(long id, Venta venta, Categoria categoria, Prenda prenda, double cantidad, double subtotal) {
 		super();
 		this.id = id;
@@ -68,8 +62,5 @@ public class LineaVenta {
 		this.cantidad = cantidad;
 		this.subtotal = subtotal;
 	}
-	
-	
-	
-	
+
 }

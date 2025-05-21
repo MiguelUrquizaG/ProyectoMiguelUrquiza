@@ -17,16 +17,17 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString(exclude = "lineasVenta")	
+@ToString(exclude = "lineasVenta")
 public class Venta {
 	@Id
 	@GeneratedValue
 	private long id;
-	
+
 	private String numeroCliente;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate fechaEntrega = LocalDate.now();
@@ -35,14 +36,14 @@ public class Venta {
 	private double precioTotal;
 	private double precioDescontado;
 	private double cantidadDescontada;
-	
-	@OneToMany(mappedBy="venta", fetch= FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonManagedReference
-	private List<LineaVenta>lineasVenta;
-	
+
+	@OneToMany(mappedBy = "venta", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+	@JsonManagedReference
+	private List<LineaVenta> lineasVenta;
+
 	public void addLineaVenta(LineaVenta linea) {
 		linea.setVenta(this);
 		this.lineasVenta.add(linea);
 	}
-	
+
 }

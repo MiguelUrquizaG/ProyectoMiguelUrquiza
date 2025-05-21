@@ -23,45 +23,45 @@
 
 	<header>
 		<nav class=" navbar navbar-dark navbar-expand-lg nav-underline">
-					<div class="container-fluid">
-						<span class="navbar-brand">Tintoreria Urquiza</span>
-						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
-							aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-							<span class="navbar-toggler-icon"></span>
-						</button>
-						<div class="collapse navbar-collapse" id="navbarColor01">
-							<ul class="navbar-nav me-auto">
-								<li class="nav-item">
-									<a class="nav-link " th:href="@{/}">Inicio
-									</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link " th:href="@{/prendas}">Prendas
-									</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link active" th:href="@{/categorias}">Categorias
-									</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" th:href="@{/ventas}">Ventas
-									</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" th:href="@{/quienesSomos}">Quienes Somos</a>
-								</li>
-							</ul>
-							
-						</div>
-					</div>
-				</nav>
+			<div class="container-fluid">
+				<span class="navbar-brand">Tintoreria Urquiza</span>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+					aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarColor01">
+					<ul class="navbar-nav me-auto">
+						<li class="nav-item">
+							<a class="nav-link " th:href="@{/}">Inicio
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link " th:href="@{/prendas}">Prendas
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" th:href="@{/categorias}">Categorias
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/ventas}">Ventas
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/quienesSomos}">Quienes Somos</a>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+		</nav>
 		<span class="h2 container-content d-block text-center bg-primary text-white py-3 fw-semibold">Gestionar
-					Descuentos</span>
+			Descuentos</span>
 	</header>
 	<main class="flex-fill px-0 container-fluid text-primary">
 
 		<div class="card shadow">
-			
+
 			<div class="card-body table-responsive">
 				<table class="table table-hover align-middle text-center">
 					<thead class="table-light">
@@ -93,7 +93,7 @@
 										class="form-control form-control-sm border-primary shadow-sm">
 								</td>
 								<td>
-									<input type="number" step="1" min="0"  name="cantidadPrendas"
+									<input type="number" step="1" min="0" name="cantidadPrendas"
 										th:value="${cat.numeroPrendasDescuento}" required
 										class="form-control form-control-sm border-primary shadow-sm">
 								</td>
@@ -106,6 +106,13 @@
 							</form>
 						</tr>
 					</tbody>
+					<tfoot class="table table-dark">
+						<tr>
+
+							<th colspan="7" class="text-end">Total categorias:</th>
+							<th class="text-center" th:text="${#lists.size(categorias)}">0</th>
+						</tr>
+					</tfoot>
 				</table>
 			</div>
 		</div>

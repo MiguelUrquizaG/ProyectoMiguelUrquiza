@@ -10,10 +10,10 @@ public class ControllerMain {
 	public String inicio() {
 		return "inicio";
 	}
-	
+
 	@GetMapping("/quienesSomos")
 	public String quienesSomos() {
 		return "quienesSomos";
 	}
-	
+
 }

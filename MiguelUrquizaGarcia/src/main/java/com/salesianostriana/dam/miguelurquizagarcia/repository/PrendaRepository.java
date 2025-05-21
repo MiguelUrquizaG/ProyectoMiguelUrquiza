@@ -7,11 +7,13 @@ import org.springframework.data.jpa.repository.Query;
 
 import com.salesianostriana.dam.miguelurquizagarcia.model.Prenda;
 
-public interface PrendaRepository extends JpaRepository<Prenda,Long>{
-	
-	public List<Prenda>findByNombreContainingIgnoreCase(String nombre);
+public interface PrendaRepository extends JpaRepository<Prenda, Long> {
+
+	public List<Prenda> findByNombreContainingIgnoreCase(String nombre);
+
 	@Query("SELECT p FROM Prenda p ORDER BY LOWER(p.nombre) ASC")
 	public List<Prenda> findAllByOrderByNombreAsc();
+
 	@Query("SELECT p FROM Prenda p  ORDER BY LOWER(p.nombre) DESC")
 	public List<Prenda> findAllByOrderByNombreDesc();
 }

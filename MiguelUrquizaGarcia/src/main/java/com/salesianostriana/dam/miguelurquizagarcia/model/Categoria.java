@@ -23,26 +23,24 @@ import lombok.ToString;
 @NoArgsConstructor
 @Builder
 public class Categoria {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	private String nombre;
 	private String descripcion;
 	private double precioServicio;
 	private boolean topVenta;
 	private double descuento;
 	private double numeroPrendasDescuento;
-	
-	public Categoria (Long id, String nombre, String descripcion) {
+
+	public Categoria(Long id, String nombre, String descripcion) {
 		this.id = id;
 		this.nombre = nombre;
-		this.descripcion=descripcion;
+		this.descripcion = descripcion;
 	}
-	
-	
-	
+
 	public Categoria(Long id, String nombre, String descripcion, double precioServicio, boolean topVenta,
 			List<Prenda> listaPrendas) {
 		super();
@@ -54,27 +52,20 @@ public class Categoria {
 		this.listaPrendas = listaPrendas;
 	}
 
-	
 	@Override
 	public String toString() {
-	    return "Categoria{" +
-	           "id=" + id +
-	           ", nombre='" + nombre + '\'' +
-	           ", descripcion='" + descripcion + '\'' +
-	           ", precioServicio=" + precioServicio +
-	           ", descuento=" + descuento +
-	           ", numeroPrendasDescuento=" + numeroPrendasDescuento +
-	           '}';
+		return "Categoria{" + "id=" + id + ", nombre='" + nombre + '\'' + ", descripcion='" + descripcion + '\''
+				+ ", precioServicio=" + precioServicio + ", descuento=" + descuento + ", numeroPrendasDescuento="
+				+ numeroPrendasDescuento + '}';
 	}
-
 
 	@ToString.Exclude
 	@EqualsAndHashCode.Exclude
-	@OneToMany(mappedBy = "categoria", fetch= FetchType.EAGER)
+	@OneToMany(mappedBy = "categoria", fetch = FetchType.EAGER)
 	private List<Prenda> listaPrendas;
-	
-	@OneToMany(mappedBy="categoria")
+
+	@OneToMany(mappedBy = "categoria")
 	@JsonIgnore
-	private List<LineaVenta>lineasVenta;
+	private List<LineaVenta> lineasVenta;
 
 }

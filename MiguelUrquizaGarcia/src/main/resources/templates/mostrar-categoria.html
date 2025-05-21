@@ -12,7 +12,8 @@
 	<link href="../static/bootstrap.min.css" th:href="@{/bootstrap.min.css}" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 	<link href="../static/estilo.css" th:href="@{/estilosMain.css}" rel="stylesheet" type="text/css">
-	<title>Tintoreria Urquiza</title>
+	<meta name="description" content="Página Mostrar Categoría">
+	<title>Tintoreria Urquiza - Mostrar Categoría</title>
 
 	<script th:inline="javascript">
 
@@ -156,7 +157,13 @@
 
 							</tr>
 						</tbody>
+						<tfoot class="table table-dark">
+							<tr>
 
+								<th colspan="3" class="text-end">Total Prendas:</th>
+								<th class="text-center" th:text="${#lists.size(prendasCategoria)}">0</th>
+							</tr>
+						</tfoot>
 					</table>
 				</div>
 			</div>

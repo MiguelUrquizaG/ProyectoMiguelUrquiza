@@ -18,24 +18,22 @@ public class CategoriaService extends BaseService<Categoria, Long, CategoriaRepo
 	private CategoriaRepository repoCategoria;
 
 	public boolean delete(Long id) {
-		Categoria c =  buscar(id);
-		boolean isEliminado =false;
-		
-		
-		if(!c.getListaPrendas().isEmpty() ||  !c.getLineasVenta().isEmpty() && c!=null ) {
-			
-		}else {
+		Categoria c = buscar(id);
+		boolean isEliminado = false;
+
+		if (!c.getListaPrendas().isEmpty() || !c.getLineasVenta().isEmpty() && c != null) {
+
+		} else {
 			delete(c);
-			isEliminado=true;
-	
+			isEliminado = true;
+
 		}
-		
+
 		return isEliminado;
 	}
 
 	public Categoria buscar(Long id) {
-		return findById(id)
-				.orElseThrow(() -> new EntityNotFoundException("Categoría con id " + id + " no encontrada"));
+		return findById(id).orElseThrow(() -> new EntityNotFoundException("Categoría con id " + id + " no encontrada"));
 	}
 
 	public void agregar(Categoria c) {
@@ -60,12 +58,12 @@ public class CategoriaService extends BaseService<Categoria, Long, CategoriaRepo
 	public List<Categoria> buscarCategoriasEconomicasNoTopVenta(Double precioMax) {
 		return repoCategoria.buscarCategoriasNoTopVentaPorPrecioMenor(precioMax);
 	}
-	
-	public void editarDescuentos(Long id,Double descuento, @RequestParam(required=false) Double cantidadPrendas) {
-		 Categoria c = buscar(id);
-		  c.setDescuento(descuento);
-		  c.setNumeroPrendasDescuento(cantidadPrendas);
-		  editar(c);	
+
+	public void editarDescuentos(Long id, Double descuento, @RequestParam(required = false) Double cantidadPrendas) {
+		Categoria c = buscar(id);
+		c.setDescuento(descuento);
+		c.setNumeroPrendasDescuento(cantidadPrendas);
+		editar(c);
 	}
 
 }

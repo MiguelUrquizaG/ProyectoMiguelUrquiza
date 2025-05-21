@@ -28,36 +28,33 @@ public class Prenda {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
+
 	private String nombre;
 	private String descripcion;
 	private String urlImagen;
 	private boolean topVenta;
-	
+
 	@ManyToOne
 	@JsonIgnoreProperties("listaPrendas")
-	@JoinColumn(foreignKey = @ForeignKey(name="fk_prenda_categoria"))	
+	@JoinColumn(foreignKey = @ForeignKey(name = "fk_prenda_categoria"))
 	private Categoria categoria;
-	
-	@OneToMany (mappedBy="prenda")
+
+	@OneToMany(mappedBy = "prenda")
 	@JsonIgnore
-	private List<LineaVenta>lineasVenta;
-	
+	private List<LineaVenta> lineasVenta;
+
 	public void addToCategoria(Categoria categoria) {
 		this.categoria = categoria;
 		categoria.getListaPrendas().add(this);
 	}
-	
+
 	public void removeFromCategoria(Categoria categoria) {
 		categoria.getListaPrendas().remove(this);
-		this.categoria = null;		
+		this.categoria = null;
 	}
-	
+
 	@Override
 	public String toString() {
-	    return "Prenda{" +
-	           "id=" + id +
-	           ", nombre='" + nombre + '\'' +
-	           '}';
+		return "Prenda{" + "id=" + id + ", nombre='" + nombre + '\'' + '}';
 	}
 }

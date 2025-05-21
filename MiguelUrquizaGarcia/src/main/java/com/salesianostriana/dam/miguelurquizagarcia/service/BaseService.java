@@ -1,4 +1,5 @@
 package com.salesianostriana.dam.miguelurquizagarcia.service;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -6,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
- * En este curso 23-24, Luismi ha explicado el servicio base de otra manera, 
+ * En este curso 23-24, Luismi ha explicado el servicio base de otra manera,
  * utilizando la interfaz base...
  * 
  * Esta clase base nos permite tener un envoltorio genérico para cualquier tipo
@@ -27,8 +28,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * obligatoriamente. Significa que R debe ser de un tipo que extienda (herede) a
  * JPARepository <T, ID> por lo que no puede ser de cualquier tipo que queramos,
  * sino que debe cumplir esta condición, de ahí el que se le llame delimitado,
- * pues estamos "delimitando" el tipo de objetos que se pueden usar a aquellos que
- * cumplan esto.
+ * pues estamos "delimitando" el tipo de objetos que se pueden usar a aquellos
+ * que cumplan esto.
  * 
  * Una de las limitaciones que tiene es fácilmente subsanable. Se podría dar el
  * caso de que el tipo T no fuese una entidad de nuestro modelo. Para
@@ -61,16 +62,16 @@ public abstract class BaseService<T, ID, R extends JpaRepository<T, ID>> {
 
 		// Devolvemos la entidad si la encuentra u otro si no lo encuentra,
 		// en este caso, hemos dicho que ese "otro" sea null
-		// se podría hacer también, más bien se debería hacer 
+		// se podría hacer también, más bien se debería hacer
 		// con Optional usando el siguiente código
 		/*
 		 * @Override public Optional<T> findById(ID id) { return
 		 * Optional.ofNullable(repositorio.findById(id).orElse(null)); }
 		 */
-		
-		 Optional<T> resultado = repositorio.findById(id);
 
-		    return resultado;
+		Optional<T> resultado = repositorio.findById(id);
+
+		return resultado;
 	}
 
 	/**
@@ -111,4 +112,3 @@ public abstract class BaseService<T, ID, R extends JpaRepository<T, ID>> {
 	}
 
 }
-
